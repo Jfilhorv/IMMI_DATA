@@ -8,8 +8,18 @@
   })();
   var TABLES_URL = base + 'data/tables.json';
   var DATA_URL = base + 'data/indicators.csv';
+  var SECTION_LABELS = {
+    1: '1. Permanent migration',
+    2: '2. Temporary visas',
+    3: '3. Humanitarian Program',
+    4: '4. Visa cancellations & departures',
+    5: '5. Net Overseas Migration',
+    6: '6. Citizenship',
+    7: '7. Labour market'
+  };
   var tableList = [];
   var allData = [];
+  var tablesWithData = new Set();
   var chart = null;
 
   function parseCSVLine(line) {
@@ -81,10 +91,45 @@
     return indicators[0];
   }
 
+  function onSectionChange() {
+    var sectionSel = document.getElementById('section');
+    var tableSel = document.getElementById('table');
+    var indSel = document.getElementById('indicator');
+    var sectionId = sectionSel.value ? parseInt(sectionSel.value, 10) : null;
+    if (!sectionId) {
+      tableSel.disabled = true;
+      tableSel.innerHTML = '<option value="">— Select section first —</option>';
+      indSel.disabled = true;
+      indSel.innerHTML = '<option value="">— Select table first —</option>';
+      if (chart) {
+        chart.data.labels = [];
+        chart.data.datasets[0].data = [];
+        chart.update('none');
+      }
+      return;
+    }
+    var tablesInSection = tableList.filter(function (t) {
+      return t.section === sectionId && tablesWithData.has(t.id);
+    });
+    tableSel.disabled = false;
+    tableSel.innerHTML = '<option value="">— Select table —</option>' +
+      tablesInSection.map(function (t) {
+        return '<option value="' + escapeHtml(t.id) + '">' + escapeHtml(t.shortTitle || t.title) + '</option>';
+      }).join('');
+    tableSel.value = '';
+    indSel.disabled = true;
+    indSel.innerHTML = '<option value="">— Select table first —</option>';
+    if (chart) {
+      chart.data.labels = [];
+      chart.data.datasets[0].data = [];
+      chart.update('none');
+    }
+  }
+
   function onTableChange() {
-    const tableSel = document.getElementById('table');
-    const indSel = document.getElementById('indicator');
-    const tableId = tableSel.value;
+    var tableSel = document.getElementById('table');
+    var indSel = document.getElementById('indicator');
+    var tableId = tableSel.value;
     if (!tableId) {
       indSel.disabled = true;
       indSel.innerHTML = '<option value="">— Select a table first —</option>';
@@ -95,7 +140,7 @@
       }
       return;
     }
-    const indicators = getIndicatorsForTable(tableId);
+    var indicators = getIndicatorsForTable(tableId);
     indSel.disabled = false;
     indSel.innerHTML = '<option value="">— Select indicator —</option>' +
       indicators.map(function (ind) {
@@ -129,49 +174,77 @@
   }
 
   function updateChart(labels, values, indicatorName) {
-    const ctx = document.getElementById('chart').getContext('2d');
+    var ctx = document.getElementById('chart').getContext('2d');
+    var isVerticalLabels = labels.length > 20;
     if (chart) {
       chart.data.labels = labels;
       chart.data.datasets[0].data = values;
       chart.data.datasets[0].label = indicatorName;
+      if (chart.options.plugins.datalabels) {
+        chart.options.plugins.datalabels.rotation = isVerticalLabels ? -90 : 0;
+      }
       chart.update('none');
       return;
     }
+    var plugins = [];
+    if (typeof ChartDataLabels !== 'undefined') plugins.push(ChartDataLabels);
     chart = new Chart(ctx, {
       type: 'bar',
+      plugins: plugins,
       data: {
         labels: labels,
         datasets: [{
           label: indicatorName,
           data: values,
-          backgroundColor: 'rgba(0, 102, 204, 0.6)',
-          borderColor: 'rgb(0, 102, 204)',
+          backgroundColor: 'rgba(59, 130, 246, 0.5)',
+          borderColor: 'rgba(59, 130, 246, 0.9)',
           borderWidth: 1
         }]
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true,
-        plugins: { legend: { display: false } },
+        maintainAspectRatio: false,
+        layout: { padding: { top: 20 } },
+        plugins: {
+          legend: { display: false },
+          datalabels: plugins.length ? {
+            anchor: 'end',
+            align: 'top',
+            rotation: isVerticalLabels ? -90 : 0,
+            color: '#e4e7eb',
+            font: { family: 'JetBrains Mono, monospace', size: 10 },
+            formatter: function (v) { return typeof v === 'number' && !isNaN(v) ? (v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v) : ''; }
+          } : undefined
+        },
         scales: {
-          x: { title: { display: true, text: 'Year (financial year start)' } },
-          y: { beginAtZero: true, title: { display: true, text: 'Value' } }
+          x: {
+            grid: { color: 'rgba(42, 48, 56, 0.6)' },
+            ticks: { color: '#8b929a', maxRotation: isVerticalLabels ? 90 : 45 },
+            title: { display: true, text: 'Year (financial year start)', color: '#8b929a' }
+          },
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(42, 48, 56, 0.6)' },
+            ticks: { color: '#8b929a' },
+            title: { display: true, text: 'Value', color: '#8b929a' }
+          }
         }
       }
     });
   }
 
   function loadData() {
+    var sectionSel = document.getElementById('section');
     var tableSel = document.getElementById('table');
     var indSel = document.getElementById('indicator');
-    tableSel.innerHTML = '<option value="">— Loading —</option>';
-    tableSel.classList.add('loading');
+    sectionSel.innerHTML = '<option value="">— Loading —</option>';
+    sectionSel.classList.add('loading');
 
     function done(errMsg) {
-      tableSel.classList.remove('loading');
+      sectionSel.classList.remove('loading');
       if (errMsg) {
-        tableSel.innerHTML = '<option value="">' + errMsg + '</option>';
-        tableSel.classList.add('error');
+        sectionSel.innerHTML = '<option value="">' + errMsg + '</option>';
+        sectionSel.classList.add('error');
       }
     }
 
@@ -190,15 +263,24 @@
         if (!Array.isArray(tableList)) throw new Error('Invalid tables.json');
         allData = parseCSV(results[1]);
         var dataTablePattern = /^\d+_\d+$/;
-        var tablesWithData = new Set();
+        tablesWithData = new Set();
         allData.forEach(function (row) {
           if (dataTablePattern.test(row.table || '')) tablesWithData.add(row.table);
         });
-        tableSel.innerHTML = '<option value="">— Select table —</option>' +
-          tableList.filter(function (t) { return tablesWithData.has(t.id); }).map(function (t) {
-            return '<option value="' + escapeHtml(t.id) + '">' + escapeHtml(t.title) + '</option>';
+        var sectionsWithData = new Set();
+        tableList.forEach(function (t) {
+          if (tablesWithData.has(t.id) && t.section != null) sectionsWithData.add(t.section);
+        });
+        var sectionOrder = [1, 2, 3, 4, 5, 6, 7];
+        sectionSel.innerHTML = '<option value="">— Select section —</option>' +
+          sectionOrder.filter(function (s) { return sectionsWithData.has(s); }).map(function (s) {
+            var label = SECTION_LABELS[s] || ('Section ' + s);
+            return '<option value="' + s + '">' + escapeHtml(label) + '</option>';
           }).join('');
-        tableSel.classList.remove('loading');
+        sectionSel.classList.remove('loading');
+        tableSel.innerHTML = '<option value="">— Select section first —</option>';
+        tableSel.disabled = true;
+        sectionSel.addEventListener('change', onSectionChange);
         tableSel.addEventListener('change', onTableChange);
         indSel.addEventListener('change', onIndicatorChange);
       } catch (e) {

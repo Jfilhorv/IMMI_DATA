@@ -5,152 +5,244 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Australian Immigration — Indicator Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
+    :root {
+      --bg: #0f1115;
+      --surface: #181b21;
+      --surface2: #1e2229;
+      --border: #2a3038;
+      --text: #e4e7eb;
+      --text-muted: #8b929a;
+      --accent: #3b82f6;
+      --accent-dim: rgba(59, 130, 246, 0.15);
+    }
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      max-width: 900px;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .page {
+      max-width: 1600px;
       margin: 0 auto;
-      padding: 1.5rem;
-      background: #f8f9fa;
-      color: #1a1a1a;
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      grid-template-rows: auto 1fr auto;
+      gap: 1.25rem;
+      min-height: 100vh;
+    }
+    @media (max-width: 900px) {
+      .page { grid-template-columns: 1fr; }
+    }
+    header {
+      grid-column: 1 / -1;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
     }
     h1 {
-      font-size: 1.5rem;
-      margin-bottom: 0.25rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem 0;
+      letter-spacing: -0.02em;
     }
     .subtitle {
-      color: #555;
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
     }
-    .controls {
-      margin-bottom: 1.5rem;
+    .sidebar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      height: fit-content;
+      position: sticky;
+      top: 1rem;
     }
-    label {
+    .controls label {
       display: block;
+      font-size: 0.75rem;
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
       margin-bottom: 0.35rem;
-      font-size: 0.9rem;
-    }
-    select {
-      width: 100%;
-      max-width: 400px;
-      padding: 0.5rem 0.75rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background: #fff;
-    }
-    .chart-wrap {
-      background: #fff;
-      padding: 1.25rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-      margin-bottom: 1.5rem;
-    }
-    .chart-wrap canvas {
-      max-height: 400px;
-    }
-    .source {
-      font-size: 0.8rem;
-      color: #666;
       margin-top: 1rem;
     }
-    .source a { color: #0066cc; }
-    .loading { color: #666; }
-    .error { color: #c00; }
-    .doc-section {
-      background: #fff;
+    .controls label:first-child { margin-top: 0; }
+    .controls select {
+      width: 100%;
+      padding: 0.5rem 0.65rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface2);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .controls select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-dim);
+    }
+    .controls select:disabled { opacity: 0.6; cursor: not-allowed; }
+    .main {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .chart-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
       padding: 1.25rem 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-      margin-bottom: 1.5rem;
+      flex: 1;
+      min-height: 380px;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chart-wrap canvas {
+      width: 100% !important;
+      height: 100% !important;
+      max-height: 420px;
+    }
+    .footer-grid {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    @media (max-width: 1100px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .doc-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.35rem;
     }
     .doc-section h2 {
-      font-size: 1.15rem;
-      margin: 0 0 0.75rem 0;
-      padding-bottom: 0.35rem;
-      border-bottom: 1px solid #e0e0e0;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.6rem 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
     }
     .doc-section h3 {
-      font-size: 1rem;
-      margin: 1rem 0 0.4rem 0;
+      font-size: 0.9rem;
+      margin: 0.85rem 0 0.35rem 0;
+      color: var(--text-muted);
     }
     .doc-section p, .doc-section dd {
-      margin: 0 0 0.6rem 0;
-      font-size: 0.9rem;
+      margin: 0 0 0.5rem 0;
+      font-size: 0.82rem;
       line-height: 1.5;
-      color: #333;
+      color: var(--text-muted);
     }
     .doc-section dt {
       font-weight: 600;
-      margin-top: 0.75rem;
-      font-size: 0.9rem;
+      font-size: 0.82rem;
+      margin-top: 0.6rem;
+      color: var(--text);
     }
     .doc-section dd { margin-left: 0; }
-    .doc-section a { color: #0066cc; }
-    .doc-section small { color: #666; }
+    .doc-section a { color: var(--accent); text-decoration: none; }
+    .doc-section a:hover { text-decoration: underline; }
+    .doc-section small { color: var(--text-muted); font-size: 0.75rem; }
+    .source {
+      grid-column: 1 / -1;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin: 0;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .source a { color: var(--accent); }
+    .loading { color: var(--text-muted); }
+    .error { color: #ef4444; }
   </style>
 </head>
 <body>
-  <h1>Australian Immigration — Indicator Dashboard</h1>
-  <p class="subtitle">Select an indicator to view time series. Data: Department of Home Affairs, Australian Migration Statistics.</p>
+  <div class="page">
+    <header>
+      <h1>Australian Immigration — Indicator Dashboard</h1>
+      <p class="subtitle">Department of Home Affairs · Australian Migration Statistics</p>
+    </header>
 
-  <div class="controls">
-    <label for="table">Select table</label>
-    <select id="table">
-      <option value="">— Loading —</option>
-    </select>
-    <label for="indicator" style="margin-top: 1rem;">Select indicator</label>
-    <select id="indicator" disabled>
-      <option value="">— Select a table first —</option>
-    </select>
+    <aside class="sidebar">
+      <div class="controls">
+        <label for="section">1. Section</label>
+        <select id="section">
+          <option value="">— Loading —</option>
+        </select>
+        <label for="table">2. Table</label>
+        <select id="table" disabled>
+          <option value="">— Select section first —</option>
+        </select>
+        <label for="indicator">3. Indicator</label>
+        <select id="indicator" disabled>
+          <option value="">— Select table first —</option>
+        </select>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="chart-wrap">
+        <canvas id="chart" aria-label="Indicator time series chart"></canvas>
+      </div>
+    </main>
+
+    <div class="footer-grid">
+      <section class="doc-section" id="overview">
+        <h2>Overview</h2>
+        <p><strong>Australian Migration Statistics, 2024–25</strong> — Released November 2025.</p>
+        <p>Produced as an accompaniment to Australia's Migration Trends. Detailed tables for the financial year including 10-year comparative data. Coverage: permanent and temporary migration, citizenship, Net Overseas Migration and labour market.</p>
+        <p><strong>Period:</strong> 2024–25 financial year, published annually.</p>
+        <h3>Caveats</h3>
+        <p>For statistical and research purposes. Cite the Department as source. Views do not necessarily represent the Department of Home Affairs. Commonwealth excludes liability for use or reliance on this information.</p>
+        <h3>Contents</h3>
+        <p>Permanent migration (1.0–1.18), temporary visas (2.0–2.4), Humanitarian (3.0–3.4), visa non-compliance (4.0–4.4), NOM (5.0–5.1), citizenship (6.0), labour market (7.0–7.8). More at <a href="https://data.gov.au" target="_blank" rel="noopener">data.gov.au</a>.</p>
+      </section>
+      <section class="doc-section" id="data-items">
+        <h2>Data Items & Terminology</h2>
+        <dl>
+          <dt>Applicant Type</dt>
+          <dd>Primary vs secondary applicants; 'primary' excludes dependants.</dd>
+          <dt>Citizenship</dt>
+          <dd>Country of citizenship; where multiple, travel document or nominated.</dd>
+          <dt>Client Location</dt>
+          <dd>Onshore (in Australia) or offshore at time of application.</dd>
+          <dt>Humanitarian Program</dt>
+          <dd>Offshore resettlement and onshore protection components.</dd>
+          <dt>Migration Program</dt>
+          <dd>Three streams: Skill, Family, Special Eligibility.</dd>
+          <dt>Net Overseas Migration (NOM)</dt>
+          <dd>Net gain/loss via arrivals and departures (12+ months stay).</dd>
+          <dt>Outcome</dt>
+          <dd>Visas granted net of certain cancellations and exclusions.</dd>
+          <dt>Primary / Secondary Applicant</dt>
+          <dd>Principal vs dependant under Migration Regulations.</dd>
+        </dl>
+        <p><small>© Commonwealth of Australia. Source: Department of Home Affairs.</small></p>
+      </section>
+    </div>
+
+    <p class="source">
+      Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Years = financial year start (e.g. 1984 = 1984–85).
+    </p>
   </div>
-
-  <div class="chart-wrap">
-    <canvas id="chart" aria-label="Indicator time series chart"></canvas>
-  </div>
-
-  <section class="doc-section" id="overview">
-    <h2>Overview</h2>
-    <p><strong>Australian Migration Statistics, 2024–25</strong> — Released November 2025.</p>
-    <p>Australian Migration Statistics is produced as an accompaniment to the publication Australia's Migration Trends. Detailed tables are provided summarising migration activity for the financial year including 10-year comparative data. Coverage includes permanent and temporary migration, citizenship, Net Overseas Migration and labour market tables.</p>
-    <p><strong>Report period and frequency:</strong> 2024–25 financial year, published annually.</p>
-    <h3>Caveats</h3>
-    <p>This Australian Migration Statistics dataset provided by the Department of Home Affairs is for statistical and research purposes. Any publications or reports using this data must cite the Department as the source. The Department is not responsible for any analysis or transformation of the data by the requestor in any publications or reports. The Department is entitled to include a statement stating “The views expressed in this report are those of the authors and do not necessarily represent those of the Department of Home Affairs” in such a published report. To the extent permitted by law, the Commonwealth excludes all liability for loss or damage arising from the use of, or reliance on, the information contained in this workbook.</p>
-    <h3>Report contents</h3>
-    <p>Tables in this package cover: Australia's permanent migration outcome (1.0–1.18), temporary entry visas (2.0–2.4), Humanitarian Program (3.0–3.4), visa non-compliance (4.0–4.4), Net Overseas Migration (5.0–5.1), citizenship (6.0), and migration and the labour market (7.0–7.8). Detailed statistical information is available at <a href="https://data.gov.au" target="_blank" rel="noopener">data.gov.au</a> and the Department of Home Affairs website (Research and statistics).</p>
-  </section>
-
-  <section class="doc-section" id="data-items">
-    <h2>Data Items and Terminology</h2>
-    <dl>
-      <dt>Applicant Type</dt>
-      <dd>Under the Migration Regulations 1994 there are two types: primary applicants and secondary applicants. Where a table or graph heading includes the word 'primary', dependants (secondary applicants) are not included.</dd>
-      <dt>Citizenship</dt>
-      <dd>The country of citizenship of the visa applicant or visa holder. Where a person has more than one citizenship, either the citizenship of the travel document or that nominated by the applicant is used.</dd>
-      <dt>Client Location</dt>
-      <dd>The location at the time the application was lodged: In Australia (onshore) or Outside Australia (offshore).</dd>
-      <dt>Humanitarian Program</dt>
-      <dd>Comprised of an offshore resettlement component and an onshore protection component; provides protection to refugees and resettlement in line with Australia's international obligations.</dd>
-      <dt>Migration Program</dt>
-      <dd>The primary pathway to Australian permanent residence. It has three streams: (1) Skill stream, (2) Family stream, (3) Special Eligibility.</dd>
-      <dt>Net Overseas Migration (NOM)</dt>
-      <dd>Net gain or loss of population through people arriving in and departing from Australia, based on duration of stay in or out of Australia for 12 months or more.</dd>
-      <dt>Outcome</dt>
-      <dd>In Migration Program reporting, outcomes are the number of visas granted (net of certain cancellations and exclusions).</dd>
-      <dt>Primary Applicant</dt>
-      <dd>The person who must satisfy the primary criteria for the grant of a visa (principal applicant).</dd>
-      <dt>Secondary Applicant</dt>
-      <dd>Must satisfy secondary criteria; generally a dependant of the primary applicant.</dd>
-    </dl>
-    <p><small>© Commonwealth of Australia. Source: Department of Home Affairs, Australian Migration Statistics.</small></p>
-  </section>
-
-  <p class="source">
-    Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Financial years shown as start year (e.g. 1984 = 1984–85).
-  </p>
 
   <script src="app.js"></script>
 </body>
