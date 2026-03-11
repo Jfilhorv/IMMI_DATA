@@ -6,9 +6,10 @@
     var last = href.lastIndexOf('/');
     return last >= 0 ? href.slice(0, last + 1) : '';
   })();
-  var TABLES_URL = base + 'data/tables.json';
-  var DATA_URL = base + 'data/indicators.csv';
-  var CATEGORY_TABLES_URL = base + 'data/category_tables.json';
+  var CACHE_BUST = '?v=2';
+  var TABLES_URL = base + 'data/tables.json' + CACHE_BUST;
+  var DATA_URL = base + 'data/indicators.csv' + CACHE_BUST;
+  var CATEGORY_TABLES_URL = base + 'data/category_tables.json' + CACHE_BUST;
   var categoryTables = [];
   var SECTION_LABELS = {
     1: '1. Permanent migration',
