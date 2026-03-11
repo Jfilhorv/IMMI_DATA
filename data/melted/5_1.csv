@@ -1,0 +1,161 @@
+Year,variable,value,sheet
+2015,Student,43.7,5.1
+2016,Student,45.4,5.1
+2017,Student,51.7,5.1
+2018,Student,59.9,5.1
+2019,Student,98.8,5.1
+2020,Student,75.1,5.1
+2021,Student,37.4,5.1
+2022,Student,16.0,5.1
+2023,Student,25.4,5.1
+2024,Student,42.7,5.1
+2015,Temporary visa categories | Working holiday,28.0,5.1
+2016,Temporary visa categories | Working holiday,27.5,5.1
+2017,Temporary visa categories | Working holiday,23.3,5.1
+2018,Temporary visa categories | Working holiday,23.5,5.1
+2019,Temporary visa categories | Working holiday,26.9,5.1
+2020,Temporary visa categories | Working holiday,16.3,5.1
+2021,Temporary visa categories | Working holiday,6.1,5.1
+2022,Temporary visa categories | Working holiday,2.6,5.1
+2023,Temporary visa categories | Working holiday,5.6,5.1
+2024,Temporary visa categories | Working holiday,18.8,5.1
+2015,Temporary visa categories | Visitor,15.5,5.1
+2016,Temporary visa categories | Visitor,15.4,5.1
+2017,Temporary visa categories | Visitor,22.9,5.1
+2018,Temporary visa categories | Visitor,14.5,5.1
+2019,Temporary visa categories | Visitor,32.1,5.1
+2020,Temporary visa categories | Visitor,12.7,5.1
+2021,Temporary visa categories | Visitor,17.5,5.1
+2022,Temporary visa categories | Visitor,15.8,5.1
+2023,Temporary visa categories | Visitor,18.1,5.1
+2024,Temporary visa categories | Visitor,19.5,5.1
+2015,Temporary visa categories | Temporary Resident (Skilled Employment),20.3,5.1
+2016,Temporary visa categories | Temporary Resident (Skilled Employment),17.0,5.1
+2017,Temporary visa categories | Temporary Resident (Skilled Employment),15.4,5.1
+2018,Temporary visa categories | Temporary Resident (Skilled Employment),15.2,5.1
+2019,Temporary visa categories | Temporary Resident (Skilled Employment),16.2,5.1
+2020,Temporary visa categories | Temporary Resident (Skilled Employment),11.8,5.1
+2021,Temporary visa categories | Temporary Resident (Skilled Employment),9.8,5.1
+2022,Temporary visa categories | Temporary Resident (Skilled Employment),6.8,5.1
+2023,Temporary visa categories | Temporary Resident (Skilled Employment),5.9,5.1
+2024,Temporary visa categories | Temporary Resident (Skilled Employment),8.8,5.1
+2015,Temporary visa categories | Other temporary visas,21.4,5.1
+2016,Temporary visa categories | Other temporary visas,22.2,5.1
+2017,Temporary visa categories | Other temporary visas,26.8,5.1
+2018,Temporary visa categories | Other temporary visas,31.5,5.1
+2019,Temporary visa categories | Other temporary visas,38.2,5.1
+2020,Temporary visa categories | Other temporary visas,42.7,5.1
+2021,Temporary visa categories | Other temporary visas,45.6,5.1
+2022,Temporary visa categories | Other temporary visas,40.7,5.1
+2023,Temporary visa categories | Other temporary visas,31.8,5.1
+2024,Temporary visa categories | Other temporary visas,46.0,5.1
+2015,Temporary visa categories | Total,128.9,5.1
+2016,Temporary visa categories | Total,127.5,5.1
+2017,Temporary visa categories | Total,140.1,5.1
+2018,Temporary visa categories | Total,144.7,5.1
+2019,Temporary visa categories | Total,212.2,5.1
+2020,Temporary visa categories | Total,158.6,5.1
+2021,Temporary visa categories | Total,116.3,5.1
+2022,Temporary visa categories | Total,81.9,5.1
+2023,Temporary visa categories | Total,86.9,5.1
+2024,Temporary visa categories | Total,135.7,5.1
+2015,Temporary visa categories | Skill,8.9,5.1
+2016,Temporary visa categories | Skill,8.1,5.1
+2017,Temporary visa categories | Skill,8.1,5.1
+2018,Temporary visa categories | Skill,7.4,5.1
+2019,Temporary visa categories | Skill,9.1,5.1
+2020,Temporary visa categories | Skill,6.7,5.1
+2021,Temporary visa categories | Skill,6.7,5.1
+2022,Temporary visa categories | Skill,5.8,5.1
+2023,Temporary visa categories | Skill,4.8,5.1
+2024,Temporary visa categories | Skill,5.3,5.1
+2015,Permanent visa categories | Family,6.1,5.1
+2016,Permanent visa categories | Family,5.6,5.1
+2017,Permanent visa categories | Family,5.6,5.1
+2018,Permanent visa categories | Family,5.6,5.1
+2019,Permanent visa categories | Family,7.0,5.1
+2020,Permanent visa categories | Family,4.4,5.1
+2021,Permanent visa categories | Family,5.2,5.1
+2022,Permanent visa categories | Family,5.9,5.1
+2023,Permanent visa categories | Family,5.7,5.1
+2024,Permanent visa categories | Family,5.0,5.1
+2015,Permanent visa categories | Special Eligibility and humanitarian,0.2,5.1
+2016,Permanent visa categories | Special Eligibility and humanitarian,0.1,5.1
+2017,Permanent visa categories | Special Eligibility and humanitarian,0.1,5.1
+2018,Permanent visa categories | Special Eligibility and humanitarian,0.2,5.1
+2019,Permanent visa categories | Special Eligibility and humanitarian,0.1,5.1
+2020,Permanent visa categories | Special Eligibility and humanitarian,0.1,5.1
+2021,Permanent visa categories | Special Eligibility and humanitarian,0.1,5.1
+2022,Permanent visa categories | Special Eligibility and humanitarian,0.1,5.1
+2023,Permanent visa categories | Special Eligibility and humanitarian,0.2,5.1
+2024,Permanent visa categories | Special Eligibility and humanitarian,0.2,5.1
+2015,Permanent visa categories | Other permanent visas,6.4,5.1
+2016,Permanent visa categories | Other permanent visas,6.7,5.1
+2017,Permanent visa categories | Other permanent visas,6.8,5.1
+2018,Permanent visa categories | Other permanent visas,7.3,5.1
+2019,Permanent visa categories | Other permanent visas,10.7,5.1
+2020,Permanent visa categories | Other permanent visas,6.7,5.1
+2021,Permanent visa categories | Other permanent visas,8.3,5.1
+2022,Permanent visa categories | Other permanent visas,9.9,5.1
+2023,Permanent visa categories | Other permanent visas,9.4,5.1
+2024,Permanent visa categories | Other permanent visas,8.5,5.1
+2015,Permanent visa categories | Total,21.5,5.1
+2016,Permanent visa categories | Total,20.5,5.1
+2017,Permanent visa categories | Total,20.6,5.1
+2018,Permanent visa categories | Total,20.4,5.1
+2019,Permanent visa categories | Total,27.0,5.1
+2020,Permanent visa categories | Total,17.9,5.1
+2021,Permanent visa categories | Total,20.3,5.1
+2022,Permanent visa categories | Total,21.7,5.1
+2023,Permanent visa categories | Total,20.0,5.1
+2024,Permanent visa categories | Total,18.9,5.1
+2015,Permanent visa categories | New Zealand citizen,27.7,5.1
+2016,Permanent visa categories | New Zealand citizen,26.7,5.1
+2017,Permanent visa categories | New Zealand citizen,24.2,5.1
+2018,Permanent visa categories | New Zealand citizen,21.4,5.1
+2019,Permanent visa categories | New Zealand citizen,24.1,5.1
+2020,Permanent visa categories | New Zealand citizen,17.4,5.1
+2021,Permanent visa categories | New Zealand citizen,14.2,5.1
+2022,Permanent visa categories | New Zealand citizen,19.8,5.1
+2023,Permanent visa categories | New Zealand citizen,14.5,5.1
+2024,Permanent visa categories | New Zealand citizen,14.6,5.1
+2015,Other | Australian citizen,99.5,5.1
+2016,Other | Australian citizen,95.0,5.1
+2017,Other | Australian citizen,92.5,5.1
+2018,Other | Australian citizen,85.5,5.1
+2019,Other | Australian citizen,83.6,5.1
+2020,Other | Australian citizen,42.5,5.1
+2021,Other | Australian citizen,53.3,5.1
+2022,Other | Australian citizen,90.2,5.1
+2023,Other | Australian citizen,87.1,5.1
+2024,Other | Australian citizen,85.0,5.1
+2015,Other | All other visas2,8.9,5.1
+2016,Other | All other visas2,6.2,5.1
+2017,Other | All other visas2,12.4,5.1
+2018,Other | All other visas2,10.2,5.1
+2019,Other | All other visas2,13.5,5.1
+2020,Other | All other visas2,4.0,5.1
+2021,Other | All other visas2,1.1,5.1
+2022,Other | All other visas2,0.0,5.1
+2023,Other | All other visas2,0.0,5.1
+2024,Other | All other visas2,0.0,5.1
+2015,Other | Total other,136.1,5.1
+2016,Other | Total other,127.9,5.1
+2017,Other | Total other,129.0,5.1
+2018,Other | Total other,117.1,5.1
+2019,Other | Total other,121.1,5.1
+2020,Other | Total other,63.9,5.1
+2021,Other | Total other,68.6,5.1
+2022,Other | Total other,109.9,5.1
+2023,Other | Total other,101.6,5.1
+2024,Other | Total other,99.5,5.1
+2015,Other | Total NOM departures,286.5,5.1
+2016,Other | Total NOM departures,275.8,5.1
+2017,Other | Total NOM departures,289.7,5.1
+2018,Other | Total NOM departures,282.2,5.1
+2019,Other | Total NOM departures,360.3,5.1
+2020,Other | Total NOM departures,240.3,5.1
+2021,Other | Total NOM departures,205.1,5.1
+2022,Other | Total NOM departures,213.5,5.1
+2023,Other | Total NOM departures,208.4,5.1
+2024,Other | Total NOM departures,254.2,5.1

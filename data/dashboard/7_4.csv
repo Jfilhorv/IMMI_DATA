@@ -1,0 +1,120 @@
+indicator,year,value,category
+15–19,0,-0.1887058421233662,Australian-born | Male
+15–19,0,-0.1970343221076617,Australian-born | Female
+15–19,0,-0.3857401642310279,Australian-born | Total
+15–19,0,0.0094629750941535,Overseas-born | Male
+15–19,0,-0.0018136350420922,Overseas-born | Female
+15–19,0,0.0076493400520612,Overseas-born | Total
+15–19,0,-0.3780908241789666,Total all birth groups
+20–24,0,-0.3844940508900386,Australian-born | Male
+20–24,0,-0.4141995260140587,Australian-born | Female
+20–24,0,-0.7986935769040973,Australian-born | Total
+20–24,0,-0.0641560908527797,Overseas-born | Male
+20–24,0,-0.0723416914994199,Overseas-born | Female
+20–24,0,-0.1364977823521997,Overseas-born | Total
+20–24,0,-0.935191359256297,Total all birth groups
+Change in demographic composition by age group (years) | 25–34,0,-0.2137569517310073,Australian-born | Male
+Change in demographic composition by age group (years) | 25–34,0,-0.2854154429389883,Australian-born | Female
+Change in demographic composition by age group (years) | 25–34,0,-0.4991723946699956,Australian-born | Total
+Change in demographic composition by age group (years) | 25–34,0,-0.1667012791627708,Overseas-born | Male
+Change in demographic composition by age group (years) | 25–34,0,0.0385312237830416,Overseas-born | Female
+Change in demographic composition by age group (years) | 25–34,0,-0.1281700553797291,Overseas-born | Total
+Change in demographic composition by age group (years) | 25–34,0,-0.6273424500497248,Total all birth groups
+Change in demographic composition by age group (years) | 35–44,0,-0.7653774731205577,Australian-born | Male
+Change in demographic composition by age group (years) | 35–44,0,-0.7185815651697085,Australian-born | Female
+Change in demographic composition by age group (years) | 35–44,0,-1.483959038290266,Australian-born | Total
+Change in demographic composition by age group (years) | 35–44,0,0.563282341081795,Overseas-born | Male
+Change in demographic composition by age group (years) | 35–44,0,0.5489187131653953,Overseas-born | Female
+Change in demographic composition by age group (years) | 35–44,0,1.1122010542471903,Overseas-born | Total
+Change in demographic composition by age group (years) | 35–44,0,-0.3717579840430758,Total all birth groups
+Change in demographic composition by age group (years) | 45–54,0,-0.3529396709142752,Australian-born | Male
+Change in demographic composition by age group (years) | 45–54,0,-0.3672998542497803,Australian-born | Female
+Change in demographic composition by age group (years) | 45–54,0,-0.7202395251640556,Australian-born | Total
+Change in demographic composition by age group (years) | 45–54,0,-0.1163903775781215,Overseas-born | Male
+Change in demographic composition by age group (years) | 45–54,0,-0.0551540865528196,Overseas-born | Female
+Change in demographic composition by age group (years) | 45–54,0,-0.1715444641309411,Overseas-born | Total
+Change in demographic composition by age group (years) | 45–54,0,-0.8917839892949968,Total all birth groups
+Change in demographic composition by age group (years) | 55–64,0,-0.0275700093081289,Australian-born | Male
+Change in demographic composition by age group (years) | 55–64,0,-0.0192353384224362,Australian-born | Female
+Change in demographic composition by age group (years) | 55–64,0,-0.0468053477305652,Australian-born | Total
+Change in demographic composition by age group (years) | 55–64,0,0.0341375038935327,Overseas-born | Male
+Change in demographic composition by age group (years) | 55–64,0,0.0857350342320485,Overseas-born | Female
+Change in demographic composition by age group (years) | 55–64,0,0.1198725381255812,Overseas-born | Total
+Change in demographic composition by age group (years) | 55–64,0,0.073067190395016,Total all birth groups
+Change in demographic composition by age group (years) | 65+,0,0.2329476284589499,Australian-born | Male
+Change in demographic composition by age group (years) | 65+,0,0.1382462964087334,Australian-born | Female
+Change in demographic composition by age group (years) | 65+,0,0.3711939248676834,Australian-born | Total
+Change in demographic composition by age group (years) | 65+,0,0.0738798486722269,Overseas-born | Male
+Change in demographic composition by age group (years) | 65+,0,0.0569012730585102,Overseas-born | Female
+Change in demographic composition by age group (years) | 65+,0,0.1307811217307371,Overseas-born | Total
+Change in demographic composition by age group (years) | 65+,0,0.5019750465984206,Total all birth groups
+Change in demographic composition by age group (years) | All age groups,0,-1.6998963696284244,Australian-born | Male
+Change in demographic composition by age group (years) | All age groups,0,-1.8635197524939004,Australian-born | Female
+Change in demographic composition by age group (years) | All age groups,0,-3.563416122122325,Australian-born | Total
+Change in demographic composition by age group (years) | All age groups,0,0.333514921148036,Overseas-born | Male
+Change in demographic composition by age group (years) | All age groups,0,0.600776831144664,Overseas-born | Female
+Change in demographic composition by age group (years) | All age groups,0,0.9342917522927,Overseas-born | Total
+Change in demographic composition by age group (years) | All age groups,0,-2.6291243698296247,Total all birth groups
+Change in demographic composition by age group (years) | 15–19,0,0.0248305952462452,Australian-born | Male
+Change in demographic composition by age group (years) | 15–19,0,0.0886678845574619,Australian-born | Female
+Change in demographic composition by age group (years) | 15–19,0,0.1134984798037071,Australian-born | Total
+Change in demographic composition by age group (years) | 15–19,0,0.0518066779660577,Overseas-born | Male
+Change in demographic composition by age group (years) | 15–19,0,0.0259113256988688,Overseas-born | Female
+Change in demographic composition by age group (years) | 15–19,0,0.0777180036649265,Overseas-born | Total
+Change in demographic composition by age group (years) | 15–19,0,0.1912164834686337,Total all birth groups
+Change in demographic composition by age group (years) | 20–24,0,-0.0226402772524082,Australian-born | Male
+Change in demographic composition by age group (years) | 20–24,0,0.0705284699580945,Australian-born | Female
+Change in demographic composition by age group (years) | 20–24,0,0.0478881927056863,Australian-born | Total
+Change in demographic composition by age group (years) | 20–24,0,0.1120256314766035,Overseas-born | Male
+Change in demographic composition by age group (years) | 20–24,0,0.0911577754490347,Overseas-born | Female
+Change in demographic composition by age group (years) | 20–24,0,0.2031834069256383,Overseas-born | Total
+Change in demographic composition by age group (years) | 20–24,0,0.2510715996313246,Total all birth groups
+Change in propensity to participate by age group (years) | 25–34,0,-0.1598103908937334,Australian-born | Male
+Change in propensity to participate by age group (years) | 25–34,0,0.3139058353592569,Australian-born | Female
+Change in propensity to participate by age group (years) | 25–34,0,0.1540954444655235,Australian-born | Total
+Change in propensity to participate by age group (years) | 25–34,0,0.0511280532714431,Overseas-born | Male
+Change in propensity to participate by age group (years) | 25–34,0,0.1878605036052036,Overseas-born | Female
+Change in propensity to participate by age group (years) | 25–34,0,0.2389885568766468,Overseas-born | Total
+Change in propensity to participate by age group (years) | 25–34,0,0.3930840013421703,Total all birth groups
+Change in propensity to participate by age group (years) | 35–44,0,-0.0121419135141082,Australian-born | Male
+Change in propensity to participate by age group (years) | 35–44,0,0.3018890312278303,Australian-born | Female
+Change in propensity to participate by age group (years) | 35–44,0,0.2897471177137221,Australian-born | Total
+Change in propensity to participate by age group (years) | 35–44,0,0.0368329130937242,Overseas-born | Male
+Change in propensity to participate by age group (years) | 35–44,0,0.3041986055349963,Overseas-born | Female
+Change in propensity to participate by age group (years) | 35–44,0,0.3410315186287205,Overseas-born | Total
+Change in propensity to participate by age group (years) | 35–44,0,0.6307786363424426,Total all birth groups
+Change in propensity to participate by age group (years) | 45–54,0,-0.0145379072436098,Australian-born | Male
+Change in propensity to participate by age group (years) | 45–54,0,0.1179235895885487,Australian-born | Female
+Change in propensity to participate by age group (years) | 45–54,0,0.1033856823449389,Australian-born | Total
+Change in propensity to participate by age group (years) | 45–54,0,0.0483573032969362,Overseas-born | Male
+Change in propensity to participate by age group (years) | 45–54,0,0.107649901126122,Overseas-born | Female
+Change in propensity to participate by age group (years) | 45–54,0,0.1560072044230583,Overseas-born | Total
+Change in propensity to participate by age group (years) | 45–54,0,0.2593928867679973,Total all birth groups
+Change in propensity to participate by age group (years) | 55–64,0,0.0746182721373288,Australian-born | Male
+Change in propensity to participate by age group (years) | 55–64,0,0.3362028177598757,Australian-born | Female
+Change in propensity to participate by age group (years) | 55–64,0,0.4108210898972045,Australian-born | Total
+Change in propensity to participate by age group (years) | 55–64,0,0.0801264823250608,Overseas-born | Male
+Change in propensity to participate by age group (years) | 55–64,0,0.2099275828669726,Overseas-born | Female
+Change in propensity to participate by age group (years) | 55–64,0,0.2900540651920334,Overseas-born | Total
+Change in propensity to participate by age group (years) | 55–64,0,0.700875155089238,Total all birth groups
+Change in propensity to participate by age group (years) | 65+,0,0.1072703661879067,Australian-born | Male
+Change in propensity to participate by age group (years) | 65+,0,0.1628027277551506,Australian-born | Female
+Change in propensity to participate by age group (years) | 65+,0,0.2700730939430573,Australian-born | Total
+Change in propensity to participate by age group (years) | 65+,0,0.0470291960144566,Overseas-born | Male
+Change in propensity to participate by age group (years) | 65+,0,0.0577295512998599,Overseas-born | Female
+Change in propensity to participate by age group (years) | 65+,0,0.1047587473143165,Overseas-born | Total
+Change in propensity to participate by age group (years) | 65+,0,0.3748318412573739,Total all birth groups
+Change in propensity to participate by age group (years) | All age groups,0,-0.002411255332379,Australian-born | Male
+Change in propensity to participate by age group (years) | All age groups,0,1.3919203562062188,Australian-born | Female
+Change in propensity to participate by age group (years) | All age groups,0,1.3895091008738398,Australian-born | Total
+Change in propensity to participate by age group (years) | All age groups,0,0.4273062574442823,Overseas-born | Male
+Change in propensity to participate by age group (years) | All age groups,0,0.9844352455810582,Overseas-born | Female
+Change in propensity to participate by age group (years) | All age groups,0,1.4117415030253406,Overseas-born | Total
+Change in propensity to participate by age group (years) | All age groups,0,2.8012506038991805,Total all birth groups
+Total change | nan,0,-1.7023076249608031,Australian-born | Male
+Total change | nan,0,-0.4715993962876816,Australian-born | Female
+Total change | nan,0,-2.173907021248485,Australian-born | Total
+Total change | nan,0,0.7608211785923185,Overseas-born | Male
+Total change | nan,0,1.585212076725722,Overseas-born | Female
+Total change | nan,0,2.3460332553180407,Overseas-born | Total
+Total change | nan,0,0.1721262340695557,Total all birth groups

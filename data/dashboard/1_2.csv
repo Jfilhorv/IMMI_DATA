@@ -1,351 +1,351 @@
 indicator,year,value
-Female,2015,6175.0
-Female,2016,5712.0
-Female,2017,5686.0
-Female,2018,5181.0
-Female,2019,3136.0
-Female,2020,1995.0
-Female,2021,2466.0
-Female,2022,5937.0
-Female,2023,7323.0
-Female,2024,6329.0
-% Female,2015,30.384293657432465
-% Female,2016,28.564284642696403
-% Female,2017,29.242954124665705
-% Female,2018,31.759946055293327
-% Female,2019,35.00390668601406
-% Female,2020,35.90066582688501
-% Female,2021,32.731616671091054
-% Female,2022,40.42075163398693
-% Female,2023,45.19254505060479
-% Female,2024,41.18297761582509
-Male,2015,14148.0
-Male,2016,14285.0
-Male,2017,13758.0
-Male,2018,11132.0
-Male,2019,5823.0
-Male,2020,3562.0
-Male,2021,5068.0
-Male,2022,8751.0
-Male,2023,8881.0
-Male,2024,9039.0
-% Male,2015,69.61570634256753
-% Male,2016,71.4357153573036
-% Male,2017,70.75704587533428
-% Male,2018,68.24005394470667
-% Male,2019,64.99609331398594
-% Male,2020,64.09933417311498
-% Male,2021,67.26838332890894
-% Male,2022,59.57924836601307
-% Male,2023,54.80745494939521
-% Male,2024,58.81702238417491
-Total1,2015,20328.0
-Total1,2016,20004.0
-Total1,2017,19447.0
-Total1,2018,16317.0
-Total1,2019,8959.0
-Total1,2020,5557.0
-Total1,2021,7534.0
-Total1,2022,14694.0
-Total1,2023,16214.0
-Total1,2024,15374.0
-Female_1,2015,20481.0
-Female_1,2016,21183.0
-Female_1,2017,21266.0
-Female_1,2018,18167.0
-Female_1,2019,11810.0
-Female_1,2020,9658.0
-Female_1,2021,12547.0
-Female_1,2022,19213.0
-Female_1,2023,20017.0
-Female_1,2024,20398.0
-% Female_1,2015,60.093304383545565
-% Female_1,2016,61.07779251484921
-% Female_1,2017,59.41219198748393
-% Female_1,2018,58.55977822905586
-% Female_1,2019,56.92663646004049
-% Female_1,2020,55.58881086681248
-% Female_1,2021,56.58683985026835
-% Female_1,2022,54.97439125582992
-% Female_1,2023,53.7831156967059
-% Female_1,2024,55.61978513388232
-Male_1,2015,13601.0
-Male_1,2016,13499.0
-Male_1,2017,14528.0
-Male_1,2018,12856.0
-Male_1,2019,8936.0
-Male_1,2020,7716.0
-Male_1,2021,9626.0
-Male_1,2022,15736.0
-Male_1,2023,17201.0
-Male_1,2024,16276.0
-% Male_1,2015,39.90669561645444
-% Male_1,2016,38.9222074851508
-% Male_1,2017,40.587808012516064
-% Male_1,2018,41.440221770944135
-% Male_1,2019,43.07336353995951
-% Male_1,2020,44.41118913318752
-% Male_1,2021,43.41316014973165
-% Male_1,2022,45.02560874417008
-% Male_1,2023,46.2168843032941
-% Male_1,2024,44.38021486611768
-Total1_1,2015,34096.0
-Total1_1,2016,34694.0
-Total1_1,2017,35799.0
-Total1_1,2018,31030.0
-Total1_1,2019,20751.0
-Total1_1,2020,17376.0
-Total1_1,2021,22174.0
-Total1_1,2022,34956.0
-Total1_1,2023,37223.0
-Total1_1,2024,36679.0
-Female_2,2015,14989.0
-Female_2,2016,13222.0
-Female_2,2017,11489.0
-Female_2,2018,13316.0
-Female_2,2019,13926.0
-Female_2,2020,11498.0
-Female_2,2021,13955.0
-Female_2,2022,25233.0
-Female_2,2023,21811.0
-Female_2,2024,17681.0
-% Female_2,2015,37.10883343236284
-% Female_2,2016,35.919587068731325
-% Female_2,2017,37.55311498986729
-% Female_2,2018,38.76451922797008
-% Female_2,2019,39.8215664407652
-% Female_2,2020,37.68229934781896
-% Female_2,2021,41.687826736370425
-% Female_2,2022,46.5433282915852
-% Female_2,2023,43.64906241869959
-% Female_2,2024,39.21268573963184
-Male_2,2015,25403.0
-Male_2,2016,23588.0
-Male_2,2017,19105.0
-Male_2,2018,21035.0
-Male_2,2019,21045.0
-Male_2,2020,19015.0
-Male_2,2021,19520.0
-Male_2,2022,28981.0
-Male_2,2023,28158.0
-Male_2,2024,27409.0
-% Male_2,2015,62.89116656763716
-% Male_2,2016,64.08041293126868
-% Male_2,2017,62.4468850101327
-% Male_2,2018,61.23548077202992
-% Male_2,2019,60.17843355923479
-% Male_2,2020,62.31770065218104
-% Male_2,2021,58.312173263629575
-% Male_2,2022,53.4566717084148
-% Male_2,2023,56.35093758130041
-% Male_2,2024,60.78731426036816
-Total1_2,2015,40407.0
-Total1_2,2016,36813.0
-Total1_2,2017,30599.0
-Total1_2,2018,34358.0
-Total1_2,2019,34985.0
-Total1_2,2020,30525.0
-Total1_2,2021,33488.0
-Total1_2,2022,54228.0
-Total1_2,2023,49986.0
-Total1_2,2024,45100.0
-Female_3,2015,19402.0
-Female_3,2016,18911.0
-Female_3,2017,15257.0
-Female_3,2018,16439.0
-Female_3,2019,17761.0
-Female_3,2020,15249.0
-Female_3,2021,14102.0
-Female_3,2022,19947.0
-Female_3,2023,17382.0
-Female_3,2024,19826.0
-% Female_3,2015,57.56245178899899
-% Female_3,2016,59.00836245631552
-% Female_3,2017,60.42376237623762
-% Female_3,2018,58.71071428571428
-% Female_3,2019,57.02864115078346
-% Female_3,2020,58.29128440366973
-% Female_3,2021,54.53420472562745
-% Female_3,2022,51.872366983928856
-% Female_3,2023,51.62459162459162
-% Female_3,2024,56.663522821458166
-Male_3,2015,14304.0
-Male_3,2016,13137.0
-Male_3,2017,9993.0
-Male_3,2018,11561.0
-Male_3,2019,13383.0
-Male_3,2020,10911.0
-Male_3,2021,11757.0
-Male_3,2022,18507.0
-Male_3,2023,16288.0
-Male_3,2024,15163.0
-% Male_3,2015,42.43754821100101
-% Male_3,2016,40.99163754368448
-% Male_3,2017,39.57623762376238
-% Male_3,2018,41.28928571428571
-% Male_3,2019,42.97135884921654
-% Male_3,2020,41.70871559633028
-% Male_3,2021,45.46579527437256
-% Male_3,2022,48.12763301607114
-% Male_3,2023,48.37540837540838
-% Male_3,2024,43.33647717854183
-Total1_3,2015,33719.0
-Total1_3,2016,32056.0
-Total1_3,2017,25254.0
-Total1_3,2018,28008.0
-Total1_3,2019,31148.0
-Total1_3,2020,26162.0
-Total1_3,2021,25867.0
-Total1_3,2022,38466.0
-Total1_3,2023,33677.0
-Total1_3,2024,34995.0
-Female_4,2015,26656.0
-Female_4,2016,26895.0
-Female_4,2017,26952.0
-Female_4,2018,23348.0
-Female_4,2019,14946.0
-Female_4,2020,11653.0
-Female_4,2021,15013.0
-Female_4,2022,25150.0
-Female_4,2023,27340.0
-Female_4,2024,26727.0
-% Female_4,2015,48.99549673743222
-% Female_4,2016,49.18707364801843
-% Female_4,2017,48.79249791809986
-% Female_4,2018,49.32398174750718
-% Female_4,2019,50.31476182460865
-% Female_4,2020,50.81767040251188
-% Female_4,2021,50.53691049247652
-% Female_4,2022,50.66784858069585
-% Female_4,2023,51.1774175433342
-% Female_4,2024,51.35659659505784
-Male_4,2015,27749.0
-Male_4,2016,27784.0
-Male_4,2017,28286.0
-Male_4,2018,23988.0
-Male_4,2019,14759.0
-Male_4,2020,11278.0
-Male_4,2021,14694.0
-Male_4,2022,24487.0
-Male_4,2023,26082.0
-Male_4,2024,25315.0
-% Male_4,2015,51.00450326256778
-% Male_4,2016,50.81292635198157
-% Male_4,2017,51.20750208190014
-% Male_4,2018,50.67601825249282
-% Male_4,2019,49.68523817539135
-% Male_4,2020,49.18232959748812
-% Male_4,2021,49.46308950752348
-% Male_4,2022,49.33215141930415
-% Male_4,2023,48.82258245666579
-% Male_4,2024,48.64340340494216
-Total1_4,2015,54424.0
-Total1_4,2016,54698.0
-Total1_4,2017,55246.0
-Total1_4,2018,47347.0
-Total1_4,2019,29710.0
-Total1_4,2020,22933.0
-Total1_4,2021,29708.0
-Total1_4,2022,49650.0
-Total1_4,2023,53437.0
-Total1_4,2024,52053.0
-Female_5,2015,34391.0
-Female_5,2016,32133.0
-Female_5,2017,26746.0
-Female_5,2018,29755.0
-Female_5,2019,31687.0
-Female_5,2020,26747.0
-Female_5,2021,28057.0
-Female_5,2022,45180.0
-Female_5,2023,39193.0
-Female_5,2024,37507.0
-% Female_5,2015,46.41285864665713
-% Female_5,2016,46.66560167300823
-% Female_5,2017,47.894133658047416
-% Female_5,2018,47.72176869657263
-% Female_5,2019,47.92709672540271
-% Female_5,2020,47.19531346496568
-% Female_5,2021,47.286547342164695
-% Female_5,2022,48.754694177062206
-% Female_5,2023,46.85971855234998
-% Female_5,2024,46.83749797075388
-Male_5,2015,39707.0
-Male_5,2016,36725.0
-Male_5,2017,29098.0
-Male_5,2018,32596.0
-Male_5,2019,34428.0
-Male_5,2020,29926.0
-Male_5,2021,31277.0
-Male_5,2022,47488.0
-Male_5,2023,44446.0
-Male_5,2024,42572.0
-% Male_5,2015,53.58714135334287
-% Male_5,2016,53.33439832699178
-% Male_5,2017,52.10586634195258
-% Male_5,2018,52.27823130342737
-% Male_5,2019,52.072903274597294
-% Male_5,2020,52.80468653503432
-% Male_5,2021,52.713452657835305
-% Male_5,2022,51.2453058229378
-% Male_5,2023,53.14028144765002
-% Male_5,2024,53.16250202924612
-Total1_5,2015,74126.0
-Total1_5,2016,68869.0
-Total1_5,2017,55853.0
-Total1_5,2018,62366.0
-Total1_5,2019,66133.0
-Total1_5,2020,56687.0
-Total1_5,2021,59355.0
-Total1_5,2022,92694.0
-Total1_5,2023,83663.0
-Total1_5,2024,80095.0
-Outside Australia,2015,54424.0
-Outside Australia,2016,54698.0
-Outside Australia,2017,55246.0
-Outside Australia,2018,47347.0
-Outside Australia,2019,29710.0
-Outside Australia,2020,22933.0
-Outside Australia,2021,29708.0
-Outside Australia,2022,49650.0
-Outside Australia,2023,53437.0
-Outside Australia,2024,52053.0
-% Outside Australia,2015,42.33683391676391
-% Outside Australia,2016,44.26586386332921
-% Outside Australia,2017,49.72682022340435
-% Outside Australia,2018,43.15532343477984
-% Outside Australia,2019,30.99861231388834
-% Outside Australia,2020,28.80306455664406
-% Outside Australia,2021,33.35616361452006
-% Outside Australia,2022,34.880290001686056
-% Outside Australia,2023,38.97665937272064
-% Outside Australia,2024,39.38992644610588
-In Australia,2015,74126.0
-In Australia,2016,68869.0
-In Australia,2017,55853.0
-In Australia,2018,62366.0
-In Australia,2019,66133.0
-In Australia,2020,56687.0
-In Australia,2021,59355.0
-In Australia,2022,92694.0
-In Australia,2023,83663.0
-In Australia,2024,80095.0
-% In Australia,2015,57.66316608323609
-% In Australia,2016,55.7341361366708
-% In Australia,2017,50.27317977659565
-% In Australia,2018,56.84467656522016
-% In Australia,2019,69.00138768611166
-% In Australia,2020,71.19693544335594
-% In Australia,2021,66.64383638547994
-% In Australia,2022,65.11970999831395
-% In Australia,2023,61.02334062727935
-% In Australia,2024,60.61007355389412
-Total,2015,128550.0
-Total,2016,123567.0
-Total,2017,111099.0
-Total,2018,109713.0
-Total,2019,95843.0
-Total,2020,79620.0
-Total,2021,89063.0
-Total,2022,142344.0
-Total,2023,137100.0
-Total,2024,132148.0
+Outside Australia - primary applicant by gender | Female,2015,6175.0
+Outside Australia - primary applicant by gender | Female,2016,5712.0
+Outside Australia - primary applicant by gender | Female,2017,5686.0
+Outside Australia - primary applicant by gender | Female,2018,5181.0
+Outside Australia - primary applicant by gender | Female,2019,3136.0
+Outside Australia - primary applicant by gender | Female,2020,1995.0
+Outside Australia - primary applicant by gender | Female,2021,2466.0
+Outside Australia - primary applicant by gender | Female,2022,5937.0
+Outside Australia - primary applicant by gender | Female,2023,7323.0
+Outside Australia - primary applicant by gender | Female,2024,6329.0
+Outside Australia - primary applicant by gender | % Female,2015,30.384293657432465
+Outside Australia - primary applicant by gender | % Female,2016,28.564284642696403
+Outside Australia - primary applicant by gender | % Female,2017,29.242954124665705
+Outside Australia - primary applicant by gender | % Female,2018,31.759946055293327
+Outside Australia - primary applicant by gender | % Female,2019,35.00390668601406
+Outside Australia - primary applicant by gender | % Female,2020,35.90066582688501
+Outside Australia - primary applicant by gender | % Female,2021,32.731616671091054
+Outside Australia - primary applicant by gender | % Female,2022,40.42075163398693
+Outside Australia - primary applicant by gender | % Female,2023,45.19254505060479
+Outside Australia - primary applicant by gender | % Female,2024,41.18297761582509
+Outside Australia - primary applicant by gender | Male,2015,14148.0
+Outside Australia - primary applicant by gender | Male,2016,14285.0
+Outside Australia - primary applicant by gender | Male,2017,13758.0
+Outside Australia - primary applicant by gender | Male,2018,11132.0
+Outside Australia - primary applicant by gender | Male,2019,5823.0
+Outside Australia - primary applicant by gender | Male,2020,3562.0
+Outside Australia - primary applicant by gender | Male,2021,5068.0
+Outside Australia - primary applicant by gender | Male,2022,8751.0
+Outside Australia - primary applicant by gender | Male,2023,8881.0
+Outside Australia - primary applicant by gender | Male,2024,9039.0
+Outside Australia - primary applicant by gender | % Male,2015,69.61570634256753
+Outside Australia - primary applicant by gender | % Male,2016,71.4357153573036
+Outside Australia - primary applicant by gender | % Male,2017,70.75704587533428
+Outside Australia - primary applicant by gender | % Male,2018,68.24005394470667
+Outside Australia - primary applicant by gender | % Male,2019,64.99609331398594
+Outside Australia - primary applicant by gender | % Male,2020,64.09933417311498
+Outside Australia - primary applicant by gender | % Male,2021,67.26838332890894
+Outside Australia - primary applicant by gender | % Male,2022,59.57924836601307
+Outside Australia - primary applicant by gender | % Male,2023,54.80745494939521
+Outside Australia - primary applicant by gender | % Male,2024,58.81702238417491
+Outside Australia - primary applicant by gender | Total1,2015,20328.0
+Outside Australia - primary applicant by gender | Total1,2016,20004.0
+Outside Australia - primary applicant by gender | Total1,2017,19447.0
+Outside Australia - primary applicant by gender | Total1,2018,16317.0
+Outside Australia - primary applicant by gender | Total1,2019,8959.0
+Outside Australia - primary applicant by gender | Total1,2020,5557.0
+Outside Australia - primary applicant by gender | Total1,2021,7534.0
+Outside Australia - primary applicant by gender | Total1,2022,14694.0
+Outside Australia - primary applicant by gender | Total1,2023,16214.0
+Outside Australia - primary applicant by gender | Total1,2024,15374.0
+Outside Australia - secondary applicant by gender | Female,2015,20481.0
+Outside Australia - secondary applicant by gender | Female,2016,21183.0
+Outside Australia - secondary applicant by gender | Female,2017,21266.0
+Outside Australia - secondary applicant by gender | Female,2018,18167.0
+Outside Australia - secondary applicant by gender | Female,2019,11810.0
+Outside Australia - secondary applicant by gender | Female,2020,9658.0
+Outside Australia - secondary applicant by gender | Female,2021,12547.0
+Outside Australia - secondary applicant by gender | Female,2022,19213.0
+Outside Australia - secondary applicant by gender | Female,2023,20017.0
+Outside Australia - secondary applicant by gender | Female,2024,20398.0
+Outside Australia - secondary applicant by gender | % Female,2015,60.093304383545565
+Outside Australia - secondary applicant by gender | % Female,2016,61.07779251484921
+Outside Australia - secondary applicant by gender | % Female,2017,59.41219198748393
+Outside Australia - secondary applicant by gender | % Female,2018,58.55977822905586
+Outside Australia - secondary applicant by gender | % Female,2019,56.92663646004049
+Outside Australia - secondary applicant by gender | % Female,2020,55.58881086681248
+Outside Australia - secondary applicant by gender | % Female,2021,56.58683985026835
+Outside Australia - secondary applicant by gender | % Female,2022,54.97439125582992
+Outside Australia - secondary applicant by gender | % Female,2023,53.7831156967059
+Outside Australia - secondary applicant by gender | % Female,2024,55.61978513388232
+Outside Australia - secondary applicant by gender | Male,2015,13601.0
+Outside Australia - secondary applicant by gender | Male,2016,13499.0
+Outside Australia - secondary applicant by gender | Male,2017,14528.0
+Outside Australia - secondary applicant by gender | Male,2018,12856.0
+Outside Australia - secondary applicant by gender | Male,2019,8936.0
+Outside Australia - secondary applicant by gender | Male,2020,7716.0
+Outside Australia - secondary applicant by gender | Male,2021,9626.0
+Outside Australia - secondary applicant by gender | Male,2022,15736.0
+Outside Australia - secondary applicant by gender | Male,2023,17201.0
+Outside Australia - secondary applicant by gender | Male,2024,16276.0
+Outside Australia - secondary applicant by gender | % Male,2015,39.90669561645444
+Outside Australia - secondary applicant by gender | % Male,2016,38.9222074851508
+Outside Australia - secondary applicant by gender | % Male,2017,40.587808012516064
+Outside Australia - secondary applicant by gender | % Male,2018,41.440221770944135
+Outside Australia - secondary applicant by gender | % Male,2019,43.07336353995951
+Outside Australia - secondary applicant by gender | % Male,2020,44.41118913318752
+Outside Australia - secondary applicant by gender | % Male,2021,43.41316014973165
+Outside Australia - secondary applicant by gender | % Male,2022,45.02560874417008
+Outside Australia - secondary applicant by gender | % Male,2023,46.2168843032941
+Outside Australia - secondary applicant by gender | % Male,2024,44.38021486611768
+Outside Australia - secondary applicant by gender | Total1,2015,34096.0
+Outside Australia - secondary applicant by gender | Total1,2016,34694.0
+Outside Australia - secondary applicant by gender | Total1,2017,35799.0
+Outside Australia - secondary applicant by gender | Total1,2018,31030.0
+Outside Australia - secondary applicant by gender | Total1,2019,20751.0
+Outside Australia - secondary applicant by gender | Total1,2020,17376.0
+Outside Australia - secondary applicant by gender | Total1,2021,22174.0
+Outside Australia - secondary applicant by gender | Total1,2022,34956.0
+Outside Australia - secondary applicant by gender | Total1,2023,37223.0
+Outside Australia - secondary applicant by gender | Total1,2024,36679.0
+In Australia - primary applicant by gender | Female,2015,14989.0
+In Australia - primary applicant by gender | Female,2016,13222.0
+In Australia - primary applicant by gender | Female,2017,11489.0
+In Australia - primary applicant by gender | Female,2018,13316.0
+In Australia - primary applicant by gender | Female,2019,13926.0
+In Australia - primary applicant by gender | Female,2020,11498.0
+In Australia - primary applicant by gender | Female,2021,13955.0
+In Australia - primary applicant by gender | Female,2022,25233.0
+In Australia - primary applicant by gender | Female,2023,21811.0
+In Australia - primary applicant by gender | Female,2024,17681.0
+In Australia - primary applicant by gender | % Female,2015,37.10883343236284
+In Australia - primary applicant by gender | % Female,2016,35.919587068731325
+In Australia - primary applicant by gender | % Female,2017,37.55311498986729
+In Australia - primary applicant by gender | % Female,2018,38.76451922797008
+In Australia - primary applicant by gender | % Female,2019,39.8215664407652
+In Australia - primary applicant by gender | % Female,2020,37.68229934781896
+In Australia - primary applicant by gender | % Female,2021,41.687826736370425
+In Australia - primary applicant by gender | % Female,2022,46.5433282915852
+In Australia - primary applicant by gender | % Female,2023,43.64906241869959
+In Australia - primary applicant by gender | % Female,2024,39.21268573963184
+In Australia - primary applicant by gender | Male,2015,25403.0
+In Australia - primary applicant by gender | Male,2016,23588.0
+In Australia - primary applicant by gender | Male,2017,19105.0
+In Australia - primary applicant by gender | Male,2018,21035.0
+In Australia - primary applicant by gender | Male,2019,21045.0
+In Australia - primary applicant by gender | Male,2020,19015.0
+In Australia - primary applicant by gender | Male,2021,19520.0
+In Australia - primary applicant by gender | Male,2022,28981.0
+In Australia - primary applicant by gender | Male,2023,28158.0
+In Australia - primary applicant by gender | Male,2024,27409.0
+In Australia - primary applicant by gender | % Male,2015,62.89116656763716
+In Australia - primary applicant by gender | % Male,2016,64.08041293126868
+In Australia - primary applicant by gender | % Male,2017,62.4468850101327
+In Australia - primary applicant by gender | % Male,2018,61.23548077202992
+In Australia - primary applicant by gender | % Male,2019,60.17843355923479
+In Australia - primary applicant by gender | % Male,2020,62.31770065218104
+In Australia - primary applicant by gender | % Male,2021,58.312173263629575
+In Australia - primary applicant by gender | % Male,2022,53.4566717084148
+In Australia - primary applicant by gender | % Male,2023,56.35093758130041
+In Australia - primary applicant by gender | % Male,2024,60.78731426036816
+In Australia - primary applicant by gender | Total1,2015,40407.0
+In Australia - primary applicant by gender | Total1,2016,36813.0
+In Australia - primary applicant by gender | Total1,2017,30599.0
+In Australia - primary applicant by gender | Total1,2018,34358.0
+In Australia - primary applicant by gender | Total1,2019,34985.0
+In Australia - primary applicant by gender | Total1,2020,30525.0
+In Australia - primary applicant by gender | Total1,2021,33488.0
+In Australia - primary applicant by gender | Total1,2022,54228.0
+In Australia - primary applicant by gender | Total1,2023,49986.0
+In Australia - primary applicant by gender | Total1,2024,45100.0
+In Australia - secondary applicant by gender | Female,2015,19402.0
+In Australia - secondary applicant by gender | Female,2016,18911.0
+In Australia - secondary applicant by gender | Female,2017,15257.0
+In Australia - secondary applicant by gender | Female,2018,16439.0
+In Australia - secondary applicant by gender | Female,2019,17761.0
+In Australia - secondary applicant by gender | Female,2020,15249.0
+In Australia - secondary applicant by gender | Female,2021,14102.0
+In Australia - secondary applicant by gender | Female,2022,19947.0
+In Australia - secondary applicant by gender | Female,2023,17382.0
+In Australia - secondary applicant by gender | Female,2024,19826.0
+In Australia - secondary applicant by gender | % Female,2015,57.56245178899899
+In Australia - secondary applicant by gender | % Female,2016,59.00836245631552
+In Australia - secondary applicant by gender | % Female,2017,60.42376237623762
+In Australia - secondary applicant by gender | % Female,2018,58.71071428571428
+In Australia - secondary applicant by gender | % Female,2019,57.02864115078346
+In Australia - secondary applicant by gender | % Female,2020,58.29128440366973
+In Australia - secondary applicant by gender | % Female,2021,54.53420472562745
+In Australia - secondary applicant by gender | % Female,2022,51.872366983928856
+In Australia - secondary applicant by gender | % Female,2023,51.62459162459162
+In Australia - secondary applicant by gender | % Female,2024,56.663522821458166
+In Australia - secondary applicant by gender | Male,2015,14304.0
+In Australia - secondary applicant by gender | Male,2016,13137.0
+In Australia - secondary applicant by gender | Male,2017,9993.0
+In Australia - secondary applicant by gender | Male,2018,11561.0
+In Australia - secondary applicant by gender | Male,2019,13383.0
+In Australia - secondary applicant by gender | Male,2020,10911.0
+In Australia - secondary applicant by gender | Male,2021,11757.0
+In Australia - secondary applicant by gender | Male,2022,18507.0
+In Australia - secondary applicant by gender | Male,2023,16288.0
+In Australia - secondary applicant by gender | Male,2024,15163.0
+In Australia - secondary applicant by gender | % Male,2015,42.43754821100101
+In Australia - secondary applicant by gender | % Male,2016,40.99163754368448
+In Australia - secondary applicant by gender | % Male,2017,39.57623762376238
+In Australia - secondary applicant by gender | % Male,2018,41.28928571428571
+In Australia - secondary applicant by gender | % Male,2019,42.97135884921654
+In Australia - secondary applicant by gender | % Male,2020,41.70871559633028
+In Australia - secondary applicant by gender | % Male,2021,45.46579527437256
+In Australia - secondary applicant by gender | % Male,2022,48.12763301607114
+In Australia - secondary applicant by gender | % Male,2023,48.37540837540838
+In Australia - secondary applicant by gender | % Male,2024,43.33647717854183
+In Australia - secondary applicant by gender | Total1,2015,33719.0
+In Australia - secondary applicant by gender | Total1,2016,32056.0
+In Australia - secondary applicant by gender | Total1,2017,25254.0
+In Australia - secondary applicant by gender | Total1,2018,28008.0
+In Australia - secondary applicant by gender | Total1,2019,31148.0
+In Australia - secondary applicant by gender | Total1,2020,26162.0
+In Australia - secondary applicant by gender | Total1,2021,25867.0
+In Australia - secondary applicant by gender | Total1,2022,38466.0
+In Australia - secondary applicant by gender | Total1,2023,33677.0
+In Australia - secondary applicant by gender | Total1,2024,34995.0
+Outside Australia by gender - total | Female,2015,26656.0
+Outside Australia by gender - total | Female,2016,26895.0
+Outside Australia by gender - total | Female,2017,26952.0
+Outside Australia by gender - total | Female,2018,23348.0
+Outside Australia by gender - total | Female,2019,14946.0
+Outside Australia by gender - total | Female,2020,11653.0
+Outside Australia by gender - total | Female,2021,15013.0
+Outside Australia by gender - total | Female,2022,25150.0
+Outside Australia by gender - total | Female,2023,27340.0
+Outside Australia by gender - total | Female,2024,26727.0
+Outside Australia by gender - total | % Female,2015,48.99549673743222
+Outside Australia by gender - total | % Female,2016,49.18707364801843
+Outside Australia by gender - total | % Female,2017,48.79249791809986
+Outside Australia by gender - total | % Female,2018,49.32398174750718
+Outside Australia by gender - total | % Female,2019,50.31476182460865
+Outside Australia by gender - total | % Female,2020,50.81767040251188
+Outside Australia by gender - total | % Female,2021,50.53691049247652
+Outside Australia by gender - total | % Female,2022,50.66784858069585
+Outside Australia by gender - total | % Female,2023,51.1774175433342
+Outside Australia by gender - total | % Female,2024,51.35659659505784
+Outside Australia by gender - total | Male,2015,27749.0
+Outside Australia by gender - total | Male,2016,27784.0
+Outside Australia by gender - total | Male,2017,28286.0
+Outside Australia by gender - total | Male,2018,23988.0
+Outside Australia by gender - total | Male,2019,14759.0
+Outside Australia by gender - total | Male,2020,11278.0
+Outside Australia by gender - total | Male,2021,14694.0
+Outside Australia by gender - total | Male,2022,24487.0
+Outside Australia by gender - total | Male,2023,26082.0
+Outside Australia by gender - total | Male,2024,25315.0
+Outside Australia by gender - total | % Male,2015,51.00450326256778
+Outside Australia by gender - total | % Male,2016,50.81292635198157
+Outside Australia by gender - total | % Male,2017,51.20750208190014
+Outside Australia by gender - total | % Male,2018,50.67601825249282
+Outside Australia by gender - total | % Male,2019,49.68523817539135
+Outside Australia by gender - total | % Male,2020,49.18232959748812
+Outside Australia by gender - total | % Male,2021,49.46308950752348
+Outside Australia by gender - total | % Male,2022,49.33215141930415
+Outside Australia by gender - total | % Male,2023,48.82258245666579
+Outside Australia by gender - total | % Male,2024,48.64340340494216
+Outside Australia by gender - total | Total1,2015,54424.0
+Outside Australia by gender - total | Total1,2016,54698.0
+Outside Australia by gender - total | Total1,2017,55246.0
+Outside Australia by gender - total | Total1,2018,47347.0
+Outside Australia by gender - total | Total1,2019,29710.0
+Outside Australia by gender - total | Total1,2020,22933.0
+Outside Australia by gender - total | Total1,2021,29708.0
+Outside Australia by gender - total | Total1,2022,49650.0
+Outside Australia by gender - total | Total1,2023,53437.0
+Outside Australia by gender - total | Total1,2024,52053.0
+In Australia by gender - total | Female,2015,34391.0
+In Australia by gender - total | Female,2016,32133.0
+In Australia by gender - total | Female,2017,26746.0
+In Australia by gender - total | Female,2018,29755.0
+In Australia by gender - total | Female,2019,31687.0
+In Australia by gender - total | Female,2020,26747.0
+In Australia by gender - total | Female,2021,28057.0
+In Australia by gender - total | Female,2022,45180.0
+In Australia by gender - total | Female,2023,39193.0
+In Australia by gender - total | Female,2024,37507.0
+In Australia by gender - total | % Female,2015,46.41285864665713
+In Australia by gender - total | % Female,2016,46.66560167300823
+In Australia by gender - total | % Female,2017,47.894133658047416
+In Australia by gender - total | % Female,2018,47.72176869657263
+In Australia by gender - total | % Female,2019,47.92709672540271
+In Australia by gender - total | % Female,2020,47.19531346496568
+In Australia by gender - total | % Female,2021,47.286547342164695
+In Australia by gender - total | % Female,2022,48.754694177062206
+In Australia by gender - total | % Female,2023,46.85971855234998
+In Australia by gender - total | % Female,2024,46.83749797075388
+In Australia by gender - total | Male,2015,39707.0
+In Australia by gender - total | Male,2016,36725.0
+In Australia by gender - total | Male,2017,29098.0
+In Australia by gender - total | Male,2018,32596.0
+In Australia by gender - total | Male,2019,34428.0
+In Australia by gender - total | Male,2020,29926.0
+In Australia by gender - total | Male,2021,31277.0
+In Australia by gender - total | Male,2022,47488.0
+In Australia by gender - total | Male,2023,44446.0
+In Australia by gender - total | Male,2024,42572.0
+In Australia by gender - total | % Male,2015,53.58714135334287
+In Australia by gender - total | % Male,2016,53.33439832699178
+In Australia by gender - total | % Male,2017,52.10586634195258
+In Australia by gender - total | % Male,2018,52.27823130342737
+In Australia by gender - total | % Male,2019,52.072903274597294
+In Australia by gender - total | % Male,2020,52.80468653503432
+In Australia by gender - total | % Male,2021,52.713452657835305
+In Australia by gender - total | % Male,2022,51.2453058229378
+In Australia by gender - total | % Male,2023,53.14028144765002
+In Australia by gender - total | % Male,2024,53.16250202924612
+In Australia by gender - total | Total1,2015,74126.0
+In Australia by gender - total | Total1,2016,68869.0
+In Australia by gender - total | Total1,2017,55853.0
+In Australia by gender - total | Total1,2018,62366.0
+In Australia by gender - total | Total1,2019,66133.0
+In Australia by gender - total | Total1,2020,56687.0
+In Australia by gender - total | Total1,2021,59355.0
+In Australia by gender - total | Total1,2022,92694.0
+In Australia by gender - total | Total1,2023,83663.0
+In Australia by gender - total | Total1,2024,80095.0
+Skill stream total by location | Outside Australia,2015,54424.0
+Skill stream total by location | Outside Australia,2016,54698.0
+Skill stream total by location | Outside Australia,2017,55246.0
+Skill stream total by location | Outside Australia,2018,47347.0
+Skill stream total by location | Outside Australia,2019,29710.0
+Skill stream total by location | Outside Australia,2020,22933.0
+Skill stream total by location | Outside Australia,2021,29708.0
+Skill stream total by location | Outside Australia,2022,49650.0
+Skill stream total by location | Outside Australia,2023,53437.0
+Skill stream total by location | Outside Australia,2024,52053.0
+Skill stream total by location | % Outside Australia,2015,42.33683391676391
+Skill stream total by location | % Outside Australia,2016,44.26586386332921
+Skill stream total by location | % Outside Australia,2017,49.72682022340435
+Skill stream total by location | % Outside Australia,2018,43.15532343477984
+Skill stream total by location | % Outside Australia,2019,30.99861231388834
+Skill stream total by location | % Outside Australia,2020,28.80306455664406
+Skill stream total by location | % Outside Australia,2021,33.35616361452006
+Skill stream total by location | % Outside Australia,2022,34.880290001686056
+Skill stream total by location | % Outside Australia,2023,38.97665937272064
+Skill stream total by location | % Outside Australia,2024,39.38992644610588
+Skill stream total by location | In Australia,2015,74126.0
+Skill stream total by location | In Australia,2016,68869.0
+Skill stream total by location | In Australia,2017,55853.0
+Skill stream total by location | In Australia,2018,62366.0
+Skill stream total by location | In Australia,2019,66133.0
+Skill stream total by location | In Australia,2020,56687.0
+Skill stream total by location | In Australia,2021,59355.0
+Skill stream total by location | In Australia,2022,92694.0
+Skill stream total by location | In Australia,2023,83663.0
+Skill stream total by location | In Australia,2024,80095.0
+Skill stream total by location | % In Australia,2015,57.66316608323609
+Skill stream total by location | % In Australia,2016,55.7341361366708
+Skill stream total by location | % In Australia,2017,50.27317977659565
+Skill stream total by location | % In Australia,2018,56.84467656522016
+Skill stream total by location | % In Australia,2019,69.00138768611166
+Skill stream total by location | % In Australia,2020,71.19693544335594
+Skill stream total by location | % In Australia,2021,66.64383638547994
+Skill stream total by location | % In Australia,2022,65.11970999831395
+Skill stream total by location | % In Australia,2023,61.02334062727935
+Skill stream total by location | % In Australia,2024,60.61007355389412
+Skill stream total by location | Total,2015,128550.0
+Skill stream total by location | Total,2016,123567.0
+Skill stream total by location | Total,2017,111099.0
+Skill stream total by location | Total,2018,109713.0
+Skill stream total by location | Total,2019,95843.0
+Skill stream total by location | Total,2020,79620.0
+Skill stream total by location | Total,2021,89063.0
+Skill stream total by location | Total,2022,142344.0
+Skill stream total by location | Total,2023,137100.0
+Skill stream total by location | Total,2024,132148.0

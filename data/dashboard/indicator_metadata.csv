@@ -4,24 +4,24 @@ indicator_id,indicator_name,category
 1_0_child_stream2,Child stream2,1_0
 1_0_special_eligibility,Special Eligibility,1_0
 1_0_total3,Total3,1_0
-1_1_employer_sponsored1,Employer Sponsored1,1_1
-1_1_stateterritory_nominated,State/Territory Nominated,1_1
-1_1_regional2,Regional2,1_1
-1_1_skilled_independent,Skilled Independent,1_1
-1_1_global_talent_independent3,Global Talent (Independent)3,1_1
-1_1_business_innovation_investment4,Business Innovation & Investment4,1_1
-1_1_distinguished_talent,Distinguished Talent,1_1
-1_1_national_innovation5,National Innovation5,1_1
-1_1_skilled_regional6,Skilled Regional6,1_1
-1_1_skill_stream_total,Skill stream total,1_1
-1_1_partner7,Partner7,1_1
-1_1_parent,Parent,1_1
-1_1_child8,Child8,1_1
-1_1_other_family9,Other Family9,1_1
-1_1_family_stream_total10,Family stream total10,1_1
-1_1_child_stream_total,Child stream total,1_1
-1_1_special_eligibility_total,Special Eligibility total,1_1
-1_1_total10,Total10,1_1
+1_1_skill_stream_employer_sponsored1,Skill stream | Employer Sponsored1,1_1
+1_1_skill_stream_stateterritory_nominated,Skill stream | State/Territory Nominated,1_1
+1_1_skill_stream_regional2,Skill stream | Regional2,1_1
+1_1_skill_stream_skilled_independent,Skill stream | Skilled Independent,1_1
+1_1_skill_stream_global_talent_independent3,Skill stream | Global Talent (Independent)3,1_1
+1_1_skill_stream_business_innovation_investment4,Skill stream | Business Innovation & Investment4,1_1
+1_1_skill_stream_distinguished_talent,Skill stream | Distinguished Talent,1_1
+1_1_skill_stream_national_innovation5,Skill stream | National Innovation5,1_1
+1_1_skill_stream_skilled_regional6,Skill stream | Skilled Regional6,1_1
+1_1_skill_stream_skill_stream_total,Skill stream | Skill stream total,1_1
+1_1_family_stream_partner7,Family stream | Partner7,1_1
+1_1_family_stream_parent,Family stream | Parent,1_1
+1_1_family_stream_child8,Family stream | Child8,1_1
+1_1_family_stream_other_family9,Family stream | Other Family9,1_1
+1_1_family_stream_family_stream_total10,Family stream | Family stream total10,1_1
+1_1_child_stream_child_stream_total,Child stream | Child stream total,1_1
+1_1_special_eligibility_special_eligibility_total,Special Eligibility | Special Eligibility total,1_1
+1_1_special_eligibility_total10,Special Eligibility | Total10,1_1
 1_10_india,India,1_10
 1_10_peoples_republic_of_china1,People's Republic of China1,1_10
 1_10_united_kingdom,United Kingdom,1_10
@@ -103,57 +103,57 @@ communications Engineering Professionals",1_13
 1_16_colombia,Colombia,1_16
 1_16_other2,Other2,1_16
 1_16_total,Total,1_16
-1_18_regional1,Regional1,1_18
-1_18_stateterritory_nominated,State/Territory Nominated,1_18
-1_18_employer_sponsored,Employer Sponsored,1_18
-1_18_skilled_independent,Skilled Independent,1_18
-1_18_global_talent_independent2,Global Talent (Independent)2,1_18
-1_18_business_innovation_and_investment3,Business Innovation and Investment3,1_18
-1_18_distinguished_talent,Distinguished Talent,1_18
-1_18_skilled_regional4,Skilled Regional4,1_18
-1_18_skill_stream_total,Skill stream total,1_18
-1_18_partner,Partner,1_18
-1_18_all_other_family_stream_visas5,"All other
+1_18_skill_stream_regional1,Skill stream | Regional1,1_18
+1_18_skill_stream_stateterritory_nominated,Skill stream | State/Territory Nominated,1_18
+1_18_skill_stream_employer_sponsored,Skill stream | Employer Sponsored,1_18
+1_18_skill_stream_skilled_independent,Skill stream | Skilled Independent,1_18
+1_18_skill_stream_global_talent_independent2,Skill stream | Global Talent (Independent)2,1_18
+1_18_skill_stream_business_innovation_and_investment3,Skill stream | Business Innovation and Investment3,1_18
+1_18_skill_stream_distinguished_talent,Skill stream | Distinguished Talent,1_18
+1_18_skill_stream_skilled_regional4,Skill stream | Skilled Regional4,1_18
+1_18_skill_stream_skill_stream_total,Skill stream | Skill stream total,1_18
+1_18_family_stream_partner,Family stream | Partner,1_18
+1_18_family_stream_all_other_family_stream_visas5,"Family stream | All other
 Family stream visas5",1_18
-1_18_family_stream_total,Family stream total,1_18
-1_18_special_eligibility_total,Special Eligibility total,1_18
-1_18_child_stream_total,Child stream total,1_18
-1_18_total,Total,1_18
-1_2_female,Female,1_2
-1_2__female,% Female,1_2
-1_2_male,Male,1_2
-1_2__male,% Male,1_2
-1_2_total1,Total1,1_2
-1_2_female_1,Female_1,1_2
-1_2__female_1,% Female_1,1_2
-1_2_male_1,Male_1,1_2
-1_2__male_1,% Male_1,1_2
-1_2_total1_1,Total1_1,1_2
-1_2_female_2,Female_2,1_2
-1_2__female_2,% Female_2,1_2
-1_2_male_2,Male_2,1_2
-1_2__male_2,% Male_2,1_2
-1_2_total1_2,Total1_2,1_2
-1_2_female_3,Female_3,1_2
-1_2__female_3,% Female_3,1_2
-1_2_male_3,Male_3,1_2
-1_2__male_3,% Male_3,1_2
-1_2_total1_3,Total1_3,1_2
-1_2_female_4,Female_4,1_2
-1_2__female_4,% Female_4,1_2
-1_2_male_4,Male_4,1_2
-1_2__male_4,% Male_4,1_2
-1_2_total1_4,Total1_4,1_2
-1_2_female_5,Female_5,1_2
-1_2__female_5,% Female_5,1_2
-1_2_male_5,Male_5,1_2
-1_2__male_5,% Male_5,1_2
-1_2_total1_5,Total1_5,1_2
-1_2_outside_australia,Outside Australia,1_2
-1_2__outside_australia,% Outside Australia,1_2
-1_2_in_australia,In Australia,1_2
-1_2__in_australia,% In Australia,1_2
-1_2_total,Total,1_2
+1_18_family_stream_family_stream_total,Family stream | Family stream total,1_18
+1_18_special_eligibility_special_eligibility_total,Special Eligibility | Special Eligibility total,1_18
+1_18_child_stream6_child_stream_total,Child stream6 | Child stream total,1_18
+1_18_child_stream6_total,Child stream6 | Total,1_18
+1_2_outside_australia_primary_applicant_by_gender_female,Outside Australia - primary applicant by gender | Female,1_2
+1_2_outside_australia_primary_applicant_by_gender_female,Outside Australia - primary applicant by gender | % Female,1_2
+1_2_outside_australia_primary_applicant_by_gender_male,Outside Australia - primary applicant by gender | Male,1_2
+1_2_outside_australia_primary_applicant_by_gender_male,Outside Australia - primary applicant by gender | % Male,1_2
+1_2_outside_australia_primary_applicant_by_gender_total1,Outside Australia - primary applicant by gender | Total1,1_2
+1_2_outside_australia_secondary_applicant_by_gender_female,Outside Australia - secondary applicant by gender | Female,1_2
+1_2_outside_australia_secondary_applicant_by_gender_female,Outside Australia - secondary applicant by gender | % Female,1_2
+1_2_outside_australia_secondary_applicant_by_gender_male,Outside Australia - secondary applicant by gender | Male,1_2
+1_2_outside_australia_secondary_applicant_by_gender_male,Outside Australia - secondary applicant by gender | % Male,1_2
+1_2_outside_australia_secondary_applicant_by_gender_total1,Outside Australia - secondary applicant by gender | Total1,1_2
+1_2_in_australia_primary_applicant_by_gender_female,In Australia - primary applicant by gender | Female,1_2
+1_2_in_australia_primary_applicant_by_gender_female,In Australia - primary applicant by gender | % Female,1_2
+1_2_in_australia_primary_applicant_by_gender_male,In Australia - primary applicant by gender | Male,1_2
+1_2_in_australia_primary_applicant_by_gender_male,In Australia - primary applicant by gender | % Male,1_2
+1_2_in_australia_primary_applicant_by_gender_total1,In Australia - primary applicant by gender | Total1,1_2
+1_2_in_australia_secondary_applicant_by_gender_female,In Australia - secondary applicant by gender | Female,1_2
+1_2_in_australia_secondary_applicant_by_gender_female,In Australia - secondary applicant by gender | % Female,1_2
+1_2_in_australia_secondary_applicant_by_gender_male,In Australia - secondary applicant by gender | Male,1_2
+1_2_in_australia_secondary_applicant_by_gender_male,In Australia - secondary applicant by gender | % Male,1_2
+1_2_in_australia_secondary_applicant_by_gender_total1,In Australia - secondary applicant by gender | Total1,1_2
+1_2_outside_australia_by_gender_total_female,Outside Australia by gender - total | Female,1_2
+1_2_outside_australia_by_gender_total_female,Outside Australia by gender - total | % Female,1_2
+1_2_outside_australia_by_gender_total_male,Outside Australia by gender - total | Male,1_2
+1_2_outside_australia_by_gender_total_male,Outside Australia by gender - total | % Male,1_2
+1_2_outside_australia_by_gender_total_total1,Outside Australia by gender - total | Total1,1_2
+1_2_in_australia_by_gender_total_female,In Australia by gender - total | Female,1_2
+1_2_in_australia_by_gender_total_female,In Australia by gender - total | % Female,1_2
+1_2_in_australia_by_gender_total_male,In Australia by gender - total | Male,1_2
+1_2_in_australia_by_gender_total_male,In Australia by gender - total | % Male,1_2
+1_2_in_australia_by_gender_total_total1,In Australia by gender - total | Total1,1_2
+1_2_skill_stream_total_by_location_outside_australia,Skill stream total by location | Outside Australia,1_2
+1_2_skill_stream_total_by_location_outside_australia,Skill stream total by location | % Outside Australia,1_2
+1_2_skill_stream_total_by_location_in_australia,Skill stream total by location | In Australia,1_2
+1_2_skill_stream_total_by_location_in_australia,Skill stream total by location | % In Australia,1_2
+1_2_skill_stream_total_by_location_total,Skill stream total by location | Total,1_2
 1_3_india,India,1_3
 1_3_united_kingdom,United Kingdom,1_3
 1_3_philippines,Philippines,1_3
@@ -261,28 +261,28 @@ Family stream visas5",1_18
 2_0_total2,Total2,2_0
 2_1_temporary_resident_skilled_employment,Temporary Resident (Skilled Employment),2_1
 2_1_temporary_graduate,Temporary Graduate,2_1
-2_1_visitors,Visitors,2_1
-2_1_working_holiday_maker,Working Holiday Maker,2_1
-2_1_student,Student,2_1
-2_1_all_other_visas,All other visas,2_1
-2_1_no_previous_visa_held_or_known,No previous visa held or known,2_1
-2_1_total,Total,2_1
-2_1_temporary_resident_skilled_employment_1,Temporary Resident (Skilled Employment)_1,2_1
-2_1_temporary_graduate_1,Temporary Graduate_1,2_1
-2_1_visitors_1,Visitors_1,2_1
-2_1_working_holiday_maker_1,Working Holiday Maker_1,2_1
-2_1_student_1,Student_1,2_1
-2_1_all_other_visas_1,All other visas_1,2_1
-2_1_no_previous_visa_held_or_known_1,No previous visa held or known_1,2_1
-2_1_total_1,Total_1,2_1
-2_1_temporary_resident_skilled_employment_2,Temporary Resident (Skilled Employment)_2,2_1
-2_1_temporary_graduate_2,Temporary Graduate_2,2_1
-2_1_visitors_2,Visitors_2,2_1
-2_1_working_holiday_maker_2,Working Holiday Maker_2,2_1
-2_1_student_2,Student_2,2_1
-2_1_all_other_visas_2,All other visas_2,2_1
-2_1_no_previous_visa_held_or_known_2,No previous visa held or known_2,2_1
-2_1_total_2,Total_2,2_1
+2_1_share_of_grants_to_applicants_outside_australia_visitors,Share (%) of grants to applicants outside Australia | Visitors,2_1
+2_1_share_of_grants_to_applicants_outside_australia_working_holiday_maker,Share (%) of grants to applicants outside Australia | Working Holiday Maker,2_1
+2_1_share_of_grants_to_applicants_outside_australia_student,Share (%) of grants to applicants outside Australia | Student,2_1
+2_1_share_of_grants_to_applicants_outside_australia_all_other_visas,Share (%) of grants to applicants outside Australia | All other visas,2_1
+2_1_share_of_grants_to_applicants_outside_australia_no_previous_visa_held_or_kno,Share (%) of grants to applicants outside Australia | No previous visa held or known,2_1
+2_1_share_of_grants_to_applicants_outside_australia_total,Share (%) of grants to applicants outside Australia | Total,2_1
+2_1_share_of_grants_to_applicants_outside_australia_temporary_resident_skilled_e,Share (%) of grants to applicants outside Australia | Temporary Resident (Skilled Employment),2_1
+2_1_share_of_grants_to_applicants_outside_australia_temporary_graduate,Share (%) of grants to applicants outside Australia | Temporary Graduate,2_1
+2_1_share_of_grants_to_applicants_in_australia_visitors,Share (%) of grants to applicants in Australia | Visitors,2_1
+2_1_share_of_grants_to_applicants_in_australia_working_holiday_maker,Share (%) of grants to applicants in Australia | Working Holiday Maker,2_1
+2_1_share_of_grants_to_applicants_in_australia_student,Share (%) of grants to applicants in Australia | Student,2_1
+2_1_share_of_grants_to_applicants_in_australia_all_other_visas,Share (%) of grants to applicants in Australia | All other visas,2_1
+2_1_share_of_grants_to_applicants_in_australia_no_previous_visa_held_or_known,Share (%) of grants to applicants in Australia | No previous visa held or known,2_1
+2_1_share_of_grants_to_applicants_in_australia_total,Share (%) of grants to applicants in Australia | Total,2_1
+2_1_share_of_grants_to_applicants_in_australia_temporary_resident_skilled_employ,Share (%) of grants to applicants in Australia | Temporary Resident (Skilled Employment),2_1
+2_1_share_of_grants_to_applicants_in_australia_temporary_graduate,Share (%) of grants to applicants in Australia | Temporary Graduate,2_1
+2_1_share_of_grants_to_applicants_in_australia_visitors_1,Share (%) of grants to applicants in Australia | Visitors_1,2_1
+2_1_share_of_total_grants_working_holiday_maker,Share (%) of total grants | Working Holiday Maker,2_1
+2_1_share_of_total_grants_student,Share (%) of total grants | Student,2_1
+2_1_share_of_total_grants_all_other_visas,Share (%) of total grants | All other visas,2_1
+2_1_share_of_total_grants_no_previous_visa_held_or_known,Share (%) of total grants | No previous visa held or known,2_1
+2_1_share_of_total_grants_total,Share (%) of total grants | Total,2_1
 2_2_primary_applicant,Primary applicant,2_2
 2_2_secondary_applicant,Secondary applicant,2_2
 2_2_total,Total,2_2
@@ -321,36 +321,36 @@ Family stream visas5",1_18
 2_4_other3,Other3,2_4
 2_4_total,Total,2_4
 3_0_refugee,Refugee,3_0
-3_0_special_humanitarian_program,Special Humanitarian Program,3_0
-3_0_total,Total,3_0
-3_0__of_total_program,% of total Program,3_0
-3_0_total_1,Total_1,3_0
-3_0__of_total_program_1,% of total Program_1,3_0
-3_0_total_humanitarian_program_grants,Total Humanitarian Program grants,3_0
-3_2_total,Total,3_2
-3_2_female,Female,3_2
-3_2_total_1,Total_1,3_2
-3_2_female_1,Female_1,3_2
-3_2_total_2,Total_2,3_2
-3_2_female_2,Female_2,3_2
-3_2_total_3,Total_3,3_2
-3_2_female_3,Female_3,3_2
-3_2_total_4,Total_4,3_2
-3_2_female_4,Female_4,3_2
-3_2_total_5,Total_5,3_2
-3_2_female_5,Female_5,3_2
-3_2_total_6,Total_6,3_2
-3_2_female_6,Female_6,3_2
-3_2_total_7,Total_7,3_2
-3_2_female_7,Female_7,3_2
-3_2_total_8,Total_8,3_2
-3_2_female_8,Female_8,3_2
-3_2_total_9,Total_9,3_2
-3_2_female_9,Female_9,3_2
-3_2_total_10,Total_10,3_2
-3_2_female_10,Female_10,3_2
-3_2_total1,Total1,3_2
-3_2_female_11,Female_11,3_2
+3_0_offshore_resettlement_component_special_humanitarian_program,Offshore resettlement component | Special Humanitarian Program,3_0
+3_0_offshore_resettlement_component_total,Offshore resettlement component | Total,3_0
+3_0_offshore_resettlement_component_of_total_program,Offshore resettlement component | % of total Program,3_0
+3_0_onshore_protection_component_total,Onshore protection component | Total,3_0
+3_0_onshore_protection_component_of_total_program,Onshore protection component | % of total Program,3_0
+3_0_onshore_protection_component_total_humanitarian_program_grants,Onshore protection component | Total Humanitarian Program grants,3_0
+3_2_014_years_total,0–14 years | Total,3_2
+3_2_014_years_female,0–14 years | Female,3_2
+3_2_1519_years_total,15–19 years | Total,3_2
+3_2_1519_years_female,15–19 years | Female,3_2
+3_2_2024_years_total,20–24 years | Total,3_2
+3_2_2024_years_female,20–24 years | Female,3_2
+3_2_2529_years_total,25–29 years | Total,3_2
+3_2_2529_years_female,25–29 years | Female,3_2
+3_2_3034_years_total,30–34 years | Total,3_2
+3_2_3034_years_female,30–34 years | Female,3_2
+3_2_3539_years_total,35–39 years | Total,3_2
+3_2_3539_years_female,35–39 years | Female,3_2
+3_2_4044_years_total,40–44 years | Total,3_2
+3_2_4044_years_female,40–44 years | Female,3_2
+3_2_4549_years_total,45–49 years | Total,3_2
+3_2_4549_years_female,45–49 years | Female,3_2
+3_2_5054_years_total,50–54 years | Total,3_2
+3_2_5054_years_female,50–54 years | Female,3_2
+3_2_5559_years_total,55–59 years | Total,3_2
+3_2_5559_years_female,55–59 years | Female,3_2
+3_2_60_years_and_over_total,60 years and over | Total,3_2
+3_2_60_years_and_over_female,60 years and over | Female,3_2
+3_2_total_total1,Total | Total1,3_2
+3_2_total_female,Total | Female,3_2
 3_3_malaysia,Malaysia,3_3
 3_3_myanmar,Myanmar,3_3
 3_3_iran,Iran,3_3
@@ -404,3 +404,177 @@ Family stream visas5",1_18
 4_4_fiji,Fiji,4_4
 4_4_all_other_countries3,All other countries3,4_4
 4_4_total4,Total4,4_4
+5_0_student,Student,5_0
+5_0_temporary_visa_categories_working_holiday,Temporary visa categories | Working holiday,5_0
+5_0_temporary_visa_categories_visitor,Temporary visa categories | Visitor,5_0
+5_0_temporary_visa_categories_temporary_resident_skilled_employment,Temporary visa categories | Temporary Resident (Skilled Employment),5_0
+5_0_temporary_visa_categories_other_temporary_visas,Temporary visa categories | Other temporary visas,5_0
+5_0_temporary_visa_categories_total,Temporary visa categories | Total,5_0
+5_0_temporary_visa_categories_skill,Temporary visa categories | Skill,5_0
+5_0_permanent_visa_categories_family,Permanent visa categories | Family,5_0
+5_0_permanent_visa_categories_special_eligibility_and_humanitarian,Permanent visa categories | Special Eligibility and humanitarian,5_0
+5_0_permanent_visa_categories_other_permanent_visas,Permanent visa categories | Other permanent visas,5_0
+5_0_permanent_visa_categories_total,Permanent visa categories | Total,5_0
+5_0_permanent_visa_categories_new_zealand_citizen,Permanent visa categories | New Zealand citizen,5_0
+5_0_other_australian_citizen,Other | Australian citizen,5_0
+5_0_other_all_other_visas2,Other | All other visas2,5_0
+5_0_other_total_other,Other | Total other,5_0
+5_0_other_total_nom_arrivals,Other | Total NOM arrivals,5_0
+5_1_student,Student,5_1
+5_1_temporary_visa_categories_working_holiday,Temporary visa categories | Working holiday,5_1
+5_1_temporary_visa_categories_visitor,Temporary visa categories | Visitor,5_1
+5_1_temporary_visa_categories_temporary_resident_skilled_employment,Temporary visa categories | Temporary Resident (Skilled Employment),5_1
+5_1_temporary_visa_categories_other_temporary_visas,Temporary visa categories | Other temporary visas,5_1
+5_1_temporary_visa_categories_total,Temporary visa categories | Total,5_1
+5_1_temporary_visa_categories_skill,Temporary visa categories | Skill,5_1
+5_1_permanent_visa_categories_family,Permanent visa categories | Family,5_1
+5_1_permanent_visa_categories_special_eligibility_and_humanitarian,Permanent visa categories | Special Eligibility and humanitarian,5_1
+5_1_permanent_visa_categories_other_permanent_visas,Permanent visa categories | Other permanent visas,5_1
+5_1_permanent_visa_categories_total,Permanent visa categories | Total,5_1
+5_1_permanent_visa_categories_new_zealand_citizen,Permanent visa categories | New Zealand citizen,5_1
+5_1_other_australian_citizen,Other | Australian citizen,5_1
+5_1_other_all_other_visas2,Other | All other visas2,5_1
+5_1_other_total_other,Other | Total other,5_1
+5_1_other_total_nom_departures,Other | Total NOM departures,5_1
+6_0_new_zealand,New Zealand,6_0
+6_0_india,India,6_0
+6_0_united_kingdom,United Kingdom,6_0
+6_0_philippines,Philippines,6_0
+6_0_vietnam,Vietnam,6_0
+6_0_nepal,Nepal,6_0
+6_0_iraq,Iraq,6_0
+6_0_peoples_republic_of_china2,People's Republic of China2,6_0
+6_0_pakistan,Pakistan,6_0
+6_0_south_africa,South Africa,6_0
+6_0_afghanistan,Afghanistan,6_0
+6_0_sri_lanka,Sri Lanka,6_0
+6_0_iran,Iran,6_0
+6_0_myanmar,Myanmar,6_0
+6_0_brazil,Brazil,6_0
+6_0_other_countries3,Other countries3,6_0
+6_0_total,Total,6_0
+7_1_skill_stream,Skill stream,7_1
+7_1_participation_rates_family_stream,Participation rates | Family stream,7_1
+7_1_participation_rates_australian_born,Participation rates | Australian-born,7_1
+7_1_participation_rates_skill_stream,Participation rates | Skill stream,7_1
+7_1_unemployment_rates_family_stream,Unemployment rates | Family stream,7_1
+7_1_unemployment_rates_australian_born,Unemployment rates | Australian-born,7_1
+7_2_1519,15–19,7_2
+7_2_2024,20–24,7_2
+7_2_change_in_demographic_composition_by_age_group_years_2534,Change in demographic composition by age group (years) | 25–34,7_2
+7_2_change_in_demographic_composition_by_age_group_years_3544,Change in demographic composition by age group (years) | 35–44,7_2
+7_2_change_in_demographic_composition_by_age_group_years_4554,Change in demographic composition by age group (years) | 45–54,7_2
+7_2_change_in_demographic_composition_by_age_group_years_5564,Change in demographic composition by age group (years) | 55–64,7_2
+7_2_change_in_demographic_composition_by_age_group_years_65,Change in demographic composition by age group (years) | 65+,7_2
+7_2_change_in_demographic_composition_by_age_group_years_all_age_groups,Change in demographic composition by age group (years) | All age groups,7_2
+7_2_change_in_demographic_composition_by_age_group_years_1519,Change in demographic composition by age group (years) | 15–19,7_2
+7_2_change_in_demographic_composition_by_age_group_years_2024,Change in demographic composition by age group (years) | 20–24,7_2
+7_2_change_in_propensity_to_participate_by_age_group_years_2534,Change in propensity to participate by age group (years) | 25–34,7_2
+7_2_change_in_propensity_to_participate_by_age_group_years_3544,Change in propensity to participate by age group (years) | 35–44,7_2
+7_2_change_in_propensity_to_participate_by_age_group_years_4554,Change in propensity to participate by age group (years) | 45–54,7_2
+7_2_change_in_propensity_to_participate_by_age_group_years_5564,Change in propensity to participate by age group (years) | 55–64,7_2
+7_2_change_in_propensity_to_participate_by_age_group_years_65,Change in propensity to participate by age group (years) | 65+,7_2
+7_2_change_in_propensity_to_participate_by_age_group_years_all_age_groups,Change in propensity to participate by age group (years) | All age groups,7_2
+7_2_total_change_nan,Total change | nan,7_2
+7_3_1519,15–19,7_3
+7_3_2024,20–24,7_3
+7_3_change_in_demographic_composition_by_age_group_years_2534,Change in demographic composition by age group (years) | 25–34,7_3
+7_3_change_in_demographic_composition_by_age_group_years_3544,Change in demographic composition by age group (years) | 35–44,7_3
+7_3_change_in_demographic_composition_by_age_group_years_4554,Change in demographic composition by age group (years) | 45–54,7_3
+7_3_change_in_demographic_composition_by_age_group_years_5564,Change in demographic composition by age group (years) | 55–64,7_3
+7_3_change_in_demographic_composition_by_age_group_years_65,Change in demographic composition by age group (years) | 65+,7_3
+7_3_change_in_demographic_composition_by_age_group_years_all_age_groups,Change in demographic composition by age group (years) | All age groups,7_3
+7_3_change_in_demographic_composition_by_age_group_years_1519,Change in demographic composition by age group (years) | 15–19,7_3
+7_3_change_in_demographic_composition_by_age_group_years_2024,Change in demographic composition by age group (years) | 20–24,7_3
+7_3_change_in_propensity_to_participate_by_age_group_years_2534,Change in propensity to participate by age group (years) | 25–34,7_3
+7_3_change_in_propensity_to_participate_by_age_group_years_3544,Change in propensity to participate by age group (years) | 35–44,7_3
+7_3_change_in_propensity_to_participate_by_age_group_years_4554,Change in propensity to participate by age group (years) | 45–54,7_3
+7_3_change_in_propensity_to_participate_by_age_group_years_5564,Change in propensity to participate by age group (years) | 55–64,7_3
+7_3_change_in_propensity_to_participate_by_age_group_years_65,Change in propensity to participate by age group (years) | 65+,7_3
+7_3_change_in_propensity_to_participate_by_age_group_years_all_age_groups,Change in propensity to participate by age group (years) | All age groups,7_3
+7_3_total_change_nan,Total change | nan,7_3
+7_4_1519,15–19,7_4
+7_4_2024,20–24,7_4
+7_4_change_in_demographic_composition_by_age_group_years_2534,Change in demographic composition by age group (years) | 25–34,7_4
+7_4_change_in_demographic_composition_by_age_group_years_3544,Change in demographic composition by age group (years) | 35–44,7_4
+7_4_change_in_demographic_composition_by_age_group_years_4554,Change in demographic composition by age group (years) | 45–54,7_4
+7_4_change_in_demographic_composition_by_age_group_years_5564,Change in demographic composition by age group (years) | 55–64,7_4
+7_4_change_in_demographic_composition_by_age_group_years_65,Change in demographic composition by age group (years) | 65+,7_4
+7_4_change_in_demographic_composition_by_age_group_years_all_age_groups,Change in demographic composition by age group (years) | All age groups,7_4
+7_4_change_in_demographic_composition_by_age_group_years_1519,Change in demographic composition by age group (years) | 15–19,7_4
+7_4_change_in_demographic_composition_by_age_group_years_2024,Change in demographic composition by age group (years) | 20–24,7_4
+7_4_change_in_propensity_to_participate_by_age_group_years_2534,Change in propensity to participate by age group (years) | 25–34,7_4
+7_4_change_in_propensity_to_participate_by_age_group_years_3544,Change in propensity to participate by age group (years) | 35–44,7_4
+7_4_change_in_propensity_to_participate_by_age_group_years_4554,Change in propensity to participate by age group (years) | 45–54,7_4
+7_4_change_in_propensity_to_participate_by_age_group_years_5564,Change in propensity to participate by age group (years) | 55–64,7_4
+7_4_change_in_propensity_to_participate_by_age_group_years_65,Change in propensity to participate by age group (years) | 65+,7_4
+7_4_change_in_propensity_to_participate_by_age_group_years_all_age_groups,Change in propensity to participate by age group (years) | All age groups,7_4
+7_4_total_change_nan,Total change | nan,7_4
+7_5_1519,15–19,7_5
+7_5_2024,20–24,7_5
+7_5_change_in_demographic_composition_by_age_group_years_2534,Change in demographic composition by age group (years) | 25–34,7_5
+7_5_change_in_demographic_composition_by_age_group_years_3544,Change in demographic composition by age group (years) | 35–44,7_5
+7_5_change_in_demographic_composition_by_age_group_years_4554,Change in demographic composition by age group (years) | 45–54,7_5
+7_5_change_in_demographic_composition_by_age_group_years_5564,Change in demographic composition by age group (years) | 55–64,7_5
+7_5_change_in_demographic_composition_by_age_group_years_65,Change in demographic composition by age group (years) | 65+,7_5
+7_5_change_in_demographic_composition_by_age_group_years_all_age_groups,Change in demographic composition by age group (years) | All age groups,7_5
+7_5_change_in_demographic_composition_by_age_group_years_1519,Change in demographic composition by age group (years) | 15–19,7_5
+7_5_change_in_demographic_composition_by_age_group_years_2024,Change in demographic composition by age group (years) | 20–24,7_5
+7_5_change_in_propensity_to_participate_by_age_group_years_2534,Change in propensity to participate by age group (years) | 25–34,7_5
+7_5_change_in_propensity_to_participate_by_age_group_years_3544,Change in propensity to participate by age group (years) | 35–44,7_5
+7_5_change_in_propensity_to_participate_by_age_group_years_4554,Change in propensity to participate by age group (years) | 45–54,7_5
+7_5_change_in_propensity_to_participate_by_age_group_years_5564,Change in propensity to participate by age group (years) | 55–64,7_5
+7_5_change_in_propensity_to_participate_by_age_group_years_65,Change in propensity to participate by age group (years) | 65+,7_5
+7_5_change_in_propensity_to_participate_by_age_group_years_all_age_groups,Change in propensity to participate by age group (years) | All age groups,7_5
+7_5_total_change_nan,Total change | nan,7_5
+7_6_1519,15–19,7_6
+7_6_2024,20–24,7_6
+7_6_change_in_demographic_composition_by_age_group_years_2534,Change in demographic composition by age group (years) | 25–34,7_6
+7_6_change_in_demographic_composition_by_age_group_years_3544,Change in demographic composition by age group (years) | 35–44,7_6
+7_6_change_in_demographic_composition_by_age_group_years_4554,Change in demographic composition by age group (years) | 45–54,7_6
+7_6_change_in_demographic_composition_by_age_group_years_5564,Change in demographic composition by age group (years) | 55–64,7_6
+7_6_change_in_demographic_composition_by_age_group_years_65,Change in demographic composition by age group (years) | 65+,7_6
+7_6_change_in_demographic_composition_by_age_group_years_all_age_groups,Change in demographic composition by age group (years) | All age groups,7_6
+7_6_change_in_demographic_composition_by_age_group_years_1519,Change in demographic composition by age group (years) | 15–19,7_6
+7_6_change_in_demographic_composition_by_age_group_years_2024,Change in demographic composition by age group (years) | 20–24,7_6
+7_6_change_in_propensity_to_participate_by_age_group_years_2534,Change in propensity to participate by age group (years) | 25–34,7_6
+7_6_change_in_propensity_to_participate_by_age_group_years_3544,Change in propensity to participate by age group (years) | 35–44,7_6
+7_6_change_in_propensity_to_participate_by_age_group_years_4554,Change in propensity to participate by age group (years) | 45–54,7_6
+7_6_change_in_propensity_to_participate_by_age_group_years_5564,Change in propensity to participate by age group (years) | 55–64,7_6
+7_6_change_in_propensity_to_participate_by_age_group_years_65,Change in propensity to participate by age group (years) | 65+,7_6
+7_6_change_in_propensity_to_participate_by_age_group_years_all_age_groups,Change in propensity to participate by age group (years) | All age groups,7_6
+7_6_total_change_nan,Total change | nan,7_6
+7_7_1519,15–19,7_7
+7_7_2024,20–24,7_7
+7_7_change_in_demographic_composition_by_age_group_years_2534,Change in demographic composition by age group (years) | 25–34,7_7
+7_7_change_in_demographic_composition_by_age_group_years_3544,Change in demographic composition by age group (years) | 35–44,7_7
+7_7_change_in_demographic_composition_by_age_group_years_4554,Change in demographic composition by age group (years) | 45–54,7_7
+7_7_change_in_demographic_composition_by_age_group_years_5564,Change in demographic composition by age group (years) | 55–64,7_7
+7_7_change_in_demographic_composition_by_age_group_years_65,Change in demographic composition by age group (years) | 65+,7_7
+7_7_change_in_demographic_composition_by_age_group_years_all_age_groups,Change in demographic composition by age group (years) | All age groups,7_7
+7_7_change_in_demographic_composition_by_age_group_years_1519,Change in demographic composition by age group (years) | 15–19,7_7
+7_7_change_in_demographic_composition_by_age_group_years_2024,Change in demographic composition by age group (years) | 20–24,7_7
+7_7_change_in_propensity_to_participate_by_age_group_years_2534,Change in propensity to participate by age group (years) | 25–34,7_7
+7_7_change_in_propensity_to_participate_by_age_group_years_3544,Change in propensity to participate by age group (years) | 35–44,7_7
+7_7_change_in_propensity_to_participate_by_age_group_years_4554,Change in propensity to participate by age group (years) | 45–54,7_7
+7_7_change_in_propensity_to_participate_by_age_group_years_5564,Change in propensity to participate by age group (years) | 55–64,7_7
+7_7_change_in_propensity_to_participate_by_age_group_years_65,Change in propensity to participate by age group (years) | 65+,7_7
+7_7_change_in_propensity_to_participate_by_age_group_years_all_age_groups,Change in propensity to participate by age group (years) | All age groups,7_7
+7_7_total_change_nan,Total change | nan,7_7
+7_8_1519,15–19,7_8
+7_8_2024,20–24,7_8
+7_8_change_in_demographic_composition_by_age_group_years_2534,Change in demographic composition by age group (years) | 25–34,7_8
+7_8_change_in_demographic_composition_by_age_group_years_3544,Change in demographic composition by age group (years) | 35–44,7_8
+7_8_change_in_demographic_composition_by_age_group_years_4554,Change in demographic composition by age group (years) | 45–54,7_8
+7_8_change_in_demographic_composition_by_age_group_years_5564,Change in demographic composition by age group (years) | 55–64,7_8
+7_8_change_in_demographic_composition_by_age_group_years_65,Change in demographic composition by age group (years) | 65+,7_8
+7_8_change_in_demographic_composition_by_age_group_years_all_age_groups,Change in demographic composition by age group (years) | All age groups,7_8
+7_8_change_in_demographic_composition_by_age_group_years_1519,Change in demographic composition by age group (years) | 15–19,7_8
+7_8_change_in_demographic_composition_by_age_group_years_2024,Change in demographic composition by age group (years) | 20–24,7_8
+7_8_change_in_propensity_to_participate_by_age_group_years_2534,Change in propensity to participate by age group (years) | 25–34,7_8
+7_8_change_in_propensity_to_participate_by_age_group_years_3544,Change in propensity to participate by age group (years) | 35–44,7_8
+7_8_change_in_propensity_to_participate_by_age_group_years_4554,Change in propensity to participate by age group (years) | 45–54,7_8
+7_8_change_in_propensity_to_participate_by_age_group_years_5564,Change in propensity to participate by age group (years) | 55–64,7_8
+7_8_change_in_propensity_to_participate_by_age_group_years_65,Change in propensity to participate by age group (years) | 65+,7_8
+7_8_change_in_propensity_to_participate_by_age_group_years_all_age_groups,Change in propensity to participate by age group (years) | All age groups,7_8
+7_8_total_change_nan,Total change | nan,7_8

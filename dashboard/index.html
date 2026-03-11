@@ -191,7 +191,13 @@
         <select id="table" disabled>
           <option value="">— Select section first —</option>
         </select>
-        <label for="indicator">3. Indicator</label>
+        <div id="submenu-wrap" class="submenu-wrap" style="display: none;">
+          <label for="submenu">3. Submenu</label>
+          <select id="submenu">
+            <option value="">— Select submenu —</option>
+          </select>
+        </div>
+        <label for="indicator" id="indicator-label">4. Indicator</label>
         <select id="indicator" disabled>
           <option value="">— Select table first —</option>
         </select>
@@ -244,6 +250,6 @@
     </p>
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

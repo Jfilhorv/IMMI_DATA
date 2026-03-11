@@ -1,121 +1,121 @@
 indicator,year,value
-Total,2020,1329
-Total,2021,3741
-Total,2022,4881
-Total,2023,5516
-Total,2024,5609
-Female,2020,650
-Female,2021,1814
-Female,2022,2358
-Female,2023,2737
-Female,2024,2674
-Total_1,2020,444
-Total_1,2021,1180
-Total_1,2022,1820
-Total_1,2023,1942
-Total_1,2024,1970
-Female_1,2020,219
-Female_1,2021,569
-Female_1,2022,890
-Female_1,2023,919
-Female_1,2024,929
-Total_2,2020,440
-Total_2,2021,1060
-Total_2,2022,1779
-Total_2,2023,1724
-Total_2,2024,1516
-Female_2,2020,234
-Female_2,2021,546
-Female_2,2022,924
-Female_2,2023,850
-Female_2,2024,787
-Total_3,2020,412
-Total_3,2021,1162
-Total_3,2022,1753
-Total_3,2023,1507
-Total_3,2024,1397
-Female_3,2020,198
-Female_3,2021,622
-Female_3,2022,943
-Female_3,2023,793
-Female_3,2024,721
-Total_4,2020,443
-Total_4,2021,1132
-Total_4,2022,1458
-Total_4,2023,1358
-Total_4,2024,1261
-Female_4,2020,226
-Female_4,2021,581
-Female_4,2022,748
-Female_4,2023,776
-Female_4,2024,718
-Total_5,2020,400
-Total_5,2021,927
-Total_5,2022,1109
-Total_5,2023,1247
-Total_5,2024,1233
-Female_5,2020,201
-Female_5,2021,429
-Female_5,2022,549
-Female_5,2023,685
-Female_5,2024,664
-Total_6,2020,294
-Total_6,2021,667
-Total_6,2022,825
-Total_6,2023,1025
-Total_6,2024,936
-Female_6,2020,162
-Female_6,2021,328
-Female_6,2022,448
-Female_6,2023,547
-Female_6,2024,473
-Total_7,2020,240
-Total_7,2021,433
-Total_7,2022,602
-Total_7,2023,716
-Total_7,2024,635
-Female_7,2020,128
-Female_7,2021,220
-Female_7,2022,361
-Female_7,2023,377
-Female_7,2024,340
-Total_8,2020,181
-Total_8,2021,363
-Total_8,2022,506
-Total_8,2023,526
-Total_8,2024,468
-Female_8,2020,86
-Female_8,2021,190
-Female_8,2022,283
-Female_8,2023,292
-Female_8,2024,260
-Total_9,2020,124
-Total_9,2021,297
-Total_9,2022,383
-Total_9,2023,411
-Total_9,2024,367
-Female_9,2020,68
-Female_9,2021,173
-Female_9,2022,228
-Female_9,2023,244
-Female_9,2024,199
-Total_10,2020,251
-Total_10,2021,583
-Total_10,2022,759
-Total_10,2023,778
-Total_10,2024,607
-Female_10,2020,137
-Female_10,2021,328
-Female_10,2022,437
-Female_10,2023,454
-Female_10,2024,362
-Total1,2020,4558
-Total1,2021,11545
-Total1,2022,15875
-Total1,2023,16750
-Total1,2024,15999
-Female_11,2020,2309
-Female_11,2021,5800
-Female_11,2022,8169
-Female_11,2023,8674
-Female_11,2024,8127
+0–14 years | Total,2020,1329
+0–14 years | Total,2021,3741
+0–14 years | Total,2022,4881
+0–14 years | Total,2023,5516
+0–14 years | Total,2024,5609
+0–14 years | Female,2020,650
+0–14 years | Female,2021,1814
+0–14 years | Female,2022,2358
+0–14 years | Female,2023,2737
+0–14 years | Female,2024,2674
+15–19 years | Total,2020,444
+15–19 years | Total,2021,1180
+15–19 years | Total,2022,1820
+15–19 years | Total,2023,1942
+15–19 years | Total,2024,1970
+15–19 years | Female,2020,219
+15–19 years | Female,2021,569
+15–19 years | Female,2022,890
+15–19 years | Female,2023,919
+15–19 years | Female,2024,929
+20–24 years | Total,2020,440
+20–24 years | Total,2021,1060
+20–24 years | Total,2022,1779
+20–24 years | Total,2023,1724
+20–24 years | Total,2024,1516
+20–24 years | Female,2020,234
+20–24 years | Female,2021,546
+20–24 years | Female,2022,924
+20–24 years | Female,2023,850
+20–24 years | Female,2024,787
+25–29 years | Total,2020,412
+25–29 years | Total,2021,1162
+25–29 years | Total,2022,1753
+25–29 years | Total,2023,1507
+25–29 years | Total,2024,1397
+25–29 years | Female,2020,198
+25–29 years | Female,2021,622
+25–29 years | Female,2022,943
+25–29 years | Female,2023,793
+25–29 years | Female,2024,721
+30–34 years | Total,2020,443
+30–34 years | Total,2021,1132
+30–34 years | Total,2022,1458
+30–34 years | Total,2023,1358
+30–34 years | Total,2024,1261
+30–34 years | Female,2020,226
+30–34 years | Female,2021,581
+30–34 years | Female,2022,748
+30–34 years | Female,2023,776
+30–34 years | Female,2024,718
+35–39 years | Total,2020,400
+35–39 years | Total,2021,927
+35–39 years | Total,2022,1109
+35–39 years | Total,2023,1247
+35–39 years | Total,2024,1233
+35–39 years | Female,2020,201
+35–39 years | Female,2021,429
+35–39 years | Female,2022,549
+35–39 years | Female,2023,685
+35–39 years | Female,2024,664
+40–44 years | Total,2020,294
+40–44 years | Total,2021,667
+40–44 years | Total,2022,825
+40–44 years | Total,2023,1025
+40–44 years | Total,2024,936
+40–44 years | Female,2020,162
+40–44 years | Female,2021,328
+40–44 years | Female,2022,448
+40–44 years | Female,2023,547
+40–44 years | Female,2024,473
+45–49 years | Total,2020,240
+45–49 years | Total,2021,433
+45–49 years | Total,2022,602
+45–49 years | Total,2023,716
+45–49 years | Total,2024,635
+45–49 years | Female,2020,128
+45–49 years | Female,2021,220
+45–49 years | Female,2022,361
+45–49 years | Female,2023,377
+45–49 years | Female,2024,340
+50–54 years | Total,2020,181
+50–54 years | Total,2021,363
+50–54 years | Total,2022,506
+50–54 years | Total,2023,526
+50–54 years | Total,2024,468
+50–54 years | Female,2020,86
+50–54 years | Female,2021,190
+50–54 years | Female,2022,283
+50–54 years | Female,2023,292
+50–54 years | Female,2024,260
+55–59 years | Total,2020,124
+55–59 years | Total,2021,297
+55–59 years | Total,2022,383
+55–59 years | Total,2023,411
+55–59 years | Total,2024,367
+55–59 years | Female,2020,68
+55–59 years | Female,2021,173
+55–59 years | Female,2022,228
+55–59 years | Female,2023,244
+55–59 years | Female,2024,199
+60 years and over | Total,2020,251
+60 years and over | Total,2021,583
+60 years and over | Total,2022,759
+60 years and over | Total,2023,778
+60 years and over | Total,2024,607
+60 years and over | Female,2020,137
+60 years and over | Female,2021,328
+60 years and over | Female,2022,437
+60 years and over | Female,2023,454
+60 years and over | Female,2024,362
+Total | Total1,2020,4558
+Total | Total1,2021,11545
+Total | Total1,2022,15875
+Total | Total1,2023,16750
+Total | Total1,2024,15999
+Total | Female,2020,2309
+Total | Female,2021,5800
+Total | Female,2022,8169
+Total | Female,2023,8674
+Total | Female,2024,8127

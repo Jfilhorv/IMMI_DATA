@@ -8,6 +8,8 @@
   })();
   var TABLES_URL = base + 'data/tables.json';
   var DATA_URL = base + 'data/indicators.csv';
+  var CATEGORY_TABLES_URL = base + 'data/category_tables.json';
+  var categoryTables = [];
   var SECTION_LABELS = {
     1: '1. Permanent migration',
     2: '2. Temporary visas',
@@ -51,16 +53,20 @@
   function parseCSV(text) {
     const lines = text.trim().split(/\r?\n/);
     if (lines.length < 2) return [];
+    const header = parseCSVLine(lines[0]);
+    const hasCategory = header.indexOf('category') >= 0;
     const rows = [];
     for (let i = 1; i < lines.length; i++) {
       const values = parseCSVLine(lines[i]);
       if (values.length >= 4) {
-        rows.push({
+        const row = {
           indicator: values[0],
           year: parseInt(values[1], 10),
           value: parseFloat(values[2]),
           table: values[3] || ''
-        });
+        };
+        if (hasCategory && values.length >= 5) row.category = values[4] || '';
+        rows.push(row);
       }
     }
     return rows;
@@ -106,7 +112,13 @@
     var sectionSel = document.getElementById('section');
     var tableSel = document.getElementById('table');
     var indSel = document.getElementById('indicator');
+    var submenuWrap = document.getElementById('submenu-wrap');
+    var submenuSel = document.getElementById('submenu');
+    var indLabel = document.getElementById('indicator-label');
     var sectionId = sectionSel.value ? parseInt(sectionSel.value, 10) : null;
+    submenuWrap.style.display = 'none';
+    submenuSel.innerHTML = '<option value="">— Select submenu —</option>';
+    indLabel.textContent = '3. Indicator';
     if (!sectionId) {
       tableSel.disabled = true;
       tableSel.innerHTML = '<option value="">— Select section first —</option>';
@@ -137,21 +149,27 @@
     }
   }
 
-  function onTableChange() {
+  function getSubmenusForTable(tableId) {
+    var indicators = getIndicatorsForTable(tableId);
+    var set = new Set();
+    indicators.forEach(function (ind) {
+      var pos = ind.indexOf(' | ');
+      if (pos > 0) set.add(ind.slice(0, pos));
+    });
+    return Array.from(set).sort(function (a, b) { return a.localeCompare(b); });
+  }
+
+  function onSubmenuChange() {
     var tableSel = document.getElementById('table');
+    var submenuSel = document.getElementById('submenu');
     var indSel = document.getElementById('indicator');
     var tableId = tableSel.value;
-    if (!tableId) {
-      indSel.disabled = true;
-      indSel.innerHTML = '<option value="">— Select a table first —</option>';
-      if (chart) {
-        chart.data.labels = [];
-        chart.data.datasets[0].data = [];
-        chart.update('none');
-      }
-      return;
-    }
-    var indicators = getIndicatorsForTable(tableId);
+    var submenu = submenuSel.value;
+    if (!tableId) return;
+    var allIndicators = getIndicatorsForTable(tableId);
+    var indicators = submenu
+      ? allIndicators.filter(function (ind) { return ind.indexOf(submenu + ' | ') === 0; })
+      : allIndicators;
     indSel.disabled = false;
     indSel.innerHTML = '<option value="">— Select indicator —</option>' +
       indicators.map(function (ind) {
@@ -161,6 +179,65 @@
     var defaultInd = getDefaultIndicator(indicators);
     indSel.value = defaultInd ? escapeHtml(defaultInd) : '';
     onIndicatorChange();
+  }
+
+  function onTableChange() {
+    var tableSel = document.getElementById('table');
+    var indSel = document.getElementById('indicator');
+    var submenuWrap = document.getElementById('submenu-wrap');
+    var submenuSel = document.getElementById('submenu');
+    var indLabel = document.getElementById('indicator-label');
+    var tableId = tableSel.value;
+    if (!tableId) {
+      submenuWrap.style.display = 'none';
+      indLabel.textContent = '3. Indicator';
+      indSel.disabled = true;
+      indSel.innerHTML = '<option value="">— Select a table first —</option>';
+      if (chart) {
+        chart.data.labels = [];
+        chart.data.datasets[0].data = [];
+        chart.update('none');
+      }
+      return;
+    }
+    var hasCategory = categoryTables.indexOf(tableId) >= 0;
+    if (hasCategory) {
+      var submenus = getSubmenusForTable(tableId);
+      submenuWrap.style.display = submenus.length ? 'block' : 'none';
+      indLabel.textContent = '4. Indicator';
+      if (submenus.length) {
+        submenuSel.innerHTML = '<option value="">— All —</option>' +
+          submenus.map(function (s) { return '<option value="' + escapeHtml(s) + '">' + escapeHtml(s) + '</option>'; }).join('');
+        submenuSel.value = '';
+        submenuSel.disabled = false;
+        onSubmenuChange();
+      } else {
+        submenuSel.innerHTML = '<option value="">— Select submenu —</option>';
+        indSel.disabled = false;
+        var indicators = getIndicatorsForTable(tableId);
+        indSel.innerHTML = '<option value="">— Select indicator —</option>' +
+          indicators.map(function (ind) {
+            var label = indicatorDisplayName(ind, indicators);
+            return '<option value="' + escapeHtml(ind) + '">' + escapeHtml(label) + '</option>';
+          }).join('');
+        var defaultInd = getDefaultIndicator(indicators);
+        indSel.value = defaultInd ? escapeHtml(defaultInd) : '';
+        onIndicatorChange();
+      }
+    } else {
+      submenuWrap.style.display = 'none';
+      indLabel.textContent = '3. Indicator';
+      var indicators = getIndicatorsForTable(tableId);
+      indSel.disabled = false;
+      indSel.innerHTML = '<option value="">— Select indicator —</option>' +
+        indicators.map(function (ind) {
+          var label = indicatorDisplayName(ind, indicators);
+          return '<option value="' + escapeHtml(ind) + '">' + escapeHtml(label) + '</option>';
+        }).join('');
+      var defaultInd = getDefaultIndicator(indicators);
+      indSel.value = defaultInd ? escapeHtml(defaultInd) : '';
+      onIndicatorChange();
+    }
   }
 
   function onIndicatorChange() {
@@ -179,9 +256,16 @@
     const filtered = allData.filter(function (row) {
       return row.table === tableId && row.indicator === indicator;
     });
-    filtered.sort(function (a, b) { return a.year - b.year; });
-    const labels = filtered.map(function (r) { return r.year; }).filter(function (y) { return isFinite(y); });
-    const values = filtered.map(function (r) { return r.value; });
+    var labels, values;
+    if (categoryTables.indexOf(tableId) >= 0 && filtered.length && filtered[0].category !== undefined) {
+      var withCat = filtered.filter(function (r) { return r.category != null && String(r.category).trim() !== ''; });
+      labels = withCat.map(function (r) { return String(r.category); });
+      values = withCat.map(function (r) { return r.value; });
+    } else {
+      filtered.sort(function (a, b) { return (a.year || 0) - (b.year || 0); });
+      labels = filtered.map(function (r) { return r.year; }).filter(function (y) { return isFinite(y); });
+      values = filtered.map(function (r) { return r.value; });
+    }
     updateChart(labels, values, indicator);
   }
 
@@ -268,12 +352,14 @@
       fetch(DATA_URL).then(function (r) {
         if (!r.ok) throw new Error('indicators.csv ' + r.status);
         return r.text();
-      })
+      }),
+      fetch(CATEGORY_TABLES_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; })
     ]).then(function (results) {
       try {
         tableList = results[0];
         if (!Array.isArray(tableList)) throw new Error('Invalid tables.json');
         allData = parseCSV(results[1]);
+        categoryTables = Array.isArray(results[2]) ? results[2] : [];
         var dataTablePattern = /^\d+_\d+$/;
         tablesWithData = new Set();
         allData.forEach(function (row) {
@@ -294,6 +380,7 @@
         tableSel.disabled = true;
         sectionSel.addEventListener('change', onSectionChange);
         tableSel.addEventListener('change', onTableChange);
+        document.getElementById('submenu').addEventListener('change', onSubmenuChange);
         indSel.addEventListener('change', onIndicatorChange);
       } catch (e) {
         done('Error: ' + (e.message || 'invalid data'));

@@ -1,144 +1,144 @@
 indicator,year,value
-Regional1,2019,3742.0
-Regional1,2020,2588.0
-Regional1,2021,4408.0
-Regional1,2022,6371.0
-Regional1,2023,4829.0
-Regional1,2024,2833.0
-State/Territory Nominated,2015,2602.0
-State/Territory Nominated,2016,2478.0
-State/Territory Nominated,2017,2769.0
-State/Territory Nominated,2018,2439.0
-State/Territory Nominated,2019,3096.0
-State/Territory Nominated,2020,2439.0
-State/Territory Nominated,2021,3934.0
-State/Territory Nominated,2022,6000.0
-State/Territory Nominated,2023,3717.0
-State/Territory Nominated,2024,2680.0
-Employer Sponsored,2015,2889.0
-Employer Sponsored,2016,2256.0
-Employer Sponsored,2017,1168.0
-Employer Sponsored,2018,2684.0
-Employer Sponsored,2019,618.0
-Employer Sponsored,2020,876.0
-Employer Sponsored,2021,1109.0
-Employer Sponsored,2022,1459.0
-Employer Sponsored,2023,1171.0
-Employer Sponsored,2024,1318.0
-Skilled Independent,2015,4757.0
-Skilled Independent,2016,4527.0
-Skilled Independent,2017,3081.0
-Skilled Independent,2018,2674.0
-Skilled Independent,2019,990.0
-Skilled Independent,2020,673.0
-Skilled Independent,2021,197.0
-Skilled Independent,2022,2758.0
-Skilled Independent,2023,3203.0
-Skilled Independent,2024,1271.0
-Global Talent (Independent)2,2019,1313.0
-Global Talent (Independent)2,2020,1692.0
-Global Talent (Independent)2,2021,936.0
-Global Talent (Independent)2,2022,425.0
-Global Talent (Independent)2,2023,237.0
-Global Talent (Independent)2,2024,117.0
-Business Innovation and Investment3,2015,331.0
-Business Innovation and Investment3,2016,329.0
-Business Innovation and Investment3,2017,298.0
-Business Innovation and Investment3,2018,315.0
-Business Innovation and Investment3,2019,191.0
-Business Innovation and Investment3,2020,456.0
-Business Innovation and Investment3,2021,461.0
-Business Innovation and Investment3,2022,199.0
-Business Innovation and Investment3,2023,84.0
-Business Innovation and Investment3,2024,55.0
-Distinguished Talent,2015,34.0
-Distinguished Talent,2016,31.0
-Distinguished Talent,2017,21.0
-Distinguished Talent,2018,45.0
-Distinguished Talent,2019,42.0
-Distinguished Talent,2020,38.0
-Distinguished Talent,2021,46.0
-Distinguished Talent,2022,62.0
-Distinguished Talent,2023,62.0
-Distinguished Talent,2024,35.0
-Skilled Regional4,2015,1664.0
-Skilled Regional4,2016,190.0
-Skilled Regional4,2017,121.0
-Skilled Regional4,2018,53.0
-Skill stream total,2015,12277.0
-Skill stream total,2016,9811.0
-Skill stream total,2017,7458.0
-Skill stream total,2018,8210.0
-Skill stream total,2019,9992.0
-Skill stream total,2020,8762.0
-Skill stream total,2021,11091.0
-Skill stream total,2022,17274.0
-Skill stream total,2023,13303.0
-Skill stream total,2024,8309.0
-Partner,2015,5804.0
-Partner,2016,7118.0
-Partner,2017,5619.0
-Partner,2018,6484.0
-Partner,2019,6575.0
-Partner,2020,14435.0
-Partner,2021,10776.0
-Partner,2022,8424.0
-Partner,2023,5992.0
-Partner,2024,4165.0
-"All other
+Skill stream | Regional1,2019,3742.0
+Skill stream | Regional1,2020,2588.0
+Skill stream | Regional1,2021,4408.0
+Skill stream | Regional1,2022,6371.0
+Skill stream | Regional1,2023,4829.0
+Skill stream | Regional1,2024,2833.0
+Skill stream | State/Territory Nominated,2015,2602.0
+Skill stream | State/Territory Nominated,2016,2478.0
+Skill stream | State/Territory Nominated,2017,2769.0
+Skill stream | State/Territory Nominated,2018,2439.0
+Skill stream | State/Territory Nominated,2019,3096.0
+Skill stream | State/Territory Nominated,2020,2439.0
+Skill stream | State/Territory Nominated,2021,3934.0
+Skill stream | State/Territory Nominated,2022,6000.0
+Skill stream | State/Territory Nominated,2023,3717.0
+Skill stream | State/Territory Nominated,2024,2680.0
+Skill stream | Employer Sponsored,2015,2889.0
+Skill stream | Employer Sponsored,2016,2256.0
+Skill stream | Employer Sponsored,2017,1168.0
+Skill stream | Employer Sponsored,2018,2684.0
+Skill stream | Employer Sponsored,2019,618.0
+Skill stream | Employer Sponsored,2020,876.0
+Skill stream | Employer Sponsored,2021,1109.0
+Skill stream | Employer Sponsored,2022,1459.0
+Skill stream | Employer Sponsored,2023,1171.0
+Skill stream | Employer Sponsored,2024,1318.0
+Skill stream | Skilled Independent,2015,4757.0
+Skill stream | Skilled Independent,2016,4527.0
+Skill stream | Skilled Independent,2017,3081.0
+Skill stream | Skilled Independent,2018,2674.0
+Skill stream | Skilled Independent,2019,990.0
+Skill stream | Skilled Independent,2020,673.0
+Skill stream | Skilled Independent,2021,197.0
+Skill stream | Skilled Independent,2022,2758.0
+Skill stream | Skilled Independent,2023,3203.0
+Skill stream | Skilled Independent,2024,1271.0
+Skill stream | Global Talent (Independent)2,2019,1313.0
+Skill stream | Global Talent (Independent)2,2020,1692.0
+Skill stream | Global Talent (Independent)2,2021,936.0
+Skill stream | Global Talent (Independent)2,2022,425.0
+Skill stream | Global Talent (Independent)2,2023,237.0
+Skill stream | Global Talent (Independent)2,2024,117.0
+Skill stream | Business Innovation and Investment3,2015,331.0
+Skill stream | Business Innovation and Investment3,2016,329.0
+Skill stream | Business Innovation and Investment3,2017,298.0
+Skill stream | Business Innovation and Investment3,2018,315.0
+Skill stream | Business Innovation and Investment3,2019,191.0
+Skill stream | Business Innovation and Investment3,2020,456.0
+Skill stream | Business Innovation and Investment3,2021,461.0
+Skill stream | Business Innovation and Investment3,2022,199.0
+Skill stream | Business Innovation and Investment3,2023,84.0
+Skill stream | Business Innovation and Investment3,2024,55.0
+Skill stream | Distinguished Talent,2015,34.0
+Skill stream | Distinguished Talent,2016,31.0
+Skill stream | Distinguished Talent,2017,21.0
+Skill stream | Distinguished Talent,2018,45.0
+Skill stream | Distinguished Talent,2019,42.0
+Skill stream | Distinguished Talent,2020,38.0
+Skill stream | Distinguished Talent,2021,46.0
+Skill stream | Distinguished Talent,2022,62.0
+Skill stream | Distinguished Talent,2023,62.0
+Skill stream | Distinguished Talent,2024,35.0
+Skill stream | Skilled Regional4,2015,1664.0
+Skill stream | Skilled Regional4,2016,190.0
+Skill stream | Skilled Regional4,2017,121.0
+Skill stream | Skilled Regional4,2018,53.0
+Skill stream | Skill stream total,2015,12277.0
+Skill stream | Skill stream total,2016,9811.0
+Skill stream | Skill stream total,2017,7458.0
+Skill stream | Skill stream total,2018,8210.0
+Skill stream | Skill stream total,2019,9992.0
+Skill stream | Skill stream total,2020,8762.0
+Skill stream | Skill stream total,2021,11091.0
+Skill stream | Skill stream total,2022,17274.0
+Skill stream | Skill stream total,2023,13303.0
+Skill stream | Skill stream total,2024,8309.0
+Family stream | Partner,2015,5804.0
+Family stream | Partner,2016,7118.0
+Family stream | Partner,2017,5619.0
+Family stream | Partner,2018,6484.0
+Family stream | Partner,2019,6575.0
+Family stream | Partner,2020,14435.0
+Family stream | Partner,2021,10776.0
+Family stream | Partner,2022,8424.0
+Family stream | Partner,2023,5992.0
+Family stream | Partner,2024,4165.0
+"Family stream | All other
 Family stream visas5",2015,65.0
-"All other
+"Family stream | All other
 Family stream visas5",2016,47.0
-"All other
+"Family stream | All other
 Family stream visas5",2017,35.0
-"All other
+"Family stream | All other
 Family stream visas5",2018,25.0
-"All other
+"Family stream | All other
 Family stream visas5",2019,12.0
-"All other
+"Family stream | All other
 Family stream visas5",2020,75.0
-"All other
+"Family stream | All other
 Family stream visas5",2021,37.0
-"All other
+"Family stream | All other
 Family stream visas5",2022,69.0
-"All other
+"Family stream | All other
 Family stream visas5",2023,70.0
-"All other
+"Family stream | All other
 Family stream visas5",2024,97.0
-Family stream total,2015,5869.0
-Family stream total,2016,7165.0
-Family stream total,2017,5654.0
-Family stream total,2018,6509.0
-Family stream total,2019,6587.0
-Family stream total,2020,14510.0
-Family stream total,2021,10813.0
-Family stream total,2022,8493.0
-Family stream total,2023,6062.0
-Family stream total,2024,4262.0
-Special Eligibility total,2015,36.0
-Special Eligibility total,2016,57.0
-Special Eligibility total,2017,26.0
-Special Eligibility total,2018,13.0
-Special Eligibility total,2019,9.0
-Special Eligibility total,2020,20.0
-Special Eligibility total,2021,18.0
-Special Eligibility total,2022,37.0
-Special Eligibility total,2023,28.0
-Special Eligibility total,2024,66.0
-Child stream total,2015,69.0
-Child stream total,2016,69.0
-Child stream total,2017,0.0
-Child stream total,2018,0.0
-Child stream total,2019,0.0
-Child stream total,2020,0.0
-Child stream total,2021,0.0
-Total,2015,18251.0
-Total,2016,17102.0
-Total,2017,13138.0
-Total,2018,14732.0
-Total,2019,16588.0
-Total,2020,23292.0
-Total,2021,21922.0
-Total,2022,25804.0
-Total,2023,19393.0
-Total,2024,12637.0
+Family stream | Family stream total,2015,5869.0
+Family stream | Family stream total,2016,7165.0
+Family stream | Family stream total,2017,5654.0
+Family stream | Family stream total,2018,6509.0
+Family stream | Family stream total,2019,6587.0
+Family stream | Family stream total,2020,14510.0
+Family stream | Family stream total,2021,10813.0
+Family stream | Family stream total,2022,8493.0
+Family stream | Family stream total,2023,6062.0
+Family stream | Family stream total,2024,4262.0
+Special Eligibility | Special Eligibility total,2015,36.0
+Special Eligibility | Special Eligibility total,2016,57.0
+Special Eligibility | Special Eligibility total,2017,26.0
+Special Eligibility | Special Eligibility total,2018,13.0
+Special Eligibility | Special Eligibility total,2019,9.0
+Special Eligibility | Special Eligibility total,2020,20.0
+Special Eligibility | Special Eligibility total,2021,18.0
+Special Eligibility | Special Eligibility total,2022,37.0
+Special Eligibility | Special Eligibility total,2023,28.0
+Special Eligibility | Special Eligibility total,2024,66.0
+Child stream6 | Child stream total,2015,69.0
+Child stream6 | Child stream total,2016,69.0
+Child stream6 | Child stream total,2017,0.0
+Child stream6 | Child stream total,2018,0.0
+Child stream6 | Child stream total,2019,0.0
+Child stream6 | Child stream total,2020,0.0
+Child stream6 | Child stream total,2021,0.0
+Child stream6 | Total,2015,18251.0
+Child stream6 | Total,2016,17102.0
+Child stream6 | Total,2017,13138.0
+Child stream6 | Total,2018,14732.0
+Child stream6 | Total,2019,16588.0
+Child stream6 | Total,2020,23292.0
+Child stream6 | Total,2021,21922.0
+Child stream6 | Total,2022,25804.0
+Child stream6 | Total,2023,19393.0
+Child stream6 | Total,2024,12637.0
