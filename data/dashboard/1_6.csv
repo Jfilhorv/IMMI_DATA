@@ -1,0 +1,103 @@
+indicator,year,value
+India,2019,7585
+India,2020,4638
+India,2021,5931
+India,2022,12192
+India,2023,12953
+India,2024,13193
+Sri Lanka,2019,883
+Sri Lanka,2020,451
+Sri Lanka,2021,699
+Sri Lanka,2022,1068
+Sri Lanka,2023,1357
+Sri Lanka,2024,3611
+Pakistan,2019,1223
+Pakistan,2020,762
+Pakistan,2021,1358
+Pakistan,2022,1754
+Pakistan,2023,2245
+Pakistan,2024,2881
+Nepal,2019,1638
+Nepal,2020,1198
+Nepal,2021,2472
+Nepal,2022,4380
+Nepal,2023,3301
+Nepal,2024,2574
+Philippines,2019,1842
+Philippines,2020,1289
+Philippines,2021,1458
+Philippines,2022,3098
+Philippines,2023,1830
+Philippines,2024,1542
+People's Republic of China2,2019,1925
+People's Republic of China2,2020,764
+People's Republic of China2,2021,950
+People's Republic of China2,2022,2106
+People's Republic of China2,2023,1380
+People's Republic of China2,2024,1101
+Bangladesh,2019,380
+Bangladesh,2020,201
+Bangladesh,2021,315
+Bangladesh,2022,457
+Bangladesh,2023,495
+Bangladesh,2024,588
+Iran,2019,340
+Iran,2020,283
+Iran,2021,170
+Iran,2022,402
+Iran,2023,495
+Iran,2024,582
+United Kingdom,2019,1050
+United Kingdom,2020,489
+United Kingdom,2021,583
+United Kingdom,2022,1141
+United Kingdom,2023,729
+United Kingdom,2024,521
+Bhutan,2019,48
+Bhutan,2020,71
+Bhutan,2021,186
+Bhutan,2022,266
+Bhutan,2023,409
+Bhutan,2024,490
+South Africa,2019,945
+South Africa,2020,356
+South Africa,2021,464
+South Africa,2022,1262
+South Africa,2023,1050
+South Africa,2024,441
+Vietnam,2019,669
+Vietnam,2020,343
+Vietnam,2021,481
+Vietnam,2022,529
+Vietnam,2023,489
+Vietnam,2024,424
+Nigeria,2019,266
+Nigeria,2020,153
+Nigeria,2021,183
+Nigeria,2022,560
+Nigeria,2023,362
+Nigeria,2024,413
+Egypt,2019,321
+Egypt,2020,175
+Egypt,2021,118
+Egypt,2022,268
+Egypt,2023,412
+Egypt,2024,399
+Zimbabwe,2019,114
+Zimbabwe,2020,102
+Zimbabwe,2021,108
+Zimbabwe,2022,229
+Zimbabwe,2023,269
+Zimbabwe,2024,375
+Other3,2019,4143
+Other3,2020,2310
+Other3,2021,2747
+Other3,2022,4232
+Other3,2023,4524
+Other3,2024,3813
+Total,2019,23372
+Total,2020,13585
+Total,2021,18223
+Total,2022,33944
+Total,2023,32300
+Total,2024,32948

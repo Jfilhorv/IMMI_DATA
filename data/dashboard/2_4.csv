@@ -1,0 +1,171 @@
+indicator,year,value
+People's Republic of China1,2015,801761
+People's Republic of China1,2016,888584
+People's Republic of China1,2017,954264
+People's Republic of China1,2018,938136
+People's Republic of China1,2019,544817
+People's Republic of China1,2020,38844
+People's Republic of China1,2021,44348
+People's Republic of China1,2022,271550
+People's Republic of China1,2023,583183
+People's Republic of China1,2024,622839
+United States of America,2015,466030
+United States of America,2016,526605
+United States of America,2017,564874
+United States of America,2018,621954
+United States of America,2019,455029
+United States of America,2020,6323
+United States of America,2021,97628
+United States of America,2022,456565
+United States of America,2023,559620
+United States of America,2024,579217
+United Kingdom,2015,586174
+United Kingdom,2016,622869
+United Kingdom,2017,630761
+United Kingdom,2018,591171
+United Kingdom,2019,479662
+United Kingdom,2020,9029
+United Kingdom,2021,160841
+United Kingdom,2022,460157
+United Kingdom,2023,479042
+United Kingdom,2024,530543
+Republic of Korea,2015,218295
+Republic of Korea,2016,254115
+Republic of Korea,2017,279329
+Republic of Korea,2018,276789
+Republic of Korea,2019,189910
+Republic of Korea,2020,7388
+Republic of Korea,2021,24912
+Republic of Korea,2022,172648
+Republic of Korea,2023,354388
+Republic of Korea,2024,360854
+Japan,2015,342343
+Japan,2016,385297
+Japan,2017,397242
+Japan,2018,410259
+Japan,2019,317479
+Japan,2020,7200
+Japan,2021,16953
+Japan,2022,157809
+Japan,2023,325445
+Japan,2024,357960
+India,2015,189221
+India,2016,220952
+India,2017,268194
+India,2018,280344
+India,2019,222785
+India,2020,29502
+India,2021,200325
+India,2022,357038
+India,2023,287259
+India,2024,302758
+Singapore,2015,236516
+Singapore,2016,244388
+Singapore,2017,238333
+Singapore,2018,236526
+Singapore,2019,154285
+Singapore,2020,5614
+Singapore,2021,95829
+Singapore,2022,219986
+Singapore,2023,230411
+Singapore,2024,237357
+Malaysia,2015,327383
+Malaysia,2016,356010
+Malaysia,2017,332224
+Malaysia,2018,337481
+Malaysia,2019,213531
+Malaysia,2020,3622
+Malaysia,2021,39960
+Malaysia,2022,147838
+Malaysia,2023,172617
+Malaysia,2024,169612
+Germany,2015,159299
+Germany,2016,173871
+Germany,2017,177336
+Germany,2018,178626
+Germany,2019,139411
+Germany,2020,1553
+Germany,2021,32662
+Germany,2022,116444
+Germany,2023,134282
+Germany,2024,144271
+Taiwan,2015,112888
+Taiwan,2016,132442
+Taiwan,2017,154746
+Taiwan,2018,152632
+Taiwan,2019,100591
+Taiwan,2020,3527
+Taiwan,2021,7833
+Taiwan,2022,72318
+Taiwan,2023,131982
+Taiwan,2024,142770
+Hong Kong (SAR of the PRC)2,2015,134187
+Hong Kong (SAR of the PRC)2,2016,152733
+Hong Kong (SAR of the PRC)2,2017,174241
+Hong Kong (SAR of the PRC)2,2018,177835
+Hong Kong (SAR of the PRC)2,2019,124438
+Hong Kong (SAR of the PRC)2,2020,1111
+Hong Kong (SAR of the PRC)2,2021,9584
+Hong Kong (SAR of the PRC)2,2022,72301
+Hong Kong (SAR of the PRC)2,2023,131010
+Hong Kong (SAR of the PRC)2,2024,140232
+Canada,2015,112554
+Canada,2016,133858
+Canada,2017,143514
+Canada,2018,148685
+Canada,2019,114560
+Canada,2020,1948
+Canada,2021,27351
+Canada,2022,111870
+Canada,2023,129273
+Canada,2024,133993
+France,2015,135984
+France,2016,141759
+France,2017,147989
+France,2018,145985
+France,2019,114375
+France,2020,1608
+France,2021,35276
+France,2022,96717
+France,2023,110476
+France,2024,114782
+Philippines,2015,67624
+Philippines,2016,86432
+Philippines,2017,96851
+Philippines,2018,107091
+Philippines,2019,73726
+Philippines,2020,9069
+Philippines,2021,28187
+Philippines,2022,114242
+Philippines,2023,109983
+Philippines,2024,113039
+Indonesia,2015,89403
+Indonesia,2016,111187
+Indonesia,2017,106747
+Indonesia,2018,112762
+Indonesia,2019,72337
+Indonesia,2020,2592
+Indonesia,2021,32106
+Indonesia,2022,116912
+Indonesia,2023,93556
+Indonesia,2024,96785
+Other3,2015,819511
+Other3,2016,914582
+Other3,2017,972522
+Other3,2018,970042
+Other3,2019,739667
+Other3,2020,38646
+Other3,2021,278095
+Other3,2022,874100
+Other3,2023,880915
+Other3,2024,868842
+Total,2015,4799173
+Total,2016,5345684
+Total,2017,5639167
+Total,2018,5686318
+Total,2019,4056603
+Total,2020,167576
+Total,2021,1131890
+Total,2022,3818495
+Total,2023,4713442
+Total,2024,4915854

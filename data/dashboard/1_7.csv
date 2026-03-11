@@ -1,0 +1,73 @@
+indicator,year,value
+Accountants,2019,1532
+Accountants,2020,480
+Accountants,2021,1376
+Accountants,2022,2971
+Accountants,2023,2272
+Accountants,2024,997
+Software and Applications Programmers,2019,272
+Software and Applications Programmers,2020,264
+Software and Applications Programmers,2021,377
+Software and Applications Programmers,2022,491
+Software and Applications Programmers,2023,463
+Software and Applications Programmers,2024,606
+"Industrial, Mechanical and Production Engineers",2019,174
+"Industrial, Mechanical and Production Engineers",2020,245
+"Industrial, Mechanical and Production Engineers",2021,277
+"Industrial, Mechanical and Production Engineers",2022,363
+"Industrial, Mechanical and Production Engineers",2023,809
+"Industrial, Mechanical and Production Engineers",2024,586
+Chefs,2019,411
+Chefs,2020,142
+Chefs,2021,448
+Chefs,2022,983
+Chefs,2023,944
+Chefs,2024,580
+Civil Engineering Professionals,2019,211
+Civil Engineering Professionals,2020,223
+Civil Engineering Professionals,2021,282
+Civil Engineering Professionals,2022,338
+Civil Engineering Professionals,2023,544
+Civil Engineering Professionals,2024,464
+Motor Mechanics,2019,207
+Motor Mechanics,2020,66
+Motor Mechanics,2021,108
+Motor Mechanics,2022,579
+Motor Mechanics,2023,289
+Motor Mechanics,2024,392
+Other Engineering Professionals,2019,166
+Other Engineering Professionals,2020,160
+Other Engineering Professionals,2021,176
+Other Engineering Professionals,2022,246
+Other Engineering Professionals,2023,442
+Other Engineering Professionals,2024,365
+ICT Business and Systems Analysts2,2019,117
+ICT Business and Systems Analysts2,2020,108
+ICT Business and Systems Analysts2,2021,251
+ICT Business and Systems Analysts2,2022,366
+ICT Business and Systems Analysts2,2023,488
+ICT Business and Systems Analysts2,2024,358
+Registered Nurses,2019,897
+Registered Nurses,2020,1353
+Registered Nurses,2021,1162
+Registered Nurses,2022,456
+Registered Nurses,2023,154
+Registered Nurses,2024,299
+Human Resource Professionals,2019,63
+Human Resource Professionals,2020,14
+Human Resource Professionals,2021,49
+Human Resource Professionals,2022,99
+Human Resource Professionals,2023,136
+Human Resource Professionals,2024,262
+Other3,2019,6210
+Other3,2020,2863
+Other3,2021,3922
+Other3,2022,7945
+Other3,2023,7255
+Other3,2024,7487
+Total,2019,10260
+Total,2020,5918
+Total,2021,8428
+Total,2022,14837
+Total,2023,13796
+Total,2024,12396

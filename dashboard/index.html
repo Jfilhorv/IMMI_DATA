@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Australian Immigration — Indicator Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      color: #1a1a1a;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .subtitle {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .controls {
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      font-size: 0.9rem;
+    }
+    select {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+    }
+    .chart-wrap {
+      background: #fff;
+      padding: 1.25rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      margin-bottom: 1.5rem;
+    }
+    .chart-wrap canvas {
+      max-height: 400px;
+    }
+    .source {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+    .source a { color: #0066cc; }
+    .loading { color: #666; }
+    .error { color: #c00; }
+  </style>
+</head>
+<body>
+  <h1>Australian Immigration — Indicator Dashboard</h1>
+  <p class="subtitle">Select an indicator to view time series. Data: Department of Home Affairs, Australian Migration Statistics.</p>
+
+  <div class="controls">
+    <label for="indicator">Select indicator</label>
+    <select id="indicator">
+      <option value="">— Loading —</option>
+    </select>
+  </div>
+
+  <div class="chart-wrap">
+    <canvas id="chart" aria-label="Indicator time series chart"></canvas>
+  </div>
+
+  <p class="source">
+    Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Financial years shown as start year (e.g. 1984 = 1984–85).
+  </p>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+indicator,year,value
+Post-Higher Education Work2,2015,19989.0
+Post-Higher Education Work2,2016,31960.0
+Post-Higher Education Work2,2017,43507.0
+Post-Higher Education Work2,2018,54781.0
+Post-Higher Education Work2,2019,54021.0
+Post-Higher Education Work2,2020,45724.0
+Post-Higher Education Work2,2021,54730.0
+Post-Higher Education Work2,2022,125090.0
+Post-Higher Education Work2,2023,96367.0
+Post-Higher Education Work2,2024,97365.0
+Highly Specialised Work3,2015,43127.0
+Highly Specialised Work3,2016,42260.0
+Highly Specialised Work3,2017,44502.0
+Highly Specialised Work3,2018,43643.0
+Highly Specialised Work3,2019,30296.0
+Highly Specialised Work3,2020,8530.0
+Highly Specialised Work3,2021,18258.0
+Highly Specialised Work3,2022,37616.0
+Highly Specialised Work3,2023,38707.0
+Highly Specialised Work3,2024,36166.0
+Post-Vocational Education Work2,2015,12425.0
+Post-Vocational Education Work2,2016,9419.0
+Post-Vocational Education Work2,2017,8149.0
+Post-Vocational Education Work2,2018,9213.0
+Post-Vocational Education Work2,2019,8982.0
+Post-Vocational Education Work2,2020,7512.0
+Post-Vocational Education Work2,2021,9056.0
+Post-Vocational Education Work2,2022,53927.0
+Post-Vocational Education Work2,2023,14010.0
+Post-Vocational Education Work2,2024,28964.0
+Entertainment,2015,18689.0
+Entertainment,2016,21452.0
+Entertainment,2017,23379.0
+Entertainment,2018,24194.0
+Entertainment,2019,18984.0
+Entertainment,2020,2159.0
+Entertainment,2021,5690.0
+Entertainment,2022,22120.0
+Entertainment,2023,24075.0
+Entertainment,2024,24861.0
+Pacific Australia Labour Mobility Scheme4,2021,4629.0
+Pacific Australia Labour Mobility Scheme4,2022,30350.0
+Pacific Australia Labour Mobility Scheme4,2023,25239.0
+Pacific Australia Labour Mobility Scheme4,2024,24609.0
+Invited for Other Social and Cultural Activity5,2016,4459.0
+Invited for Other Social and Cultural Activity5,2017,13921.0
+Invited for Other Social and Cultural Activity5,2018,16175.0
+Invited for Other Social and Cultural Activity5,2019,12762.0
+Invited for Other Social and Cultural Activity5,2020,1686.0
+Invited for Other Social and Cultural Activity5,2021,7528.0
+Invited for Other Social and Cultural Activity5,2022,16370.0
+Invited for Other Social and Cultural Activity5,2023,16124.0
+Invited for Other Social and Cultural Activity5,2024,15751.0
+Temporary Resident - Other (Not Further Specified),2015,1351.0
+Temporary Resident - Other (Not Further Specified),2016,3597.0
+Temporary Resident - Other (Not Further Specified),2017,5770.0
+Temporary Resident - Other (Not Further Specified),2018,6299.0
+Temporary Resident - Other (Not Further Specified),2019,6088.0
+Temporary Resident - Other (Not Further Specified),2020,1869.0
+Temporary Resident - Other (Not Further Specified),2021,3052.0
+Temporary Resident - Other (Not Further Specified),2022,8509.0
+Temporary Resident - Other (Not Further Specified),2023,7513.0
+Temporary Resident - Other (Not Further Specified),2024,6224.0
+Family (Temporary),2015,2700.0
+Family (Temporary),2016,1919.0
+Family (Temporary),2017,1036.0
+Family (Temporary),2018,1184.0
+Family (Temporary),2019,2481.0
+Family (Temporary),2020,2831.0
+Family (Temporary),2021,5523.0
+Family (Temporary),2022,8075.0
+Family (Temporary),2023,6848.0
+Family (Temporary),2024,6137.0
+Research Activities,2015,3428.0
+Research Activities,2016,4283.0
+Research Activities,2017,6227.0
+Research Activities,2018,7070.0
+Research Activities,2019,5399.0
+Research Activities,2020,242.0
+Research Activities,2021,2001.0
+Research Activities,2022,4671.0
+Research Activities,2023,5429.0
+Research Activities,2024,3104.0
+Diplomatic,2015,2895.0
+Diplomatic,2016,2938.0
+Diplomatic,2017,3081.0
+Diplomatic,2018,3007.0
+Diplomatic,2019,2504.0
+Diplomatic,2020,3010.0
+Diplomatic,2021,2926.0
+Diplomatic,2022,2847.0
+Diplomatic,2023,2702.0
+Diplomatic,2024,2664.0
+Australian Government Endorsed Events5,2017,14781.0
+Australian Government Endorsed Events5,2018,1135.0
+Australian Government Endorsed Events5,2019,3276.0
+Australian Government Endorsed Events5,2020,22929.0
+Australian Government Endorsed Events5,2021,31268.0
+Australian Government Endorsed Events5,2022,148311.0
+Australian Government Endorsed Events5,2023,76597.0
+Australian Government Endorsed Events5,2024,2385.0
+Religious Work,2015,1853.0
+Religious Work,2016,2118.0
+Religious Work,2017,2281.0
+Religious Work,2018,1991.0
+Religious Work,2019,1925.0
+Religious Work,2020,600.0
+Religious Work,2021,1016.0
+Religious Work,2022,2506.0
+Religious Work,2023,1449.0
+Religious Work,2024,2310.0
+Sporting Activities,2015,583.0
+Sporting Activities,2016,2022.0
+Sporting Activities,2017,1178.0
+Sporting Activities,2018,1349.0
+Sporting Activities,2019,1446.0
+Sporting Activities,2020,701.0
+Sporting Activities,2021,996.0
+Sporting Activities,2022,1581.0
+Sporting Activities,2023,1248.0
+Sporting Activities,2024,1399.0
+Government Agreement,2015,651.0
+Government Agreement,2016,935.0
+Government Agreement,2017,821.0
+Government Agreement,2018,1035.0
+Government Agreement,2019,1201.0
+Government Agreement,2020,494.0
+Government Agreement,2021,710.0
+Government Agreement,2022,908.0
+Government Agreement,2023,1142.0
+Government Agreement,2024,1261.0
+Special Programs,2015,1754.0
+Special Programs,2016,1737.0
+Special Programs,2017,1760.0
+Special Programs,2018,1369.0
+Special Programs,2019,721.0
+Special Programs,2020,42.0
+Special Programs,2021,242.0
+Special Programs,2022,682.0
+Special Programs,2023,782.0
+Special Programs,2024,673.0
+Other6,2015,21362.0
+Other6,2016,16001.0
+Other6,2017,10066.0
+Other6,2018,13703.0
+Other6,2019,12022.0
+Other6,2020,9319.0
+Other6,2021,12850.0
+Other6,2022,976.0
+Other6,2023,1134.0
+Other6,2024,1547.0
+Total,2015,130807.0
+Total,2016,145100.0
+Total,2017,180459.0
+Total,2018,186148.0
+Total,2019,162108.0
+Total,2020,107648.0
+Total,2021,160475.0
+Total,2022,464539.0
+Total,2023,319366.0
+Total,2024,255420.0

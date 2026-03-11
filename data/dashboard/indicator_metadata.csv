@@ -1,0 +1,406 @@
+indicator_id,indicator_name,category
+1_0_skill_stream,Skill stream,1_0
+1_0_family_stream1,Family stream1,1_0
+1_0_child_stream2,Child stream2,1_0
+1_0_special_eligibility,Special Eligibility,1_0
+1_0_total3,Total3,1_0
+1_1_employer_sponsored1,Employer Sponsored1,1_1
+1_1_stateterritory_nominated,State/Territory Nominated,1_1
+1_1_regional2,Regional2,1_1
+1_1_skilled_independent,Skilled Independent,1_1
+1_1_global_talent_independent3,Global Talent (Independent)3,1_1
+1_1_business_innovation_investment4,Business Innovation & Investment4,1_1
+1_1_distinguished_talent,Distinguished Talent,1_1
+1_1_national_innovation5,National Innovation5,1_1
+1_1_skilled_regional6,Skilled Regional6,1_1
+1_1_skill_stream_total,Skill stream total,1_1
+1_1_partner7,Partner7,1_1
+1_1_parent,Parent,1_1
+1_1_child8,Child8,1_1
+1_1_other_family9,Other Family9,1_1
+1_1_family_stream_total10,Family stream total10,1_1
+1_1_child_stream_total,Child stream total,1_1
+1_1_special_eligibility_total,Special Eligibility total,1_1
+1_1_total10,Total10,1_1
+1_10_india,India,1_10
+1_10_peoples_republic_of_china1,People's Republic of China1,1_10
+1_10_united_kingdom,United Kingdom,1_10
+1_10_nepal,Nepal,1_10
+1_10_pakistan,Pakistan,1_10
+1_10_philippines,Philippines,1_10
+1_10_sri_lanka,Sri Lanka,1_10
+1_10_hong_kong_sar_of_the_prc2,Hong Kong (SAR of the PRC)2,1_10
+1_10_ireland,Ireland,1_10
+1_10_malaysia,Malaysia,1_10
+1_10_iran,Iran,1_10
+1_10_vietnam,Vietnam,1_10
+1_10_south_africa,South Africa,1_10
+1_10_brazil,Brazil,1_10
+1_10_singapore,Singapore,1_10
+1_10_other3,Other3,1_10
+1_10_total,Total,1_10
+1_12_india,India,1_12
+1_12_pakistan,Pakistan,1_12
+1_12_philippines,Philippines,1_12
+1_12_sri_lanka,Sri Lanka,1_12
+1_12_nepal,Nepal,1_12
+1_12_peoples_republic_of_china2,People's Republic of China2,1_12
+1_12_united_kingdom,United Kingdom,1_12
+1_12_iran,Iran,1_12
+1_12_bangladesh,Bangladesh,1_12
+1_12_zimbabwe,Zimbabwe,1_12
+1_12_south_africa,South Africa,1_12
+1_12_nigeria,Nigeria,1_12
+1_12_kenya,Kenya,1_12
+1_12_vietnam,Vietnam,1_12
+1_12_egypt,Egypt,1_12
+1_12_other3,Other3,1_12
+1_12_total,Total,1_12
+1_13_industrial_mechanical_and_production_engineers,"Industrial, Mechanical and Production Engineers",1_13
+1_13_civil_engineering_professionals,Civil Engineering Professionals,1_13
+1_13_electronics_engineers,Electronics Engineers,1_13
+1_13_registered_nurses,Registered Nurses,1_13
+1_13_electrical_engineers,Electrical Engineers,1_13
+1_13_tele_communications_engineering_professionals,"Tele-
+communications Engineering Professionals",1_13
+1_13_motor_mechanics,Motor Mechanics,1_13
+1_13_chemical_and_materials_engineers,Chemical and Materials Engineers,1_13
+1_13_software_and_applications_programmers,Software and Applications Programmers,1_13
+1_13_database_and_systems_administrators_and_ict_security_specialists2,"Database and Systems Administrators, and ICT Security Specialists2",1_13
+1_13_other,Other,1_13
+1_13_total,Total,1_13
+1_15_india,India,1_15
+1_15_peoples_republic_of_china2,People's Republic of China2,1_15
+1_15_hong_kong_sar_of_the_prc3,Hong Kong (SAR of the PRC)3,1_15
+1_15_pakistan,Pakistan,1_15
+1_15_vietnam,Vietnam,1_15
+1_15_united_states_of_america,United States of America,1_15
+1_15_iran,Iran,1_15
+1_15_taiwan,Taiwan,1_15
+1_15_united_kingdom,United Kingdom,1_15
+1_15_singapore,Singapore,1_15
+1_15_bangladesh,Bangladesh,1_15
+1_15_sri_lanka,Sri Lanka,1_15
+1_15_israel,Israel,1_15
+1_15_south_africa,South Africa,1_15
+1_15_russian_federation,Russian Federation,1_15
+1_15_other4,Other4,1_15
+1_15_total,Total,1_15
+1_16_peoples_republic_of_china1,People's Republic of China1,1_16
+1_16_india,India,1_16
+1_16_afghanistan,Afghanistan,1_16
+1_16_philippines,Philippines,1_16
+1_16_vietnam,Vietnam,1_16
+1_16_pakistan,Pakistan,1_16
+1_16_united_kingdom,United Kingdom,1_16
+1_16_thailand,Thailand,1_16
+1_16_united_states_of_america,United States of America,1_16
+1_16_lebanon,Lebanon,1_16
+1_16_sri_lanka,Sri Lanka,1_16
+1_16_indonesia,Indonesia,1_16
+1_16_nepal,Nepal,1_16
+1_16_iraq,Iraq,1_16
+1_16_colombia,Colombia,1_16
+1_16_other2,Other2,1_16
+1_16_total,Total,1_16
+1_18_regional1,Regional1,1_18
+1_18_stateterritory_nominated,State/Territory Nominated,1_18
+1_18_employer_sponsored,Employer Sponsored,1_18
+1_18_skilled_independent,Skilled Independent,1_18
+1_18_global_talent_independent2,Global Talent (Independent)2,1_18
+1_18_business_innovation_and_investment3,Business Innovation and Investment3,1_18
+1_18_distinguished_talent,Distinguished Talent,1_18
+1_18_skilled_regional4,Skilled Regional4,1_18
+1_18_skill_stream_total,Skill stream total,1_18
+1_18_partner,Partner,1_18
+1_18_all_other_family_stream_visas5,"All other
+Family stream visas5",1_18
+1_18_family_stream_total,Family stream total,1_18
+1_18_special_eligibility_total,Special Eligibility total,1_18
+1_18_child_stream_total,Child stream total,1_18
+1_18_total,Total,1_18
+1_2_female,Female,1_2
+1_2__female,% Female,1_2
+1_2_male,Male,1_2
+1_2__male,% Male,1_2
+1_2_total1,Total1,1_2
+1_2_female_1,Female_1,1_2
+1_2__female_1,% Female_1,1_2
+1_2_male_1,Male_1,1_2
+1_2__male_1,% Male_1,1_2
+1_2_total1_1,Total1_1,1_2
+1_2_female_2,Female_2,1_2
+1_2__female_2,% Female_2,1_2
+1_2_male_2,Male_2,1_2
+1_2__male_2,% Male_2,1_2
+1_2_total1_2,Total1_2,1_2
+1_2_female_3,Female_3,1_2
+1_2__female_3,% Female_3,1_2
+1_2_male_3,Male_3,1_2
+1_2__male_3,% Male_3,1_2
+1_2_total1_3,Total1_3,1_2
+1_2_female_4,Female_4,1_2
+1_2__female_4,% Female_4,1_2
+1_2_male_4,Male_4,1_2
+1_2__male_4,% Male_4,1_2
+1_2_total1_4,Total1_4,1_2
+1_2_female_5,Female_5,1_2
+1_2__female_5,% Female_5,1_2
+1_2_male_5,Male_5,1_2
+1_2__male_5,% Male_5,1_2
+1_2_total1_5,Total1_5,1_2
+1_2_outside_australia,Outside Australia,1_2
+1_2__outside_australia,% Outside Australia,1_2
+1_2_in_australia,In Australia,1_2
+1_2__in_australia,% In Australia,1_2
+1_2_total,Total,1_2
+1_3_india,India,1_3
+1_3_united_kingdom,United Kingdom,1_3
+1_3_philippines,Philippines,1_3
+1_3_south_africa,South Africa,1_3
+1_3_sri_lanka,Sri Lanka,1_3
+1_3_peoples_republic_of_china1,People's Republic of China1,1_3
+1_3_nepal,Nepal,1_3
+1_3_ireland,Ireland,1_3
+1_3_brazil,Brazil,1_3
+1_3_pakistan,Pakistan,1_3
+1_3_republic_of_korea,Republic of Korea,1_3
+1_3_italy,Italy,1_3
+1_3_zimbabwe,Zimbabwe,1_3
+1_3_colombia,Colombia,1_3
+1_3_vietnam,Vietnam,1_3
+1_3_other2,Other2,1_3
+1_3_total,Total,1_3
+1_4_accommodation_and_food_services,Accommodation and Food Services,1_4
+1_4_administrative_and_support_services,Administrative and Support Services,1_4
+1_4_agriculture_forestry_and_fishing,"Agriculture, Forestry and Fishing",1_4
+1_4_arts_and_recreation_services,Arts and Recreation Services,1_4
+1_4_construction,Construction,1_4
+1_4_education_and_training,Education and Training,1_4
+1_4_electricity_gas_water_and_waste_services,"Electricity, Gas, Water and Waste Services",1_4
+1_4_financial_and_insurance_services,Financial and Insurance Services,1_4
+1_4_health_care_and_social_assistance,Health Care and Social Assistance,1_4
+1_4_information_media_and_telecommunications,Information Media and Telecommunications,1_4
+1_4_manufacturing,Manufacturing,1_4
+1_4_mining,Mining,1_4
+1_4_other_services,Other Services,1_4
+1_4_professional_scientific_and_technical_services,"Professional, Scientific and Technical Services",1_4
+1_4_public_administration_and_safety,Public Administration and Safety,1_4
+1_4_rental_hiring_and_real_estate_services,"Rental, Hiring and Real Estate Services",1_4
+1_4_retail_trade,Retail Trade,1_4
+1_4_transport_postal_and_warehousing,Transport Postal and Warehousing,1_4
+1_4_wholesale_trade,Wholesale Trade,1_4
+1_4_not_specified,Not Specified,1_4
+1_4_total,Total,1_4
+1_6_india,India,1_6
+1_6_sri_lanka,Sri Lanka,1_6
+1_6_pakistan,Pakistan,1_6
+1_6_nepal,Nepal,1_6
+1_6_philippines,Philippines,1_6
+1_6_peoples_republic_of_china2,People's Republic of China2,1_6
+1_6_bangladesh,Bangladesh,1_6
+1_6_iran,Iran,1_6
+1_6_united_kingdom,United Kingdom,1_6
+1_6_bhutan,Bhutan,1_6
+1_6_south_africa,South Africa,1_6
+1_6_vietnam,Vietnam,1_6
+1_6_nigeria,Nigeria,1_6
+1_6_egypt,Egypt,1_6
+1_6_zimbabwe,Zimbabwe,1_6
+1_6_other3,Other3,1_6
+1_6_total,Total,1_6
+1_7_accountants,Accountants,1_7
+1_7_software_and_applications_programmers,Software and Applications Programmers,1_7
+1_7_industrial_mechanical_and_production_engineers,"Industrial, Mechanical and Production Engineers",1_7
+1_7_chefs,Chefs,1_7
+1_7_civil_engineering_professionals,Civil Engineering Professionals,1_7
+1_7_motor_mechanics,Motor Mechanics,1_7
+1_7_other_engineering_professionals,Other Engineering Professionals,1_7
+1_7_ict_business_and_systems_analysts2,ICT Business and Systems Analysts2,1_7
+1_7_registered_nurses,Registered Nurses,1_7
+1_7_human_resource_professionals,Human Resource Professionals,1_7
+1_7_other3,Other3,1_7
+1_7_total,Total,1_7
+1_8_india,India,1_8
+1_8_peoples_republic_of_china1,People's Republic of China1,1_8
+1_8_nepal,Nepal,1_8
+1_8_pakistan,Pakistan,1_8
+1_8_sri_lanka,Sri Lanka,1_8
+1_8_united_kingdom,United Kingdom,1_8
+1_8_philippines,Philippines,1_8
+1_8_malaysia,Malaysia,1_8
+1_8_south_africa,South Africa,1_8
+1_8_bhutan,Bhutan,1_8
+1_8_iran,Iran,1_8
+1_8_vietnam,Vietnam,1_8
+1_8_bangladesh,Bangladesh,1_8
+1_8_ireland,Ireland,1_8
+1_8_brazil,Brazil,1_8
+1_8_other2,Other2,1_8
+1_8_total,Total,1_8
+1_9_software_and_applications_programmers,Software and Applications Programmers,1_9
+1_9_accountants,Accountants,1_9
+1_9_ict_business_and_systems_analysts2,ICT Business and Systems Analysts2,1_9
+1_9_civil_engineering_professionals,Civil Engineering Professionals,1_9
+1_9_industrial_mechanical_and_production_engineers,"Industrial, Mechanical and Production Engineers",1_9
+1_9_registered_nurses,Registered Nurses,1_9
+1_9_chefs,Chefs,1_9
+1_9_electrical_engineers,Electrical Engineers,1_9
+1_9_other_engineering_professionals,Other Engineering Professionals,1_9
+1_9_early_childhood_pre_primary_school_teachers,Early Childhood (Pre-primary School) Teachers,1_9
+1_9_other3,Other3,1_9
+1_9_total,Total,1_9
+2_0_visitor,Visitor,2_0
+2_0_special_category,Special Category,2_0
+2_0_crew_and_transit,Crew and Transit,2_0
+2_0_student,Student,2_0
+2_0_working_holiday_maker,Working Holiday Maker,2_0
+2_0_temporary_resident_other_employment,Temporary Resident (Other Employment),2_0
+2_0_temporary_resident_skilled_employment1,Temporary Resident (Skilled Employment)1,2_0
+2_0_other_temporary,Other Temporary,2_0
+2_0_total2,Total2,2_0
+2_1_temporary_resident_skilled_employment,Temporary Resident (Skilled Employment),2_1
+2_1_temporary_graduate,Temporary Graduate,2_1
+2_1_visitors,Visitors,2_1
+2_1_working_holiday_maker,Working Holiday Maker,2_1
+2_1_student,Student,2_1
+2_1_all_other_visas,All other visas,2_1
+2_1_no_previous_visa_held_or_known,No previous visa held or known,2_1
+2_1_total,Total,2_1
+2_1_temporary_resident_skilled_employment_1,Temporary Resident (Skilled Employment)_1,2_1
+2_1_temporary_graduate_1,Temporary Graduate_1,2_1
+2_1_visitors_1,Visitors_1,2_1
+2_1_working_holiday_maker_1,Working Holiday Maker_1,2_1
+2_1_student_1,Student_1,2_1
+2_1_all_other_visas_1,All other visas_1,2_1
+2_1_no_previous_visa_held_or_known_1,No previous visa held or known_1,2_1
+2_1_total_1,Total_1,2_1
+2_1_temporary_resident_skilled_employment_2,Temporary Resident (Skilled Employment)_2,2_1
+2_1_temporary_graduate_2,Temporary Graduate_2,2_1
+2_1_visitors_2,Visitors_2,2_1
+2_1_working_holiday_maker_2,Working Holiday Maker_2,2_1
+2_1_student_2,Student_2,2_1
+2_1_all_other_visas_2,All other visas_2,2_1
+2_1_no_previous_visa_held_or_known_2,No previous visa held or known_2,2_1
+2_1_total_2,Total_2,2_1
+2_2_primary_applicant,Primary applicant,2_2
+2_2_secondary_applicant,Secondary applicant,2_2
+2_2_total,Total,2_2
+2_3_post_higher_education_work2,Post-Higher Education Work2,2_3
+2_3_highly_specialised_work3,Highly Specialised Work3,2_3
+2_3_post_vocational_education_work2,Post-Vocational Education Work2,2_3
+2_3_entertainment,Entertainment,2_3
+2_3_pacific_australia_labour_mobility_scheme4,Pacific Australia Labour Mobility Scheme4,2_3
+2_3_invited_for_other_social_and_cultural_activity5,Invited for Other Social and Cultural Activity5,2_3
+2_3_temporary_resident_other_not_further_specified,Temporary Resident - Other (Not Further Specified),2_3
+2_3_family_temporary,Family (Temporary),2_3
+2_3_research_activities,Research Activities,2_3
+2_3_diplomatic,Diplomatic,2_3
+2_3_australian_government_endorsed_events5,Australian Government Endorsed Events5,2_3
+2_3_religious_work,Religious Work,2_3
+2_3_sporting_activities,Sporting Activities,2_3
+2_3_government_agreement,Government Agreement,2_3
+2_3_special_programs,Special Programs,2_3
+2_3_other6,Other6,2_3
+2_3_total,Total,2_3
+2_4_peoples_republic_of_china1,People's Republic of China1,2_4
+2_4_united_states_of_america,United States of America,2_4
+2_4_united_kingdom,United Kingdom,2_4
+2_4_republic_of_korea,Republic of Korea,2_4
+2_4_japan,Japan,2_4
+2_4_india,India,2_4
+2_4_singapore,Singapore,2_4
+2_4_malaysia,Malaysia,2_4
+2_4_germany,Germany,2_4
+2_4_taiwan,Taiwan,2_4
+2_4_hong_kong_sar_of_the_prc2,Hong Kong (SAR of the PRC)2,2_4
+2_4_canada,Canada,2_4
+2_4_france,France,2_4
+2_4_philippines,Philippines,2_4
+2_4_indonesia,Indonesia,2_4
+2_4_other3,Other3,2_4
+2_4_total,Total,2_4
+3_0_refugee,Refugee,3_0
+3_0_special_humanitarian_program,Special Humanitarian Program,3_0
+3_0_total,Total,3_0
+3_0__of_total_program,% of total Program,3_0
+3_0_total_1,Total_1,3_0
+3_0__of_total_program_1,% of total Program_1,3_0
+3_0_total_humanitarian_program_grants,Total Humanitarian Program grants,3_0
+3_2_total,Total,3_2
+3_2_female,Female,3_2
+3_2_total_1,Total_1,3_2
+3_2_female_1,Female_1,3_2
+3_2_total_2,Total_2,3_2
+3_2_female_2,Female_2,3_2
+3_2_total_3,Total_3,3_2
+3_2_female_3,Female_3,3_2
+3_2_total_4,Total_4,3_2
+3_2_female_4,Female_4,3_2
+3_2_total_5,Total_5,3_2
+3_2_female_5,Female_5,3_2
+3_2_total_6,Total_6,3_2
+3_2_female_6,Female_6,3_2
+3_2_total_7,Total_7,3_2
+3_2_female_7,Female_7,3_2
+3_2_total_8,Total_8,3_2
+3_2_female_8,Female_8,3_2
+3_2_total_9,Total_9,3_2
+3_2_female_9,Female_9,3_2
+3_2_total_10,Total_10,3_2
+3_2_female_10,Female_10,3_2
+3_2_total1,Total1,3_2
+3_2_female_11,Female_11,3_2
+3_3_malaysia,Malaysia,3_3
+3_3_myanmar,Myanmar,3_3
+3_3_iran,Iran,3_3
+3_3_peoples_republic_of_china1,People’s Republic of China1,3_3
+3_3_pakistan,Pakistan,3_3
+3_3_papua_new_guinea,Papua New Guinea,3_3
+3_3_afghanistan,Afghanistan,3_3
+3_3_yemen,Yemen,3_3
+3_3_fiji,Fiji,3_3
+3_3_vietnam,Vietnam,3_3
+3_3_other,Other,3_3
+3_3_total,Total,3_3
+3_4_temporary_protection,Temporary Protection,3_4
+3_4_safe_haven_enterprise,Safe Haven Enterprise,3_4
+4_0_student,Student,4_0
+4_0_temporary_resident,Temporary Resident,4_0
+4_0_visitor,Visitor,4_0
+4_0_working_holiday,Working Holiday,4_0
+4_0_all_other_categories,All other categories,4_0
+4_0_total,Total,4_0
+4_1_peoples_republic_of_china1,People's Republic of China1,4_1
+4_1_india,India,4_1
+4_1_vietnam,Vietnam,4_1
+4_1_united_kingdom,United Kingdom,4_1
+4_1_united_states_of_america,United States of America,4_1
+4_1_philippines,Philippines,4_1
+4_1_thailand,Thailand,4_1
+4_1_indonesia,Indonesia,4_1
+4_1_fiji,Fiji,4_1
+4_1_malaysia,Malaysia,4_1
+4_1_all_other_countries2,All other countries2,4_1
+4_1_total3,Total3,4_1
+4_2_removals_from_onshore_immigration_detention,Removals from onshore immigration detention,4_2
+4_2_returns_from_the_community1,Returns from the community1,4_2
+4_2_total2,Total2,4_2
+4_3_visitor,Visitor,4_3
+4_3_student,Student,4_3
+4_3_temporary_resident,Temporary Resident,4_3
+4_3_working_holiday,Working Holiday,4_3
+4_3_all_other_categories,All other categories,4_3
+4_3_total1,Total1,4_3
+4_4_india,India,4_4
+4_4_peoples_republic_of_china2,People's Republic of China2,4_4
+4_4_malaysia,Malaysia,4_4
+4_4_new_zealand,New Zealand,4_4
+4_4_indonesia,Indonesia,4_4
+4_4_united_kingdom,United Kingdom,4_4
+4_4_vietnam,Vietnam,4_4
+4_4_colombia,Colombia,4_4
+4_4_philippines,Philippines,4_4
+4_4_fiji,Fiji,4_4
+4_4_all_other_countries3,All other countries3,4_4
+4_4_total4,Total4,4_4

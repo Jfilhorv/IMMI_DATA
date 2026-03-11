@@ -1,0 +1,217 @@
+indicator,year,value
+Visitor,2001,3364335
+Visitor,2002,3265315
+Visitor,2003,3492097
+Visitor,2004,3613350
+Visitor,2005,3598896
+Visitor,2006,3672485
+Visitor,2007,3647946
+Visitor,2008,3378969
+Visitor,2009,3444262
+Visitor,2010,3540505
+Visitor,2011,3558483
+Visitor,2012,3750640
+Visitor,2013,3990248
+Visitor,2014,4308107
+Visitor,2015,4799173
+Visitor,2016,5345684
+Visitor,2017,5639167
+Visitor,2018,5686318
+Visitor,2019,4056603
+Visitor,2020,167576
+Visitor,2021,1131890
+Visitor,2022,3818495
+Visitor,2023,4713442
+Visitor,2024,4915854
+Special Category,2001,964300
+Special Category,2002,968417
+Special Category,2003,1130623
+Special Category,2004,1311194
+Special Category,2005,1330974
+Special Category,2006,1377978
+Special Category,2007,1430189
+Special Category,2008,1441125
+Special Category,2009,1487375
+Special Category,2010,1589422
+Special Category,2011,1675697
+Special Category,2012,1705150
+Special Category,2013,1762890
+Special Category,2014,1798220
+Special Category,2015,1850308
+Special Category,2016,1921561
+Special Category,2017,1856614
+Special Category,2018,1889988
+Special Category,2019,1396835
+Special Category,2020,143023
+Special Category,2021,302226
+Special Category,2022,1428081
+Special Category,2023,1786486
+Special Category,2024,1873536
+Crew and Transit,2001,34351
+Crew and Transit,2002,38254
+Crew and Transit,2003,40667
+Crew and Transit,2004,37952
+Crew and Transit,2005,35651
+Crew and Transit,2006,38590
+Crew and Transit,2007,388828
+Crew and Transit,2008,212192
+Crew and Transit,2009,221585
+Crew and Transit,2010,288995
+Crew and Transit,2011,265849
+Crew and Transit,2012,298217
+Crew and Transit,2013,322126
+Crew and Transit,2014,320521
+Crew and Transit,2015,345873
+Crew and Transit,2016,352394
+Crew and Transit,2017,351516
+Crew and Transit,2018,347744
+Crew and Transit,2019,308233
+Crew and Transit,2020,256969
+Crew and Transit,2021,275549
+Crew and Transit,2022,402150
+Crew and Transit,2023,394332
+Crew and Transit,2024,405266
+Student,2001,153631
+Student,2002,162716
+Student,2003,171579
+Student,2004,175277
+Student,2005,191319
+Student,2006,230794
+Student,2007,278704
+Student,2008,319630
+Student,2009,270493
+Student,2010,250435
+Student,2011,253047
+Student,2012,259278
+Student,2013,292060
+Student,2014,299540
+Student,2015,310845
+Student,2016,343035
+Student,2017,378292
+Student,2018,405742
+Student,2019,340152
+Student,2020,232750
+Student,2021,263737
+Student,2022,577295
+Student,2023,376731
+Student,2024,371564
+Working Holiday Maker,2001,85241
+Working Holiday Maker,2002,88747
+Working Holiday Maker,2003,93893
+Working Holiday Maker,2004,105051
+Working Holiday Maker,2005,115444
+Working Holiday Maker,2006,136805
+Working Holiday Maker,2007,157827
+Working Holiday Maker,2008,194316
+Working Holiday Maker,2009,183168
+Working Holiday Maker,2010,192922
+Working Holiday Maker,2011,222992
+Working Holiday Maker,2012,258248
+Working Holiday Maker,2013,239592
+Working Holiday Maker,2014,226812
+Working Holiday Maker,2015,214583
+Working Holiday Maker,2016,211011
+Working Holiday Maker,2017,210456
+Working Holiday Maker,2018,209036
+Working Holiday Maker,2019,149249
+Working Holiday Maker,2020,39586
+Working Holiday Maker,2021,97359
+Working Holiday Maker,2022,224431
+Working Holiday Maker,2023,234556
+Working Holiday Maker,2024,321116
+Temporary Resident (Other Employment),2001,45681
+Temporary Resident (Other Employment),2002,51006
+Temporary Resident (Other Employment),2003,51419
+Temporary Resident (Other Employment),2004,51651
+Temporary Resident (Other Employment),2005,46510
+Temporary Resident (Other Employment),2006,45136
+Temporary Resident (Other Employment),2007,44183
+Temporary Resident (Other Employment),2008,52383
+Temporary Resident (Other Employment),2009,56821
+Temporary Resident (Other Employment),2010,57863
+Temporary Resident (Other Employment),2011,77263
+Temporary Resident (Other Employment),2012,80403
+Temporary Resident (Other Employment),2013,104738
+Temporary Resident (Other Employment),2014,119817
+Temporary Resident (Other Employment),2015,130807
+Temporary Resident (Other Employment),2016,145100
+Temporary Resident (Other Employment),2017,180459
+Temporary Resident (Other Employment),2018,186148
+Temporary Resident (Other Employment),2019,162108
+Temporary Resident (Other Employment),2020,107648
+Temporary Resident (Other Employment),2021,160475
+Temporary Resident (Other Employment),2022,464539
+Temporary Resident (Other Employment),2023,319366
+Temporary Resident (Other Employment),2024,255420
+Temporary Resident (Skilled Employment)1,2001,37892
+Temporary Resident (Skilled Employment)1,2002,41665
+Temporary Resident (Skilled Employment)1,2003,42361
+Temporary Resident (Skilled Employment)1,2004,49046
+Temporary Resident (Skilled Employment)1,2005,71696
+Temporary Resident (Skilled Employment)1,2006,87933
+Temporary Resident (Skilled Employment)1,2007,111019
+Temporary Resident (Skilled Employment)1,2008,101432
+Temporary Resident (Skilled Employment)1,2009,68023
+Temporary Resident (Skilled Employment)1,2010,90145
+Temporary Resident (Skilled Employment)1,2011,125075
+Temporary Resident (Skilled Employment)1,2012,126361
+Temporary Resident (Skilled Employment)1,2013,98571
+Temporary Resident (Skilled Employment)1,2014,96084
+Temporary Resident (Skilled Employment)1,2015,85611
+Temporary Resident (Skilled Employment)1,2016,87580
+Temporary Resident (Skilled Employment)1,2017,64470
+Temporary Resident (Skilled Employment)1,2018,81975
+Temporary Resident (Skilled Employment)1,2019,55060
+Temporary Resident (Skilled Employment)1,2020,43195
+Temporary Resident (Skilled Employment)1,2021,61987
+Temporary Resident (Skilled Employment)1,2022,102565
+Temporary Resident (Skilled Employment)1,2023,101533
+Temporary Resident (Skilled Employment)1,2024,130571
+Other Temporary,2001,6389
+Other Temporary,2002,6346
+Other Temporary,2003,6810
+Other Temporary,2004,7709
+Other Temporary,2005,7681
+Other Temporary,2006,7783
+Other Temporary,2007,8407
+Other Temporary,2008,7972
+Other Temporary,2009,8255
+Other Temporary,2010,9285
+Other Temporary,2011,9372
+Other Temporary,2012,9313
+Other Temporary,2013,10558
+Other Temporary,2014,11469
+Other Temporary,2015,11387
+Other Temporary,2016,12254
+Other Temporary,2017,13074
+Other Temporary,2018,11886
+Other Temporary,2019,9222
+Other Temporary,2020,2961
+Other Temporary,2021,3604
+Other Temporary,2022,7810
+Other Temporary,2023,6291
+Other Temporary,2024,5961
+Total2,2001,4691820
+Total2,2002,4622466
+Total2,2003,5029449
+Total2,2004,5351230
+Total2,2005,5398171
+Total2,2006,5597504
+Total2,2007,6067103
+Total2,2008,5708019
+Total2,2009,5739982
+Total2,2010,6019572
+Total2,2011,6187778
+Total2,2012,6487610
+Total2,2013,6820783
+Total2,2014,7180570
+Total2,2015,7748587
+Total2,2016,8418619
+Total2,2017,8694048
+Total2,2018,8818837
+Total2,2019,6477462
+Total2,2020,993708
+Total2,2021,2296827
+Total2,2022,7025366
+Total2,2023,7932737
+Total2,2024,8279288

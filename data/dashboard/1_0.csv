@@ -1,0 +1,206 @@
+indicator,year,value
+Skill stream,1984,10100
+Skill stream,1985,16200
+Skill stream,1986,28500
+Skill stream,1987,42000
+Skill stream,1988,51200
+Skill stream,1989,52700
+Skill stream,1990,49800
+Skill stream,1991,41400
+Skill stream,1992,21300
+Skill stream,1993,18300
+Skill stream,1994,30400
+Skill stream,1995,24100
+Skill stream,1996,34676
+Skill stream,1997,34446
+Skill stream,1998,34895
+Skill stream,1999,35352
+Skill stream,2000,44721
+Skill stream,2001,53507
+Skill stream,2002,66053
+Skill stream,2003,71243
+Skill stream,2004,77878
+Skill stream,2005,97336
+Skill stream,2006,97922
+Skill stream,2007,108540
+Skill stream,2008,114777
+Skill stream,2009,107868
+Skill stream,2010,113725
+Skill stream,2011,125755
+Skill stream,2012,128973
+Skill stream,2013,128550
+Skill stream,2014,127774
+Skill stream,2015,128550
+Skill stream,2016,123567
+Skill stream,2017,111099
+Skill stream,2018,109713
+Skill stream,2019,95843
+Skill stream,2020,79620
+Skill stream,2021,89063
+Skill stream,2022,142344
+Skill stream,2023,137100
+Skill stream,2024,132148
+Family stream1,1984,43000
+Family stream1,1985,62100
+Family stream1,1986,70700
+Family stream1,1987,77500
+Family stream1,1988,70400
+Family stream1,1989,64500
+Family stream1,1990,59300
+Family stream1,1991,53700
+Family stream1,1992,42600
+Family stream1,1993,40700
+Family stream1,1994,42000
+Family stream1,1995,53870
+Family stream1,1996,34993
+Family stream1,1997,29093
+Family stream1,1998,29967
+Family stream1,1999,29855
+Family stream1,2000,31337
+Family stream1,2001,35920
+Family stream1,2002,38113
+Family stream1,2003,39567
+Family stream1,2004,39245
+Family stream1,2005,42744
+Family stream1,2006,47071
+Family stream1,2007,46808
+Family stream1,2008,53128
+Family stream1,2009,56710
+Family stream1,2010,51243
+Family stream1,2011,54904
+Family stream1,2012,56335
+Family stream1,2013,57262
+Family stream1,2014,56950
+Family stream1,2015,57400
+Family stream1,2016,56220
+Family stream1,2017,47732
+Family stream1,2018,47247
+Family stream1,2019,41961
+Family stream1,2020,77372
+Family stream1,2021,51288
+Family stream1,2022,49500
+Family stream1,2023,49720
+Family stream1,2024,49500
+Child stream2,1984,1200
+Child stream2,1985,1300
+Child stream2,1986,1900
+Child stream2,1987,2000
+Child stream2,1988,2300
+Child stream2,1989,2100
+Child stream2,1990,2000
+Child stream2,1991,2200
+Child stream2,1992,2700
+Child stream2,1993,2500
+Child stream2,1994,2500
+Child stream2,1995,2830
+Child stream2,1996,2183
+Child stream2,1997,2188
+Child stream2,1998,2071
+Child stream2,1999,2162
+Child stream2,2000,2124
+Child stream2,2001,2162
+Child stream2,2002,2681
+Child stream2,2003,2662
+Child stream2,2004,2491
+Child stream2,2005,2547
+Child stream2,2006,3008
+Child stream2,2007,3062
+Child stream2,2008,3238
+Child stream2,2009,3544
+Child stream2,2010,3300
+Child stream2,2011,3700
+Child stream2,2012,3850
+Child stream2,2013,3850
+Child stream2,2014,4135
+Child stream2,2015,3512
+Child stream2,2016,3400
+Child stream2,2017,3350
+Child stream2,2018,3248
+Child stream2,2019,2481
+Child stream2,2020,3006
+Child stream2,2021,3006
+Child stream2,2022,3000
+Child stream2,2023,3000
+Child stream2,2024,3000
+Special Eligibility,1984,200
+Special Eligibility,1985,400
+Special Eligibility,1986,600
+Special Eligibility,1987,600
+Special Eligibility,1988,800
+Special Eligibility,1989,900
+Special Eligibility,1990,1200
+Special Eligibility,1991,1700
+Special Eligibility,1992,1400
+Special Eligibility,1993,1300
+Special Eligibility,1994,1600
+Special Eligibility,1995,1700
+Special Eligibility,1996,1735
+Special Eligibility,1997,1113
+Special Eligibility,1998,888
+Special Eligibility,1999,2868
+Special Eligibility,2000,2415
+Special Eligibility,2001,1465
+Special Eligibility,2002,1225
+Special Eligibility,2003,890
+Special Eligibility,2004,450
+Special Eligibility,2005,306
+Special Eligibility,2006,199
+Special Eligibility,2007,220
+Special Eligibility,2008,175
+Special Eligibility,2009,501
+Special Eligibility,2010,417
+Special Eligibility,2011,639
+Special Eligibility,2012,842
+Special Eligibility,2013,338
+Special Eligibility,2014,238
+Special Eligibility,2015,308
+Special Eligibility,2016,421
+Special Eligibility,2017,236
+Special Eligibility,2018,115
+Special Eligibility,2019,81
+Special Eligibility,2020,54
+Special Eligibility,2021,199
+Special Eligibility,2022,160
+Special Eligibility,2023,180
+Special Eligibility,2024,353
+Total3,1984,54500
+Total3,1985,80000
+Total3,1986,101700
+Total3,1987,122100
+Total3,1988,124700
+Total3,1989,120200
+Total3,1990,112200
+Total3,1991,98900
+Total3,1992,67900
+Total3,1993,62800
+Total3,1994,76500
+Total3,1995,82500
+Total3,1996,73587
+Total3,1997,66840
+Total3,1998,67821
+Total3,1999,70237
+Total3,2000,80597
+Total3,2001,93054
+Total3,2002,108072
+Total3,2003,114362
+Total3,2004,120064
+Total3,2005,142933
+Total3,2006,148200
+Total3,2007,158630
+Total3,2008,171318
+Total3,2009,168623
+Total3,2010,168685
+Total3,2011,184998
+Total3,2012,190000
+Total3,2013,190000
+Total3,2014,189097
+Total3,2015,189770
+Total3,2016,183608
+Total3,2017,162417
+Total3,2018,160323
+Total3,2019,140366
+Total3,2020,160052
+Total3,2021,143556
+Total3,2022,195004
+Total3,2023,190000
+Total3,2024,185001

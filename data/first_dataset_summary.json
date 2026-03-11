@@ -1,0 +1,295 @@
+{
+  "source": "Australian Migration Statistics 2024-25",
+  "url": "https://data.gov.au/data/dataset/dba45e7c-81f4-44aa-9d82-1b9a0a121017/resource/242e6794-9b6a-4d34-a67f-d940e96e6a37/download/migration_trends_statistical_package_2024_25.xlsx",
+  "file": "C:\\Users\\efilh\\IMMI_DATA\\data\\raw\\migration_trends_statistical_package_2024_25.xlsx",
+  "sheets": [
+    {
+      "name": "Overview",
+      "rows": 98,
+      "columns": 2,
+      "csv_file": "by_sheet/Overview.csv"
+    },
+    {
+      "name": "Data Items and Terminology",
+      "rows": 45,
+      "columns": 3,
+      "csv_file": "by_sheet/Data Items and Terminology.csv"
+    },
+    {
+      "name": "1.0",
+      "rows": 53,
+      "columns": 7,
+      "csv_file": "by_sheet/1_0.csv"
+    },
+    {
+      "name": "1.1",
+      "rows": 26,
+      "columns": 20,
+      "csv_file": "by_sheet/1_1.csv"
+    },
+    {
+      "name": "1.2",
+      "rows": 17,
+      "columns": 37,
+      "csv_file": "by_sheet/1_2.csv"
+    },
+    {
+      "name": "1.3",
+      "rows": 17,
+      "columns": 19,
+      "csv_file": "by_sheet/1_3.csv"
+    },
+    {
+      "name": "1.4",
+      "rows": 22,
+      "columns": 23,
+      "csv_file": "by_sheet/1_4.csv"
+    },
+    {
+      "name": "1.5",
+      "rows": 21,
+      "columns": 14,
+      "csv_file": "by_sheet/1_5.csv"
+    },
+    {
+      "name": "1.6",
+      "rows": 14,
+      "columns": 19,
+      "csv_file": "by_sheet/1_6.csv"
+    },
+    {
+      "name": "1.7",
+      "rows": 14,
+      "columns": 14,
+      "csv_file": "by_sheet/1_7.csv"
+    },
+    {
+      "name": "1.8",
+      "rows": 17,
+      "columns": 19,
+      "csv_file": "by_sheet/1_8.csv"
+    },
+    {
+      "name": "1.9",
+      "rows": 18,
+      "columns": 14,
+      "csv_file": "by_sheet/1_9.csv"
+    },
+    {
+      "name": "1.10",
+      "rows": 18,
+      "columns": 19,
+      "csv_file": "by_sheet/1_10.csv"
+    },
+    {
+      "name": "1.11",
+      "rows": 20,
+      "columns": 14,
+      "csv_file": "by_sheet/1_11.csv"
+    },
+    {
+      "name": "1.12",
+      "rows": 18,
+      "columns": 19,
+      "csv_file": "by_sheet/1_12.csv"
+    },
+    {
+      "name": "1.13",
+      "rows": 17,
+      "columns": 14,
+      "csv_file": "by_sheet/1_13.csv"
+    },
+    {
+      "name": "1.14",
+      "rows": 22,
+      "columns": 19,
+      "csv_file": "by_sheet/1_14.csv"
+    },
+    {
+      "name": "1.15",
+      "rows": 15,
+      "columns": 19,
+      "csv_file": "by_sheet/1_15.csv"
+    },
+    {
+      "name": "1.16",
+      "rows": 17,
+      "columns": 19,
+      "csv_file": "by_sheet/1_16.csv"
+    },
+    {
+      "name": "1.17",
+      "rows": 21,
+      "columns": 19,
+      "csv_file": "by_sheet/1_17.csv"
+    },
+    {
+      "name": "1.18",
+      "rows": 22,
+      "columns": 17,
+      "csv_file": "by_sheet/1_18.csv"
+    },
+    {
+      "name": "2.0",
+      "rows": 31,
+      "columns": 11,
+      "csv_file": "by_sheet/2_0.csv"
+    },
+    {
+      "name": "2.1",
+      "rows": 16,
+      "columns": 26,
+      "csv_file": "by_sheet/2_1.csv"
+    },
+    {
+      "name": "2.2",
+      "rows": 15,
+      "columns": 5,
+      "csv_file": "by_sheet/2_2.csv"
+    },
+    {
+      "name": "2.3",
+      "rows": 23,
+      "columns": 19,
+      "csv_file": "by_sheet/2_3.csv"
+    },
+    {
+      "name": "2.4",
+      "rows": 18,
+      "columns": 19,
+      "csv_file": "by_sheet/2_4.csv"
+    },
+    {
+      "name": "3.0",
+      "rows": 17,
+      "columns": 9,
+      "csv_file": "by_sheet/3_0.csv"
+    },
+    {
+      "name": "3.1",
+      "rows": 18,
+      "columns": 26,
+      "csv_file": "by_sheet/3_1.csv"
+    },
+    {
+      "name": "3.2",
+      "rows": 12,
+      "columns": 26,
+      "csv_file": "by_sheet/3_2.csv"
+    },
+    {
+      "name": "3.3",
+      "rows": 9,
+      "columns": 14,
+      "csv_file": "by_sheet/3_3.csv"
+    },
+    {
+      "name": "3.4",
+      "rows": 9,
+      "columns": 4,
+      "csv_file": "by_sheet/3_4.csv"
+    },
+    {
+      "name": "4.0",
+      "rows": 10,
+      "columns": 8,
+      "csv_file": "by_sheet/4_0.csv"
+    },
+    {
+      "name": "4.1",
+      "rows": 11,
+      "columns": 14,
+      "csv_file": "by_sheet/4_1.csv"
+    },
+    {
+      "name": "4.2",
+      "rows": 10,
+      "columns": 5,
+      "csv_file": "by_sheet/4_2.csv"
+    },
+    {
+      "name": "4.3",
+      "rows": 9,
+      "columns": 8,
+      "csv_file": "by_sheet/4_3.csv"
+    },
+    {
+      "name": "4.4",
+      "rows": 13,
+      "columns": 14,
+      "csv_file": "by_sheet/4_4.csv"
+    },
+    {
+      "name": "5.0",
+      "rows": 19,
+      "columns": 18,
+      "csv_file": "by_sheet/5_0.csv"
+    },
+    {
+      "name": "5.1",
+      "rows": 19,
+      "columns": 18,
+      "csv_file": "by_sheet/5_1.csv"
+    },
+    {
+      "name": "6.0",
+      "rows": 11,
+      "columns": 19,
+      "csv_file": "by_sheet/6_0.csv"
+    },
+    {
+      "name": "7.0",
+      "rows": 12,
+      "columns": 6,
+      "csv_file": "by_sheet/7_0.csv"
+    },
+    {
+      "name": "7.1",
+      "rows": 17,
+      "columns": 8,
+      "csv_file": "by_sheet/7_1.csv"
+    },
+    {
+      "name": "7.2",
+      "rows": 15,
+      "columns": 20,
+      "csv_file": "by_sheet/7_2.csv"
+    },
+    {
+      "name": "7.3",
+      "rows": 15,
+      "columns": 20,
+      "csv_file": "by_sheet/7_3.csv"
+    },
+    {
+      "name": "7.4",
+      "rows": 15,
+      "columns": 20,
+      "csv_file": "by_sheet/7_4.csv"
+    },
+    {
+      "name": "7.5",
+      "rows": 15,
+      "columns": 20,
+      "csv_file": "by_sheet/7_5.csv"
+    },
+    {
+      "name": "7.6",
+      "rows": 15,
+      "columns": 20,
+      "csv_file": "by_sheet/7_6.csv"
+    },
+    {
+      "name": "7.7",
+      "rows": 15,
+      "columns": 20,
+      "csv_file": "by_sheet/7_7.csv"
+    },
+    {
+      "name": "7.8",
+      "rows": 15,
+      "columns": 20,
+      "csv_file": "by_sheet/7_8.csv"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+indicator,year,value
+Student,2022,4723
+Student,2023,13966
+Student,2024,21632
+Temporary Resident,2022,4727
+Temporary Resident,2023,4609
+Temporary Resident,2024,6496
+Visitor,2022,4621
+Visitor,2023,8192
+Visitor,2024,6679
+Working Holiday,2022,59
+Working Holiday,2023,703
+Working Holiday,2024,653
+All other categories,2022,1583
+All other categories,2023,1401
+All other categories,2024,2521
+Total,2022,15713
+Total,2023,28871
+Total,2024,37981
