@@ -12,10 +12,13 @@
   <style>
     * { box-sizing: border-box; }
     :root {
-      --bg: #0f1115;
-      --surface: #181b21;
-      --surface2: #1e2229;
-      --border: #2a3038;
+      --bg: #0a0c10;
+      --bg-ice: rgba(15, 22, 35, 0.85);
+      --surface: rgba(24, 30, 42, 0.55);
+      --surface-solid: #181b21;
+      --surface2: rgba(30, 36, 48, 0.7);
+      --border: rgba(60, 80, 110, 0.35);
+      --border-ice: rgba(120, 160, 200, 0.2);
       --text: #e4e7eb;
       --text-muted: #8b929a;
       --accent: #3b82f6;
@@ -26,6 +29,10 @@
       margin: 0;
       padding: 0;
       background: var(--bg);
+      background-image:
+        radial-gradient(ellipse 120% 80% at 50% -20%, rgba(56, 120, 180, 0.12), transparent),
+        radial-gradient(ellipse 80% 50% at 100% 50%, rgba(40, 80, 130, 0.08), transparent),
+        radial-gradient(ellipse 60% 80% at 0% 80%, rgba(30, 70, 120, 0.06), transparent);
       color: var(--text);
       min-height: 100vh;
     }
@@ -44,8 +51,12 @@
     }
     header {
       grid-column: 1 / -1;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 0.75rem;
+      border-radius: 12px;
+      background: rgba(20, 28, 40, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--border-ice);
     }
     h1 {
       font-size: 1.35rem;
@@ -60,12 +71,15 @@
     }
     .sidebar {
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-ice);
+      border-radius: 12px;
       padding: 1rem 1.1rem;
       height: fit-content;
       position: sticky;
       top: 1rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
     }
     .controls label {
       display: block;
@@ -88,6 +102,7 @@
       background: var(--surface2);
       color: var(--text);
       cursor: pointer;
+      backdrop-filter: blur(8px);
     }
     .controls select:focus {
       outline: none;
@@ -102,8 +117,10 @@
     }
     .chart-wrap {
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border-ice);
+      border-radius: 12px;
       padding: 1.25rem 1.5rem;
       flex: 1;
       min-height: 380px;
@@ -111,6 +128,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
     }
     .chart-wrap canvas {
       width: 100% !important;
@@ -127,9 +145,11 @@
       .footer-grid { grid-template-columns: 1fr; }
     }
     .doc-section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      background: rgba(24, 30, 42, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-ice);
+      border-radius: 12px;
       padding: 1.1rem 1.35rem;
     }
     .doc-section h2 {
