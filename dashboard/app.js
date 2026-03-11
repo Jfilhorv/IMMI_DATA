@@ -1,11 +1,16 @@
 (function () {
   'use strict';
 
-  const TABLES_URL = 'data/tables.json';
-  const DATA_URL = 'data/indicators.csv';
-  let tableList = [];
-  let allData = [];
-  let chart = null;
+  var base = (function () {
+    var href = window.location.href;
+    var last = href.lastIndexOf('/');
+    return last >= 0 ? href.slice(0, last + 1) : '';
+  })();
+  var TABLES_URL = base + 'data/tables.json';
+  var DATA_URL = base + 'data/indicators.csv';
+  var tableList = [];
+  var allData = [];
+  var chart = null;
 
   function parseCSVLine(line) {
     const out = [];
@@ -157,33 +162,51 @@
   }
 
   function loadData() {
-    const tableSel = document.getElementById('table');
-    const indSel = document.getElementById('indicator');
+    var tableSel = document.getElementById('table');
+    var indSel = document.getElementById('indicator');
     tableSel.innerHTML = '<option value="">— Loading —</option>';
     tableSel.classList.add('loading');
 
+    function done(errMsg) {
+      tableSel.classList.remove('loading');
+      if (errMsg) {
+        tableSel.innerHTML = '<option value="">' + errMsg + '</option>';
+        tableSel.classList.add('error');
+      }
+    }
+
     Promise.all([
-      fetch(TABLES_URL).then(function (r) { return r.json(); }),
-      fetch(DATA_URL).then(function (r) { return r.text(); })
+      fetch(TABLES_URL).then(function (r) {
+        if (!r.ok) throw new Error('tables.json ' + r.status);
+        return r.json();
+      }),
+      fetch(DATA_URL).then(function (r) {
+        if (!r.ok) throw new Error('indicators.csv ' + r.status);
+        return r.text();
+      })
     ]).then(function (results) {
-      tableList = results[0];
-      allData = parseCSV(results[1]);
-      const dataTablePattern = /^\d+_\d+$/;
-      const tablesWithData = new Set();
-      allData.forEach(function (row) {
-        if (dataTablePattern.test(row.table || '')) tablesWithData.add(row.table);
-      });
-      tableSel.innerHTML = '<option value="">— Select table —</option>' +
-        tableList.filter(function (t) { return tablesWithData.has(t.id); }).map(function (t) {
-          return '<option value="' + escapeHtml(t.id) + '">' + escapeHtml(t.title) + '</option>';
-        }).join('');
-      tableSel.classList.remove('loading');
-      tableSel.addEventListener('change', onTableChange);
-      indSel.addEventListener('change', onIndicatorChange);
+      try {
+        tableList = results[0];
+        if (!Array.isArray(tableList)) throw new Error('Invalid tables.json');
+        allData = parseCSV(results[1]);
+        var dataTablePattern = /^\d+_\d+$/;
+        var tablesWithData = new Set();
+        allData.forEach(function (row) {
+          if (dataTablePattern.test(row.table || '')) tablesWithData.add(row.table);
+        });
+        tableSel.innerHTML = '<option value="">— Select table —</option>' +
+          tableList.filter(function (t) { return tablesWithData.has(t.id); }).map(function (t) {
+            return '<option value="' + escapeHtml(t.id) + '">' + escapeHtml(t.title) + '</option>';
+          }).join('');
+        tableSel.classList.remove('loading');
+        tableSel.addEventListener('change', onTableChange);
+        indSel.addEventListener('change', onIndicatorChange);
+      } catch (e) {
+        done('Error: ' + (e.message || 'invalid data'));
+        console.error(e);
+      }
     }).catch(function (err) {
-      tableSel.innerHTML = '<option value="">Error loading data</option>';
-      tableSel.classList.remove('loading');
-      tableSel.classList.add('error');
+      done('Error loading data');
       console.error(err);
     });
   }
