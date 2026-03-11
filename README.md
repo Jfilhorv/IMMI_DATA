@@ -36,6 +36,22 @@ IMMI_DATA/
 - **Dashboard:** Static dashboard in [dashboard/](dashboard/) (dropdown + Chart.js; copy `data/dashboard/indicators.csv` to `dashboard/data/` and open `dashboard/index.html` or serve the folder).
 - **GitHub Pages:** Not configured (use repo root or `docs/` and link to `dashboard/`).
 
+## Publish to GitHub
+
+The repo is initialized with an initial commit. To push to GitHub:
+
+1. Create a **new repository** on [GitHub](https://github.com/new) (e.g. `IMMI_DATA` or `australian-immigration-dashboard`). Do **not** add a README or .gitignore (you already have them).
+2. In this folder, add the remote and push:
+
+   ```bash
+   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+   git push -u origin main
+   ```
+
+   Or with SSH: `git remote add origin git@github.com:YOUR_USERNAME/YOUR_REPO.git`
+
+3. To enable **GitHub Pages**: repo **Settings → Pages → Source**: choose your branch (e.g. `main`) and folder (e.g. **/ (root)**). The dashboard will be at `https://YOUR_USERNAME.github.io/YOUR_REPO/dashboard/`.
+
 ## Licence and attribution
 
 - Code in this repo: use as you like (e.g. MIT or CC0).
