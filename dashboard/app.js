@@ -91,6 +91,17 @@
     return indicators[0];
   }
 
+  function baseName(ind) {
+    return ind.replace(/\s*\d+$/, '');
+  }
+
+  function indicatorDisplayName(indicator, allIndicators) {
+    var base = baseName(indicator);
+    if (base === indicator) return indicator;
+    var sameBase = allIndicators.filter(function (i) { return baseName(i) === base; });
+    return sameBase.length === 1 ? base : indicator;
+  }
+
   function onSectionChange() {
     var sectionSel = document.getElementById('section');
     var tableSel = document.getElementById('table');
@@ -144,7 +155,8 @@
     indSel.disabled = false;
     indSel.innerHTML = '<option value="">— Select indicator —</option>' +
       indicators.map(function (ind) {
-        return '<option value="' + escapeHtml(ind) + '">' + escapeHtml(ind) + '</option>';
+        var label = indicatorDisplayName(ind, indicators);
+        return '<option value="' + escapeHtml(ind) + '">' + escapeHtml(label) + '</option>';
       }).join('');
     var defaultInd = getDefaultIndicator(indicators);
     indSel.value = defaultInd ? escapeHtml(defaultInd) : '';
