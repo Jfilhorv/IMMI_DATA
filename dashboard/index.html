@@ -60,6 +60,37 @@
     .source a { color: #0066cc; }
     .loading { color: #666; }
     .error { color: #c00; }
+    .doc-section {
+      background: #fff;
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      margin-bottom: 1.5rem;
+    }
+    .doc-section h2 {
+      font-size: 1.15rem;
+      margin: 0 0 0.75rem 0;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .doc-section h3 {
+      font-size: 1rem;
+      margin: 1rem 0 0.4rem 0;
+    }
+    .doc-section p, .doc-section dd {
+      margin: 0 0 0.6rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #333;
+    }
+    .doc-section dt {
+      font-weight: 600;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .doc-section dd { margin-left: 0; }
+    .doc-section a { color: #0066cc; }
+    .doc-section small { color: #666; }
   </style>
 </head>
 <body>
@@ -67,15 +98,55 @@
   <p class="subtitle">Select an indicator to view time series. Data: Department of Home Affairs, Australian Migration Statistics.</p>
 
   <div class="controls">
-    <label for="indicator">Select indicator</label>
-    <select id="indicator">
+    <label for="table">Select table</label>
+    <select id="table">
       <option value="">— Loading —</option>
+    </select>
+    <label for="indicator" style="margin-top: 1rem;">Select indicator</label>
+    <select id="indicator" disabled>
+      <option value="">— Select a table first —</option>
     </select>
   </div>
 
   <div class="chart-wrap">
     <canvas id="chart" aria-label="Indicator time series chart"></canvas>
   </div>
+
+  <section class="doc-section" id="overview">
+    <h2>Overview</h2>
+    <p><strong>Australian Migration Statistics, 2024–25</strong> — Released November 2025.</p>
+    <p>Australian Migration Statistics is produced as an accompaniment to the publication Australia's Migration Trends. Detailed tables are provided summarising migration activity for the financial year including 10-year comparative data. Coverage includes permanent and temporary migration, citizenship, Net Overseas Migration and labour market tables.</p>
+    <p><strong>Report period and frequency:</strong> 2024–25 financial year, published annually.</p>
+    <h3>Caveats</h3>
+    <p>This Australian Migration Statistics dataset provided by the Department of Home Affairs is for statistical and research purposes. Any publications or reports using this data must cite the Department as the source. The Department is not responsible for any analysis or transformation of the data by the requestor in any publications or reports. The Department is entitled to include a statement stating “The views expressed in this report are those of the authors and do not necessarily represent those of the Department of Home Affairs” in such a published report. To the extent permitted by law, the Commonwealth excludes all liability for loss or damage arising from the use of, or reliance on, the information contained in this workbook.</p>
+    <h3>Report contents</h3>
+    <p>Tables in this package cover: Australia's permanent migration outcome (1.0–1.18), temporary entry visas (2.0–2.4), Humanitarian Program (3.0–3.4), visa non-compliance (4.0–4.4), Net Overseas Migration (5.0–5.1), citizenship (6.0), and migration and the labour market (7.0–7.8). Detailed statistical information is available at <a href="https://data.gov.au" target="_blank" rel="noopener">data.gov.au</a> and the Department of Home Affairs website (Research and statistics).</p>
+  </section>
+
+  <section class="doc-section" id="data-items">
+    <h2>Data Items and Terminology</h2>
+    <dl>
+      <dt>Applicant Type</dt>
+      <dd>Under the Migration Regulations 1994 there are two types: primary applicants and secondary applicants. Where a table or graph heading includes the word 'primary', dependants (secondary applicants) are not included.</dd>
+      <dt>Citizenship</dt>
+      <dd>The country of citizenship of the visa applicant or visa holder. Where a person has more than one citizenship, either the citizenship of the travel document or that nominated by the applicant is used.</dd>
+      <dt>Client Location</dt>
+      <dd>The location at the time the application was lodged: In Australia (onshore) or Outside Australia (offshore).</dd>
+      <dt>Humanitarian Program</dt>
+      <dd>Comprised of an offshore resettlement component and an onshore protection component; provides protection to refugees and resettlement in line with Australia's international obligations.</dd>
+      <dt>Migration Program</dt>
+      <dd>The primary pathway to Australian permanent residence. It has three streams: (1) Skill stream, (2) Family stream, (3) Special Eligibility.</dd>
+      <dt>Net Overseas Migration (NOM)</dt>
+      <dd>Net gain or loss of population through people arriving in and departing from Australia, based on duration of stay in or out of Australia for 12 months or more.</dd>
+      <dt>Outcome</dt>
+      <dd>In Migration Program reporting, outcomes are the number of visas granted (net of certain cancellations and exclusions).</dd>
+      <dt>Primary Applicant</dt>
+      <dd>The person who must satisfy the primary criteria for the grant of a visa (principal applicant).</dd>
+      <dt>Secondary Applicant</dt>
+      <dd>Must satisfy secondary criteria; generally a dependant of the primary applicant.</dd>
+    </dl>
+    <p><small>© Commonwealth of Australia. Source: Department of Home Affairs, Australian Migration Statistics.</small></p>
+  </section>
 
   <p class="source">
     Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Financial years shown as start year (e.g. 1984 = 1984–85).
