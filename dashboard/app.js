@@ -293,8 +293,8 @@
         datasets: [{
           label: indicatorName,
           data: values,
-          backgroundColor: 'rgba(59, 130, 246, 0.5)',
-          borderColor: 'rgba(59, 130, 246, 0.9)',
+          backgroundColor: 'rgba(37, 99, 235, 0.5)',
+          borderColor: 'rgba(37, 99, 235, 0.85)',
           borderWidth: 1
         }]
       },
@@ -308,22 +308,22 @@
             anchor: 'end',
             align: 'top',
             rotation: isVerticalLabels ? -90 : 0,
-            color: '#e4e7eb',
+            color: '#4a5568',
             font: { family: 'JetBrains Mono, monospace', size: 10 },
             formatter: function (v) { return typeof v === 'number' && !isNaN(v) ? (v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v) : ''; }
           } : undefined
         },
         scales: {
           x: {
-            grid: { color: 'rgba(42, 48, 56, 0.6)' },
-            ticks: { color: '#8b929a', maxRotation: isVerticalLabels ? 90 : 45 },
-            title: { display: true, text: 'Year (financial year start)', color: '#8b929a' }
+            grid: { color: 'rgba(0, 0, 0, 0.08)' },
+            ticks: { color: '#4a5568', maxRotation: isVerticalLabels ? 90 : 45 },
+            title: { display: true, text: 'Year (financial year start)', color: '#4a5568' }
           },
           y: {
             beginAtZero: true,
-            grid: { color: 'rgba(42, 48, 56, 0.6)' },
-            ticks: { color: '#8b929a' },
-            title: { display: true, text: 'Value', color: '#8b929a' }
+            grid: { color: 'rgba(0, 0, 0, 0.08)' },
+            ticks: { color: '#4a5568' },
+            title: { display: true, text: 'Value', color: '#4a5568' }
           }
         }
       }
