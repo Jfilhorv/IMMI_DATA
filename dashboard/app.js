@@ -24,6 +24,9 @@
   var allData = [];
   var tablesWithData = new Set();
   var chart = null;
+  var chartType = 'bar';
+  var KPI_TABLE = '1_0';
+  var KPI_INDICATORS = ['Skill stream', 'Family stream1', 'Child stream2', 'Special Eligibility', 'Total3'];
 
   function parseCSVLine(line) {
     const out = [];
@@ -77,6 +80,70 @@
     const div = document.createElement('div');
     div.textContent = s;
     return div.innerHTML;
+  }
+
+  function getKpiData() {
+    var out = [];
+    KPI_INDICATORS.forEach(function (ind) {
+      var rows = allData.filter(function (r) { return r.table === KPI_TABLE && r.indicator === ind; });
+      rows.sort(function (a, b) { return a.year - b.year; });
+      var last3 = rows.slice(-3);
+      var latest = last3[last3.length - 1];
+      var prev = last3.length >= 2 ? last3[last3.length - 2] : null;
+      var pct = prev && prev.value && latest ? ((latest.value - prev.value) / prev.value * 100) : null;
+      out.push({ indicator: ind, years: last3.map(function (r) { return r.year; }), values: last3.map(function (r) { return r.value; }), latest: latest ? latest.value : null, pct: pct });
+    });
+    return out;
+  }
+
+  function drawSparkline(canvasId, values) {
+    var el = document.getElementById(canvasId);
+    if (!el || !values || values.length === 0) return;
+    var dpr = window.devicePixelRatio || 1;
+    var w = el.parentElement.clientWidth || 120;
+    var h = 32;
+    el.width = w * dpr;
+    el.height = h * dpr;
+    el.style.width = w + 'px';
+    el.style.height = h + 'px';
+    var ctx = el.getContext('2d');
+    ctx.scale(dpr, dpr);
+    var min = Math.min.apply(null, values);
+    var max = Math.max.apply(null, values);
+    var range = max - min || 1;
+    var pad = 4;
+    var x0 = pad;
+    var x1 = w - pad;
+    var y0 = h - pad;
+    var step = values.length > 1 ? (x1 - x0) / (values.length - 1) : 0;
+    ctx.strokeStyle = '#1e40af';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    values.forEach(function (v, i) {
+      var x = x0 + i * step;
+      var y = y0 - ((v - min) / range) * (h - 2 * pad);
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+  }
+
+  function updateKpiCards() {
+    var data = getKpiData();
+    data.forEach(function (d, i) {
+      var valEl = document.getElementById('kpi-' + i + '-val');
+      var changeEl = document.getElementById('kpi-' + i + '-change');
+      if (valEl) valEl.textContent = d.latest != null ? d.latest.toLocaleString('en-AU', { maximumFractionDigits: 0 }) : '—';
+      if (changeEl) {
+        changeEl.textContent = '';
+        changeEl.className = 'kpi-change neutral';
+        if (d.pct != null && isFinite(d.pct)) {
+          changeEl.textContent = (d.pct >= 0 ? '+' : '') + d.pct.toFixed(1) + '%';
+          changeEl.className = 'kpi-change ' + (d.pct > 0 ? 'positive' : d.pct < 0 ? 'negative' : 'neutral');
+        }
+      }
+      drawSparkline('kpi-' + i + '-spark', d.values);
+    });
   }
 
   function getIndicatorsForTable(tableId) {
@@ -270,13 +337,22 @@
     updateChart(labels, values, indicator);
   }
 
+  var CHART_COLOR = { bg: 'rgba(37, 99, 235, 0.5)', border: 'rgba(37, 99, 235, 0.9)', axis: '#1a202c', grid: 'rgba(0, 0, 0, 0.12)' };
+
   function updateChart(labels, values, indicatorName) {
     var ctx = document.getElementById('chart').getContext('2d');
     var isVerticalLabels = labels.length > 20;
     if (chart) {
+      chart.config.type = chartType;
       chart.data.labels = labels;
       chart.data.datasets[0].data = values;
       chart.data.datasets[0].label = indicatorName;
+      chart.data.datasets[0].backgroundColor = CHART_COLOR.bg;
+      chart.data.datasets[0].borderColor = CHART_COLOR.border;
+      chart.data.datasets[0].borderWidth = chartType === 'line' ? 2 : 1;
+      chart.data.datasets[0].fill = false;
+      chart.data.datasets[0].tension = chartType === 'line' ? 0.2 : 0;
+      chart.data.datasets[0].pointRadius = chartType === 'line' ? 3 : 0;
       if (chart.options.plugins.datalabels) {
         chart.options.plugins.datalabels.rotation = isVerticalLabels ? -90 : 0;
       }
@@ -286,16 +362,19 @@
     var plugins = [];
     if (typeof ChartDataLabels !== 'undefined') plugins.push(ChartDataLabels);
     chart = new Chart(ctx, {
-      type: 'bar',
+      type: chartType,
       plugins: plugins,
       data: {
         labels: labels,
         datasets: [{
           label: indicatorName,
           data: values,
-          backgroundColor: 'rgba(37, 99, 235, 0.5)',
-          borderColor: 'rgba(37, 99, 235, 0.85)',
-          borderWidth: 1
+          backgroundColor: CHART_COLOR.bg,
+          borderColor: CHART_COLOR.border,
+          borderWidth: chartType === 'line' ? 2 : 1,
+          fill: false,
+          tension: chartType === 'line' ? 0.2 : 0,
+          pointRadius: chartType === 'line' ? 3 : 0
         }]
       },
       options: {
@@ -306,24 +385,24 @@
           legend: { display: false },
           datalabels: plugins.length ? {
             anchor: 'end',
-            align: 'top',
+            align: chartType === 'line' ? 'top' : 'top',
             rotation: isVerticalLabels ? -90 : 0,
-            color: '#4a5568',
+            color: CHART_COLOR.axis,
             font: { family: 'JetBrains Mono, monospace', size: 10 },
             formatter: function (v) { return typeof v === 'number' && !isNaN(v) ? (v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v) : ''; }
           } : undefined
         },
         scales: {
           x: {
-            grid: { color: 'rgba(0, 0, 0, 0.08)' },
-            ticks: { color: '#4a5568', maxRotation: isVerticalLabels ? 90 : 45 },
-            title: { display: true, text: 'Year (financial year start)', color: '#4a5568' }
+            grid: { color: CHART_COLOR.grid },
+            ticks: { color: CHART_COLOR.axis, maxRotation: isVerticalLabels ? 90 : 45 },
+            title: { display: true, text: 'Year (financial year start)', color: CHART_COLOR.axis }
           },
           y: {
             beginAtZero: true,
-            grid: { color: 'rgba(0, 0, 0, 0.08)' },
-            ticks: { color: '#4a5568' },
-            title: { display: true, text: 'Value', color: '#4a5568' }
+            grid: { color: CHART_COLOR.grid },
+            ticks: { color: CHART_COLOR.axis },
+            title: { display: true, text: 'Value', color: CHART_COLOR.axis }
           }
         }
       }
@@ -383,6 +462,23 @@
         tableSel.addEventListener('change', onTableChange);
         document.getElementById('submenu').addEventListener('change', onSubmenuChange);
         indSel.addEventListener('change', onIndicatorChange);
+        updateKpiCards();
+        document.getElementById('chart-type-bar').addEventListener('click', function () {
+          chartType = 'bar';
+          document.getElementById('chart-type-bar').classList.add('active');
+          document.getElementById('chart-type-bar').setAttribute('aria-pressed', 'true');
+          document.getElementById('chart-type-line').classList.remove('active');
+          document.getElementById('chart-type-line').setAttribute('aria-pressed', 'false');
+          if (chart) { chart.config.type = 'bar'; chart.update('none'); }
+        });
+        document.getElementById('chart-type-line').addEventListener('click', function () {
+          chartType = 'line';
+          document.getElementById('chart-type-line').classList.add('active');
+          document.getElementById('chart-type-line').setAttribute('aria-pressed', 'true');
+          document.getElementById('chart-type-bar').classList.remove('active');
+          document.getElementById('chart-type-bar').setAttribute('aria-pressed', 'false');
+          if (chart) { chart.config.type = 'line'; chart.update('none'); }
+        });
       } catch (e) {
         done('Error: ' + (e.message || 'invalid data'));
         console.error(e);

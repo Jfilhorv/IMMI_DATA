@@ -41,7 +41,7 @@
       padding: 1.25rem 1.5rem;
       display: grid;
       grid-template-columns: 280px 1fr;
-      grid-template-rows: auto 1fr auto;
+      grid-template-rows: auto auto 1fr auto;
       gap: 1.25rem;
       min-height: 100vh;
     }
@@ -191,6 +191,84 @@
     .source a { color: var(--accent); }
     .loading { color: var(--text-muted); }
     .error { color: #ef4444; }
+    .kpi-row {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 1100px) {
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .kpi-row { grid-template-columns: 1fr; }
+    }
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+    .kpi-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+    .kpi-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .kpi-change {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+    .kpi-change.positive { color: #047857; }
+    .kpi-change.negative { color: #b91c1c; }
+    .kpi-change.neutral { color: var(--text-muted); }
+    .kpi-spark {
+      margin-top: 0.6rem;
+      height: 32px;
+      width: 100%;
+    }
+    .kpi-spark canvas { display: block; width: 100% !important; height: 32px !important; }
+    .chart-toolbar {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: -0.5rem;
+    }
+    .chart-toolbar label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+    .chart-type-toggle {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .chart-type-toggle button {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.85rem;
+      font-family: inherit;
+      border: none;
+      background: #fff;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .chart-type-toggle button.active {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+    }
+    .chart-type-toggle button:not(.active):hover { background: rgba(0,0,0,0.04); }
   </style>
 </head>
 <body>
@@ -199,6 +277,14 @@
       <h1>Australian Immigration — Indicator Dashboard</h1>
       <p class="subtitle">Department of Home Affairs · Australian Migration Statistics</p>
     </header>
+
+    <div class="kpi-row" id="kpi-row" aria-label="Migration program outcome KPIs">
+      <div class="kpi-card"><div class="kpi-title">Skill stream</div><div class="kpi-value" id="kpi-0-val">—</div><div class="kpi-change" id="kpi-0-change"></div><div class="kpi-spark"><canvas id="kpi-0-spark"></canvas></div></div>
+      <div class="kpi-card"><div class="kpi-title">Family stream</div><div class="kpi-value" id="kpi-1-val">—</div><div class="kpi-change" id="kpi-1-change"></div><div class="kpi-spark"><canvas id="kpi-1-spark"></canvas></div></div>
+      <div class="kpi-card"><div class="kpi-title">Child stream</div><div class="kpi-value" id="kpi-2-val">—</div><div class="kpi-change" id="kpi-2-change"></div><div class="kpi-spark"><canvas id="kpi-2-spark"></canvas></div></div>
+      <div class="kpi-card"><div class="kpi-title">Special Eligibility</div><div class="kpi-value" id="kpi-3-val">—</div><div class="kpi-change" id="kpi-3-change"></div><div class="kpi-spark"><canvas id="kpi-3-spark"></canvas></div></div>
+      <div class="kpi-card"><div class="kpi-title">Total</div><div class="kpi-value" id="kpi-4-val">—</div><div class="kpi-change" id="kpi-4-change"></div><div class="kpi-spark"><canvas id="kpi-4-spark"></canvas></div></div>
+    </div>
 
     <aside class="sidebar">
       <div class="controls">
@@ -224,6 +310,13 @@
     </aside>
 
     <main class="main">
+      <div class="chart-toolbar">
+        <label for="chart-type">Chart type:</label>
+        <div class="chart-type-toggle" id="chart-type-toggle" role="group" aria-label="Chart type">
+          <button type="button" id="chart-type-bar" class="active" aria-pressed="true">Bar</button>
+          <button type="button" id="chart-type-line" aria-pressed="false">Line</button>
+        </div>
+      </div>
       <div class="chart-wrap">
         <canvas id="chart" aria-label="Indicator time series chart"></canvas>
       </div>
@@ -269,6 +362,6 @@
     </p>
   </div>
 
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
