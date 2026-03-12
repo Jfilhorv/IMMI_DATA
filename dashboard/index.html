@@ -169,6 +169,44 @@
       background: rgba(255,255,255,0.85);
       border-radius: 4px;
     }
+    .map-view-toggle {
+      position: absolute;
+      top: 0.4rem;
+      left: 0.5rem;
+      z-index: 600;
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.95);
+    }
+    .map-view-toggle button {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .map-view-toggle button.active {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+    }
+    .map-donut-wrap {
+      position: absolute;
+      inset: 0;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-donut-wrap #map-donut-chart {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .map-wrap .map-title { top: 2.25rem; }
     .map-wrap .map-inner {
       position: absolute;
       inset: 0;
@@ -443,9 +481,16 @@
         <canvas id="chart" aria-label="Indicator time series chart"></canvas>
       </div>
       <div class="map-wrap" id="map-wrap">
+        <div class="map-view-toggle">
+          <button type="button" id="map-view-map" class="active" aria-pressed="true">Map</button>
+          <button type="button" id="map-view-donut" aria-pressed="false">Donut</button>
+        </div>
         <p class="map-overlay map-title" id="map-title">Map (country data)</p>
-        <div class="map-inner">
+        <div class="map-inner" id="map-inner">
           <div id="map"></div>
+        </div>
+        <div class="map-donut-wrap" id="map-donut-wrap" style="display: none;">
+          <canvas id="map-donut-chart" aria-label="Map data as donut chart"></canvas>
         </div>
         <div class="map-legend" id="map-legend" style="display: none;">
           <h4 id="map-legend-title">Outcomes</h4>

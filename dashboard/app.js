@@ -43,6 +43,15 @@
   var leafletMap = null;
   var mapGeoLayer = null;
   var mapLabelLayer = null;
+  var mapDonutChart = null;
+  var mapViewMode = 'map';
+  var DONUT_COLORS = ['#2563eb', '#1d4ed8', '#3b82f6', '#60a5fa', '#93c5fd', '#1e40af', '#1e3a8a', '#3730a3', '#4f46e5', '#6366f1', '#818cf8', '#a5b4fc', '#4338ca', '#5b21b6', '#7c3aed'];
+
+  function doughnutColors(n) {
+    var out = [];
+    for (var i = 0; i < n; i++) out.push(DONUT_COLORS[i % DONUT_COLORS.length]);
+    return out;
+  }
 
   function parseCSVLine(line) {
     const out = [];
@@ -447,12 +456,13 @@
 
   function getCountryDataForMap(tableId, year) {
     var rows = allData.filter(function (r) { return r.table === tableId; });
-    if (rows.length === 0) return { valuesByIso: {}, year: null, min: 0, max: 1 };
+    if (rows.length === 0) return { valuesByIso: {}, year: null, min: 0, max: 1, countryList: [] };
     var years = getMapAvailableYears(tableId);
     var targetYear = year != null && years.indexOf(year) >= 0 ? year : years[years.length - 1];
-    if (targetYear == null) return { valuesByIso: {}, year: null, min: 0, max: 1 };
+    if (targetYear == null) return { valuesByIso: {}, year: null, min: 0, max: 1, countryList: [] };
     var yearRows = rows.filter(function (r) { return r.year === targetYear; });
     var valuesByIso = {};
+    var countryList = [];
     var min = Infinity, max = -Infinity;
     yearRows.forEach(function (r) {
       var name = r.indicator;
@@ -462,12 +472,14 @@
       var v = Number(r.value);
       if (!isFinite(v)) return;
       valuesByIso[iso] = v;
+      countryList.push({ name: name, value: v });
       if (v < min) min = v;
       if (v > max) max = v;
     });
+    countryList.sort(function (a, b) { return b.value - a.value; });
     if (min === Infinity) min = 0;
     if (max === -Infinity || max === min) max = min + 1;
-    return { valuesByIso: valuesByIso, year: targetYear, min: min, max: max };
+    return { valuesByIso: valuesByIso, year: targetYear, min: min, max: max, countryList: countryList };
   }
 
   function valueToColor(val, min, max) {
@@ -482,6 +494,45 @@
   function getMapTableTitle(tableId) {
     var t = tableList.filter(function (x) { return x.id === tableId; })[0];
     return t ? (t.shortTitle || t.title || tableId) : tableId;
+  }
+
+  function updateMapDonutChart(countryList) {
+    var canvas = document.getElementById('map-donut-chart');
+    if (!canvas || !countryList.length) return;
+    var labels = countryList.map(function (c) { return c.name; });
+    var values = countryList.map(function (c) { return c.value; });
+    var fmt = function (v) { return typeof v === 'number' && !isNaN(v) ? (v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v) : ''; };
+    if (mapDonutChart) {
+      mapDonutChart.data.labels = labels;
+      mapDonutChart.data.datasets[0].data = values;
+      mapDonutChart.data.datasets[0].backgroundColor = doughnutColors(labels.length);
+      mapDonutChart.update('none');
+      return;
+    }
+    var plugins = [];
+    if (typeof ChartDataLabels !== 'undefined') plugins.push(ChartDataLabels);
+    mapDonutChart = new Chart(canvas.getContext('2d'), {
+      type: 'doughnut',
+      plugins: plugins,
+      data: {
+        labels: labels,
+        datasets: [{
+          data: values,
+          backgroundColor: doughnutColors(labels.length),
+          borderColor: '#fff',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        cutout: '60%',
+        plugins: {
+          legend: { display: true, position: 'right' },
+          datalabels: plugins.length ? { color: '#fff', font: { size: 9 }, formatter: fmt } : undefined
+        }
+      }
+    });
   }
 
   function updateMapWithCountryData(tableId, year) {
@@ -501,6 +552,8 @@
     }
     var data = getCountryDataForMap(tableId, year != null ? year : (years.length ? years[years.length - 1] : null));
     var mapEl = document.getElementById('map');
+    var mapInner = document.getElementById('map-inner');
+    var mapDonutWrap = document.getElementById('map-donut-wrap');
     var titleEl = document.getElementById('map-title');
     var legendEl = document.getElementById('map-legend');
     var legendScale = document.getElementById('map-legend-scale');
@@ -508,12 +561,24 @@
     if (!mapEl || Object.keys(data.valuesByIso).length === 0) {
       if (titleEl) titleEl.textContent = 'Map (select a table above for country data)';
       if (legendEl) legendEl.style.display = 'none';
+      if (mapInner) mapInner.style.display = '';
+      if (mapDonutWrap) mapDonutWrap.style.display = 'none';
       return;
     }
     if (titleEl) titleEl.textContent = getMapTableTitle(tableId) + (data.year ? ' (' + data.year + ')' : '');
+    if (mapViewMode === 'donut') {
+      if (mapInner) mapInner.style.display = 'none';
+      if (mapDonutWrap) mapDonutWrap.style.display = 'flex';
+      updateMapDonutChart(data.countryList || []);
+      if (legendEl) legendEl.style.display = 'none';
+      return;
+    }
+    if (mapInner) mapInner.style.display = '';
+    if (mapDonutWrap) mapDonutWrap.style.display = 'none';
     if (!leafletMap) {
-      leafletMap = L.map('map', { center: [20, 0], zoom: 1, zoomControl: true });
+      leafletMap = L.map('map', { center: [20, 0], zoom: 1, zoomControl: false });
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(leafletMap);
+      L.control.zoom({ position: 'bottomleft' }).addTo(leafletMap);
     }
     if (mapLabelLayer) {
       leafletMap.removeLayer(mapLabelLayer);
@@ -671,6 +736,26 @@
           document.getElementById('chart-type-bar').classList.remove('active');
           document.getElementById('chart-type-bar').setAttribute('aria-pressed', 'false');
           if (chart) { chart.config.type = 'line'; chart.update('none'); }
+        });
+        var mapViewMapBtn = document.getElementById('map-view-map');
+        var mapViewDonutBtn = document.getElementById('map-view-donut');
+        if (mapViewMapBtn) mapViewMapBtn.addEventListener('click', function () {
+          mapViewMode = 'map';
+          mapViewMapBtn.classList.add('active');
+          mapViewMapBtn.setAttribute('aria-pressed', 'true');
+          if (mapViewDonutBtn) { mapViewDonutBtn.classList.remove('active'); mapViewDonutBtn.setAttribute('aria-pressed', 'false'); }
+          var mt = document.getElementById('map-table');
+          var my = document.getElementById('map-year');
+          updateMapWithCountryData(mt && mt.value ? mt.value : MAP_TABLE_TEST, my && my.value ? parseInt(my.value, 10) : null);
+        });
+        if (mapViewDonutBtn) mapViewDonutBtn.addEventListener('click', function () {
+          mapViewMode = 'donut';
+          mapViewDonutBtn.classList.add('active');
+          mapViewDonutBtn.setAttribute('aria-pressed', 'true');
+          if (mapViewMapBtn) { mapViewMapBtn.classList.remove('active'); mapViewMapBtn.setAttribute('aria-pressed', 'false'); }
+          var mt = document.getElementById('map-table');
+          var my = document.getElementById('map-year');
+          updateMapWithCountryData(mt && mt.value ? mt.value : MAP_TABLE_TEST, my && my.value ? parseInt(my.value, 10) : null);
         });
         if (sectionsWithData.has(1) && tablesWithData.has('1_0')) {
           sectionSel.value = '1';
