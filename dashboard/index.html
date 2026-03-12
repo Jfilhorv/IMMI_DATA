@@ -134,9 +134,18 @@
       min-height: 400px;
       height: 480px;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+    .chart-wrap .chart-title + canvas { flex: 1; min-height: 0; }
+    .chart-title {
+      margin: 0 0 0.35rem 0;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
     }
     .chart-wrap canvas {
       width: 100% !important;
@@ -478,6 +487,7 @@
         </div>
       </div>
       <div class="chart-wrap">
+        <p class="chart-title" id="chart-title" aria-live="polite"></p>
         <canvas id="chart" aria-label="Indicator time series chart"></canvas>
       </div>
       <div class="map-wrap" id="map-wrap">

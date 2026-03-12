@@ -346,11 +346,40 @@
     }
   }
 
+  function setChartTitle() {
+    var sectionSel = document.getElementById('section');
+    var tableSel = document.getElementById('table');
+    var submenuWrap = document.getElementById('submenu-wrap');
+    var submenuSel = document.getElementById('submenu');
+    var indSel = document.getElementById('indicator');
+    var titleEl = document.getElementById('chart-title');
+    if (!titleEl) return;
+    var parts = [];
+    if (sectionSel && sectionSel.selectedIndex >= 0) {
+      var s = sectionSel.options[sectionSel.selectedIndex].text;
+      if (s) parts.push(s);
+    }
+    if (tableSel && tableSel.selectedIndex >= 0) {
+      var t = tableSel.options[tableSel.selectedIndex].text;
+      if (t) parts.push(t);
+    }
+    if (submenuWrap && submenuWrap.style.display !== 'none' && submenuSel && submenuSel.selectedIndex >= 0 && submenuSel.value) {
+      var sm = submenuSel.options[submenuSel.selectedIndex].text;
+      if (sm) parts.push(sm);
+    }
+    if (indSel && indSel.selectedIndex >= 0) {
+      var i = indSel.options[indSel.selectedIndex].text;
+      if (i) parts.push(i);
+    }
+    titleEl.textContent = parts.length ? parts.join(' · ') : '';
+  }
+
   function onIndicatorChange() {
     const tableSel = document.getElementById('table');
     const indSel = document.getElementById('indicator');
     const tableId = tableSel.value;
     const indicator = indSel.value;
+    setChartTitle();
     if (!tableId || !indicator) {
       if (chart) {
         chart.data.labels = [];
@@ -391,9 +420,11 @@
       chart.data.datasets[0].fill = false;
       chart.data.datasets[0].tension = chartType === 'line' ? 0.2 : 0;
       chart.data.datasets[0].pointRadius = chartType === 'line' ? 3 : 0;
+      if (chart.options.layout) chart.options.layout.padding = { top: 56, right: 8 };
       if (chart.options.plugins.datalabels) {
         chart.options.plugins.datalabels.rotation = isVerticalLabels ? -90 : 0;
       }
+      if (chart.options.scales && chart.options.scales.y) chart.options.scales.y.grace = '8%';
       chart.update('none');
       return;
     }
@@ -418,7 +449,7 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        layout: { padding: { top: 32, right: 8 } },
+        layout: { padding: { top: 56, right: 8 } },
         plugins: {
           legend: { display: false },
           datalabels: plugins.length ? {
@@ -438,6 +469,7 @@
           },
           y: {
             beginAtZero: true,
+            grace: '8%',
             grid: { color: CHART_COLOR.grid },
             ticks: { color: CHART_COLOR.axis },
             title: { display: false }
@@ -762,6 +794,7 @@
           onSectionChange();
           tableSel.value = '1_0';
           onTableChange();
+          onIndicatorChange();
         }
         var mt = document.getElementById('map-table');
         updateMapWithCountryData(mt && mt.value ? mt.value : MAP_TABLE_TEST);
