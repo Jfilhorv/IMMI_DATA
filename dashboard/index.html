@@ -156,8 +156,39 @@
       z-index: 500;
       pointer-events: none;
     }
+    .map-overlay.map-controls-row {
+      top: 0.4rem;
+      left: 2.75rem;
+      right: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: auto;
+    }
+    .map-control-left, .map-control-right {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.92);
+      padding: 0.3rem 0.5rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .map-control-left label, .map-control-right label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .map-control-left select, .map-control-right select {
+      padding: 0.25rem 0.4rem;
+      font-size: 0.78rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: #fff;
+      max-width: 12rem;
+    }
     .map-overlay.map-title {
-      top: 0.35rem;
+      top: 2.25rem;
       left: 0.5rem;
       right: 0.5rem;
       text-align: center;
@@ -342,23 +373,6 @@
       margin-bottom: 0.5rem;
     }
     .chart-toolbar label { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; }
-    .chart-toolbar .toolbar-map {
-      margin-left: 0.75rem;
-      padding-left: 0.75rem;
-      border-left: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .chart-toolbar .toolbar-map select {
-      padding: 0.3rem 0.5rem;
-      font-size: 0.8rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      background: #fff;
-      max-width: 12rem;
-    }
     .chart-type-toggle {
       display: flex;
       gap: 0;
@@ -428,17 +442,21 @@
           <button type="button" id="chart-type-bar" class="active" aria-pressed="true">Bar</button>
           <button type="button" id="chart-type-line" aria-pressed="false">Line</button>
         </div>
-        <div class="toolbar-map">
-          <label for="map-table">Map:</label>
-          <select id="map-table" aria-label="Map data by country"></select>
-          <label for="map-year">Year:</label>
-          <select id="map-year" aria-label="Map year"></select>
-        </div>
       </div>
       <div class="chart-wrap">
         <canvas id="chart" aria-label="Indicator time series chart"></canvas>
       </div>
       <div class="map-wrap" id="map-wrap">
+        <div class="map-overlay map-controls-row">
+          <div class="map-control-left">
+            <label for="map-table">Map:</label>
+            <select id="map-table" aria-label="Map data by country"></select>
+          </div>
+          <div class="map-control-right">
+            <label for="map-year">Year:</label>
+            <select id="map-year" aria-label="Map year"></select>
+          </div>
+        </div>
         <p class="map-overlay map-title" id="map-title">Map (country data)</p>
         <div class="map-inner">
           <div id="map"></div>
