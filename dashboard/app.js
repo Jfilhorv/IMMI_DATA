@@ -510,7 +510,7 @@
       if (legendEl) legendEl.style.display = 'none';
       return;
     }
-    if (titleEl) titleEl.textContent = getMapTableTitle(tableId) + (data.year ? ' (' + data.year + ')' : '') + ' — by country';
+    if (titleEl) titleEl.textContent = getMapTableTitle(tableId) + (data.year ? ' (' + data.year + ')' : '');
     if (!leafletMap) {
       leafletMap = L.map('map', { center: [20, 0], zoom: 1, zoomControl: true });
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(leafletMap);
