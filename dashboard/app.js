@@ -113,7 +113,7 @@
     if (!el || !values || values.length === 0) return;
     var dpr = window.devicePixelRatio || 1;
     var w = el.parentElement.clientWidth || 120;
-    var h = 32;
+    var h = 24;
     el.width = w * dpr;
     el.height = h * dpr;
     el.style.width = w + 'px';
@@ -422,18 +422,20 @@
     });
   }
 
-  function getCountryDataForMap(tableId) {
+  function getMapAvailableYears(tableId) {
+    var rows = allData.filter(function (r) { return r.table === tableId; });
+    var set = new Set();
+    rows.forEach(function (r) { if (isFinite(r.year) && r.year > 0) set.add(r.year); });
+    return Array.from(set).sort(function (a, b) { return a - b; });
+  }
+
+  function getCountryDataForMap(tableId, year) {
     var rows = allData.filter(function (r) { return r.table === tableId; });
     if (rows.length === 0) return { valuesByIso: {}, year: null, min: 0, max: 1 };
-    var byYear = {};
-    rows.forEach(function (r) {
-      if (!byYear[r.year]) byYear[r.year] = [];
-      byYear[r.year].push(r);
-    });
-    var years = Object.keys(byYear).map(Number).filter(function (y) { return isFinite(y) && y > 0; }).sort(function (a, b) { return a - b; });
-    var latestYear = years[years.length - 1];
-    if (latestYear == null) return { valuesByIso: {}, year: null, min: 0, max: 1 };
-    var yearRows = rows.filter(function (r) { return r.year === latestYear; });
+    var years = getMapAvailableYears(tableId);
+    var targetYear = year != null && years.indexOf(year) >= 0 ? year : years[years.length - 1];
+    if (targetYear == null) return { valuesByIso: {}, year: null, min: 0, max: 1 };
+    var yearRows = rows.filter(function (r) { return r.year === targetYear; });
     var valuesByIso = {};
     var min = Infinity, max = -Infinity;
     yearRows.forEach(function (r) {
@@ -449,7 +451,7 @@
     });
     if (min === Infinity) min = 0;
     if (max === -Infinity || max === min) max = min + 1;
-    return { valuesByIso: valuesByIso, year: latestYear, min: min, max: max };
+    return { valuesByIso: valuesByIso, year: targetYear, min: min, max: max };
   }
 
   function valueToColor(val, min, max) {
@@ -461,9 +463,20 @@
     return 'rgb(' + r + ',' + g + ',' + b + ')';
   }
 
-  function updateMapWithCountryData(tableId) {
+  function updateMapWithCountryData(tableId, year) {
     if (typeof L === 'undefined') return;
-    var data = getCountryDataForMap(tableId);
+    var mapYearSel = document.getElementById('map-year');
+    var years = getMapAvailableYears(tableId);
+    if (years.length > 0 && mapYearSel) {
+      mapYearSel.innerHTML = years.map(function (y) { return '<option value="' + y + '">' + y + '</option>'; }).join('');
+      var target = year != null && years.indexOf(year) >= 0 ? year : years[years.length - 1];
+      mapYearSel.value = target != null ? target : '';
+      mapYearSel.disabled = false;
+    } else if (mapYearSel) {
+      mapYearSel.innerHTML = '<option value="">—</option>';
+      mapYearSel.disabled = true;
+    }
+    var data = getCountryDataForMap(tableId, year != null ? year : (years.length ? years[years.length - 1] : null));
     var mapEl = document.getElementById('map');
     var titleEl = document.getElementById('map-title');
     var legendEl = document.getElementById('map-legend');
@@ -474,7 +487,7 @@
       if (legendEl) legendEl.style.display = 'none';
       return;
     }
-    if (titleEl) titleEl.textContent = 'Table ' + tableId.replace('_', '.') + ' by country (' + (data.year || '') + ')';
+    if (titleEl) titleEl.textContent = 'Table ' + tableId.replace('_', '.') + ' by country';
     if (!leafletMap) {
       leafletMap = L.map('map', { center: [20, 0], zoom: 2, zoomControl: true });
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(leafletMap);
@@ -570,6 +583,11 @@
         tableSel.addEventListener('change', onTableChange);
         document.getElementById('submenu').addEventListener('change', onSubmenuChange);
         indSel.addEventListener('change', onIndicatorChange);
+        var mapYearEl = document.getElementById('map-year');
+        if (mapYearEl) mapYearEl.addEventListener('change', function () {
+          var y = mapYearEl.value ? parseInt(mapYearEl.value, 10) : null;
+          updateMapWithCountryData(MAP_TABLE_TEST, y);
+        });
         updateKpiCards();
         document.getElementById('chart-type-bar').addEventListener('click', function () {
           chartType = 'bar';
