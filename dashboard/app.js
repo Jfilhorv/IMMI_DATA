@@ -39,6 +39,7 @@
   };
   var leafletMap = null;
   var mapGeoLayer = null;
+  var mapLabelLayer = null;
 
   function parseCSVLine(line) {
     const out = [];
@@ -492,10 +493,15 @@
       leafletMap = L.map('map', { center: [20, 0], zoom: 2, zoomControl: true });
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(leafletMap);
     }
+    if (mapLabelLayer) {
+      leafletMap.removeLayer(mapLabelLayer);
+      mapLabelLayer = null;
+    }
     if (mapGeoLayer) {
       leafletMap.removeLayer(mapGeoLayer);
       mapGeoLayer = null;
     }
+    function fmtNum(n) { return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n); }
     fetch(GEOJSON_URL)
       .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('GeoJSON ' + res.status)); })
       .then(function (geojson) {
@@ -506,8 +512,33 @@
             var val = data.valuesByIso[iso];
             var fill = val != null ? valueToColor(val, data.min, data.max) : '#e5e7eb';
             return { fillColor: fill, fillOpacity: 0.75, weight: 1, color: '#94a3b8' };
+          },
+          onEachFeature: function (feature, layer) {
+            var iso = feature.properties && (feature.properties.ISO_A2 || feature.properties.iso_a2);
+            var name = feature.properties && (feature.properties.ADMIN || feature.properties.name || iso);
+            var val = iso && data.valuesByIso[iso];
+            if (val != null && isFinite(val)) {
+              layer.bindTooltip(name + ': ' + fmtNum(Math.round(val)), { permanent: false, direction: 'top', className: 'map-tooltip' });
+            }
           }
         }).addTo(leafletMap);
+        mapLabelLayer = L.layerGroup();
+        mapGeoLayer.eachLayer(function (layer) {
+          var feature = layer.feature;
+          var iso = feature.properties && (feature.properties.ISO_A2 || feature.properties.iso_a2);
+          if (!iso || typeof iso !== 'string' || iso.length !== 2) return;
+          var val = data.valuesByIso[iso];
+          if (val == null || !isFinite(val)) return;
+          var center = layer.getBounds().getCenter();
+          var icon = L.divIcon({
+            html: '<span class="map-country-value">' + fmtNum(Math.round(val)) + '</span>',
+            className: 'map-value-label',
+            iconSize: null,
+            iconAnchor: [0, 0]
+          });
+          L.marker(center, { icon: icon }).addTo(mapLabelLayer);
+        });
+        mapLabelLayer.addTo(leafletMap);
         setTimeout(function () { if (leafletMap) leafletMap.invalidateSize(); }, 100);
         legendEl.style.display = 'block';
         document.getElementById('map-legend-title').textContent = 'Outcomes (' + (data.year || '') + ')';
@@ -521,7 +552,6 @@
           span.style.background = valueToColor(v, data.min, data.max);
           legendScale.appendChild(span);
         }
-        function fmtNum(n) { return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n); }
         legendLabels.innerHTML = '<span>' + fmtNum(Math.round(data.min)) + '</span><span>' + fmtNum(Math.round(data.max)) + '</span>';
       })
       .catch(function () {

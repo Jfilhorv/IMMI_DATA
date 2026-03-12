@@ -111,7 +111,7 @@
     .controls select:disabled { opacity: 0.6; cursor: not-allowed; }
     .main {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.4fr 0.6fr;
       gap: 0.6rem;
       min-height: 0;
       align-items: stretch;
@@ -126,8 +126,8 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 0.6rem 0.8rem;
-      min-height: 320px;
-      height: 360px;
+      min-height: 400px;
+      height: 480px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -136,7 +136,7 @@
     .chart-wrap canvas {
       width: 100% !important;
       height: 100% !important;
-      max-height: 360px;
+      max-height: 480px;
     }
     .map-wrap {
       background: var(--surface);
@@ -178,10 +178,10 @@
     }
     .map-wrap .map-inner {
       flex: 1;
-      min-height: 240px;
+      min-height: 200px;
       min-width: 0;
       aspect-ratio: 1;
-      max-height: 320px;
+      max-height: 260px;
     }
     .map-wrap #map {
       width: 100%;
@@ -209,6 +209,12 @@
     }
     .map-legend .scale span { width: 1.2rem; height: 0.6rem; border-radius: 2px; }
     .map-legend .scale-labels { display: flex; justify-content: space-between; margin-top: 0.1rem; font-size: 0.58rem; color: var(--text-muted); }
+    .map-value-label { background: none !important; border: none !important; }
+    .map-country-value {
+      font-size: 0.6rem; font-weight: 700; color: #1a202c; text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 1px 1px rgba(0,0,0,0.3);
+      white-space: nowrap; pointer-events: none;
+    }
+    .leaflet-tooltip.map-tooltip { font-size: 0.7rem; padding: 0.2rem 0.4rem; }
     .footer-grid {
       grid-column: 1 / -1;
       display: grid;
@@ -223,45 +229,45 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 0.8rem;
+      border-radius: 6px;
+      padding: 0.4rem 0.5rem;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     }
     .doc-section h2 {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      margin: 0 0 0.35rem 0;
-      padding-bottom: 0.3rem;
+      margin: 0 0 0.25rem 0;
+      padding-bottom: 0.2rem;
       border-bottom: 1px solid var(--border);
       color: var(--text);
     }
     .doc-section h3 {
-      font-size: 0.8rem;
-      margin: 0.5rem 0 0.25rem 0;
+      font-size: 0.72rem;
+      margin: 0.35rem 0 0.2rem 0;
       color: var(--text-muted);
     }
     .doc-section p, .doc-section dd {
-      margin: 0 0 0.35rem 0;
-      font-size: 0.75rem;
-      line-height: 1.4;
+      margin: 0 0 0.25rem 0;
+      font-size: 0.7rem;
+      line-height: 1.35;
       color: var(--text-muted);
     }
     .doc-section dt {
       font-weight: 600;
-      font-size: 0.75rem;
-      margin-top: 0.4rem;
+      font-size: 0.7rem;
+      margin-top: 0.3rem;
       color: var(--text);
     }
     .doc-section dd { margin-left: 0; }
     .doc-section a { color: var(--accent); text-decoration: none; }
     .doc-section a:hover { text-decoration: underline; }
-    .doc-section small { color: var(--text-muted); font-size: 0.7rem; }
+    .doc-section small { color: var(--text-muted); font-size: 0.65rem; }
     .source {
       grid-column: 1 / -1;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--text-muted);
       margin: 0;
-      padding-top: 0.35rem;
+      padding-top: 0.25rem;
       border-top: 1px solid var(--border);
     }
     .source a { color: var(--accent); }
