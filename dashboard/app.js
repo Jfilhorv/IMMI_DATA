@@ -479,6 +479,12 @@
           document.getElementById('chart-type-bar').setAttribute('aria-pressed', 'false');
           if (chart) { chart.config.type = 'line'; chart.update('none'); }
         });
+        if (sectionsWithData.has(1) && tablesWithData.has('1_0')) {
+          sectionSel.value = '1';
+          onSectionChange();
+          tableSel.value = '1_0';
+          onTableChange();
+        }
       } catch (e) {
         done('Error: ' + (e.message || 'invalid data'));
         console.error(e);

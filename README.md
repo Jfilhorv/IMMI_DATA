@@ -4,7 +4,14 @@ A **free, public** dashboard and webpage showing Australian immigration statisti
 
 ---
 
-### **[Open the live dashboard →](https://jfilhorv.github.io/IMMI_DATA/dashboard/)**
+<div align="center">
+
+**Australian Immigration — Indicator Dashboard**  
+Sections 1–7 · KPIs · Line/Bar charts · Migration Program, NOM, Humanitarian, Labour market
+
+[![Open live dashboard](https://img.shields.io/badge/🌐_Live_Dashboard-Open_here-1e40af?style=for-the-badge)](https://jfilhorv.github.io/IMMI_DATA/dashboard/)
+
+</div>
 
 ---
 
