@@ -28,6 +28,7 @@
   var KPI_TABLE = '1_0';
   var KPI_INDICATORS = ['Skill stream', 'Family stream1', 'Child stream2', 'Special Eligibility', 'Total3'];
   var MAP_TABLE_TEST = '1_3';
+  var MAP_TABLES = ['1_3', '1_6', '1_8', '1_10', '1_12', '1_14', '1_15', '1_16', '1_17', '2_4', '3_1', '3_3', '4_1', '4_4', '6_0'];
   var GEOJSON_URL = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson';
   var countryToIso = {
     'India': 'IN', 'United Kingdom': 'GB', 'Philippines': 'PH', 'South Africa': 'ZA', 'Sri Lanka': 'LK',
@@ -319,7 +320,6 @@
       indSel.value = defaultInd ? escapeHtml(defaultInd) : '';
       onIndicatorChange();
     }
-    if (tableId === MAP_TABLE_TEST) updateMapWithCountryData(tableId);
   }
 
   function onIndicatorChange() {
@@ -464,9 +464,16 @@
     return 'rgb(' + r + ',' + g + ',' + b + ')';
   }
 
+  function getMapTableTitle(tableId) {
+    var t = tableList.filter(function (x) { return x.id === tableId; })[0];
+    return t ? (t.shortTitle || t.title || tableId) : tableId;
+  }
+
   function updateMapWithCountryData(tableId, year) {
     if (typeof L === 'undefined') return;
+    var mapTableSel = document.getElementById('map-table');
     var mapYearSel = document.getElementById('map-year');
+    if (!tableId && mapTableSel) tableId = mapTableSel.value || MAP_TABLE_TEST;
     var years = getMapAvailableYears(tableId);
     if (years.length > 0 && mapYearSel) {
       mapYearSel.innerHTML = years.map(function (y) { return '<option value="' + y + '">' + y + '</option>'; }).join('');
@@ -484,11 +491,11 @@
     var legendScale = document.getElementById('map-legend-scale');
     var legendLabels = document.getElementById('map-legend-labels');
     if (!mapEl || Object.keys(data.valuesByIso).length === 0) {
-      if (titleEl) titleEl.textContent = 'Map (select table 1.3 for country data)';
+      if (titleEl) titleEl.textContent = 'Map (select a table above for country data)';
       if (legendEl) legendEl.style.display = 'none';
       return;
     }
-    if (titleEl) titleEl.textContent = 'Table ' + tableId.replace('_', '.') + ' by country';
+    if (titleEl) titleEl.textContent = getMapTableTitle(tableId) + (data.year ? ' (' + data.year + ')' : '') + ' — by country';
     if (!leafletMap) {
       leafletMap = L.map('map', { center: [20, 0], zoom: 2, zoomControl: true });
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(leafletMap);
@@ -613,10 +620,23 @@
         tableSel.addEventListener('change', onTableChange);
         document.getElementById('submenu').addEventListener('change', onSubmenuChange);
         indSel.addEventListener('change', onIndicatorChange);
+        var mapTableEl = document.getElementById('map-table');
         var mapYearEl = document.getElementById('map-year');
+        var mapTableOpts = MAP_TABLES.filter(function (id) { return tablesWithData.has(id); });
+        if (mapTableEl && mapTableOpts.length) {
+          mapTableEl.innerHTML = mapTableOpts.map(function (id) {
+            var title = getMapTableTitle(id);
+            return '<option value="' + escapeHtml(id) + '">' + escapeHtml(title) + '</option>';
+          }).join('');
+          mapTableEl.value = mapTableOpts.indexOf(MAP_TABLE_TEST) >= 0 ? MAP_TABLE_TEST : mapTableOpts[0];
+          mapTableEl.addEventListener('change', function () {
+            var y = mapYearEl && mapYearEl.value ? parseInt(mapYearEl.value, 10) : null;
+            updateMapWithCountryData(mapTableEl.value, y);
+          });
+        }
         if (mapYearEl) mapYearEl.addEventListener('change', function () {
           var y = mapYearEl.value ? parseInt(mapYearEl.value, 10) : null;
-          updateMapWithCountryData(MAP_TABLE_TEST, y);
+          updateMapWithCountryData(mapTableEl ? mapTableEl.value : MAP_TABLE_TEST, y);
         });
         updateKpiCards();
         document.getElementById('chart-type-bar').addEventListener('click', function () {
@@ -641,7 +661,8 @@
           tableSel.value = '1_0';
           onTableChange();
         }
-        updateMapWithCountryData(MAP_TABLE_TEST);
+        var mt = document.getElementById('map-table');
+        updateMapWithCountryData(mt && mt.value ? mt.value : MAP_TABLE_TEST);
       } catch (e) {
         done('Error: ' + (e.message || 'invalid data'));
         console.error(e);
