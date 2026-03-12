@@ -203,39 +203,23 @@
       white-space: nowrap; pointer-events: none;
     }
     .leaflet-tooltip.map-tooltip { font-size: 0.7rem; padding: 0.2rem 0.4rem; }
-    .table-notes-wrap {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.5rem 0.75rem;
-      margin-top: 0.25rem;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    }
-    .table-notes-title {
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin: 0 0 0.35rem 0;
-      padding-bottom: 0.25rem;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
-    .table-notes {
+    .block-notes .table-notes {
       font-size: 0.72rem;
       line-height: 1.5;
       color: var(--text-muted);
-      max-height: 12rem;
+      max-height: 10rem;
       overflow-y: auto;
     }
     .table-notes p { margin: 0 0 0.35rem 0; }
     .table-notes .table-notes-empty { color: var(--text-muted); font-style: italic; }
-    .footer-grid {
+    .footer-three-blocks {
       grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 0.6rem;
     }
     @media (max-width: 1100px) {
-      .footer-grid { grid-template-columns: 1fr; }
+      .footer-three-blocks { grid-template-columns: 1fr; }
     }
     .doc-section {
       background: var(--surface);
@@ -450,13 +434,13 @@
           <div class="scale-labels" id="map-legend-labels"></div>
         </div>
       </div>
-      <div class="table-notes-wrap" id="table-notes-wrap" style="grid-column: 1 / -1;">
-        <h3 class="table-notes-title">Notes &amp; sources</h3>
-        <div id="table-notes" class="table-notes" aria-live="polite"></div>
-      </div>
     </main>
 
-    <div class="footer-grid">
+    <div class="footer-three-blocks" id="footer-three-blocks">
+      <section class="doc-section block-notes">
+        <h2>Notas</h2>
+        <div id="table-notes" class="table-notes" aria-live="polite"></div>
+      </section>
       <section class="doc-section" id="overview">
         <h2>Overview</h2>
         <p><strong>Australian Migration Statistics, 2024–25</strong> — Released November 2025.</p>
@@ -468,7 +452,7 @@
         <p>Permanent migration (1.0–1.18), temporary visas (2.0–2.4), Humanitarian (3.0–3.4), visa non-compliance (4.0–4.4), NOM (5.0–5.1), citizenship (6.0), labour market (7.0–7.8). More at <a href="https://data.gov.au" target="_blank" rel="noopener">data.gov.au</a>.</p>
       </section>
       <section class="doc-section" id="data-items">
-        <h2>Data Items & Terminology</h2>
+        <h2>Data Items &amp; Terminology</h2>
         <dl>
           <dt>Applicant Type</dt>
           <dd>Primary vs secondary applicants; 'primary' excludes dependants.</dd>
