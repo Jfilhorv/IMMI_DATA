@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <style>
     * { box-sizing: border-box; }
     :root {
@@ -36,16 +37,16 @@
       min-height: 100vh;
     }
     .page {
-      max-width: 1600px;
+      max-width: 1920px;
       margin: 0 auto;
-      padding: 1.25rem 1.5rem;
+      padding: 1rem 1.25rem;
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 260px 1fr;
       grid-template-rows: auto auto 1fr auto;
-      gap: 1.25rem;
+      gap: 1rem;
       min-height: 100vh;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
       .page { grid-template-columns: 1fr; }
     }
     header {
@@ -109,9 +110,14 @@
     }
     .controls select:disabled { opacity: 0.6; cursor: not-allowed; }
     .main {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
       min-height: 0;
+      align-items: stretch;
+    }
+    @media (max-width: 1200px) {
+      .main { grid-template-columns: 1fr; }
     }
     .chart-wrap {
       background: var(--surface);
@@ -119,8 +125,7 @@
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      flex: 1;
+      padding: 1rem 1.25rem;
       min-height: 380px;
       height: 420px;
       display: flex;
@@ -133,6 +138,49 @@
       height: 100% !important;
       max-height: 420px;
     }
+    .map-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.5rem;
+      min-height: 380px;
+      height: 420px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      position: relative;
+    }
+    .map-wrap .map-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin: 0 0 0.35rem 0;
+      padding: 0 0.25rem;
+    }
+    .map-wrap #map {
+      width: 100%;
+      height: calc(100% - 2rem);
+      border-radius: 6px;
+    }
+    .map-legend {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.7rem;
+      color: var(--text);
+      z-index: 1000;
+    }
+    .map-legend h4 { margin: 0 0 0.35rem 0; font-size: 0.7rem; }
+    .map-legend .scale {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 0.25rem;
+    }
+    .map-legend .scale span { width: 1.5rem; height: 0.75rem; border-radius: 2px; }
+    .map-legend .scale-labels { display: flex; justify-content: space-between; margin-top: 0.15rem; font-size: 0.65rem; color: var(--text-muted); }
     .footer-grid {
       grid-column: 1 / -1;
       display: grid;
@@ -310,7 +358,7 @@
     </aside>
 
     <main class="main">
-      <div class="chart-toolbar">
+      <div class="chart-toolbar" style="grid-column: 1 / -1;">
         <label for="chart-type">Chart type:</label>
         <div class="chart-type-toggle" id="chart-type-toggle" role="group" aria-label="Chart type">
           <button type="button" id="chart-type-bar" class="active" aria-pressed="true">Bar</button>
@@ -319,6 +367,15 @@
       </div>
       <div class="chart-wrap">
         <canvas id="chart" aria-label="Indicator time series chart"></canvas>
+      </div>
+      <div class="map-wrap" id="map-wrap">
+        <p class="map-title" id="map-title">Map (country data)</p>
+        <div id="map"></div>
+        <div class="map-legend" id="map-legend" style="display: none;">
+          <h4 id="map-legend-title">Outcomes</h4>
+          <div class="scale" id="map-legend-scale"></div>
+          <div class="scale-labels" id="map-legend-labels"></div>
+        </div>
       </div>
     </main>
 
@@ -362,6 +419,7 @@
     </p>
   </div>
 
-  <script src="app.js?v=5"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

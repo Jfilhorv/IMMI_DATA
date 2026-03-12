@@ -27,6 +27,18 @@
   var chartType = 'bar';
   var KPI_TABLE = '1_0';
   var KPI_INDICATORS = ['Skill stream', 'Family stream1', 'Child stream2', 'Special Eligibility', 'Total3'];
+  var MAP_TABLE_TEST = '1_3';
+  var GEOJSON_URL = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson';
+  var countryToIso = {
+    'India': 'IN', 'United Kingdom': 'GB', 'Philippines': 'PH', 'South Africa': 'ZA', 'Sri Lanka': 'LK',
+    "People's Republic of China1": 'CN', "People's Republic of China2": 'CN', 'Nepal': 'NP', 'Ireland': 'IE',
+    'Brazil': 'BR', 'Pakistan': 'PK', 'Republic of Korea': 'KR', 'Italy': 'IT', 'Zimbabwe': 'ZW',
+    'Colombia': 'CO', 'Vietnam': 'VN', 'United States of America': 'US', 'New Zealand': 'NZ', 'Iraq': 'IQ',
+    'Afghanistan': 'AF', 'Iran': 'IR', 'Syria': 'SY', 'Sudan': 'SD', 'Egypt': 'EG', 'Malaysia': 'MY',
+    'Indonesia': 'ID', 'Thailand': 'TH', 'Bangladesh': 'BD', 'Singapore': 'SG', 'Hong Kong': 'HK'
+  };
+  var leafletMap = null;
+  var mapGeoLayer = null;
 
   function parseCSVLine(line) {
     const out = [];
@@ -306,6 +318,7 @@
       indSel.value = defaultInd ? escapeHtml(defaultInd) : '';
       onIndicatorChange();
     }
+    if (tableId === MAP_TABLE_TEST) updateMapWithCountryData(tableId);
   }
 
   function onIndicatorChange() {
@@ -409,6 +422,101 @@
     });
   }
 
+  function getCountryDataForMap(tableId) {
+    var rows = allData.filter(function (r) { return r.table === tableId; });
+    if (rows.length === 0) return { valuesByIso: {}, year: null, min: 0, max: 1 };
+    var byYear = {};
+    rows.forEach(function (r) {
+      if (!byYear[r.year]) byYear[r.year] = [];
+      byYear[r.year].push(r);
+    });
+    var years = Object.keys(byYear).map(Number).filter(function (y) { return isFinite(y) && y > 0; }).sort(function (a, b) { return a - b; });
+    var latestYear = years[years.length - 1];
+    if (latestYear == null) return { valuesByIso: {}, year: null, min: 0, max: 1 };
+    var yearRows = rows.filter(function (r) { return r.year === latestYear; });
+    var valuesByIso = {};
+    var min = Infinity, max = -Infinity;
+    yearRows.forEach(function (r) {
+      var name = r.indicator;
+      if (/^Total\d*$/.test(name) || /^Other\d*$/.test(name)) return;
+      var iso = countryToIso[name] || countryToIso[name.replace(/\d+$/, '')];
+      if (!iso) return;
+      var v = Number(r.value);
+      if (!isFinite(v)) return;
+      valuesByIso[iso] = v;
+      if (v < min) min = v;
+      if (v > max) max = v;
+    });
+    if (min === Infinity) min = 0;
+    if (max === -Infinity || max === min) max = min + 1;
+    return { valuesByIso: valuesByIso, year: latestYear, min: min, max: max };
+  }
+
+  function valueToColor(val, min, max) {
+    if (max === min) return '#93c5fd';
+    var t = (val - min) / (max - min);
+    var r = Math.round(147 + (30 - 147) * t);
+    var g = Math.round(197 + (64 - 197) * t);
+    var b = Math.round(253 + (175 - 253) * t);
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+  }
+
+  function updateMapWithCountryData(tableId) {
+    if (typeof L === 'undefined') return;
+    var data = getCountryDataForMap(tableId);
+    var mapEl = document.getElementById('map');
+    var titleEl = document.getElementById('map-title');
+    var legendEl = document.getElementById('map-legend');
+    var legendScale = document.getElementById('map-legend-scale');
+    var legendLabels = document.getElementById('map-legend-labels');
+    if (!mapEl || Object.keys(data.valuesByIso).length === 0) {
+      if (titleEl) titleEl.textContent = 'Map (select table 1.3 for country data)';
+      if (legendEl) legendEl.style.display = 'none';
+      return;
+    }
+    if (titleEl) titleEl.textContent = 'Table ' + tableId.replace('_', '.') + ' by country (' + (data.year || '') + ')';
+    if (!leafletMap) {
+      leafletMap = L.map('map', { center: [20, 0], zoom: 2, zoomControl: true });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(leafletMap);
+    }
+    if (mapGeoLayer) {
+      leafletMap.removeLayer(mapGeoLayer);
+      mapGeoLayer = null;
+    }
+    fetch(GEOJSON_URL)
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error('GeoJSON ' + res.status)); })
+      .then(function (geojson) {
+        mapGeoLayer = L.geoJSON(geojson, {
+          style: function (feature) {
+            var iso = feature.properties && (feature.properties.ISO_A2 || feature.properties.iso_a2);
+            if (!iso || typeof iso !== 'string' || iso.length !== 2 || iso === '-99') return { fillColor: '#e5e7eb', fillOpacity: 0.6, weight: 1, color: '#9ca3af' };
+            var val = data.valuesByIso[iso];
+            var fill = val != null ? valueToColor(val, data.min, data.max) : '#e5e7eb';
+            return { fillColor: fill, fillOpacity: 0.75, weight: 1, color: '#94a3b8' };
+          }
+        }).addTo(leafletMap);
+        setTimeout(function () { if (leafletMap) leafletMap.invalidateSize(); }, 100);
+        legendEl.style.display = 'block';
+        document.getElementById('map-legend-title').textContent = 'Outcomes (' + (data.year || '') + ')';
+        var steps = 5;
+        legendScale.innerHTML = '';
+        legendLabels.innerHTML = '';
+        for (var i = 0; i <= steps; i++) {
+          var t = i / steps;
+          var v = data.min + t * (data.max - data.min);
+          var span = document.createElement('span');
+          span.style.background = valueToColor(v, data.min, data.max);
+          legendScale.appendChild(span);
+        }
+        function fmtNum(n) { return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n); }
+        legendLabels.innerHTML = '<span>' + fmtNum(Math.round(data.min)) + '</span><span>' + fmtNum(Math.round(data.max)) + '</span>';
+      })
+      .catch(function () {
+        if (titleEl) titleEl.textContent = 'Map (load failed)';
+        if (legendEl) legendEl.style.display = 'none';
+      });
+  }
+
   function loadData() {
     var sectionSel = document.getElementById('section');
     var tableSel = document.getElementById('table');
@@ -485,6 +593,7 @@
           tableSel.value = '1_0';
           onTableChange();
         }
+        updateMapWithCountryData(MAP_TABLE_TEST);
       } catch (e) {
         done('Error: ' + (e.message || 'invalid data'));
         console.error(e);
