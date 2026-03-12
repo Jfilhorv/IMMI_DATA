@@ -10,7 +10,9 @@
   var TABLES_URL = base + 'data/tables.json' + CACHE_BUST;
   var DATA_URL = base + 'data/indicators.csv' + CACHE_BUST;
   var CATEGORY_TABLES_URL = base + 'data/category_tables.json' + CACHE_BUST;
+  var FOOTNOTES_URL = base + 'data/table_footnotes.json' + CACHE_BUST;
   var categoryTables = [];
+  var tableFootnotes = {};
   var SECTION_LABELS = {
     1: '1. Permanent migration',
     2: '2. Temporary visas',
@@ -280,6 +282,7 @@
         chart.data.datasets[0].data = [];
         chart.update('none');
       }
+      updateTableNotes(null);
       return;
     }
     var hasCategory = categoryTables.indexOf(tableId) >= 0;
@@ -319,6 +322,18 @@
       var defaultInd = getDefaultIndicator(indicators);
       indSel.value = defaultInd ? escapeHtml(defaultInd) : '';
       onIndicatorChange();
+    }
+    updateTableNotes(tableId);
+  }
+
+  function updateTableNotes(tableId) {
+    var el = document.getElementById('table-notes');
+    if (!el) return;
+    var lines = tableId && tableFootnotes[tableId];
+    if (lines && lines.length) {
+      el.innerHTML = lines.map(function (line) { return '<p>' + escapeHtml(line) + '</p>'; }).join('');
+    } else {
+      el.innerHTML = '<p class="table-notes-empty">Select a table to view notes and sources.</p>';
     }
   }
 
@@ -394,7 +409,7 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        layout: { padding: { top: 20 } },
+        layout: { padding: { top: 32, right: 8 } },
         plugins: {
           legend: { display: false },
           datalabels: plugins.length ? {
@@ -416,7 +431,7 @@
             beginAtZero: true,
             grid: { color: CHART_COLOR.grid },
             ticks: { color: CHART_COLOR.axis },
-            title: { display: true, text: 'Value', color: CHART_COLOR.axis }
+            title: { display: false }
           }
         }
       }
@@ -591,13 +606,15 @@
         if (!r.ok) throw new Error('indicators.csv ' + r.status);
         return r.text();
       }),
-      fetch(CATEGORY_TABLES_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; })
+      fetch(CATEGORY_TABLES_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
+      fetch(FOOTNOTES_URL).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
     ]).then(function (results) {
       try {
         tableList = results[0];
         if (!Array.isArray(tableList)) throw new Error('Invalid tables.json');
         allData = parseCSV(results[1]);
         categoryTables = Array.isArray(results[2]) ? results[2] : [];
+        tableFootnotes = results[3] && typeof results[3] === 'object' ? results[3] : {};
         var dataTablePattern = /^\d+_\d+$/;
         tablesWithData = new Set();
         allData.forEach(function (row) {

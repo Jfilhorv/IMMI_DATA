@@ -152,31 +152,8 @@
       z-index: 500;
       pointer-events: none;
     }
-    .map-overlay.map-controls {
-      top: 0.35rem;
-      right: 0.35rem;
-      left: auto;
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      flex-wrap: wrap;
-      pointer-events: auto;
-      background: rgba(255,255,255,0.92);
-      padding: 0.3rem 0.5rem;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-    }
-    .map-overlay.map-controls label { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); }
-    .map-overlay.map-controls select {
-      padding: 0.25rem 0.4rem;
-      font-size: 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      background: rgba(255,255,255,0.95);
-      max-width: 12rem;
-    }
     .map-overlay.map-title {
-      top: 2.25rem;
+      top: 0.35rem;
       left: 0.5rem;
       right: 0.5rem;
       text-align: center;
@@ -226,6 +203,31 @@
       white-space: nowrap; pointer-events: none;
     }
     .leaflet-tooltip.map-tooltip { font-size: 0.7rem; padding: 0.2rem 0.4rem; }
+    .table-notes-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      margin-top: 0.25rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+    .table-notes-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 0 0 0.35rem 0;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .table-notes {
+      font-size: 0.72rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      max-height: 12rem;
+      overflow-y: auto;
+    }
+    .table-notes p { margin: 0 0 0.35rem 0; }
+    .table-notes .table-notes-empty { color: var(--text-muted); font-style: italic; }
     .footer-grid {
       grid-column: 1 / -1;
       display: grid;
@@ -336,10 +338,28 @@
       grid-column: 1 / -1;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
       margin-bottom: -0.25rem;
     }
     .chart-toolbar label { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; }
+    .chart-toolbar .toolbar-map {
+      margin-left: 0.75rem;
+      padding-left: 0.75rem;
+      border-left: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .chart-toolbar .toolbar-map select {
+      padding: 0.3rem 0.5rem;
+      font-size: 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: #fff;
+      max-width: 12rem;
+    }
     .chart-type-toggle {
       display: flex;
       gap: 0;
@@ -409,17 +429,17 @@
           <button type="button" id="chart-type-bar" class="active" aria-pressed="true">Bar</button>
           <button type="button" id="chart-type-line" aria-pressed="false">Line</button>
         </div>
-      </div>
-      <div class="chart-wrap">
-        <canvas id="chart" aria-label="Indicator time series chart"></canvas>
-      </div>
-      <div class="map-wrap" id="map-wrap">
-        <div class="map-overlay map-controls">
+        <div class="toolbar-map">
           <label for="map-table">Map:</label>
           <select id="map-table" aria-label="Map data by country"></select>
           <label for="map-year">Year:</label>
           <select id="map-year" aria-label="Map year"></select>
         </div>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="chart" aria-label="Indicator time series chart"></canvas>
+      </div>
+      <div class="map-wrap" id="map-wrap">
         <p class="map-overlay map-title" id="map-title">Map (country data)</p>
         <div class="map-inner">
           <div id="map"></div>
@@ -429,6 +449,10 @@
           <div class="scale" id="map-legend-scale"></div>
           <div class="scale-labels" id="map-legend-labels"></div>
         </div>
+      </div>
+      <div class="table-notes-wrap" id="table-notes-wrap" style="grid-column: 1 / -1;">
+        <h3 class="table-notes-title">Notes &amp; sources</h3>
+        <div id="table-notes" class="table-notes" aria-live="polite"></div>
       </div>
     </main>
 
@@ -473,6 +497,6 @@
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script src="app.js?v=8"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>
