@@ -2,6 +2,12 @@
 
 A **free, public** dashboard and webpage showing Australian immigration statistics from official government sources: **when** (year/quarter/month), **from** (country), **to** (Australia), **across years**.
 
+---
+
+### **[Open the live dashboard →](https://jfilhorv.github.io/IMMI_DATA/dashboard/)**
+
+---
+
 ## Data sources
 
 - **[data.gov.au](https://data.gov.au)** — Australian Migration Statistics, visa programs, overseas arrivals and departures
