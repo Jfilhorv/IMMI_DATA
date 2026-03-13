@@ -641,8 +641,8 @@
     if (mapInner) mapInner.style.display = '';
     if (mapDonutWrap) mapDonutWrap.style.display = 'none';
     if (!leafletMap) {
-      leafletMap = L.map('map', { center: [20, 0], zoom: 1, zoomControl: false });
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap' }).addTo(leafletMap);
+      leafletMap = L.map('map', { center: [20, 0], zoom: 1, zoomControl: false, attributionControl: false });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(leafletMap);
       L.control.zoom({ position: 'bottomleft' }).addTo(leafletMap);
     }
     if (mapLabelLayer) {
