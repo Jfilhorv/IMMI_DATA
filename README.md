@@ -34,6 +34,10 @@ All statistics shown in the dashboard come from the following official release:
 - **Content:** Migration program outcomes (permanent and temporary), humanitarian, visa cancellations, Net Overseas Migration, citizenship, labour market. Tables 1.0–7.8, financial year series.  
 - **Licence:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — attribution required; we attribute in the dashboard and do not imply government endorsement.
 
+**Current data:** Last update uses the **2024–25** statistical package. File name: `migration_trends_statistical_package_2024_25.xlsx`. Full download URL: [data.gov.au resource 2024-25](https://data.gov.au/data/dataset/dba45e7c-81f4-44aa-9d82-1b9a0a121017/resource/242e6794-9b6a-4d34-a67f-d940e96e6a37/download/migration_trends_statistical_package_2024_25.xlsx). New releases (e.g. 2025–26) typically appear after the end of the financial year (check the dataset page).
+
+**How to update:** See [docs/DATA_AND_UPDATE.md](./docs/DATA_AND_UPDATE.md) for the exact script list, order, and steps. From project root you can run `python scripts/run_update.py` to run the full pipeline.
+
 Additional references: [Visa statistics](https://www.homeaffairs.gov.au/research-and-statistics/statistics/visa-statistics) (Home Affairs), [PLANNING.md](./PLANNING.md), [DATA_SOURCES.md](./DATA_SOURCES.md).
 
 ## Project structure
@@ -47,11 +51,15 @@ IMMI_DATA/
 ├── data/
 │   └── dashboard/           # indicators.csv, kpi_candidates.json, kpi_candidates_list.md
 ├── scripts/
-│   ├── list_kpi_candidates.py   # Build KPI list (tables/indicators with 3+ years for sparklines)
-│   ├── build_drawio_tree.py     # Generate draw.io diagram (docs/indicator_tree.drawio)
+│   ├── run_update.py           # Run full pipeline (fetch → melt → build → footnotes → KPIs → sync → draw.io)
+│   ├── sync_dashboard_data.py  # Copy data/dashboard/ → dashboard/data/
+│   ├── fetch_first_dataset.py  # Download XLSX, export by_sheet
 │   ├── melt_all_sheets.py      # XLSX → melted CSV
 │   ├── build_dashboard_data.py # Build dashboard JSON/CSV
-│   └── ...                    # Other pipeline scripts
+│   ├── extract_table_footnotes.py
+│   ├── list_kpi_candidates.py
+│   ├── build_drawio_tree.py    # Optional: docs/indicator_tree.drawio
+│   └── ...
 ├── dashboard/                # Static dashboard (HTML/JS, Chart.js, Leaflet)
 │   ├── index.html
 │   ├── app.js
