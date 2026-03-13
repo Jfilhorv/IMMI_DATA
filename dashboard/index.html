@@ -666,50 +666,60 @@
     (function () {
       var listEl = document.getElementById('news-list');
       if (!listEl) return;
-      var feedUrl = 'https://migrationalliance.com.au/immigration-daily-news/latest.html?format=feed&type=rss';
-      var proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl);
-      fetch(proxy).then(function (r) { return r.text(); }).then(function (xmlText) {
-        try {
-          var parser = new DOMParser();
-          var doc = parser.parseFromString(xmlText, 'text/xml');
-          var items = doc.querySelectorAll('item');
-          if (!items.length) items = doc.querySelectorAll('entry');
-          function getThumb(it) {
-            var enc = it.querySelector('enclosure[type^="image"]');
-            if (enc && enc.getAttribute('url')) return enc.getAttribute('url');
-            var media = it.querySelector('media\\:thumbnail') || it.querySelector('[url][width][height]');
-            if (media && media.getAttribute('url')) return media.getAttribute('url');
-            var mediaContent = it.querySelector('media\\:content');
-            if (mediaContent && mediaContent.getAttribute('url')) return mediaContent.getAttribute('url');
-            var desc = it.querySelector('description') && it.querySelector('description').textContent || '';
-            var imgMatch = desc.match(/<img[^>]+src=["']([^"']+)["']/i);
-            if (imgMatch) return imgMatch[1];
-            return '';
-          }
-          var partHtml = '';
-          var max = 10;
-          for (var i = 0; i < items.length && i < max; i++) {
-            var it = items[i];
-            var title = (it.querySelector('title') && it.querySelector('title').textContent) || '';
-            var link = (it.querySelector('link') && (it.querySelector('link').textContent || it.querySelector('link').getAttribute('href'))) || '#';
-            if (title) {
-              if (partHtml) partHtml += '<span class="news-sep" aria-hidden="true"> • </span>';
-              var thumb = getThumb(it);
-              var thumbHtml = thumb ? '<img class="news-thumb" src="' + thumb.replace(/"/g, '&quot;') + '" alt="" loading="lazy">' : '';
-              partHtml += '<span class="news-item"><a href="' + link.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener noreferrer">' + thumbHtml + title.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</a></span>';
+      function loadNews() {
+        var feedUrl = 'https://migrationalliance.com.au/immigration-daily-news/latest.html?format=feed&type=rss';
+        var proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl);
+        var timeout = 10000;
+        var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+        var t = ctrl ? setTimeout(function () { ctrl.abort(); }, timeout) : null;
+        var opts = ctrl ? { signal: ctrl.signal } : {};
+        fetch(proxy, opts).then(function (r) { return r.text(); }).then(function (xmlText) {
+          if (t) clearTimeout(t);
+          try {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(xmlText, 'text/xml');
+            var items = doc.querySelectorAll('item');
+            if (!items.length) items = doc.querySelectorAll('entry');
+            function getThumb(it) {
+              var enc = it.querySelector('enclosure[type^="image"]');
+              if (enc && enc.getAttribute('url')) return enc.getAttribute('url');
+              var media = it.querySelector('media\\:thumbnail') || it.querySelector('[url][width][height]');
+              if (media && media.getAttribute('url')) return media.getAttribute('url');
+              var mediaContent = it.querySelector('media\\:content');
+              if (mediaContent && mediaContent.getAttribute('url')) return mediaContent.getAttribute('url');
+              var desc = it.querySelector('description') && it.querySelector('description').textContent || '';
+              var imgMatch = desc.match(/<img[^>]+src=["']([^"']+)["']/i);
+              if (imgMatch) return imgMatch[1];
+              return '';
             }
+            var partHtml = '';
+            var max = 10;
+            for (var i = 0; i < items.length && i < max; i++) {
+              var it = items[i];
+              var title = (it.querySelector('title') && it.querySelector('title').textContent) || '';
+              var link = (it.querySelector('link') && (it.querySelector('link').textContent || it.querySelector('link').getAttribute('href'))) || '#';
+              if (title) {
+                if (partHtml) partHtml += '<span class="news-sep" aria-hidden="true"> • </span>';
+                var thumb = getThumb(it);
+                var thumbHtml = thumb ? '<img class="news-thumb" src="' + thumb.replace(/"/g, '&quot;') + '" alt="" loading="lazy">' : '';
+                partHtml += '<span class="news-item"><a href="' + link.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener noreferrer">' + thumbHtml + title.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</a></span>';
+              }
+            }
+            if (partHtml) {
+              listEl.innerHTML = '<div class="news-ticker-track"><span class="news-ticker-part">' + partHtml + '</span><span class="news-ticker-part" aria-hidden="true">' + partHtml + '</span></div>';
+            } else {
+              listEl.innerHTML = '<p class="news-error">No items in feed.</p>';
+            }
+          } catch (e) {
+            listEl.innerHTML = '<p class="news-error">Could not parse feed.</p>';
           }
-          if (partHtml) {
-            listEl.innerHTML = '<div class="news-ticker-track"><span class="news-ticker-part">' + partHtml + '</span><span class="news-ticker-part" aria-hidden="true">' + partHtml + '</span></div>';
-          } else {
-            listEl.innerHTML = '<p class="news-error">No items in feed.</p>';
-          }
-        } catch (e) {
-          listEl.innerHTML = '<p class="news-error">Could not parse feed.</p>';
-        }
-      }).catch(function () {
-        listEl.innerHTML = '<p class="news-error">Unable to load feed.</p>';
-      });
+        }).catch(function (err) {
+          if (t) clearTimeout(t);
+          listEl.innerHTML = '<p class="news-error">News temporarily unavailable.</p>';
+        });
+      }
+      if (document.readyState === 'complete') setTimeout(loadNews, 400);
+      else window.addEventListener('load', function () { setTimeout(loadNews, 400); });
     })();
   </script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
