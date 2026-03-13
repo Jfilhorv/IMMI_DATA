@@ -1,14 +1,17 @@
 """
 Generate a draw.io (diagrams.net) XML file for the indicator tree:
-Root -> 7 Sections -> 46 Tables. Opens in draw.io / diagrams.net.
+Root -> 7 Sections -> 46 Tables -> Indicators (577). Opens in draw.io / diagrams.net.
 """
+import csv
 import json
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 from pathlib import Path
+from collections import defaultdict
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 TABLES_JSON = PROJECT_ROOT / "dashboard" / "data" / "tables.json"
+INDICATORS_CSV = PROJECT_ROOT / "dashboard" / "data" / "indicators.csv"
 OUT_DRAWIO = PROJECT_ROOT / "docs" / "indicator_tree.drawio"
 
 SECTION_LABELS = {
@@ -34,9 +37,23 @@ def escape_xml(text):
     )
 
 
+def load_indicators_by_table():
+    """Return dict table_id -> sorted list of unique indicator names."""
+    by_table = defaultdict(set)
+    with open(INDICATORS_CSV, encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            table = (row.get("table") or "").strip()
+            ind = (row.get("indicator") or "").strip()
+            if table and ind:
+                by_table[table].add(ind)
+    return {t: sorted(inds, key=lambda s: s.lower()) for t, inds in by_table.items()}
+
+
 def main():
     with open(TABLES_JSON, encoding="utf-8") as f:
         tables = json.load(f)
+    indicators_by_table = load_indicators_by_table()
     by_section = {}
     for t in tables:
         s = t.get("section")
@@ -46,36 +63,33 @@ def main():
     for s in by_section:
         by_section[s].sort(key=lambda x: (x.get("id") or ""))
 
-    # Layout: root top, then 7 sections in a row, then tables under each section (vertical stack)
-    cell_w, cell_h = 200, 32
-    table_w, table_h = 220, 26
-    dx_section = 240
-    dy_section = 60
-    dy_table = 30
-    root_x, root_y = 380, 30
-    section_y = 100
-    table_start_y = 150
+    # Layout: vertical flow — one column, root → section → table → indicators, top to bottom
+    x_root, x_section, x_table, x_ind = 40, 40, 60, 80
+    w_cell = 280
+    h_root, h_section, h_table, h_ind = 48, 28, 24, 16
+    dy = 4  # gap between rows
 
     cells = []
     cell_id = [2]
     root_id = 2
     cell_id[0] += 1
+    y = 20
     cells.append(
         (
             root_id,
             None,
-            "Australian Immigration Data\n7 sections \u00B7 46 tables \u00B7 577 combinations",
-            root_x,
-            root_y,
-            320,
-            52,
+            "Australian Immigration Data\n7 sections \u00B7 46 tables \u00B7 577 indicators",
+            x_root,
+            y,
+            w_cell,
+            h_root,
             "rounded=1;whiteSpace=wrap;html=1;fillColor=#1e40af;strokeColor=#1e3a8a;fontColor=#ffffff;fontStyle=1;fontSize=12;",
         )
     )
+    y += h_root + dy * 2
 
     section_ids = {}
     table_ids = {}
-    x_section = 40
     for sid in [1, 2, 3, 4, 5, 6, 7]:
         if sid not in by_section:
             continue
@@ -91,13 +105,13 @@ def main():
                 root_id,
                 escape_xml(label),
                 x_section,
-                section_y,
-                cell_w,
-                cell_h,
+                y,
+                w_cell,
+                h_section,
                 "rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;",
             )
         )
-        ty = table_start_y
+        y += h_section + dy
         for t in tblist:
             tid_cell = cell_id[0]
             cell_id[0] += 1
@@ -108,15 +122,33 @@ def main():
                     tid_cell,
                     sid_cell,
                     escape_xml(short),
-                    x_section + 20,
-                    ty,
-                    table_w,
-                    table_h,
+                    x_table,
+                    y,
+                    w_cell - (x_table - x_root),
+                    h_table,
                     "rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;",
                 )
             )
-            ty += dy_table
-        x_section += dx_section
+            y += h_table + dy
+            inds = indicators_by_table.get(t["id"]) or []
+            for ind_name in inds:
+                ind_cell = cell_id[0]
+                cell_id[0] += 1
+                display_name = (ind_name[:45] + "…") if len(ind_name) > 45 else ind_name
+                cells.append(
+                    (
+                        ind_cell,
+                        tid_cell,
+                        escape_xml(display_name),
+                        x_ind,
+                        y,
+                        w_cell - (x_ind - x_root),
+                        h_ind,
+                        "rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#82b366;fontSize=8;",
+                    )
+                )
+                y += h_ind + dy
+        y += dy * 2  # extra space between sections
 
     # Build XML (draw.io format)
     mxfile = ET.Element(
@@ -134,7 +166,7 @@ def main():
     mxgraph = ET.SubElement(
         diagram,
         "mxGraphModel",
-        attrib={"dx": "1200", "dy": "800", "grid": "1", "gridSize": "10", "guides": "1", "tooltips": "1", "connect": "1", "arrows": "1", "fold": "1", "page": "1", "pageScale": "1", "pageWidth": "1600", "pageHeight": "900", "math": "0", "shadow": "0"},
+        attrib={"dx": "400", "dy": "12000", "grid": "1", "gridSize": "10", "guides": "1", "tooltips": "1", "connect": "1", "arrows": "1", "fold": "1", "page": "1", "pageScale": "1", "pageWidth": "400", "pageHeight": "14000", "math": "0", "shadow": "0"},
     )
     root = ET.SubElement(mxgraph, "root")
     ET.SubElement(root, "mxCell", attrib={"id": "0"})
