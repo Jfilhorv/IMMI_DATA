@@ -306,6 +306,19 @@
       padding-right: 1.5rem;
       white-space: nowrap;
     }
+    .news-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .news-thumb {
+      width: 28px;
+      height: 28px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
     @keyframes news-ticker {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -326,9 +339,9 @@
       grid-template-columns: 1.25fr 1fr 1fr;
       gap: 0.6rem;
     }
-    .block-notes {
+    .doc-section.block-notes {
       padding: 0.65rem 0.75rem;
-      border: 2px solid var(--accent);
+      border: 2px solid var(--accent) !important;
       box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
     }
     .block-notes h2 {
@@ -526,7 +539,7 @@
           <p class="news-loading" id="news-loading">Loading news…</p>
         </div>
       </div>
-      <p class="news-sources" style="margin:0;font-size:0.65rem;color:var(--text-muted);flex-shrink:0;">Sources: <a href="https://www.homeaffairs.gov.au/news-media" target="_blank" rel="noopener noreferrer">Home Affairs</a> · <a href="https://migrationalliance.com.au/immigration-daily-news/latest.html" target="_blank" rel="noopener noreferrer">Migration Alliance</a></p>
+      <p class="news-sources" style="margin:0;font-size:0.65rem;color:var(--text-muted);flex-shrink:0;">Sources: <a href="https://www.homeaffairs.gov.au/news-media" target="_blank" rel="noopener noreferrer">Home Affairs</a> · <a href="https://newsroom.border.gov.au/" target="_blank" rel="noopener noreferrer">ABF Newsroom</a> · <a href="https://immi.homeaffairs.gov.au/news-media" target="_blank" rel="noopener noreferrer">Immi news</a> · <a href="https://migrationalliance.com.au/immigration-daily-news/latest.html" target="_blank" rel="noopener noreferrer">Migration Alliance</a></p>
     </section>
 
     <div class="kpi-row" id="kpi-row" aria-label="Migration program outcome KPIs">
@@ -654,6 +667,18 @@
           var doc = parser.parseFromString(xmlText, 'text/xml');
           var items = doc.querySelectorAll('item');
           if (!items.length) items = doc.querySelectorAll('entry');
+          function getThumb(it) {
+            var enc = it.querySelector('enclosure[type^="image"]');
+            if (enc && enc.getAttribute('url')) return enc.getAttribute('url');
+            var media = it.querySelector('media\\:thumbnail') || it.querySelector('[url][width][height]');
+            if (media && media.getAttribute('url')) return media.getAttribute('url');
+            var mediaContent = it.querySelector('media\\:content');
+            if (mediaContent && mediaContent.getAttribute('url')) return mediaContent.getAttribute('url');
+            var desc = it.querySelector('description') && it.querySelector('description').textContent || '';
+            var imgMatch = desc.match(/<img[^>]+src=["']([^"']+)["']/i);
+            if (imgMatch) return imgMatch[1];
+            return '';
+          }
           var partHtml = '';
           var max = 10;
           for (var i = 0; i < items.length && i < max; i++) {
@@ -662,7 +687,9 @@
             var link = (it.querySelector('link') && (it.querySelector('link').textContent || it.querySelector('link').getAttribute('href'))) || '#';
             if (title) {
               if (partHtml) partHtml += '<span class="news-sep" aria-hidden="true"> • </span>';
-              partHtml += '<a href="' + link.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener noreferrer">' + title.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</a>';
+              var thumb = getThumb(it);
+              var thumbHtml = thumb ? '<img class="news-thumb" src="' + thumb.replace(/"/g, '&quot;') + '" alt="" loading="lazy">' : '';
+              partHtml += '<span class="news-item"><a href="' + link.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener noreferrer">' + thumbHtml + title.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</a></span>';
             }
           }
           if (partHtml) {
