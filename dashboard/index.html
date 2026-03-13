@@ -341,7 +341,6 @@
     }
     .doc-section.block-notes {
       padding: 0.65rem 0.75rem;
-      border: 2px solid var(--accent) !important;
       box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
     }
     .block-notes h2 {
@@ -402,6 +401,10 @@
     .doc-section a { color: var(--accent); text-decoration: none; }
     .doc-section a:hover { text-decoration: underline; }
     .doc-section small { color: var(--text-muted); font-size: 0.65rem; }
+    .footer-three-blocks .doc-section.block-notes {
+      border: 2px solid var(--accent);
+      border-color: #2563eb;
+    }
     .source {
       grid-column: 1 / -1;
       font-size: 0.65rem;
@@ -475,9 +478,10 @@
       padding: 0.4rem 0.5rem;
       box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-items: center;
       gap: 0.5rem 0.75rem;
+      white-space: nowrap;
     }
     .map-toolbar label {
       font-size: 0.65rem;
@@ -499,8 +503,8 @@
       cursor: pointer;
       min-width: 0;
     }
-    .map-toolbar select#map-table { min-width: 10rem; max-width: 18rem; }
-    .map-toolbar select#map-year { max-width: 5rem; }
+    .map-toolbar select#map-table { min-width: 8rem; max-width: 14rem; }
+    .map-toolbar select#map-year { max-width: 4.5rem; }
     .chart-type-toggle {
       display: flex;
       gap: 0;
