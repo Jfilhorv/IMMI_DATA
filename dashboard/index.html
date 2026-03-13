@@ -264,6 +264,46 @@
       white-space: nowrap; pointer-events: none;
     }
     .leaflet-tooltip.map-tooltip { font-size: 0.7rem; padding: 0.2rem 0.4rem; }
+    .news-block {
+      grid-column: 1 / -1;
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem 0.85rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+    .news-block h2 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .news-block ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+    .news-block li {
+      margin-bottom: 0.4rem;
+      padding-left: 0;
+    }
+    .news-block li:last-child { margin-bottom: 0; }
+    .news-block a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .news-block a:hover { text-decoration: underline; }
+    .news-block .news-loading,
+    .news-block .news-error { color: var(--text-muted); font-size: 0.78rem; }
+    .news-block .news-source { margin-top: 0.5rem; font-size: 0.7rem; color: var(--text-muted); }
+    .news-block .news-source a { font-weight: 400; }
     .footer-three-blocks {
       grid-column: 1 / -1;
       display: grid;
@@ -532,6 +572,14 @@
       </div>
     </main>
 
+    <section class="news-block" id="news-block" aria-label="Australian immigration news">
+      <h2>Australian immigration news</h2>
+      <div id="news-list">
+        <p class="news-loading" id="news-loading">Loading news…</p>
+      </div>
+      <p class="news-source" id="news-source-wrap">Source: <a href="https://www.homeaffairs.gov.au/news-media" target="_blank" rel="noopener noreferrer">Department of Home Affairs</a> · <a href="https://migrationalliance.com.au/immigration-daily-news/latest.html" target="_blank" rel="noopener noreferrer">Migration Alliance</a> · Links open in a new tab.</p>
+    </section>
+
     <div class="footer-three-blocks" id="footer-three-blocks">
       <section class="doc-section block-notes">
         <h2>Notes</h2>
@@ -576,6 +624,41 @@
     </p>
   </div>
 
+  <script>
+    (function () {
+      var listEl = document.getElementById('news-list');
+      var loadingEl = document.getElementById('news-loading');
+      if (!listEl) return;
+      var feedUrl = 'https://migrationalliance.com.au/immigration-daily-news/latest.html?format=feed&type=rss';
+      var proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl);
+      fetch(proxy).then(function (r) { return r.text(); }).then(function (xmlText) {
+        try {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(xmlText, 'text/xml');
+          var items = doc.querySelectorAll('item');
+          if (!items.length) items = doc.querySelectorAll('entry');
+          var html = '';
+          var max = 7;
+          for (var i = 0; i < items.length && i < max; i++) {
+            var it = items[i];
+            var title = (it.querySelector('title') && it.querySelector('title').textContent) || '';
+            var link = (it.querySelector('link') && (it.querySelector('link').textContent || it.querySelector('link').getAttribute('href'))) || '#';
+            if (title) html += '<li><a href="' + link.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener noreferrer">' + title.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</a></li>';
+          }
+          if (html) {
+            listEl.innerHTML = '<ul>' + html + '</ul>';
+          } else {
+            listEl.innerHTML = '<p class="news-error">No items in feed. Visit the sources below.</p>';
+          }
+        } catch (e) {
+          listEl.innerHTML = '<p class="news-error">Could not parse feed. Visit the sources below.</p>';
+        }
+      }).catch(function () {
+        if (loadingEl) loadingEl.remove();
+        listEl.innerHTML = '<p class="news-error">Unable to load feed. Visit the sources below.</p>';
+      });
+    })();
+  </script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="app.js?v=9"></script>
 </body>
