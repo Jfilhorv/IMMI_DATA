@@ -7,7 +7,7 @@ A **free, public** dashboard and webpage showing Australian immigration statisti
 <div align="center">
 
 **Australian Immigration — Indicator Dashboard**  
-Sections 1–7 · KPIs · Line/Bar charts · Migration Program, NOM, Humanitarian, Labour market
+Sections 1–7 · Dynamic KPIs (5 per table) · Line/Bar charts · Map & donut · News ticker
 
 [![Open live dashboard](https://img.shields.io/badge/🌐_Live_Dashboard-Open_here-1e40af?style=for-the-badge)](https://jfilhorv.github.io/IMMI_DATA/dashboard/)
 
@@ -25,14 +25,22 @@ Sections 1–7 · KPIs · Line/Bar charts · Migration Program, NOM, Humanitaria
 
 ```
 IMMI_DATA/
-├── PLANNING.md          # Full project plan
-├── README.md            # This file
-├── DATA_AVAILABLE.md    # List of all datasets and how to get them
-├── DATA_SOURCES.md      # Data sources reference
-├── data/                # raw/; by_sheet/; melted/; dashboard/ (indicator,year,value); INDEX.csv
-├── scripts/             # fetch_first_dataset.py, build_index_csv.py (pandas)
-├── dashboard/           # Static dashboard (HTML/JS + charts)
-└── docs/                # Optional .md exports; primary format is CSV in data/
+├── PLANNING.md              # Full project plan
+├── README.md                # This file
+├── DATA_AVAILABLE.md        # List of all datasets and how to get them
+├── DATA_SOURCES.md          # Data sources reference
+├── data/
+│   └── dashboard/           # indicators.csv, kpi_candidates.json, kpi_candidates_list.md
+├── scripts/
+│   ├── list_kpi_candidates.py   # Build KPI list (tables/indicators with 3+ years for sparklines)
+│   ├── melt_all_sheets.py      # XLSX → melted CSV
+│   ├── build_dashboard_data.py # Build dashboard JSON/CSV
+│   └── ...                    # Other pipeline scripts
+├── dashboard/                # Static dashboard (HTML/JS, Chart.js, Leaflet)
+│   ├── index.html
+│   ├── app.js
+│   └── data/                 # tables.json, indicators.csv, kpi_candidates.json, etc.
+└── docs/                     # Optional .md exports
 ```
 
 ## Goals
@@ -44,10 +52,9 @@ IMMI_DATA/
 ## Status
 
 - **Planning:** Done (see [PLANNING.md](./PLANNING.md))
-- **Data pipeline:** First dataset → [data/by_sheet/](data/by_sheet/), [data/melted/](data/melted/), and [data/dashboard/](data/dashboard/) (**indicator, year, value** for dropdown + chart; see [docs/DASHBOARD_METABASE_SUPERSET.md](docs/DASHBOARD_METABASE_SUPERSET.md)).
-- **Documentation:** Overview + Data Items and Terminology. **Data:** 1.0–1.7. Index: [data/INDEX.csv](data/INDEX.csv).
-- **Dashboard:** Static dashboard in [dashboard/](dashboard/) (dropdown + Chart.js; copy `data/dashboard/indicators.csv` to `dashboard/data/` and open `dashboard/index.html` or serve the folder).
-- **GitHub Pages:** Not configured (use repo root or `docs/` and link to `dashboard/`).
+- **Data pipeline:** First dataset → [data/by_sheet/](data/by_sheet/), [data/melted/](data/melted/), [data/dashboard/](data/dashboard/). Script `scripts/list_kpi_candidates.py` generates [data/dashboard/kpi_candidates_list.md](data/dashboard/kpi_candidates_list.md) and `kpi_candidates.json` (29 tables, 420 indicator×table pairs with 3+ years for sparklines).
+- **Dashboard:** Static dashboard in [dashboard/](dashboard/): Section → Table → (Submenu) → Indicator; **dynamic KPIs** (5 most relevant indicators per selected table, with YoY % and 3-point sparkline); Line/Bar chart; choropleth map and donut by country; news ticker; table notes and footnotes.
+- **GitHub Pages:** Live at [jfilhorv.github.io/IMMI_DATA/dashboard/](https://jfilhorv.github.io/IMMI_DATA/dashboard/).
 
 ## Publish to GitHub
 
@@ -72,4 +79,4 @@ The repo is initialized with an initial commit. To push to GitHub:
 
 ---
 
-*Project in English. Next: implement data discovery and pipeline (Phase 1–2).*
+*Project in English.*

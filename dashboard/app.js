@@ -114,10 +114,15 @@
     return kpiCandidates[tableId].slice(0, 5);
   }
 
+  function kpiTitleDisplay(name) {
+    if (!name || name === '—') return name;
+    return name.replace(/\d+$/, '').trim() || name;
+  }
+
   function setKpiCardTitles(indicators) {
     for (var i = 0; i < 5; i++) {
       var el = document.getElementById('kpi-' + i + '-title');
-      if (el) el.textContent = indicators[i] || '—';
+      if (el) el.textContent = kpiTitleDisplay(indicators[i]) || '—';
     }
   }
 
