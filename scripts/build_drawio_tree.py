@@ -13,6 +13,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 TABLES_JSON = PROJECT_ROOT / "dashboard" / "data" / "tables.json"
 INDICATORS_CSV = PROJECT_ROOT / "dashboard" / "data" / "indicators.csv"
 OUT_DRAWIO = PROJECT_ROOT / "docs" / "indicator_tree.drawio"
+OUT_HTML = PROJECT_ROOT / "docs" / "indicator_tree.drawio.html"
 
 SECTION_LABELS = {
     1: "1. Permanent migration",
@@ -269,6 +270,32 @@ def main():
     with open(OUT_DRAWIO, "w", encoding="utf-8") as f:
         f.write(out_xml)
     print(f"Wrote {OUT_DRAWIO}")
+
+    # Generate HTML viewer (embed same XML so diagram can be viewed in browser)
+    viewer_data = {
+        "highlight": "#0000ff",
+        "nav": True,
+        "resize": True,
+        "toolbar": "zoom layers lightbox",
+        "xml": out_xml,
+    }
+    json_str = json.dumps(viewer_data, ensure_ascii=False)
+    html_attr = json_str.replace("&", "&amp;").replace('"', "&quot;")
+    html_content = (
+        '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8"/>\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1"/>\n'
+        '<title>Indicator tree — Australian Immigration Data</title>\n</head>\n<body>\n'
+        '<p style="margin:0.5rem 1rem;font-family:sans-serif;font-size:0.9rem;">'
+        '<a href="../dashboard/index.html">← Dashboard</a> · '
+        '<a href="../dashboard/tree.html">Indicator tree (list)</a></p>\n'
+        '<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" '
+        'data-mxgraph="' + html_attr + '"></div>\n'
+        '<script src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>\n'
+        '</body>\n</html>'
+    )
+    with open(OUT_HTML, "w", encoding="utf-8") as f:
+        f.write(html_content)
+    print(f"Wrote {OUT_HTML}")
 
 
 if __name__ == "__main__":
