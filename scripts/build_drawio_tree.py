@@ -63,39 +63,81 @@ def main():
     for s in by_section:
         by_section[s].sort(key=lambda x: (x.get("id") or ""))
 
-    # Layout: vertical flow — one column, root → section → table → indicators, top to bottom
-    x_root, x_section, x_table, x_ind = 40, 40, 60, 80
-    w_cell = 280
-    h_root, h_section, h_table, h_ind = 48, 28, 24, 16
-    dy = 4  # gap between rows
+    # Layout: "armoire on its side" — left to right: Root | 7 sections | 46 tables | 577 indicators
+    # Each level is a column; items stack vertically within column. Root/sections/tables centered on their children.
+    x_root, x_section, x_table, x_ind = 20, 140, 280, 430
+    w_root, w_section, w_table, w_ind = 100, 120, 130, 160
+    h_root, h_section, h_table, h_ind = 44, 24, 20, 14
+    gap = 2
+
+    # 1) Build flat list of all indicators in order (section → table → indicator); assign y to each
+    ind_y_list = []  # (table_id, section_id, indicator_name, y_position)
+    y_run = 0
+    for sid in [1, 2, 3, 4, 5, 6, 7]:
+        if sid not in by_section:
+            continue
+        for t in by_section[sid]:
+            inds = indicators_by_table.get(t["id"]) or []
+            for ind_name in inds:
+                ind_y_list.append((t["id"], sid, ind_name, y_run))
+                y_run += h_ind + gap
+
+    # 2) For each table, get y_min, y_max from its indicators; table y = center
+    table_yrange = {}  # table_id -> (y_min, y_max)
+    for t in tables:
+        tid = t.get("id")
+        tbl_ys = [item[3] for item in ind_y_list if item[0] == tid]
+        if tbl_ys:
+            table_yrange[tid] = (min(tbl_ys), max(tbl_ys))
+        else:
+            table_yrange[tid] = (0, 0)
+
+    # 3) For each section, get y_min, y_max from its tables; section y = center
+    section_yrange = {}
+    for sid in [1, 2, 3, 4, 5, 6, 7]:
+        if sid not in by_section:
+            continue
+        tblist = by_section[sid]
+        all_ys = []
+        for t in tblist:
+            ymn, ymx = table_yrange.get(t["id"], (0, 0))
+            all_ys.extend([ymn, ymx])
+        if all_ys:
+            section_yrange[sid] = (min(all_ys), max(all_ys))
+        else:
+            section_yrange[sid] = (0, 0)
+
+    # 4) Root y = center of all sections (clamp to 0)
+    sec_ys = [section_yrange[s][0] for s in section_yrange] + [section_yrange[s][1] for s in section_yrange]
+    root_y = max(0, (min(sec_ys) + max(sec_ys) - h_root) // 2) if sec_ys else 0
 
     cells = []
     cell_id = [2]
     root_id = 2
     cell_id[0] += 1
-    y = 20
     cells.append(
         (
             root_id,
             None,
-            "Australian Immigration Data\n7 sections \u00B7 46 tables \u00B7 577 indicators",
+            "7 \u00B7 46 \u00B7 577",
             x_root,
-            y,
-            w_cell,
+            root_y,
+            w_root,
             h_root,
-            "rounded=1;whiteSpace=wrap;html=1;fillColor=#1e40af;strokeColor=#1e3a8a;fontColor=#ffffff;fontStyle=1;fontSize=12;",
+            "rounded=1;whiteSpace=wrap;html=1;fillColor=#1e40af;strokeColor=#1e3a8a;fontColor=#ffffff;fontStyle=1;fontSize=11;",
         )
     )
-    y += h_root + dy * 2
 
     section_ids = {}
     table_ids = {}
+    # Sections column
     for sid in [1, 2, 3, 4, 5, 6, 7]:
         if sid not in by_section:
             continue
-        tblist = by_section[sid]
-        n = len(tblist)
-        label = (SECTION_LABELS.get(sid) or f"Section {sid}") + f" ({n} tables)"
+        ymn, ymx = section_yrange.get(sid, (0, 0))
+        sy = max(0, (ymn + ymx - h_section) // 2)
+        n = len(by_section[sid])
+        label = (SECTION_LABELS.get(sid) or f"Section {sid}") + f" ({n})"
         sid_cell = cell_id[0]
         cell_id[0] += 1
         section_ids[sid] = sid_cell
@@ -105,50 +147,56 @@ def main():
                 root_id,
                 escape_xml(label),
                 x_section,
-                y,
-                w_cell,
+                sy,
+                w_section,
                 h_section,
-                "rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;",
+                "rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=9;",
             )
         )
-        y += h_section + dy
-        for t in tblist:
+    # Tables column
+    for sid in [1, 2, 3, 4, 5, 6, 7]:
+        if sid not in by_section:
+            continue
+        for t in by_section[sid]:
+            tid = t["id"]
             tid_cell = cell_id[0]
             cell_id[0] += 1
-            table_ids[(sid, t["id"])] = tid_cell
-            short = (t.get("shortTitle") or t.get("title") or t["id"])[:50]
+            table_ids[(sid, tid)] = tid_cell
+            ymn, ymx = table_yrange.get(tid, (0, 0))
+            ty = max(0, (ymn + ymx - h_table) // 2)
+            short = (t.get("shortTitle") or t.get("title") or tid)[:36]
             cells.append(
                 (
                     tid_cell,
-                    sid_cell,
+                    section_ids[sid],
                     escape_xml(short),
                     x_table,
-                    y,
-                    w_cell - (x_table - x_root),
+                    ty,
+                    w_table,
                     h_table,
-                    "rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;",
+                    "rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=8;",
                 )
             )
-            y += h_table + dy
-            inds = indicators_by_table.get(t["id"]) or []
-            for ind_name in inds:
-                ind_cell = cell_id[0]
-                cell_id[0] += 1
-                display_name = (ind_name[:45] + "…") if len(ind_name) > 45 else ind_name
-                cells.append(
-                    (
-                        ind_cell,
-                        tid_cell,
-                        escape_xml(display_name),
-                        x_ind,
-                        y,
-                        w_cell - (x_ind - x_root),
-                        h_ind,
-                        "rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#82b366;fontSize=8;",
-                    )
-                )
-                y += h_ind + dy
-        y += dy * 2  # extra space between sections
+    # Indicators column (from precomputed list)
+    for table_id, section_id, ind_name, iy in ind_y_list:
+        ind_cell = cell_id[0]
+        cell_id[0] += 1
+        display_name = (ind_name[:40] + "…") if len(ind_name) > 40 else ind_name
+        tid_cell = table_ids.get((section_id, table_id))
+        if tid_cell is None:
+            continue
+        cells.append(
+            (
+                ind_cell,
+                tid_cell,
+                escape_xml(display_name),
+                x_ind,
+                iy,
+                w_ind,
+                h_ind,
+                "rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#82b366;fontSize=7;",
+            )
+        )
 
     # Build XML (draw.io format)
     mxfile = ET.Element(
@@ -166,7 +214,7 @@ def main():
     mxgraph = ET.SubElement(
         diagram,
         "mxGraphModel",
-        attrib={"dx": "400", "dy": "12000", "grid": "1", "gridSize": "10", "guides": "1", "tooltips": "1", "connect": "1", "arrows": "1", "fold": "1", "page": "1", "pageScale": "1", "pageWidth": "400", "pageHeight": "14000", "math": "0", "shadow": "0"},
+        attrib={"dx": "600", "dy": "9500", "grid": "1", "gridSize": "10", "guides": "1", "tooltips": "1", "connect": "1", "arrows": "1", "fold": "1", "page": "1", "pageScale": "1", "pageWidth": "620", "pageHeight": "9500", "math": "0", "shadow": "0"},
     )
     root = ET.SubElement(mxgraph, "root")
     ET.SubElement(root, "mxCell", attrib={"id": "0"})
