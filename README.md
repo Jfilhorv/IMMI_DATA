@@ -15,11 +15,26 @@ A **free, public** dashboard and webpage showing Australian immigration statisti
 
 ---
 
-## Data sources
+## Links
 
-- **[data.gov.au](https://data.gov.au)** — Australian Migration Statistics, visa programs, overseas arrivals and departures
-- **Department of Home Affairs** — Visa statistics, migration program, humanitarian and temporary visa data
-- All data is attributed; sources are linked in the dashboard and in [PLANNING.md](./PLANNING.md)
+| What | URL |
+|------|-----|
+| **Live dashboard** | [https://jfilhorv.github.io/IMMI_DATA/dashboard/](https://jfilhorv.github.io/IMMI_DATA/dashboard/) |
+| **Indicator tree (list)** | [https://jfilhorv.github.io/IMMI_DATA/dashboard/tree.html](https://jfilhorv.github.io/IMMI_DATA/dashboard/tree.html) |
+| **Indicator tree (diagram)** | [https://jfilhorv.github.io/IMMI_DATA/docs/indicator_tree.drawio.html](https://jfilhorv.github.io/IMMI_DATA/docs/indicator_tree.drawio.html) |
+| **Repository** | [https://github.com/Jfilhorv/IMMI_DATA](https://github.com/Jfilhorv/IMMI_DATA) |
+
+## Data source (where the data comes from)
+
+All statistics shown in the dashboard come from the following official release:
+
+- **Dataset:** [Australian Migration Statistics](https://data.gov.au/data/dataset/australian-migration-statistics)  
+- **Publisher:** Department of Home Affairs, Australian Government  
+- **Portal:** [data.gov.au](https://data.gov.au)  
+- **Content:** Migration program outcomes (permanent and temporary), humanitarian, visa cancellations, Net Overseas Migration, citizenship, labour market. Tables 1.0–7.8, financial year series.  
+- **Licence:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — attribution required; we attribute in the dashboard and do not imply government endorsement.
+
+Additional references: [Visa statistics](https://www.homeaffairs.gov.au/research-and-statistics/statistics/visa-statistics) (Home Affairs), [PLANNING.md](./PLANNING.md), [DATA_SOURCES.md](./DATA_SOURCES.md).
 
 ## Project structure
 
