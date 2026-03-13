@@ -467,9 +467,11 @@
     body.tweak-notes-b2 .block-notes { border-width: 2px; }
     /* Tweak: outline color */
     body.tweak-outline-gray .controls select,
-    body.tweak-outline-gray .block-notes { border-color: rgba(0,0,0,0.2); }
+    body.tweak-outline-gray .block-notes,
+    body.tweak-outline-gray .map-wrap { border-color: rgba(0,0,0,0.2); }
     body.tweak-outline-blue .controls select,
-    body.tweak-outline-blue .block-notes { border-color: var(--accent); }
+    body.tweak-outline-blue .block-notes,
+    body.tweak-outline-blue .map-wrap { border-color: var(--accent); }
   </style>
 </head>
 <body>
@@ -604,8 +606,10 @@
 
   <script>
     (function () {
+      document.body.classList.add('tweak-menu-b1', 'tweak-notes-b2', 'tweak-outline-blue');
       var bar = document.getElementById('tweak-bar');
       if (!bar) return;
+      bar.querySelectorAll('button[data-tweak="menu-b1"], button[data-tweak="notes-b2"], button[data-tweak="outline-blue"]').forEach(function (b) { b.classList.add('active-tweak'); });
       var groupClasses = { 'menu-b1': ['tweak-menu-b1', 'tweak-menu-b2'], 'menu-b2': ['tweak-menu-b1', 'tweak-menu-b2'], 'notes-b1': ['tweak-notes-b1', 'tweak-notes-b2'], 'notes-b2': ['tweak-notes-b1', 'tweak-notes-b2'], 'outline-gray': ['tweak-outline-gray', 'tweak-outline-blue'], 'outline-blue': ['tweak-outline-gray', 'tweak-outline-blue'] };
       bar.addEventListener('click', function (e) {
         var btn = e.target.closest('button[data-tweak]');
