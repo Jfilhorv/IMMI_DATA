@@ -7,7 +7,7 @@ A **free, public** dashboard and webpage showing Australian immigration statisti
 <div align="center">
 
 **Australian Immigration — Indicator Dashboard**  
-Sections 1–7 · Dynamic KPIs (5 per table) · Line/Bar charts · Map & donut · News ticker
+7 sections · 46 tables · 577 indicators · [Indicator tree](https://jfilhorv.github.io/IMMI_DATA/dashboard/tree.html) (visual hierarchy)
 
 [![Open live dashboard](https://img.shields.io/badge/🌐_Live_Dashboard-Open_here-1e40af?style=for-the-badge)](https://jfilhorv.github.io/IMMI_DATA/dashboard/)
 
@@ -53,7 +53,7 @@ IMMI_DATA/
 
 - **Planning:** Done (see [PLANNING.md](./PLANNING.md))
 - **Data pipeline:** First dataset → [data/by_sheet/](data/by_sheet/), [data/melted/](data/melted/), [data/dashboard/](data/dashboard/). Script `scripts/list_kpi_candidates.py` generates [data/dashboard/kpi_candidates_list.md](data/dashboard/kpi_candidates_list.md) and `kpi_candidates.json` (29 tables, 420 indicator×table pairs with 3+ years for sparklines).
-- **Dashboard:** Static dashboard in [dashboard/](dashboard/): Section → Table → (Submenu) → Indicator; **dynamic KPIs** (5 most relevant indicators per selected table, with YoY % and 3-point sparkline); Line/Bar chart; choropleth map and donut by country; news ticker; table notes and footnotes.
+- **Dashboard:** Static dashboard in [dashboard/](dashboard/): Section → Table → (Submenu) → Indicator; **dynamic KPIs** (5 most relevant indicators per selected table, with YoY % and 3-point sparkline); Line/Bar chart; choropleth map and donut by country; news ticker; table notes and footnotes. **[Indicator tree](dashboard/tree.html)** — collapsible visual tree of all 7 sections, 46 tables and 577 indicators; links open the dashboard with that table/indicator selected.
 - **GitHub Pages:** Live at [jfilhorv.github.io/IMMI_DATA/dashboard/](https://jfilhorv.github.io/IMMI_DATA/dashboard/).
 
 ## Publish to GitHub

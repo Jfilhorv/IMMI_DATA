@@ -831,6 +831,25 @@
           onTableChange();
           onIndicatorChange();
         }
+        var params = new URLSearchParams(window.location.search);
+        var wantTable = params.get('table');
+        var wantIndicator = params.get('indicator');
+        if (wantTable && tablesWithData.has(wantTable)) {
+          var tbl = tableList.filter(function (t) { return t.id === wantTable; })[0];
+          if (tbl && sectionsWithData.has(tbl.section)) {
+            sectionSel.value = String(tbl.section);
+            onSectionChange();
+            tableSel.value = wantTable;
+            onTableChange();
+            if (wantIndicator) {
+              var opts = indSel.options;
+              for (var j = 0; j < opts.length; j++) {
+                if (opts[j].value === wantIndicator) { indSel.value = wantIndicator; break; }
+              }
+              onIndicatorChange();
+            }
+          }
+        }
         var mt = document.getElementById('map-table');
         updateMapWithCountryData(mt && mt.value ? mt.value : MAP_TABLE_TEST);
       } catch (e) {

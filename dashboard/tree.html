@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indicator tree — Australian Immigration Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --bg: #f0f4f8;
+      --text: #2d3748;
+      --text-muted: #4a5568;
+      --accent: #2563eb;
+      --header-bg: #1e40af;
+      --header-text: #fff;
+      --border: rgba(0,0,0,0.08);
+      --surface: rgba(255,255,255,0.9);
+    }
+    body { font-family: 'DM Sans', system-ui, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); min-height: 100vh; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 1rem 1.25rem; }
+    header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 0.75rem 1.25rem;
+      margin: 0 0 1rem 0;
+      box-shadow: 0 2px 8px rgba(30,64,175,0.25);
+    }
+    header .wrap { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    h1 { font-size: 1.2rem; margin: 0 0 0.25rem 0; font-weight: 700; }
+    .back { font-size: 0.85rem; margin-top: 0.25rem; }
+    .back a { color: rgba(255,255,255,0.9); text-decoration: none; }
+    .back a:hover { text-decoration: underline; }
+    .meta { font-size: 0.8rem; color: var(--text-muted); margin: 0 0 1rem 0; }
+    .tree { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.75rem; }
+    .tree details { margin: 0.15rem 0; }
+    .tree summary {
+      cursor: pointer;
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .tree summary::-webkit-details-marker { display: none; }
+    .tree summary::before { content: '▶'; font-size: 0.65rem; transition: transform 0.15s; }
+    .tree details[open] > summary::before { transform: rotate(90deg); }
+    .tree summary:hover { background: rgba(37,99,235,0.08); }
+    .tree .section summary { color: var(--accent); }
+    .tree .table summary { padding-left: 1.25rem; font-weight: 500; font-size: 0.85rem; }
+    .tree .submenu summary { padding-left: 2rem; font-size: 0.8rem; font-weight: 500; color: var(--text-muted); }
+    .tree .indicator-list { padding-left: 2.5rem; margin: 0.25rem 0; list-style: none; }
+    .tree .indicator-list li { margin: 0.15rem 0; }
+    .tree .indicator-list a {
+      display: inline-block;
+      padding: 0.2rem 0.4rem;
+      font-size: 0.8rem;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .tree .indicator-list a:hover { background: rgba(37,99,235,0.1); color: var(--accent); }
+    .count { font-size: 0.7rem; font-weight: 500; color: var(--text-muted); }
+    .loading { padding: 1rem; color: var(--text-muted); }
+    .error { padding: 1rem; color: #b91c1c; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Indicator tree</h1>
+      <p class="back"><a href="index.html">← Back to Dashboard</a></p>
+    </div>
+  </header>
+  <div class="wrap">
+    <p class="meta" id="meta">7 sections · 46 tables · 577 indicators</p>
+    <div id="tree-root" class="tree">
+      <p class="loading" id="loading">Loading…</p>
+    </div>
+  </div>
+  <script>
+(function () {
+  'use strict';
+  var base = (function () {
+    var href = window.location.href;
+    var last = href.lastIndexOf('/');
+    return last >= 0 ? href.slice(0, last + 1) : '';
+  })();
+  var TABLES_URL = base + 'data/tables.json?v=1';
+  var DATA_URL = base + 'data/indicators.csv?v=1';
+  var SECTION_LABELS = {
+    1: '1. Permanent migration',
+    2: '2. Temporary visas',
+    3: '3. Humanitarian Program',
+    4: '4. Visa cancellations & departures',
+    5: '5. Net Overseas Migration',
+    6: '6. Citizenship',
+    7: '7. Labour market'
+  };
+
+  function parseCSVLine(line) {
+    var out = [], i = 0;
+    while (i < line.length) {
+      if (line[i] === '"') {
+        i++;
+        var s = '';
+        while (i < line.length && line[i] !== '"') { s += line[i]; i++; }
+        if (line[i] === '"') i++;
+        out.push(s.trim());
+      } else {
+        var s = '';
+        while (i < line.length && line[i] !== ',') { s += line[i]; i++; }
+        out.push(s.trim());
+        if (line[i] === ',') i++;
+      }
+    }
+    return out;
+  }
+
+  function buildTree(tables, csvText) {
+    var lines = csvText.trim().split(/\r?\n/);
+    if (lines.length < 2) return { sections: {}, totalIndicators: 0 };
+    var header = parseCSVLine(lines[0]);
+    var tableIdx = header.indexOf('table');
+    var indIdx = header.indexOf('indicator');
+    if (tableIdx < 0 || indIdx < 0) return { sections: {}, totalIndicators: 0 };
+    var tableToIndicators = {};
+    for (var i = 1; i < lines.length; i++) {
+      var row = parseCSVLine(lines[i]);
+      if (row.length <= Math.max(tableIdx, indIdx)) continue;
+      var table = (row[tableIdx] || '').trim();
+      var ind = (row[indIdx] || '').trim();
+      if (!table || !ind) continue;
+      if (!tableToIndicators[table]) tableToIndicators[table] = {};
+      if (ind.indexOf(' | ') >= 0) {
+        var parts = ind.split(' | ');
+        var sub = (parts[0] || '').trim();
+        var name = (parts.slice(1).join(' | ') || '').trim();
+        if (!tableToIndicators[table][sub]) tableToIndicators[table][sub] = [];
+        if (tableToIndicators[table][sub].indexOf(name) < 0) tableToIndicators[table][sub].push(name);
+      } else {
+        if (!tableToIndicators[table]['']) tableToIndicators[table][''] = [];
+        if (tableToIndicators[table][''].indexOf(ind) < 0) tableToIndicators[table][''].push(ind);
+      }
+    }
+    var sections = {};
+    var totalIndicators = 0;
+    tables.forEach(function (t) {
+      var sid = t.section;
+      if (!sections[sid]) sections[sid] = { label: SECTION_LABELS[sid] || ('Section ' + sid), tables: [] };
+      var indBySub = tableToIndicators[t.id] || { '': [] };
+      var flat = [];
+      Object.keys(indBySub).sort().forEach(function (sub) {
+        (indBySub[sub] || []).sort(function (a, b) { return a.toLowerCase().localeCompare(b.toLowerCase()); }).forEach(function (name) {
+          flat.push({ submenu: sub, name: name, full: sub ? sub + ' | ' + name : name });
+        });
+      });
+      totalIndicators += flat.length;
+      sections[sid].tables.push({ id: t.id, shortTitle: t.shortTitle || t.title, indicators: flat });
+    });
+    return { sections: sections, totalIndicators: totalIndicators };
+  }
+
+  function escapeHtml(s) {
+    var div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+  }
+
+  function render(tree) {
+    var root = document.getElementById('tree-root');
+    var meta = document.getElementById('meta');
+    if (!tree.totalIndicators) {
+      root.innerHTML = '<p class="error">No indicator data.</p>';
+      return;
+    }
+    var sectionCount = Object.keys(tree.sections).length;
+    var tableCount = 0;
+    Object.keys(tree.sections).forEach(function (sid) { tableCount += tree.sections[sid].tables.length; });
+    meta.textContent = sectionCount + ' sections · ' + tableCount + ' tables · ' + tree.totalIndicators + ' indicators';
+    var html = '';
+    [1, 2, 3, 4, 5, 6, 7].forEach(function (sid) {
+      var sec = tree.sections[sid];
+      if (!sec || !sec.tables.length) return;
+      html += '<details class="section"><summary><span>' + escapeHtml(sec.label) + '</span> <span class="count">' + sec.tables.length + ' tables</span></summary>';
+      sec.tables.forEach(function (tbl) {
+        html += '<details class="table"><summary><span>' + escapeHtml(tbl.shortTitle) + '</span> <span class="count">' + tbl.indicators.length + ' indicators</span></summary>';
+        var bySub = {};
+        tbl.indicators.forEach(function (ind) {
+          var sub = ind.submenu || '\u200b';
+          if (!bySub[sub]) bySub[sub] = [];
+          bySub[sub].push(ind);
+        });
+        var subKeys = Object.keys(bySub).sort();
+        subKeys.forEach(function (sub) {
+          var list = bySub[sub];
+          if (sub === '\u200b') {
+            html += '<ul class="indicator-list">';
+            list.forEach(function (ind) {
+              var href = 'index.html?table=' + encodeURIComponent(tbl.id) + '&indicator=' + encodeURIComponent(ind.full);
+              html += '<li><a href="' + href + '">' + escapeHtml(ind.name) + '</a></li>';
+            });
+            html += '</ul>';
+          } else {
+            html += '<details class="submenu"><summary>' + escapeHtml(sub) + ' <span class="count">' + list.length + '</span></summary><ul class="indicator-list">';
+            list.forEach(function (ind) {
+              var href = 'index.html?table=' + encodeURIComponent(tbl.id) + '&indicator=' + encodeURIComponent(ind.full);
+              html += '<li><a href="' + href + '">' + escapeHtml(ind.name) + '</a></li>';
+            });
+            html += '</ul></details>';
+          }
+        });
+        html += '</details>';
+      });
+      html += '</details>';
+    });
+    root.innerHTML = html;
+  }
+
+  document.getElementById('loading').textContent = 'Loading…';
+  Promise.all([
+    fetch(TABLES_URL).then(function (r) { if (!r.ok) throw new Error('tables'); return r.json(); }),
+    fetch(DATA_URL).then(function (r) { if (!r.ok) throw new Error('data'); return r.text(); })
+  ]).then(function (res) {
+    var tables = res[0];
+    var csvText = res[1];
+    if (!Array.isArray(tables)) throw new Error('Invalid tables');
+    var tree = buildTree(tables, csvText);
+    render(tree);
+  }).catch(function (err) {
+    document.getElementById('tree-root').innerHTML = '<p class="error">Failed to load data: ' + escapeHtml(err.message || 'error') + '</p>';
+  });
+})();
+  </script>
+</body>
+</html>
