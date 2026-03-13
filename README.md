@@ -41,14 +41,15 @@ IMMI_DATA/
 │   ├── index.html
 │   ├── app.js
 │   └── data/                 # tables.json, indicators.csv, kpi_candidates.json, etc.
-└── docs/                     # Optional .md exports; indicator_tree.drawio (edit in draw.io); indicador_tree.drawio.html (view in browser)
+└── docs/                     # indicator_tree.drawio (edit in draw.io); indicator_tree.drawio.html (view: https://jfilhorv.github.io/IMMI_DATA/docs/indicator_tree.drawio.html)
 ```
 
 ## Goals
 
-1. **Get** relevant data from Australian Gov (Home Affairs, data.gov.au).
-2. **Show** dimensions: when, from, to, across years (and visa/stream where available).
-3. **Publish** a dashboard and webpage on **GitHub Pages** for free public use.
+- Take advantage of publicly available migration datasets released by the Australian Government (Home Affairs, data.gov.au).
+- Transform these datasets into clearer visual insights by regrouping and presenting them through intuitive charts and dashboards.
+- Help immigrants, analysts, and the public better understand migration trends by providing additional perspectives and visual interpretations of the data.
+- Publish an open and freely accessible dashboard on GitHub Pages for public exploration and transparency.
 
 ## Status
 
@@ -79,5 +80,3 @@ The repo is initialized with an initial commit. To push to GitHub:
 - Government data: follow the licence of each dataset (e.g. CC BY); we will attribute sources on the site.
 
 ---
-
-*Project in English.*
