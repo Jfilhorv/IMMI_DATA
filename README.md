@@ -33,6 +33,7 @@ IMMI_DATA/
 │   └── dashboard/           # indicators.csv, kpi_candidates.json, kpi_candidates_list.md
 ├── scripts/
 │   ├── list_kpi_candidates.py   # Build KPI list (tables/indicators with 3+ years for sparklines)
+│   ├── build_drawio_tree.py     # Generate draw.io diagram (docs/indicator_tree.drawio)
 │   ├── melt_all_sheets.py      # XLSX → melted CSV
 │   ├── build_dashboard_data.py # Build dashboard JSON/CSV
 │   └── ...                    # Other pipeline scripts
@@ -40,7 +41,7 @@ IMMI_DATA/
 │   ├── index.html
 │   ├── app.js
 │   └── data/                 # tables.json, indicators.csv, kpi_candidates.json, etc.
-└── docs/                     # Optional .md exports
+└── docs/                     # Optional .md exports; indicator_tree.drawio (open in draw.io/diagrams.net)
 ```
 
 ## Goals
