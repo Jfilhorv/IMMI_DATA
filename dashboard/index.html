@@ -100,7 +100,7 @@
       font-size: 0.78rem;
       font-weight: 500;
       font-family: inherit;
-      border: 1px solid rgba(0,0,0,0.14);
+      border: 1px solid var(--accent);
       border-radius: 4px;
       background: #fff;
       color: var(--text);
@@ -272,7 +272,7 @@
     }
     .block-notes {
       padding: 0.65rem 0.75rem;
-      border: 1px solid rgba(0,0,0,0.12);
+      border: 2px solid var(--accent);
       box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
     }
     .block-notes h2 {
@@ -401,7 +401,7 @@
     .chart-toolbar label { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; }
     .map-toolbar {
       background: var(--surface);
-      border: 1px solid rgba(0,0,0,0.14);
+      border: 1px solid var(--accent);
       border-radius: 8px;
       padding: 0.4rem 0.5rem;
       box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
@@ -454,43 +454,6 @@
       font-weight: 600;
     }
     .chart-type-toggle button:not(.active):hover { background: rgba(0,0,0,0.04); }
-    /* Disposable tweak bar – remove when you keep the style you like */
-    .tweak-bar {
-      grid-column: 1 / -1;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 0.6rem;
-      background: rgba(0,0,0,0.04);
-      border: 1px dashed rgba(0,0,0,0.2);
-      border-radius: 6px;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-    }
-    .tweak-bar span { margin-right: 0.25rem; }
-    .tweak-bar button {
-      padding: 0.2rem 0.45rem;
-      font-size: 0.68rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      background: #fff;
-      cursor: pointer;
-    }
-    .tweak-bar button:hover { background: var(--accent-dim); }
-    .tweak-bar button.active-tweak { border-color: var(--accent); background: var(--accent-dim); }
-    /* Tweak: menu border width */
-    body.tweak-menu-b1 .controls select { border-width: 1px; }
-    body.tweak-menu-b2 .controls select { border-width: 2px; }
-    body.tweak-notes-b1 .block-notes { border-width: 1px; }
-    body.tweak-notes-b2 .block-notes { border-width: 2px; }
-    /* Tweak: outline color */
-    body.tweak-outline-gray .controls select,
-    body.tweak-outline-gray .block-notes,
-    body.tweak-outline-gray .map-toolbar { border-color: rgba(0,0,0,0.2); }
-    body.tweak-outline-blue .controls select,
-    body.tweak-outline-blue .block-notes,
-    body.tweak-outline-blue .map-toolbar { border-color: var(--accent); }
   </style>
 </head>
 <body>
@@ -499,16 +462,6 @@
       <h1>Australian Immigration — Indicator Dashboard</h1>
       <p class="subtitle">Department of Home Affairs · Australian Migration Statistics</p>
     </header>
-
-    <div class="tweak-bar" id="tweak-bar" aria-label="Temporary style options">
-      <span>Menus &amp; Notes outline (pick then delete this bar):</span>
-      <button type="button" data-tweak="menu-b1">Menu 1px</button>
-      <button type="button" data-tweak="menu-b2">Menu 2px</button>
-      <button type="button" data-tweak="notes-b1">Notes 1px</button>
-      <button type="button" data-tweak="notes-b2">Notes 2px</button>
-      <button type="button" data-tweak="outline-gray">Color gray</button>
-      <button type="button" data-tweak="outline-blue">Color blue</button>
-    </div>
 
     <div class="kpi-row" id="kpi-row" aria-label="Migration program outcome KPIs">
       <div class="kpi-card"><div class="kpi-title">Skill stream</div><div class="kpi-value" id="kpi-0-val">—</div><div class="kpi-change" id="kpi-0-change"></div><div class="kpi-spark"><canvas id="kpi-0-spark"></canvas></div></div>
@@ -623,26 +576,6 @@
     </p>
   </div>
 
-  <script>
-    (function () {
-      document.body.classList.add('tweak-menu-b1', 'tweak-notes-b2', 'tweak-outline-blue');
-      var bar = document.getElementById('tweak-bar');
-      if (!bar) return;
-      bar.querySelectorAll('button[data-tweak="menu-b1"], button[data-tweak="notes-b2"], button[data-tweak="outline-blue"]').forEach(function (b) { b.classList.add('active-tweak'); });
-      var groupClasses = { 'menu-b1': ['tweak-menu-b1', 'tweak-menu-b2'], 'menu-b2': ['tweak-menu-b1', 'tweak-menu-b2'], 'notes-b1': ['tweak-notes-b1', 'tweak-notes-b2'], 'notes-b2': ['tweak-notes-b1', 'tweak-notes-b2'], 'outline-gray': ['tweak-outline-gray', 'tweak-outline-blue'], 'outline-blue': ['tweak-outline-gray', 'tweak-outline-blue'] };
-      bar.addEventListener('click', function (e) {
-        var btn = e.target.closest('button[data-tweak]');
-        if (!btn) return;
-        var tweak = btn.getAttribute('data-tweak');
-        var toRemove = groupClasses[tweak];
-        if (!toRemove) return;
-        toRemove.forEach(function (c) { document.body.classList.remove(c); });
-        document.body.classList.add('tweak-' + tweak);
-        bar.querySelectorAll('button[data-tweak]').forEach(function (b) { b.classList.remove('active-tweak'); });
-        btn.classList.add('active-tweak');
-      });
-    })();
-  </script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="app.js?v=9"></script>
 </body>
