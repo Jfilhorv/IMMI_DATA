@@ -69,6 +69,19 @@
     .count { font-size: 0.7rem; font-weight: 500; color: var(--text-muted); }
     .loading { padding: 1rem; color: var(--text-muted); }
     .error { padding: 1rem; color: #b91c1c; }
+    .search-wrap { margin-bottom: 1rem; }
+    .search-wrap input {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+    }
+    .search-wrap input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(37,99,235,0.15); }
+    .search-wrap input::placeholder { color: var(--text-muted); }
   </style>
 </head>
 <body>
@@ -80,6 +93,9 @@
   </header>
   <div class="wrap">
     <p class="meta" id="meta">7 sections · 46 tables · 577 indicators</p>
+    <div class="search-wrap">
+      <input type="text" id="tree-search" placeholder="Search sections, tables, indicators…" aria-label="Filter tree">
+    </div>
     <div id="tree-root" class="tree">
       <p class="loading" id="loading">Loading…</p>
     </div>
@@ -173,11 +189,36 @@
     return div.innerHTML;
   }
 
-  function render(tree) {
+  function filterTree(tree, query) {
+    if (!query) return tree;
+    var q = query.toLowerCase().trim();
+    if (!q) return tree;
+    var out = { sections: {}, totalIndicators: 0 };
+    [1, 2, 3, 4, 5, 6, 7].forEach(function (sid) {
+      var sec = tree.sections[sid];
+      if (!sec) return;
+      var tablesOut = [];
+      sec.tables.forEach(function (tbl) {
+        var indicatorsOut = tbl.indicators.filter(function (ind) {
+          var text = (sec.label + ' ' + tbl.shortTitle + ' ' + ind.name + ' ' + (ind.submenu || '')).toLowerCase();
+          return text.indexOf(q) >= 0;
+        });
+        if (indicatorsOut.length) {
+          tablesOut.push({ id: tbl.id, shortTitle: tbl.shortTitle, indicators: indicatorsOut });
+          out.totalIndicators += indicatorsOut.length;
+        }
+      });
+      if (tablesOut.length) out.sections[sid] = { label: sec.label, tables: tablesOut };
+    });
+    return out;
+  }
+
+  function render(tree, openAll) {
     var root = document.getElementById('tree-root');
     var meta = document.getElementById('meta');
     if (!tree.totalIndicators) {
-      root.innerHTML = '<p class="error">No indicator data.</p>';
+      root.innerHTML = '<p class="error">No matches.</p>';
+      meta.textContent = '0 sections · 0 tables · 0 indicators';
       return;
     }
     var sectionCount = Object.keys(tree.sections).length;
@@ -188,9 +229,10 @@
     [1, 2, 3, 4, 5, 6, 7].forEach(function (sid) {
       var sec = tree.sections[sid];
       if (!sec || !sec.tables.length) return;
-      html += '<details class="section"><summary><span>' + escapeHtml(sec.label) + '</span> <span class="count">' + sec.tables.length + ' tables</span></summary>';
+      var openAttr = openAll ? ' open' : '';
+      html += '<details class="section"' + openAttr + '><summary><span>' + escapeHtml(sec.label) + '</span> <span class="count">' + sec.tables.length + ' tables</span></summary>';
       sec.tables.forEach(function (tbl) {
-        html += '<details class="table"><summary><span>' + escapeHtml(tbl.shortTitle) + '</span> <span class="count">' + tbl.indicators.length + ' indicators</span></summary>';
+        html += '<details class="table"' + openAttr + '><summary><span>' + escapeHtml(tbl.shortTitle) + '</span> <span class="count">' + tbl.indicators.length + ' indicators</span></summary>';
         var bySub = {};
         tbl.indicators.forEach(function (ind) {
           var sub = ind.submenu || '\u200b';
@@ -208,7 +250,7 @@
             });
             html += '</ul>';
           } else {
-            html += '<details class="submenu"><summary>' + escapeHtml(sub) + ' <span class="count">' + list.length + '</span></summary><ul class="indicator-list">';
+            html += '<details class="submenu"' + openAttr + '><summary>' + escapeHtml(sub) + ' <span class="count">' + list.length + '</span></summary><ul class="indicator-list">';
             list.forEach(function (ind) {
               var href = 'index.html?table=' + encodeURIComponent(tbl.id) + '&indicator=' + encodeURIComponent(ind.full);
               html += '<li><a href="' + href + '">' + escapeHtml(ind.name) + '</a></li>';
@@ -223,6 +265,20 @@
     root.innerHTML = html;
   }
 
+  var fullTree = null;
+  var searchEl = document.getElementById('tree-search');
+
+  function onSearch() {
+    var q = (searchEl && searchEl.value) ? searchEl.value.trim() : '';
+    if (!fullTree) return;
+    if (!q) {
+      render(fullTree, false);
+      return;
+    }
+    var filtered = filterTree(fullTree, q);
+    render(filtered, true);
+  }
+
   document.getElementById('loading').textContent = 'Loading…';
   Promise.all([
     fetch(TABLES_URL).then(function (r) { if (!r.ok) throw new Error('tables'); return r.json(); }),
@@ -231,8 +287,9 @@
     var tables = res[0];
     var csvText = res[1];
     if (!Array.isArray(tables)) throw new Error('Invalid tables');
-    var tree = buildTree(tables, csvText);
-    render(tree);
+    fullTree = buildTree(tables, csvText);
+    render(fullTree, false);
+    if (searchEl) searchEl.addEventListener('input', onSearch);
   }).catch(function (err) {
     document.getElementById('tree-root').innerHTML = '<p class="error">Failed to load data: ' + escapeHtml(err.message || 'error') + '</p>';
   });
