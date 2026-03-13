@@ -271,39 +271,55 @@
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 0.6rem 0.85rem;
+      padding: 0.4rem 0.75rem;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
     }
     .news-block h2 {
-      font-size: 0.88rem;
-      font-weight: 700;
-      margin: 0 0 0.5rem 0;
-      padding-bottom: 0.35rem;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
-    .news-block ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
       font-size: 0.8rem;
-      line-height: 1.5;
+      font-weight: 700;
+      margin: 0;
+      color: var(--text);
+      flex-shrink: 0;
     }
-    .news-block li {
-      margin-bottom: 0.4rem;
-      padding-left: 0;
+    .news-ticker-wrap {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0, black 2rem, black calc(100% - 2rem), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0, black 2rem, black calc(100% - 2rem), transparent 100%);
     }
-    .news-block li:last-child { margin-bottom: 0; }
+    .news-ticker-track {
+      display: flex;
+      width: max-content;
+      animation: news-ticker 40s linear infinite;
+    }
+    .news-ticker-track:hover { animation-play-state: paused; }
+    .news-ticker-part {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+      padding-right: 1.5rem;
+      white-space: nowrap;
+    }
+    @keyframes news-ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
     .news-block a {
       color: var(--accent);
       text-decoration: none;
+      font-size: 0.78rem;
       font-weight: 500;
     }
     .news-block a:hover { text-decoration: underline; }
+    .news-block .news-sep { color: var(--text-muted); font-size: 0.7rem; user-select: none; }
     .news-block .news-loading,
     .news-block .news-error { color: var(--text-muted); font-size: 0.78rem; }
-    .news-block .news-source { margin-top: 0.5rem; font-size: 0.7rem; color: var(--text-muted); }
-    .news-block .news-source a { font-weight: 400; }
     .footer-three-blocks {
       grid-column: 1 / -1;
       display: grid;
@@ -503,6 +519,16 @@
       <p class="subtitle">Department of Home Affairs · Australian Migration Statistics</p>
     </header>
 
+    <section class="news-block" id="news-block" aria-label="Australian immigration news">
+      <h2>Australian immigration news</h2>
+      <div class="news-ticker-wrap">
+        <div id="news-list">
+          <p class="news-loading" id="news-loading">Loading news…</p>
+        </div>
+      </div>
+      <p class="news-sources" style="margin:0;font-size:0.65rem;color:var(--text-muted);flex-shrink:0;">Sources: <a href="https://www.homeaffairs.gov.au/news-media" target="_blank" rel="noopener noreferrer">Home Affairs</a> · <a href="https://migrationalliance.com.au/immigration-daily-news/latest.html" target="_blank" rel="noopener noreferrer">Migration Alliance</a></p>
+    </section>
+
     <div class="kpi-row" id="kpi-row" aria-label="Migration program outcome KPIs">
       <div class="kpi-card"><div class="kpi-title">Skill stream</div><div class="kpi-value" id="kpi-0-val">—</div><div class="kpi-change" id="kpi-0-change"></div><div class="kpi-spark"><canvas id="kpi-0-spark"></canvas></div></div>
       <div class="kpi-card"><div class="kpi-title">Family stream</div><div class="kpi-value" id="kpi-1-val">—</div><div class="kpi-change" id="kpi-1-change"></div><div class="kpi-spark"><canvas id="kpi-1-spark"></canvas></div></div>
@@ -572,14 +598,6 @@
       </div>
     </main>
 
-    <section class="news-block" id="news-block" aria-label="Australian immigration news">
-      <h2>Australian immigration news</h2>
-      <div id="news-list">
-        <p class="news-loading" id="news-loading">Loading news…</p>
-      </div>
-      <p class="news-source" id="news-source-wrap">Source: <a href="https://www.homeaffairs.gov.au/news-media" target="_blank" rel="noopener noreferrer">Department of Home Affairs</a> · <a href="https://migrationalliance.com.au/immigration-daily-news/latest.html" target="_blank" rel="noopener noreferrer">Migration Alliance</a> · Links open in a new tab.</p>
-    </section>
-
     <div class="footer-three-blocks" id="footer-three-blocks">
       <section class="doc-section block-notes">
         <h2>Notes</h2>
@@ -627,7 +645,6 @@
   <script>
     (function () {
       var listEl = document.getElementById('news-list');
-      var loadingEl = document.getElementById('news-loading');
       if (!listEl) return;
       var feedUrl = 'https://migrationalliance.com.au/immigration-daily-news/latest.html?format=feed&type=rss';
       var proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl);
@@ -637,25 +654,27 @@
           var doc = parser.parseFromString(xmlText, 'text/xml');
           var items = doc.querySelectorAll('item');
           if (!items.length) items = doc.querySelectorAll('entry');
-          var html = '';
-          var max = 7;
+          var partHtml = '';
+          var max = 10;
           for (var i = 0; i < items.length && i < max; i++) {
             var it = items[i];
             var title = (it.querySelector('title') && it.querySelector('title').textContent) || '';
             var link = (it.querySelector('link') && (it.querySelector('link').textContent || it.querySelector('link').getAttribute('href'))) || '#';
-            if (title) html += '<li><a href="' + link.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener noreferrer">' + title.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</a></li>';
+            if (title) {
+              if (partHtml) partHtml += '<span class="news-sep" aria-hidden="true"> • </span>';
+              partHtml += '<a href="' + link.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener noreferrer">' + title.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</a>';
+            }
           }
-          if (html) {
-            listEl.innerHTML = '<ul>' + html + '</ul>';
+          if (partHtml) {
+            listEl.innerHTML = '<div class="news-ticker-track"><span class="news-ticker-part">' + partHtml + '</span><span class="news-ticker-part" aria-hidden="true">' + partHtml + '</span></div>';
           } else {
-            listEl.innerHTML = '<p class="news-error">No items in feed. Visit the sources below.</p>';
+            listEl.innerHTML = '<p class="news-error">No items in feed.</p>';
           }
         } catch (e) {
-          listEl.innerHTML = '<p class="news-error">Could not parse feed. Visit the sources below.</p>';
+          listEl.innerHTML = '<p class="news-error">Could not parse feed.</p>';
         }
       }).catch(function () {
-        if (loadingEl) loadingEl.remove();
-        listEl.innerHTML = '<p class="news-error">Unable to load feed. Visit the sources below.</p>';
+        listEl.innerHTML = '<p class="news-error">Unable to load feed.</p>';
       });
     })();
   </script>
