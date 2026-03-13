@@ -41,7 +41,7 @@ IMMI_DATA/
 │   ├── index.html
 │   ├── app.js
 │   └── data/                 # tables.json, indicators.csv, kpi_candidates.json, etc.
-└── docs/                     # Optional .md exports; indicator_tree.drawio (open in https://app.diagrams.net/ via File → Open)
+└── docs/                     # Optional .md exports; indicator_tree.drawio (edit in draw.io); indicador_tree.drawio.html (view in browser)
 ```
 
 ## Goals
