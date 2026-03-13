@@ -668,12 +668,18 @@
       if (!listEl) return;
       var feedUrl = 'https://migrationalliance.com.au/immigration-daily-news/latest.html?format=feed&type=rss';
       var proxies = [
-        'https://corsproxy.io/?' + encodeURIComponent(feedUrl),
-        'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl)
+        'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl),
+        'https://api.allorigins.win/get?url=' + encodeURIComponent(feedUrl),
+        'https://corsproxy.io/?' + encodeURIComponent(feedUrl)
       ];
-      var timeout = 20000;
-      function renderFeed(xmlText) {
+      var timeout = 45000;
+      function renderFeed(responseText) {
         try {
+          var xmlText = responseText;
+          if (responseText.trim().indexOf('{') === 0) {
+            var data = JSON.parse(responseText);
+            xmlText = (data && data.contents) ? data.contents : responseText;
+          }
           var parser = new DOMParser();
           var doc = parser.parseFromString(xmlText, 'text/xml');
           var items = doc.querySelectorAll('item');
