@@ -6,13 +6,15 @@
     var last = href.lastIndexOf('/');
     return last >= 0 ? href.slice(0, last + 1) : '';
   })();
-  var CACHE_BUST = '?v=2';
+  var CACHE_BUST = '?v=3';
   var TABLES_URL = base + 'data/tables.json' + CACHE_BUST;
   var DATA_URL = base + 'data/indicators.csv' + CACHE_BUST;
   var CATEGORY_TABLES_URL = base + 'data/category_tables.json' + CACHE_BUST;
   var FOOTNOTES_URL = base + 'data/table_footnotes.json' + CACHE_BUST;
+  var KPI_CANDIDATES_URL = base + 'data/kpi_candidates.json' + CACHE_BUST;
   var categoryTables = [];
   var tableFootnotes = {};
+  var kpiCandidates = {};
   var SECTION_LABELS = {
     1: '1. Permanent migration',
     2: '2. Temporary visas',
@@ -28,7 +30,7 @@
   var chart = null;
   var chartType = 'bar';
   var KPI_TABLE = '1_0';
-  var KPI_INDICATORS = ['Skill stream', 'Family stream1', 'Child stream2', 'Special Eligibility', 'Total3'];
+  var KPI_INDICATORS = [];
   var MAP_TABLE_TEST = '1_3';
   var MAP_TABLES = ['1_3', '1_6', '1_8', '1_10', '1_12', '1_14', '1_15', '1_16', '1_17', '2_4', '3_1', '3_3', '4_1', '4_4', '6_0'];
   var GEOJSON_URL = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson';
@@ -107,6 +109,18 @@
     return div.innerHTML;
   }
 
+  function getTop5IndicatorsForTable(tableId) {
+    if (!tableId || !kpiCandidates[tableId]) return [];
+    return kpiCandidates[tableId].slice(0, 5);
+  }
+
+  function setKpiCardTitles(indicators) {
+    for (var i = 0; i < 5; i++) {
+      var el = document.getElementById('kpi-' + i + '-title');
+      if (el) el.textContent = indicators[i] || '—';
+    }
+  }
+
   function getKpiData() {
     var out = [];
     KPI_INDICATORS.forEach(function (ind) {
@@ -123,7 +137,12 @@
 
   function drawSparkline(canvasId, values) {
     var el = document.getElementById(canvasId);
-    if (!el || !values || values.length === 0) return;
+    if (!el) return;
+    if (!values || values.length === 0) {
+      var ctx = el.getContext('2d');
+      if (ctx) ctx.clearRect(0, 0, el.width, el.height);
+      return;
+    }
     var dpr = window.devicePixelRatio || 1;
     var w = el.parentElement.clientWidth || 120;
     var h = 24;
@@ -155,20 +174,21 @@
 
   function updateKpiCards() {
     var data = getKpiData();
-    data.forEach(function (d, i) {
+    for (var i = 0; i < 5; i++) {
+      var d = data[i];
       var valEl = document.getElementById('kpi-' + i + '-val');
       var changeEl = document.getElementById('kpi-' + i + '-change');
-      if (valEl) valEl.textContent = d.latest != null ? d.latest.toLocaleString('en-AU', { maximumFractionDigits: 0 }) : '—';
+      if (valEl) valEl.textContent = d && d.latest != null ? d.latest.toLocaleString('en-AU', { maximumFractionDigits: 0 }) : '—';
       if (changeEl) {
         changeEl.textContent = '';
         changeEl.className = 'kpi-change neutral';
-        if (d.pct != null && isFinite(d.pct)) {
+        if (d && d.pct != null && isFinite(d.pct)) {
           changeEl.textContent = (d.pct >= 0 ? '+' : '') + d.pct.toFixed(1) + '%';
           changeEl.className = 'kpi-change ' + (d.pct > 0 ? 'positive' : d.pct < 0 ? 'negative' : 'neutral');
         }
       }
-      drawSparkline('kpi-' + i + '-spark', d.values);
-    });
+      drawSparkline('kpi-' + i + '-spark', d && d.values ? d.values : []);
+    }
   }
 
   function getIndicatorsForTable(tableId) {
@@ -292,6 +312,10 @@
         chart.update('none');
       }
       updateTableNotes(null);
+      KPI_TABLE = '';
+      KPI_INDICATORS = [];
+      setKpiCardTitles([]);
+      updateKpiCards();
       return;
     }
     var hasCategory = categoryTables.indexOf(tableId) >= 0;
@@ -314,9 +338,9 @@
             var label = indicatorDisplayName(ind, indicators);
             return '<option value="' + escapeHtml(ind) + '">' + escapeHtml(label) + '</option>';
           }).join('');
-        var defaultInd = getDefaultIndicator(indicators);
-        indSel.value = defaultInd ? escapeHtml(defaultInd) : '';
-        onIndicatorChange();
+      var defaultInd = getDefaultIndicator(indicators);
+      indSel.value = defaultInd ? escapeHtml(defaultInd) : '';
+      onIndicatorChange();
       }
     } else {
       submenuWrap.style.display = 'none';
@@ -332,6 +356,10 @@
       indSel.value = defaultInd ? escapeHtml(defaultInd) : '';
       onIndicatorChange();
     }
+    KPI_TABLE = tableId;
+    KPI_INDICATORS = getTop5IndicatorsForTable(tableId);
+    setKpiCardTitles(KPI_INDICATORS);
+    updateKpiCards();
     updateTableNotes(tableId);
   }
 
@@ -704,7 +732,8 @@
         return r.text();
       }),
       fetch(CATEGORY_TABLES_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
-      fetch(FOOTNOTES_URL).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
+      fetch(FOOTNOTES_URL).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }),
+      fetch(KPI_CANDIDATES_URL).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
     ]).then(function (results) {
       try {
         tableList = results[0];
@@ -712,6 +741,7 @@
         allData = parseCSV(results[1]);
         categoryTables = Array.isArray(results[2]) ? results[2] : [];
         tableFootnotes = results[3] && typeof results[3] === 'object' ? results[3] : {};
+        kpiCandidates = results[4] && typeof results[4] === 'object' ? results[4] : {};
         var dataTablePattern = /^\d+_\d+$/;
         tablesWithData = new Set();
         allData.forEach(function (row) {
