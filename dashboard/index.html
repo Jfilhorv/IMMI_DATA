@@ -668,8 +668,8 @@
       if (!listEl) return;
       var feedUrl = 'https://migrationalliance.com.au/immigration-daily-news/latest.html?format=feed&type=rss';
       var proxies = [
-        'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl),
-        'https://corsproxy.io/?' + encodeURIComponent(feedUrl)
+        'https://corsproxy.io/?' + encodeURIComponent(feedUrl),
+        'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl)
       ];
       var timeout = 20000;
       function renderFeed(xmlText) {
@@ -705,12 +705,10 @@
           }
           if (partHtml) {
             listEl.innerHTML = '<div class="news-ticker-track"><span class="news-ticker-part">' + partHtml + '</span><span class="news-ticker-part" aria-hidden="true">' + partHtml + '</span></div>';
-          } else {
-            listEl.innerHTML = '<p class="news-error">No items in feed.</p>';
+            return true;
           }
-        } catch (e) {
-          listEl.innerHTML = '<p class="news-error">Could not parse feed.</p>';
-        }
+        } catch (e) {}
+        return false;
       }
       function tryFetch(proxyIndex) {
         if (proxyIndex >= proxies.length) {
@@ -723,7 +721,9 @@
         var opts = ctrl ? { signal: ctrl.signal } : {};
         fetch(url, opts).then(function (r) { return r.text(); }).then(function (xmlText) {
           if (t) clearTimeout(t);
-          renderFeed(xmlText);
+          if (renderFeed(xmlText)) return;
+          if (proxyIndex + 1 < proxies.length) tryFetch(proxyIndex + 1);
+          else listEl.innerHTML = '<p class="news-error">No items in feed.</p>';
         }).catch(function () {
           if (t) clearTimeout(t);
           tryFetch(proxyIndex + 1);
