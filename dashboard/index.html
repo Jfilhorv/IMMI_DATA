@@ -245,8 +245,17 @@
     .controls-over-chart .step-num-img {
       height: 1rem;
       width: auto;
+      min-width: 1rem;
       vertical-align: middle;
       display: inline-block;
+      object-fit: contain;
+    }
+    .controls-over-chart .submenu-wrap .step-num-img {
+      height: 1rem;
+      width: auto;
+      min-width: 1rem;
+      display: inline-block;
+      vertical-align: middle;
     }
     .controls-over-chart .step-num {
       font-size: 0.82rem;
@@ -262,9 +271,9 @@
       max-width: 10rem;
     }
     .controls-over-chart .submenu-wrap { display: inline-flex; align-items: center; gap: 0.2rem; flex-shrink: 0; white-space: nowrap; }
+    .controls-over-chart .submenu-wrap label { display: inline-flex; align-items: center; gap: 0.2rem; }
     .controls-over-chart .submenu-wrap select { min-width: 4rem; }
-    .controls-over-chart .submenu-wrap .step-num,
-    .controls-over-chart #indicator-label .step-num { font-size: 0.82rem; font-weight: 800; color: var(--accent); min-width: 1.1em; }
+    .controls-over-chart #indicator-label .step-num-img { height: 1rem; width: auto; min-width: 1rem; vertical-align: middle; display: inline-block; }
     .chart-body {
       position: relative;
       flex: 1;
@@ -952,7 +961,7 @@
               <option value="">— Select section first —</option>
             </select>
             <div id="submenu-wrap" class="submenu-wrap" style="display: none;">
-              <label for="submenu"><img src="number-3.png" alt="3" class="step-num-img"> Submenu</label>
+              <label for="submenu"><img src="number-3.png" alt="3" class="step-num-img" loading="eager"> Submenu</label>
               <select id="submenu">
                 <option value="">— Select submenu —</option>
               </select>
