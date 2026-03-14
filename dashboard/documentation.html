@@ -34,6 +34,9 @@
     @media (max-width: 768px) { .page { padding: 0.3rem 0.5rem 0.2rem; } }
     @media (max-width: 480px) { .page { padding: 0.2rem 0.3rem 0.12rem; } }
     .wrap { max-width: 720px; margin: 0; padding: 1rem 0 2rem; }
+    .doc-back { position: sticky; top: 0; z-index: 10; margin: 0 0 1rem 0; padding: 0.4rem 0; background: linear-gradient(to bottom, var(--bg) 60%, transparent); }
+    .doc-back a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+    .doc-back a:hover { text-decoration: underline; }
     header {
       min-height: 5.25rem;
       padding: 0.36rem 0.54rem;
@@ -160,6 +163,7 @@
     <span class="header-logo-link" aria-hidden="true"><img src="logo_immi_data.png" alt="IMMI-DATA" class="header-logo logo-default"><img src="immi_data_logo_plate.png" alt="IMMI-DATA" class="header-logo logo-hover" aria-hidden="true"></span>
   </header>
   <div class="wrap">
+    <p class="doc-back"><a href="index.html">← Back to Dashboard</a></p>
     <p class="doc-intro">A <strong>free, public</strong> dashboard showing Australian immigration statistics from official government sources: <strong>when</strong> (year/quarter/month), <strong>from</strong> (country), <strong>to</strong> (Australia), <strong>across years</strong>. Open the dashboard to explore migration statistics published by the Department of Home Affairs. Select a section, table and indicator to explore trends, download charts, or view migration patterns by country.</p>
 
     <section class="doc-section">
