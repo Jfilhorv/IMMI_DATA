@@ -35,14 +35,24 @@
       display: block;
       line-height: 0;
       margin-left: -0.25rem;
+      position: relative;
     }
     header .header-logo-left img {
       height: 4rem;
       width: auto;
       display: block;
       vertical-align: middle;
+      transition: opacity 0.2s ease;
     }
-    header .header-logo-left:hover { opacity: 0.9; }
+    header .header-logo-left .logo-hover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    header .header-logo-left:hover .logo-default { opacity: 0; }
+    header .header-logo-left:hover .logo-hover { opacity: 1; }
     header .wrap .header-left { flex: 1; min-width: 0; }
     h1 { font-size: 1.2rem; margin: 0 0 0.25rem 0; font-weight: 700; }
     .back { font-size: 0.85rem; margin-top: 0.25rem; }
@@ -101,7 +111,7 @@
 <body>
   <header>
     <div class="wrap">
-      <a href="index.html" class="header-logo-left" aria-label="Back to Dashboard" title="Back to Dashboard"><img src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"></a>
+      <a href="index.html" class="header-logo-left" aria-label="Back to Dashboard" title="Back to Dashboard"><img class="logo-default" src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"><img class="logo-hover" src="logo_immi_data_squera_plate.png" alt="IMMI-DATA" aria-hidden="true"></a>
       <div class="header-left">
         <h1>Indicator tree</h1>
         <p class="back"><a href="index.html">← Back to Dashboard</a></p>
