@@ -452,9 +452,11 @@
       chart.data.datasets[0].borderWidth = chartType === 'line' ? 2 : 1;
       chart.data.datasets[0].fill = false;
       chart.data.datasets[0].tension = chartType === 'line' ? 0.5 : 0;
-      chart.data.datasets[0].pointRadius = chartType === 'line' ? 4 : 0;
+      chart.data.datasets[0].pointRadius = chartType === 'line' ? 5 : 0;
       chart.data.datasets[0].pointHoverRadius = chartType === 'line' ? 6 : 0;
-      chart.data.datasets[0].pointBackgroundColor = chartType === 'line' ? CHART_COLOR.border : undefined;
+      chart.data.datasets[0].pointBackgroundColor = chartType === 'line' ? 'rgba(234, 88, 12, 0.95)' : undefined;
+      chart.data.datasets[0].pointBorderColor = chartType === 'line' ? '#ea580c' : undefined;
+      chart.data.datasets[0].pointBorderWidth = chartType === 'line' ? 1 : 0;
       if (chart.options.layout) chart.options.layout.padding = { top: 56, right: 8 };
       if (chart.options.plugins.datalabels) {
         chart.options.plugins.datalabels.rotation = isVerticalLabels ? -90 : 0;
@@ -478,9 +480,11 @@
           borderWidth: chartType === 'line' ? 2 : 1,
           fill: false,
           tension: chartType === 'line' ? 0.5 : 0,
-          pointRadius: chartType === 'line' ? 4 : 0,
+          pointRadius: chartType === 'line' ? 5 : 0,
           pointHoverRadius: chartType === 'line' ? 6 : 0,
-          pointBackgroundColor: chartType === 'line' ? CHART_COLOR.border : undefined
+          pointBackgroundColor: chartType === 'line' ? 'rgba(234, 88, 12, 0.95)' : undefined,
+          pointBorderColor: chartType === 'line' ? '#ea580c' : undefined,
+          pointBorderWidth: chartType === 'line' ? 1 : 0
         }]
       },
       options: {
