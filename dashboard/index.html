@@ -100,7 +100,6 @@
       display: block;
       overflow: visible;
     }
-    header .header-logo-link:hover { opacity: 0.9; }
     header .header-logo-link img,
     header .header-logo {
       height: 14.08rem !important;
@@ -110,7 +109,18 @@
       object-fit: contain;
       flex-shrink: 0;
       display: block;
+      transition: opacity 0.2s ease;
     }
+    header .header-logo-link .logo-hover {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    header .header-logo-link:hover .logo-default,
+    header .header-logo-link:hover .header-logo.logo-default { opacity: 0; }
+    header .header-logo-link:hover .logo-hover { opacity: 1; }
     .sidebar {
       background: var(--surface);
       backdrop-filter: blur(12px);
@@ -907,7 +917,7 @@
         <h1>Australian Immigration — Indicator Dashboard</h1>
         <p class="subtitle">Department of Home Affairs · Australian Migration Statistics · <a href="tree.html">Indicator tree</a> (577 combinations)</p>
       </div>
-      <a href="index.html" class="header-logo-link" aria-label="Back to dashboard"><img src="logo_immi_data.png" alt="IMMI-DATA" class="header-logo"></a>
+      <a href="index.html" class="header-logo-link" aria-label="Back to dashboard"><img src="logo_immi_data.png" alt="IMMI-DATA" class="header-logo logo-default"><img src="immi_data_logo_plate.png" alt="IMMI-DATA" class="header-logo logo-hover" aria-hidden="true"></a>
     </header>
 
     <section class="news-block" id="news-block" aria-label="Australian immigration news">
