@@ -427,6 +427,10 @@
     });
   }
 
+  function formatBoldNumbersInNotes(text) {
+    return text.replace(/\b(\d+\.?\d*)\b/g, '<b>$1</b>');
+  }
+
   function updateTableNotes(tableId) {
     var el = document.getElementById('table-notes');
     if (!el) return;
@@ -435,6 +439,7 @@
       el.innerHTML = lines.map(function (line) {
         var escaped = escapeHtml(line);
         var formatted = formatPercentagesInNotes(escaped);
+        formatted = formatBoldNumbersInNotes(formatted);
         return '<p>' + formatted + '</p>';
       }).join('');
     } else {
