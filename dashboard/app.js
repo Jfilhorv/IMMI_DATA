@@ -438,10 +438,24 @@
   }
 
   var CHART_COLOR = { bg: 'rgba(37, 99, 235, 0.5)', border: 'rgba(37, 99, 235, 0.9)', axis: '#1a202c', grid: 'rgba(0, 0, 0, 0.12)' };
+  var LINE_POINT_ORANGE = { bg: 'rgba(234, 88, 12, 0.95)', border: '#ea580c' };
+
+  function linePointStyles(n) {
+    var radius = [], bg = [], border = [];
+    for (var i = 0; i < n; i++) {
+      var isLast3 = i >= n - 3 && n >= 3;
+      radius.push(isLast3 ? 5 : 0);
+      bg.push(isLast3 ? LINE_POINT_ORANGE.bg : 'transparent');
+      border.push(isLast3 ? LINE_POINT_ORANGE.border : 'transparent');
+    }
+    return { pointRadius: radius, pointBackgroundColor: bg, pointBorderColor: border };
+  }
 
   function updateChart(labels, values, indicatorName) {
     var ctx = document.getElementById('chart').getContext('2d');
     var isVerticalLabels = labels.length > 20;
+    var n = values.length;
+    var linePoints = linePointStyles(n);
     if (chart) {
       chart.config.type = chartType;
       chart.data.labels = labels;
@@ -452,10 +466,10 @@
       chart.data.datasets[0].borderWidth = chartType === 'line' ? 2 : 1;
       chart.data.datasets[0].fill = false;
       chart.data.datasets[0].tension = chartType === 'line' ? 0.5 : 0;
-      chart.data.datasets[0].pointRadius = chartType === 'line' ? 5 : 0;
+      chart.data.datasets[0].pointRadius = chartType === 'line' ? linePoints.pointRadius : 0;
       chart.data.datasets[0].pointHoverRadius = chartType === 'line' ? 6 : 0;
-      chart.data.datasets[0].pointBackgroundColor = chartType === 'line' ? 'rgba(234, 88, 12, 0.95)' : undefined;
-      chart.data.datasets[0].pointBorderColor = chartType === 'line' ? '#ea580c' : undefined;
+      chart.data.datasets[0].pointBackgroundColor = chartType === 'line' ? linePoints.pointBackgroundColor : undefined;
+      chart.data.datasets[0].pointBorderColor = chartType === 'line' ? linePoints.pointBorderColor : undefined;
       chart.data.datasets[0].pointBorderWidth = chartType === 'line' ? 1 : 0;
       if (chart.options.layout) chart.options.layout.padding = { top: 56, right: 8 };
       if (chart.options.plugins.datalabels) {
@@ -480,10 +494,10 @@
           borderWidth: chartType === 'line' ? 2 : 1,
           fill: false,
           tension: chartType === 'line' ? 0.5 : 0,
-          pointRadius: chartType === 'line' ? 5 : 0,
+          pointRadius: chartType === 'line' ? linePoints.pointRadius : 0,
           pointHoverRadius: chartType === 'line' ? 6 : 0,
-          pointBackgroundColor: chartType === 'line' ? 'rgba(234, 88, 12, 0.95)' : undefined,
-          pointBorderColor: chartType === 'line' ? '#ea580c' : undefined,
+          pointBackgroundColor: chartType === 'line' ? linePoints.pointBackgroundColor : undefined,
+          pointBorderColor: chartType === 'line' ? linePoints.pointBorderColor : undefined,
           pointBorderWidth: chartType === 'line' ? 1 : 0
         }]
       },
@@ -802,7 +816,12 @@
           document.getElementById('chart-type-bar').setAttribute('aria-pressed', 'true');
           document.getElementById('chart-type-line').classList.remove('active');
           document.getElementById('chart-type-line').setAttribute('aria-pressed', 'false');
-          if (chart) { chart.config.type = 'bar'; chart.update('none'); }
+          if (chart) {
+            chart.config.type = 'bar';
+            var ds = chart.data.datasets[0];
+            if (ds) { ds.tension = 0; ds.pointRadius = 0; ds.pointHoverRadius = 0; ds.borderWidth = 1; ds.pointBackgroundColor = undefined; ds.pointBorderColor = undefined; ds.pointBorderWidth = 0; }
+            chart.update('none');
+          }
         });
         document.getElementById('chart-type-line').addEventListener('click', function () {
           chartType = 'line';
@@ -810,7 +829,21 @@
           document.getElementById('chart-type-line').setAttribute('aria-pressed', 'true');
           document.getElementById('chart-type-bar').classList.remove('active');
           document.getElementById('chart-type-bar').setAttribute('aria-pressed', 'false');
-          if (chart) { chart.config.type = 'line'; chart.update('none'); }
+          if (chart) {
+            chart.config.type = 'line';
+            var ds = chart.data.datasets[0];
+            if (ds && ds.data) {
+              var pt = linePointStyles(ds.data.length);
+              ds.borderWidth = 2;
+              ds.tension = 0.5;
+              ds.pointRadius = pt.pointRadius;
+              ds.pointHoverRadius = 6;
+              ds.pointBackgroundColor = pt.pointBackgroundColor;
+              ds.pointBorderColor = pt.pointBorderColor;
+              ds.pointBorderWidth = 1;
+            }
+            chart.update('none');
+          }
         });
         var mapViewMapBtn = document.getElementById('map-view-map');
         var mapViewDonutBtn = document.getElementById('map-view-donut');
