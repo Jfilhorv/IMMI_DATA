@@ -471,7 +471,7 @@
       layer.setStyle({
         fillColor: fill,
         fillOpacity: 0.75,
-        weight: isHighlight ? 3 : 1,
+        weight: isHighlight ? 1.2 : 1,
         color: isHighlight ? MAP_HIGHLIGHT_BORDER : '#94a3b8'
       });
     });
@@ -836,6 +836,8 @@
                 if (!mapTableId || MAP_TABLES.indexOf(mapTableId) < 0) return;
                 var tbl = tableList.filter(function (t) { return t.id === mapTableId; })[0];
                 if (!tbl || !sectionsWithData.has(tbl.section)) return;
+                updateCountrySpotlight(countryName);
+                highlightCountryOnMap(countryName);
                 var sectionSel = document.getElementById('section');
                 var tableSel = document.getElementById('table');
                 var indSel = document.getElementById('indicator');
@@ -853,8 +855,8 @@
                       }
                     }
                     onIndicatorChange();
-                  }, 0);
-                }, 0);
+                  }, 50);
+                }, 50);
               });
               layer.on('add', function () {
                 if (layer._path) layer._path.style.cursor = 'pointer';
