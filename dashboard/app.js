@@ -455,8 +455,7 @@
   }
 
   var SPOTLIGHT_FADE_MS = 500;
-  var MAP_HIGHLIGHT_COLOR = '#2563eb';
-  var MAP_HIGHLIGHT_BORDER = '#1e40af';
+  var MAP_HIGHLIGHT_BORDER = '#22d3ee';
 
   function highlightCountryOnMap(countryName) {
     if (!mapGeoLayer || !currentMapData) return;
@@ -467,13 +466,14 @@
       if (!iso) return;
       iso = String(iso).toUpperCase();
       var val = currentMapData.valuesByIso[iso];
+      var fill = val != null ? valueToColor(val, currentMapData.min, currentMapData.max) : '#e5e7eb';
       var isHighlight = targetIso && iso === targetIso;
-      if (isHighlight) {
-        layer.setStyle({ fillColor: MAP_HIGHLIGHT_COLOR, fillOpacity: 0.95, weight: 2.5, color: MAP_HIGHLIGHT_BORDER });
-      } else {
-        var fill = val != null ? valueToColor(val, currentMapData.min, currentMapData.max) : '#e5e7eb';
-        layer.setStyle({ fillColor: fill, fillOpacity: 0.75, weight: 1, color: '#94a3b8' });
-      }
+      layer.setStyle({
+        fillColor: fill,
+        fillOpacity: 0.75,
+        weight: isHighlight ? 3 : 1,
+        color: isHighlight ? MAP_HIGHLIGHT_BORDER : '#94a3b8'
+      });
     });
   }
 
