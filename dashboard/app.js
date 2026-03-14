@@ -165,9 +165,9 @@
     }
     var dpr = window.devicePixelRatio || 1;
     var w = el.parentElement.clientWidth || 120;
-    var labelTop = 10;
-    var lineBottom = 24;
-    var h = 32;
+    var labelTop = 16;
+    var lineBottom = 40;
+    var h = 48;
     el.width = w * dpr;
     el.height = h * dpr;
     el.style.width = w + 'px';
@@ -211,14 +211,14 @@
       ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
       ctx.fill();
     });
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.35)';
-    ctx.font = '7px system-ui, sans-serif';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
+    ctx.font = '8px system-ui, sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
     points.forEach(function (p) {
       var label = abbreviateSparkValue(p.v);
       if (!label) return;
-      var textY = p.y - 5;
+      var textY = p.y - 6;
       if (textY < labelTop) textY = labelTop;
       ctx.fillText(label, p.x, textY);
     });
