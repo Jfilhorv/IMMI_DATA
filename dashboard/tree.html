@@ -51,7 +51,7 @@
       border-bottom: 3px solid var(--accent);
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 0.675rem;
       position: relative;
@@ -110,8 +110,12 @@
       color: var(--header-subtitle);
       margin: 0;
     }
-    header .subtitle a { color: #2563eb; text-decoration: none; }
-    header .subtitle a:hover { text-decoration: underline; }
+    header .subtitle a {
+      color: #2563eb;
+    }
+    header .subtitle a:hover {
+      text-decoration: underline;
+    }
     header .header-nav {
       display: flex;
       align-items: center;
@@ -190,6 +194,7 @@
     header .header-logo-link:hover .logo-hover { opacity: 1; }
     @media (max-width: 768px) {
       header { padding: 0.35rem 0.45rem; flex-wrap: wrap; gap: 0.4rem; }
+      header .header-text { margin-right: 0; }
       header h1 { font-size: 1.35rem; }
       header .header-logo-left img { height: 3.5rem; }
       header .header-logo-link { display: none; }
