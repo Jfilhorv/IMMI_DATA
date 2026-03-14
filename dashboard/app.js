@@ -165,7 +165,7 @@
     var x1 = w - pad;
     var y0 = h - pad;
     var step = values.length > 1 ? (x1 - x0) / (values.length - 1) : 0;
-    ctx.strokeStyle = '#1e40af';
+    ctx.strokeStyle = '#60a5fa';
     ctx.lineWidth = 2;
     ctx.beginPath();
     var points = [];
@@ -177,7 +177,7 @@
       else ctx.lineTo(x, y);
     });
     ctx.stroke();
-    ctx.fillStyle = '#1e40af';
+    ctx.fillStyle = '#60a5fa';
     points.forEach(function (p) {
       ctx.beginPath();
       ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
@@ -446,7 +446,7 @@
   }
 
   var CHART_COLOR = { bg: 'rgba(37, 99, 235, 0.5)', border: 'rgba(37, 99, 235, 0.9)', axis: '#1a202c', grid: 'rgba(0, 0, 0, 0.12)' };
-  var LINE_POINT_BLUE = '#1e40af';
+  var LINE_POINT_BLUE = '#60a5fa';
 
   function updateChart(labels, values, indicatorName) {
     var ctx = document.getElementById('chart').getContext('2d');
