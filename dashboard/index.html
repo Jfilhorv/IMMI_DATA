@@ -190,20 +190,28 @@
     .main {
       display: grid;
       grid-template-columns: 1.5fr 0.5fr;
-      grid-template-rows: 480px 480px;
+      grid-template-rows: 480px;
       gap: 0.6rem;
       min-height: 0;
       min-width: 0;
       align-items: stretch;
     }
     .chart-wrap { grid-column: 1; grid-row: 1; }
-    .map-toolbar { grid-column: 2; grid-row: 1; align-self: start; }
-    .map-wrap { grid-column: 2; grid-row: 2; }
+    .map-column {
+      grid-column: 2;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      gap: 0.35rem;
+    }
+    .map-column .map-toolbar { flex-shrink: 0; }
+    .map-column .map-wrap { flex: 1; min-height: 0; height: auto; }
     @media (max-width: 1200px) {
       .main { grid-template-columns: 1fr; grid-template-rows: 480px auto 480px; }
       .chart-wrap { grid-column: 1; grid-row: 1; }
-      .map-toolbar { grid-column: 1; grid-row: 2; }
-      .map-wrap { grid-column: 1; grid-row: 3; }
+      .map-column { grid-column: 1; grid-row: 2; }
+      .map-column .map-wrap { min-height: 360px; }
     }
     .chart-top-bar {
       display: flex;
@@ -942,6 +950,7 @@
         <p class="chart-title" id="chart-title" aria-live="polite"></p>
         <canvas id="chart" aria-label="Indicator time series chart"></canvas>
       </div>
+      <div class="map-column">
       <div class="map-toolbar">
         <label for="map-table">Map:</label>
         <select id="map-table" aria-label="Map data by country"></select>
@@ -978,6 +987,7 @@
             <p class="spotlight-text" id="spotlight-text">Loading…</p>
           </div>
         </section>
+      </div>
       </div>
     </main>
 
