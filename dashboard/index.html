@@ -43,7 +43,7 @@
       padding: 0.5rem 0.75rem;
       display: grid;
       grid-template-columns: 240px 1fr;
-      grid-template-rows: auto auto auto 1fr auto;
+      grid-template-rows: auto auto auto 1fr auto auto;
       gap: 0.6rem;
       min-height: 100vh;
     }
@@ -335,7 +335,6 @@
     .news-block .news-loading,
     .news-block .news-error { color: var(--text-muted); font-size: 0.78rem; }
     .country-spotlight {
-      grid-column: 1 / -1;
       background: var(--surface);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -348,6 +347,34 @@
       align-items: center;
       gap: 0.6rem;
       flex-wrap: wrap;
+    }
+    .country-spotlight-in-sidebar {
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.5rem;
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 4rem;
+      max-height: 12rem;
+      overflow-y: auto;
+    }
+    .country-spotlight-in-sidebar h2 {
+      font-size: 0.65rem;
+      font-weight: 700;
+      margin: 0 0 0.25rem 0;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .country-spotlight-in-sidebar .spotlight-country {
+      font-size: 0.78rem;
+    }
+    .country-spotlight-in-sidebar .spotlight-text {
+      font-size: 0.72rem;
+      line-height: 1.35;
+      margin: 0 0 0.2rem 0;
+    }
+    .country-spotlight-in-sidebar .spotlight-hint {
+      font-size: 0.6rem;
     }
     .country-spotlight h2 {
       font-size: 0.75rem;
@@ -620,13 +647,6 @@
       <p class="news-sources" style="margin:0;font-size:0.6rem;color:var(--text-muted);flex-shrink:0;">Sources: <a href="https://www.homeaffairs.gov.au/news-media" target="_blank" rel="noopener noreferrer" title="Home Affairs">HA</a> · <a href="https://newsroom.border.gov.au/" target="_blank" rel="noopener noreferrer" title="ABF Newsroom">ABF</a> · <a href="https://immi.homeaffairs.gov.au/news-media" target="_blank" rel="noopener noreferrer" title="Immi news">Immi</a> · <a href="https://migrationalliance.com.au/immigration-daily-news/latest.html" target="_blank" rel="noopener noreferrer" title="Migration Alliance">MA</a></p>
     </section>
 
-    <section class="country-spotlight" id="country-spotlight" aria-label="Country spotlight">
-      <h2>Country spotlight</h2>
-      <span class="spotlight-country" id="spotlight-country"></span>
-      <p class="spotlight-text" id="spotlight-text">Loading…</p>
-      <span class="spotlight-hint" id="spotlight-hint">Select a country in the Indicator menu (when a map table is selected) or wait to cycle.</span>
-    </section>
-
     <div class="kpi-row" id="kpi-row" aria-label="Key indicators for selected table">
       <div class="kpi-card"><div class="kpi-title" id="kpi-0-title">—</div><div class="kpi-value-row"><div class="kpi-value" id="kpi-0-val">—</div><div class="kpi-spark"><canvas id="kpi-0-spark"></canvas></div></div><div class="kpi-change" id="kpi-0-change"></div></div>
       <div class="kpi-card"><div class="kpi-title" id="kpi-1-title">—</div><div class="kpi-value-row"><div class="kpi-value" id="kpi-1-val">—</div><div class="kpi-spark"><canvas id="kpi-1-spark"></canvas></div></div><div class="kpi-change" id="kpi-1-change"></div></div>
@@ -656,6 +676,12 @@
           <option value="">— Select table first —</option>
         </select>
       </div>
+      <section class="country-spotlight country-spotlight-in-sidebar" id="country-spotlight" aria-label="Country spotlight">
+        <h2>Country spotlight</h2>
+        <span class="spotlight-country" id="spotlight-country"></span>
+        <p class="spotlight-text" id="spotlight-text">Loading…</p>
+        <span class="spotlight-hint" id="spotlight-hint">Select a country in the Indicator menu (when a map table is selected) or wait to cycle.</span>
+      </section>
     </aside>
 
     <main class="main">
