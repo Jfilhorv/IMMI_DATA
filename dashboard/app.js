@@ -140,6 +140,13 @@
     return out;
   }
 
+  function abbreviateSparkValue(v) {
+    if (v >= 1e6) return (v / 1e6).toFixed(1) + 'M';
+    if (v >= 1000) return (v / 1000).toFixed(1) + 'k';
+    if (Math.abs(v) < 10 && v !== Math.floor(v)) return v.toFixed(1);
+    return Math.round(v).toString();
+  }
+
   function drawSparkline(canvasId, values) {
     var el = document.getElementById(canvasId);
     if (!el) return;
@@ -150,7 +157,7 @@
     }
     var dpr = window.devicePixelRatio || 1;
     var w = el.parentElement.clientWidth || 120;
-    var h = 24;
+    var h = 28;
     el.width = w * dpr;
     el.height = h * dpr;
     el.style.width = w + 'px';
@@ -161,6 +168,8 @@
     var max = Math.max.apply(null, values);
     var range = max - min || 1;
     var pad = 4;
+    var lineTop = 4;
+    var lineH = h - 2 * pad;
     var x0 = pad;
     var x1 = w - pad;
     var y0 = h - pad;
@@ -171,8 +180,8 @@
     var points = [];
     values.forEach(function (v, i) {
       var x = x0 + i * step;
-      var y = y0 - ((v - min) / range) * (h - 2 * pad);
-      points.push({ x: x, y: y });
+      var y = y0 - ((v - min) / range) * lineH;
+      points.push({ x: x, y: y, v: v });
       if (i === 0) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
     });
@@ -182,6 +191,13 @@
       ctx.beginPath();
       ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
       ctx.fill();
+    });
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.35)';
+    ctx.font = '7px system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    points.forEach(function (p) {
+      ctx.fillText(abbreviateSparkValue(p.v), p.x, p.y - 4);
     });
   }
 
