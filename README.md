@@ -1,4 +1,4 @@
-# <img src="dashboard/logo_immi_data_square_black_write.png" alt="IMMI-DATA" height="40" style="vertical-align: middle;" /> Australian Immigration Data Dashboard
+# <img src="dashboard/logo_immi_data_squera_plate.png" alt="IMMI-DATA" height="80" style="vertical-align: middle;" /> Australian Immigration Data Dashboard
 
 A **free, public** dashboard and webpage showing Australian immigration statistics from official government sources: **when** (year/quarter/month), **from** (country), **to** (Australia), **across years**.
 
