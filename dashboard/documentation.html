@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation — Australian Immigration Data</title>
+  <link rel="icon" href="logo_immi_data_square_black_write.png?v=4" type="image/png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --bg: #f0f4f8;
+      --text: #2d3748;
+      --text-muted: #4a5568;
+      --accent: #2563eb;
+      --header-bg: rgba(219, 234, 254, 0.92);
+      --header-title: #1e40af;
+      --header-subtitle: #6b7280;
+      --border: rgba(0,0,0,0.08);
+      --surface: rgba(255,255,255,0.9);
+    }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      margin: 0;
+      padding: 0 0.75rem;
+      background: var(--bg);
+      background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 248, 255, 0.95) 50%, rgba(230, 240, 252, 0.9) 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 1rem 1.25rem 2rem; }
+    header {
+      padding: 0.36rem 0.54rem;
+      border-radius: 0 0 8px 8px;
+      background: var(--header-bg);
+      border: none;
+      border-bottom: 3px solid var(--accent);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.675rem;
+      position: relative;
+    }
+    header .header-logo-left { flex-shrink: 0; display: block; line-height: 0; margin-left: -0.5rem; position: relative; }
+    header .header-logo-left img { height: 5rem; width: auto; display: block; transition: opacity 0.2s ease; }
+    header .header-logo-left .logo-hover { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.2s ease; }
+    header .header-logo-left:hover .logo-default { opacity: 0; }
+    header .header-logo-left:hover .logo-hover { opacity: 1; }
+    header .header-left-group { display: flex; align-items: center; gap: 0.225rem; min-width: 0; flex: 1; }
+    header .header-text { min-width: 0; }
+    header h1 {
+      font-family: 'Plus Jakarta Sans', 'DM Sans', system-ui, sans-serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0 0 0.11rem 0;
+      padding: 0.18rem 0.36rem;
+      letter-spacing: -0.02em;
+      color: var(--header-title);
+      -webkit-text-stroke: 0.5px var(--header-title);
+      border-radius: 6px;
+      transition: color 0.2s ease, -webkit-text-stroke 0.2s ease;
+    }
+    header h1:hover { color: #000; -webkit-text-stroke: 0.5px #000; }
+    header .header-nav {
+      display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; margin-right: 14rem;
+      font-size: 0.85rem; font-weight: 500; color: var(--header-subtitle);
+    }
+    header .header-nav a { color: var(--accent); text-decoration: none; }
+    header .header-nav a:hover { text-decoration: underline; }
+    header .header-nav .sep { color: var(--header-subtitle); user-select: none; }
+    header { overflow: visible; }
+    header .header-logo-link {
+      position: absolute; right: 0.6rem; top: 50%; transform: translateY(-50%);
+      text-decoration: none; line-height: 0; display: block; overflow: visible;
+    }
+    header .header-logo-link img, header .header-logo {
+      height: 14.08rem !important; min-height: 226px; width: auto !important; max-width: 500px;
+      object-fit: contain; flex-shrink: 0; display: block; transition: opacity 0.2s ease;
+    }
+    header .header-logo-link .logo-hover { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; }
+    header .header-logo-link:hover .logo-default, header .header-logo-link:hover .header-logo.logo-default { opacity: 0; }
+    header .header-logo-link:hover .logo-hover { opacity: 1; }
+    @media (max-width: 768px) {
+      header { padding: 0.35rem 0.45rem; flex-wrap: wrap; gap: 0.4rem; }
+      header h1 { font-size: 1.35rem; }
+      header .header-logo-left img { height: 3.5rem; }
+      header .header-nav { margin-right: 0; }
+      header .header-logo-link { display: none; }
+    }
+    @media (max-width: 480px) {
+      header { padding: 0.25rem 0.35rem; }
+      header h1 { font-size: 1.05rem; }
+      header .header-logo-left img { height: 2.5rem; }
+      header .header-left-group { gap: 0.15rem; }
+      header .header-logo-link { display: none; }
+    }
+    .doc-section { margin: 1.5rem 0; }
+    .doc-section h2 { font-size: 1.15rem; color: var(--accent); margin: 0 0 0.5rem 0; }
+    .doc-section p, .doc-section li { font-size: 0.95rem; line-height: 1.55; color: var(--text); margin: 0.4rem 0; }
+    .doc-section a { color: var(--accent); text-decoration: none; }
+    .doc-section a:hover { text-decoration: underline; }
+    .doc-section table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .doc-section th, .doc-section td { padding: 0.4rem 0.6rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .doc-section th { font-weight: 600; color: var(--text-muted); }
+    .doc-section pre, .doc-section code { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
+    .doc-section pre { padding: 0.75rem 1rem; overflow-x: auto; }
+    .doc-section ul { padding-left: 1.25rem; }
+    .doc-intro { font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-left-group">
+      <a href="index.html" class="header-logo-left" aria-label="Dashboard" title="Dashboard"><img class="logo-default" src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"><img class="logo-hover" src="logo_immi_data_squera_plate.png" alt="IMMI-DATA" aria-hidden="true"></a>
+      <div class="header-text">
+        <h1>Australian Immigration — Documentation</h1>
+      </div>
+    </div>
+    <nav class="header-nav" aria-label="Site navigation">
+      <a href="tree.html">Indicator Tree</a><span class="sep">—</span><a href="documentation.html">Documentation</a><span class="sep">—</span><a href="https://github.com/Jfilhorv/IMMI_DATA" target="_blank" rel="noopener noreferrer">Git</a>
+    </nav>
+    <a href="index.html" class="header-logo-link" aria-label="Back to Dashboard"><img src="logo_immi_data.png" alt="IMMI-DATA" class="header-logo logo-default"><img src="immi_data_logo_plate.png" alt="IMMI-DATA" class="header-logo logo-hover" aria-hidden="true"></a>
+  </header>
+  <div class="wrap">
+    <p class="doc-intro">A <strong>free, public</strong> dashboard showing Australian immigration statistics from official government sources: <strong>when</strong> (year/quarter/month), <strong>from</strong> (country), <strong>to</strong> (Australia), <strong>across years</strong>. Open the dashboard to explore migration statistics published by the Department of Home Affairs. Select a section, table and indicator to explore trends, download charts, or view migration patterns by country.</p>
+
+    <section class="doc-section">
+      <h2>Links</h2>
+      <table>
+        <tr><th>What</th><th>URL</th></tr>
+        <tr><td>Live dashboard</td><td><a href="index.html">index.html</a></td></tr>
+        <tr><td>Indicator tree (list)</td><td><a href="tree.html">tree.html</a></td></tr>
+        <tr><td>Indicator tree (diagram)</td><td><a href="https://jfilhorv.github.io/IMMI_DATA/docs/indicator_tree.drawio.html" target="_blank" rel="noopener">docs/indicator_tree.drawio.html</a></td></tr>
+        <tr><td>Repository</td><td><a href="https://github.com/Jfilhorv/IMMI_DATA" target="_blank" rel="noopener">GitHub — Jfilhorv/IMMI_DATA</a></td></tr>
+      </table>
+    </section>
+
+    <section class="doc-section">
+      <h2>Data source</h2>
+      <p>All statistics come from the official release:</p>
+      <ul>
+        <li><strong>Dataset:</strong> <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a></li>
+        <li><strong>Publisher:</strong> Department of Home Affairs, Australian Government</li>
+        <li><strong>Portal:</strong> <a href="https://data.gov.au" target="_blank" rel="noopener">data.gov.au</a></li>
+        <li><strong>Content:</strong> Migration program outcomes (permanent and temporary), humanitarian, visa cancellations, Net Overseas Migration, citizenship, labour market. Tables 1.0–7.8, financial year series.</li>
+        <li><strong>Licence:</strong> <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> — attribution required; we attribute in the dashboard and do not imply government endorsement.</li>
+      </ul>
+      <p><strong>Current data:</strong> Last update uses the <strong>2024–25</strong> statistical package. New releases (e.g. 2025–26) typically appear after the end of the financial year. See the dataset page for the latest download.</p>
+      <p><strong>How to update:</strong> From project root run <code>python scripts/run_update.py</code> for the full pipeline. See <code>docs/DATA_AND_UPDATE.md</code> for the exact script list and steps.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>Project structure</h2>
+      <pre>IMMI_DATA/
+├── README.md, PLANNING.md, DATA_SOURCES.md
+├── data/ (by_sheet, melted, dashboard/)
+├── scripts/ (run_update.py, fetch_first_dataset.py, melt_all_sheets.py, build_dashboard_data.py, …)
+├── dashboard/ (index.html, app.js, tree.html, documentation.html, data/)
+└── docs/ (indicator_tree.drawio, indicator_tree.drawio.html)</pre>
+    </section>
+
+    <section class="doc-section">
+      <h2>Goals</h2>
+      <ul>
+        <li>Use publicly available migration datasets released by the Australian Government (Home Affairs, data.gov.au).</li>
+        <li>Transform them into clearer visual insights via intuitive charts and dashboards.</li>
+        <li>Help immigrants, analysts, and the public understand migration trends.</li>
+        <li>Publish an open, freely accessible dashboard on GitHub Pages.</li>
+      </ul>
+    </section>
+
+    <section class="doc-section">
+      <h2>Status</h2>
+      <p>Planning done; data pipeline from dataset → by_sheet → melted → dashboard. Dashboard: Section → Table → (Submenu) → Indicator; dynamic KPIs, line/bar chart, choropleth map and donut by country, news ticker, table notes. <a href="tree.html">Indicator tree</a> — collapsible tree of all 7 sections, 46 tables and 577 indicators. Live at <a href="https://jfilhorv.github.io/IMMI_DATA/dashboard/">GitHub Pages</a>.</p>
+    </section>
+
+    <section class="doc-section">
+      <h2>Licence and attribution</h2>
+      <p>Code in this repo: use as you like (e.g. MIT or CC0). Government data: follow the licence of each dataset (e.g. CC BY); we attribute sources on the site.</p>
+    </section>
+  </div>
+</body>
+</html>

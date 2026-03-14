@@ -59,6 +59,7 @@
       header .header-text { margin-right: 0; }
       header h1 { font-size: 1.35rem; }
       header .header-logo-left img { height: 3.5rem; }
+      header .header-nav { margin-right: 0; }
       header .header-logo-link { display: none; }
     }
     @media (max-width: 480px) {
@@ -157,6 +158,22 @@
     header .subtitle a:hover {
       text-decoration: underline;
     }
+    header .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+      margin-right: 14rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--header-subtitle);
+    }
+    header .header-nav a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    header .header-nav a:hover { text-decoration: underline; }
+    header .header-nav .sep { color: var(--header-subtitle); user-select: none; }
     header { overflow: visible; }
     header .header-logo-link {
       position: absolute;
@@ -1007,6 +1024,9 @@
           <p class="subtitle">Department of Home Affairs · Australian Migration Statistics · <img src="tree_icon.png" alt="" class="subtitle-tree-icon" aria-hidden="true"><a href="tree.html">Indicator tree</a> (577 combinations)</p>
         </div>
       </div>
+      <nav class="header-nav" aria-label="Site navigation">
+        <a href="tree.html">Indicator Tree</a><span class="sep">—</span><a href="documentation.html">Documentation</a><span class="sep">—</span><a href="https://github.com/Jfilhorv/IMMI_DATA" target="_blank" rel="noopener noreferrer">Git</a>
+      </nav>
       <a href="index.html" class="header-logo-link" aria-label="Back to dashboard"><img src="logo_immi_data.png" alt="IMMI-DATA" class="header-logo logo-default"><img src="immi_data_logo_plate.png" alt="IMMI-DATA" class="header-logo logo-hover" aria-hidden="true"></a>
     </header>
 
