@@ -78,6 +78,13 @@
       display: block;
     }
     header .header-logo-left:hover { opacity: 0.9; }
+    header .header-left-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 0;
+      flex: 1;
+    }
     header .header-text {
       min-width: 0;
       margin-right: 14rem;
@@ -927,10 +934,12 @@
 <body>
   <div class="page">
     <header>
-      <a href="index.html" class="header-logo-left" aria-label="IMMI-DATA" title="Dashboard"><img src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"></a>
-      <div class="header-text">
-        <h1>Australian Immigration — Indicator Dashboard</h1>
-        <p class="subtitle">Department of Home Affairs · Australian Migration Statistics · <a href="tree.html">Indicator tree</a> (577 combinations)</p>
+      <div class="header-left-group">
+        <a href="index.html" class="header-logo-left" aria-label="IMMI-DATA" title="Dashboard"><img src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"></a>
+        <div class="header-text">
+          <h1>Australian Immigration — Indicator Dashboard</h1>
+          <p class="subtitle">Department of Home Affairs · Australian Migration Statistics · <a href="tree.html">Indicator tree</a> (577 combinations)</p>
+        </div>
       </div>
       <a href="index.html" class="header-logo-link" aria-label="Back to dashboard"><img src="logo_immi_data.png" alt="IMMI-DATA" class="header-logo logo-default"><img src="immi_data_logo_plate.png" alt="IMMI-DATA" class="header-logo logo-hover" aria-hidden="true"></a>
     </header>
