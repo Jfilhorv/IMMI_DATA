@@ -205,7 +205,6 @@
       min-height: 0;
       gap: 0.35rem;
     }
-    .map-column .map-toolbar { flex-shrink: 0; }
     .map-column .map-wrap { flex: 1; min-height: 0; height: auto; }
     @media (max-width: 1200px) {
       .main { grid-template-columns: 1fr; grid-template-rows: 480px auto 480px; }
@@ -252,12 +251,26 @@
       min-width: 8rem;
     }
     .controls-over-chart .submenu-wrap { display: inline-flex; align-items: center; gap: 0.2rem; }
+    .controls-over-chart .submenu-wrap .step-num { font-size: 0.9rem; font-weight: 800; color: var(--accent); min-width: 1.2em; }
+    .chart-body {
+      position: relative;
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
     .chart-toolbar-inline {
+      position: absolute;
+      top: 0.35rem;
+      right: 0.5rem;
+      z-index: 2;
       display: flex;
       align-items: center;
       gap: 0.35rem;
       flex-shrink: 0;
     }
+    .chart-wrap .chart-title + .chart-body { flex: 1; min-height: 0; }
+    .chart-wrap .chart-body canvas { flex: 1; min-height: 0; width: 100% !important; height: 100% !important; max-height: none; }
     .chart-wrap {
       background: var(--surface);
       backdrop-filter: blur(12px);
@@ -273,7 +286,6 @@
       justify-content: flex-start;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     }
-    .chart-wrap .chart-title + canvas { flex: 1; min-height: 0; }
     .chart-title {
       margin: 0 0 0.1rem 0;
       font-size: 0.76rem;
@@ -320,14 +332,14 @@
       display: flex;
       gap: 0;
       border: 1px solid var(--border);
-      border-radius: 4px;
+      border-radius: 3px;
       overflow: hidden;
       background: rgba(255,255,255,0.9);
       flex-shrink: 0;
     }
     .map-view-toggle button {
-      padding: 0.2rem 0.4rem;
-      font-size: 0.7rem;
+      padding: 0.15rem 0.3rem;
+      font-size: 0.65rem;
       border: none;
       background: transparent;
       color: var(--text-muted);
@@ -801,40 +813,40 @@
       cursor: pointer;
     }
     .btn-download:hover { border-color: var(--accent); color: var(--accent); }
-    .map-toolbar {
-      background: var(--surface);
-      border: 1px solid var(--accent);
-      border-radius: 8px;
-      padding: 0.4rem 0.5rem;
-      box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+    .map-toolbar-inside {
+      flex-shrink: 0;
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 0.5rem 0.75rem;
-      white-space: nowrap;
+      gap: 0.25rem 0.5rem;
+      padding: 0.25rem 0.4rem;
+      border-bottom: 1px solid var(--border);
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
     }
-    .map-toolbar label {
-      font-size: 0.65rem;
+    .map-toolbar-inside label {
+      font-size: 0.6rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.02em;
-      color: var(--text);
+      color: var(--text-muted);
       margin: 0;
     }
-    .map-toolbar select {
-      padding: 0.3rem 0.4rem;
-      font-size: 0.78rem;
+    .map-toolbar-inside select {
+      padding: 0.2rem 0.35rem;
+      font-size: 0.72rem;
       font-weight: 500;
       font-family: inherit;
-      border: 1px solid rgba(0,0,0,0.14);
+      border: 1px solid var(--border);
       border-radius: 4px;
       background: #fff;
       color: var(--text);
       cursor: pointer;
       min-width: 0;
     }
-    .map-toolbar select#map-table { min-width: 8rem; max-width: 14rem; }
-    .map-toolbar select#map-year { max-width: 4.5rem; }
+    .map-toolbar-inside select#map-table { min-width: 6rem; max-width: 12rem; }
+    .map-toolbar-inside select#map-year { max-width: 4rem; }
     .chart-type-toggle {
       display: flex;
       gap: 0;
@@ -935,6 +947,9 @@
               <option value="">— Select table first —</option>
             </select>
           </div>
+        </div>
+        <p class="chart-title" id="chart-title" aria-live="polite"></p>
+        <div class="chart-body">
           <div class="chart-toolbar chart-toolbar-inline">
             <div class="chart-type-toggle" id="chart-type-toggle" role="group" aria-label="Chart type">
               <button type="button" id="chart-type-bar" class="active" aria-pressed="true">Bar</button>
@@ -946,18 +961,17 @@
               <button type="button" id="download-csv" class="btn-download" title="Download data as CSV"><span aria-hidden="true">↓</span> CSV</button>
             </div>
           </div>
+          <canvas id="chart" aria-label="Indicator time series chart"></canvas>
         </div>
-        <p class="chart-title" id="chart-title" aria-live="polite"></p>
-        <canvas id="chart" aria-label="Indicator time series chart"></canvas>
       </div>
       <div class="map-column">
-      <div class="map-toolbar">
-        <label for="map-table">Map:</label>
-        <select id="map-table" aria-label="Map data by country"></select>
-        <label for="map-year">Year:</label>
-        <select id="map-year" aria-label="Map year"></select>
-      </div>
       <div class="map-wrap" id="map-wrap">
+        <div class="map-toolbar map-toolbar-inside">
+          <label for="map-table">Map:</label>
+          <select id="map-table" aria-label="Map data by country"></select>
+          <label for="map-year">Year:</label>
+          <select id="map-year" aria-label="Map year"></select>
+        </div>
         <div class="map-header">
           <p class="map-title-inline" id="map-title">Map (country data)</p>
           <div class="map-view-toggle">
