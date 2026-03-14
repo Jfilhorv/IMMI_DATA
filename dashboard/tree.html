@@ -24,14 +24,26 @@
     body {
       font-family: 'DM Sans', system-ui, sans-serif;
       margin: 0;
-      padding: 0 0.75rem 0.2rem;
+      padding: 0;
       background: var(--bg);
       background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 248, 255, 0.95) 50%, rgba(230, 240, 252, 0.9) 100%);
       color: var(--text);
       min-height: 100vh;
     }
+    .page {
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 0 0.75rem 0.2rem;
+    }
+    @media (max-width: 768px) {
+      .page { padding: 0.3rem 0.5rem 0.2rem; }
+    }
+    @media (max-width: 480px) {
+      .page { padding: 0.2rem 0.3rem 0.12rem; }
+    }
     .wrap { max-width: 900px; margin: 0; padding: 1rem 0; }
     header {
+      min-height: 5.25rem;
       padding: 0.36rem 0.54rem;
       border-radius: 0 0 8px 8px;
       background: var(--header-bg);
@@ -93,6 +105,13 @@
       color: #000;
       -webkit-text-stroke: 0.5px #000;
     }
+    header .subtitle {
+      font-size: 0.7rem;
+      color: var(--header-subtitle);
+      margin: 0;
+    }
+    header .subtitle a { color: #2563eb; text-decoration: none; }
+    header .subtitle a:hover { text-decoration: underline; }
     header .header-nav {
       display: flex;
       align-items: center;
@@ -111,6 +130,8 @@
       padding: 0 0.5rem;
     }
     header .header-nav a:hover { color: var(--accent); text-decoration: underline; }
+    header .header-nav a.current { font-weight: 700; }
+    header .header-nav .nav-icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 0.25em; fill: currentColor; }
     header .header-nav .sep {
       display: inline-block;
       width: 1px;
@@ -156,16 +177,15 @@
     header .header-logo-link:hover .header-logo.logo-default { opacity: 0; }
     header .header-logo-link:hover .logo-hover { opacity: 1; }
     @media (max-width: 768px) {
-      body { padding: 0.3rem 0.5rem 0.2rem; }
       header { padding: 0.35rem 0.45rem; flex-wrap: wrap; gap: 0.4rem; }
       header h1 { font-size: 1.35rem; }
       header .header-logo-left img { height: 3.5rem; }
       header .header-logo-link { display: none; }
     }
     @media (max-width: 480px) {
-      body { padding: 0.2rem 0.3rem 0.12rem; }
       header { padding: 0.25rem 0.35rem; }
       header h1 { font-size: 1.05rem; }
+      header .subtitle { font-size: 0.6rem; }
       header .header-logo-left img { height: 2.5rem; }
       header .header-left-group { gap: 0.15rem; }
       header .header-logo-link { display: none; }
@@ -220,15 +240,17 @@
   </style>
 </head>
 <body>
+  <div class="page">
   <header>
     <div class="header-left-group">
       <a href="index.html" class="header-logo-left" aria-label="Back to Dashboard" title="Back to Dashboard"><img class="logo-default" src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"><img class="logo-hover" src="logo_immi_data_squera_plate.png" alt="IMMI-DATA" aria-hidden="true"></a>
       <div class="header-text">
         <h1>Australian Immigration — Tree options</h1>
+        <p class="subtitle">7 sections · 46 tables · 577 indicators · <a href="index.html">Dashboard</a></p>
       </div>
     </div>
     <nav class="header-nav" aria-label="Site navigation">
-      <a href="tree.html">Indicator Tree</a><span class="sep" aria-hidden="true"></span><a href="documentation.html">Documentation</a><span class="sep" aria-hidden="true"></span><a href="https://github.com/Jfilhorv/IMMI_DATA" target="_blank" rel="noopener noreferrer">Git</a>
+      <a href="tree.html" class="current">Indicator Tree</a><span class="sep" aria-hidden="true"></span><a href="documentation.html">Documentation</a><span class="sep" aria-hidden="true"></span><a href="https://github.com/Jfilhorv/IMMI_DATA" target="_blank" rel="noopener noreferrer" title="Repository"><svg class="nav-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> Git</a>
     </nav>
     <a href="index.html" class="header-logo-link" aria-label="Back to Dashboard"><img src="logo_immi_data.png" alt="IMMI-DATA" class="header-logo logo-default"><img src="immi_data_logo_plate.png" alt="IMMI-DATA" class="header-logo logo-hover" aria-hidden="true"></a>
   </header>
@@ -240,6 +262,7 @@
     <div id="tree-root" class="tree">
       <p class="loading" id="loading">Loading…</p>
     </div>
+  </div>
   </div>
   <script>
 (function () {
