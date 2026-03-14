@@ -164,10 +164,10 @@
       return;
     }
     var dpr = window.devicePixelRatio || 1;
-    var w = el.parentElement.clientWidth || 120;
-    var labelTop = 16;
-    var lineBottom = 40;
-    var h = 48;
+    var w = el.parentElement.clientWidth || 160;
+    var h = 56;
+    var labelTop = 22;
+    var lineBottom = 50;
     el.width = w * dpr;
     el.height = h * dpr;
     el.style.width = w + 'px';
@@ -180,8 +180,8 @@
     var pad = 22;
     var x0 = pad;
     var x1 = w - pad;
-    var y0 = lineBottom - pad;
-    var lineH = lineBottom - labelTop - 2;
+    var y0 = lineBottom - 6;
+    var lineH = lineBottom - labelTop - 6;
     var step = values.length > 1 ? (x1 - x0) / (values.length - 1) : 0;
     ctx.strokeStyle = '#60a5fa';
     ctx.lineWidth = 2;
