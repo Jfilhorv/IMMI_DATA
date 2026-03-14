@@ -64,12 +64,16 @@
     }
     @media (max-width: 480px) {
       .page { padding: 0.25rem 0.35rem 0.15rem; }
+      header { padding: 0.3rem 0.4rem; }
       header h1 { font-size: 1.15rem; }
+      header .subtitle { font-size: 0.65rem; }
       header .header-logo-left img { height: 2.75rem; }
       header .header-logo-link { display: none; }
       header .header-left-group { gap: 0.2rem; }
       .chart-top-bar { flex-wrap: wrap; }
       .controls-over-chart { flex-wrap: wrap; }
+      .map-column .map-wrap { min-height: 280px; }
+      .btn-download { min-height: 44px; padding: 0.35rem 0.5rem; }
     }
     header {
       grid-column: 1 / -1;
@@ -749,7 +753,8 @@
     }
     @media (max-width: 600px) {
       .chart-toolbar { gap: 0.4rem; }
-      .btn-download { padding: 0.4rem 0.5rem; min-height: 36px; }
+      .btn-download { padding: 0.35rem 0.5rem; min-height: 44px; }
+      .chart-type-toggle button { min-height: 44px; padding: 0.4rem 0.6rem; }
       .block-notes .table-notes { min-height: 5rem; max-height: 16rem; }
       .doc-section { padding: 0.5rem 0.6rem; }
     }
