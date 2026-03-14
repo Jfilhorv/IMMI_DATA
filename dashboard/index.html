@@ -113,7 +113,32 @@
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
       overflow: visible;
       min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
     }
+    .sidebar-data-items {
+      font-size: 0.58rem;
+      line-height: 1.2;
+      padding: 0.25rem 0 0 0;
+      margin: 0;
+      border-top: 1px solid var(--border);
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+    }
+    .sidebar-data-items h2 {
+      font-size: 0.68rem;
+      margin: 0 0 0.2rem 0;
+      padding-bottom: 0.1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-data-items dt { font-size: 0.56rem; margin-top: 0.15rem; }
+    .sidebar-data-items dd { font-size: 0.56rem; margin: 0 0 0.05rem 0; }
+    .sidebar-data-items small { font-size: 0.52rem; }
     .controls label {
       display: block;
       font-size: 0.65rem;
@@ -510,19 +535,13 @@
       grid-template-columns: 2fr 1fr;
       gap: 0.25rem;
     }
-    .footer-right {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.25rem;
-      min-width: 0;
-    }
-    .footer-right .doc-section {
+    .footer-three-blocks #overview {
       padding: 0.2rem 0.28rem;
     }
-    .footer-right .doc-section h2 { font-size: 0.64rem; padding-bottom: 0.06rem; margin-bottom: 0.1rem; }
-    .footer-right .doc-section h3 { font-size: 0.58rem; margin: 0.1rem 0 0.05rem 0; }
-    .footer-right .doc-section p, .footer-right .doc-section dd { font-size: 0.58rem; margin: 0 0 0.06rem 0; line-height: 1.2; }
-    .footer-right .doc-section dt { font-size: 0.58rem; margin-top: 0.1rem; }
+    .footer-three-blocks #overview h2 { font-size: 0.64rem; padding-bottom: 0.06rem; margin-bottom: 0.1rem; }
+    .footer-three-blocks #overview h3 { font-size: 0.58rem; margin: 0.1rem 0 0.05rem 0; }
+    .footer-three-blocks #overview p, .footer-three-blocks #overview dd { font-size: 0.58rem; margin: 0 0 0.06rem 0; line-height: 1.2; }
+    .footer-three-blocks #overview dt { font-size: 0.58rem; margin-top: 0.1rem; }
     .doc-section.block-notes {
       padding: 0.35rem 0.5rem;
       box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
@@ -547,7 +566,6 @@
     .table-notes .table-notes-empty { color: var(--text-muted); font-style: italic; font-size: 0.8rem; }
     @media (max-width: 1100px) {
       .footer-three-blocks { grid-template-columns: 1fr; }
-      .footer-right { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       .chart-toolbar { gap: 0.4rem; }
@@ -613,13 +631,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.4rem;
+      gap: 0.5rem 0.75rem;
       flex-wrap: wrap;
       padding-top: 0.08rem;
       border-top: 1px solid var(--border);
     }
     .source-row .source { border-top: none; padding-top: 0; flex: 1; min-width: 0; }
-    .source.attribution-notice { padding-top: 0.04rem; font-size: 0.58rem; }
+    .source-row .source.attribution-notice { flex: 0 1 auto; padding-top: 0; font-size: 0.58rem; }
     .btn-download-footer {
       font-size: 0.65rem;
       padding: 0.15rem 0.35rem;
@@ -821,6 +839,28 @@
           <option value="">— Select table first —</option>
         </select>
       </div>
+      <section class="doc-section sidebar-data-items" id="data-items">
+        <h2>Data Items &amp; Terminology</h2>
+        <dl>
+          <dt>Applicant Type</dt>
+          <dd>Primary vs secondary applicants; 'primary' excludes dependants.</dd>
+          <dt>Citizenship</dt>
+          <dd>Country of citizenship; where multiple, travel document or nominated.</dd>
+          <dt>Client Location</dt>
+          <dd>Onshore (in Australia) or offshore at time of application.</dd>
+          <dt>Humanitarian Program</dt>
+          <dd>Offshore resettlement and onshore protection components.</dd>
+          <dt>Migration Program</dt>
+          <dd>Three streams: Skill, Family, Special Eligibility.</dd>
+          <dt>Net Overseas Migration (NOM)</dt>
+          <dd>Net gain/loss via arrivals and departures (12+ months stay).</dd>
+          <dt>Outcome</dt>
+          <dd>Visas granted net of certain cancellations and exclusions.</dd>
+          <dt>Primary / Secondary Applicant</dt>
+          <dd>Principal vs dependant under Migration Regulations.</dd>
+        </dl>
+        <p><small>© Commonwealth of Australia. Source: Department of Home Affairs.</small></p>
+      </section>
     </aside>
 
     <main class="main">
@@ -884,7 +924,6 @@
         <h2>Notes</h2>
         <div id="table-notes" class="table-notes" aria-live="polite"></div>
       </section>
-      <div class="footer-right">
       <section class="doc-section" id="overview">
         <h2>Overview</h2>
         <p><strong>Australian Migration Statistics, 2024–25</strong> — <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener noreferrer" class="overview-release">Released November 2025.</a></p>
@@ -895,29 +934,6 @@
         <h3>Contents</h3>
         <p>Permanent migration (1.0–1.18), temporary visas (2.0–2.4), Humanitarian (3.0–3.4), visa non-compliance (4.0–4.4), NOM (5.0–5.1), citizenship (6.0), labour market (7.0–7.8). More at <a href="https://data.gov.au" target="_blank" rel="noopener">data.gov.au</a>.</p>
       </section>
-      <section class="doc-section" id="data-items">
-        <h2>Data Items &amp; Terminology</h2>
-        <dl>
-          <dt>Applicant Type</dt>
-          <dd>Primary vs secondary applicants; 'primary' excludes dependants.</dd>
-          <dt>Citizenship</dt>
-          <dd>Country of citizenship; where multiple, travel document or nominated.</dd>
-          <dt>Client Location</dt>
-          <dd>Onshore (in Australia) or offshore at time of application.</dd>
-          <dt>Humanitarian Program</dt>
-          <dd>Offshore resettlement and onshore protection components.</dd>
-          <dt>Migration Program</dt>
-          <dd>Three streams: Skill, Family, Special Eligibility.</dd>
-          <dt>Net Overseas Migration (NOM)</dt>
-          <dd>Net gain/loss via arrivals and departures (12+ months stay).</dd>
-          <dt>Outcome</dt>
-          <dd>Visas granted net of certain cancellations and exclusions.</dd>
-          <dt>Primary / Secondary Applicant</dt>
-          <dd>Principal vs dependant under Migration Regulations.</dd>
-        </dl>
-        <p><small>© Commonwealth of Australia. Source: Department of Home Affairs.</small></p>
-      </section>
-      </div>
     </div>
 
     <div class="source-row">
@@ -925,10 +941,10 @@
         Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Years = financial year start (e.g. 1984 = 1984–85).
       </p>
       <button type="button" id="footer-download-csv" class="btn-download-footer" title="Download current selection as CSV">Download CSV</button>
+      <p class="source attribution-notice">
+        Data: © Commonwealth of Australia, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. This site is not affiliated with the Australian Government.
+      </p>
     </div>
-    <p class="source attribution-notice">
-      Data: © Commonwealth of Australia, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. This site is not affiliated with the Australian Government.
-    </p>
   </div>
 
   <script>
