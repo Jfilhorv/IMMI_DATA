@@ -59,7 +59,6 @@
       header .header-text { margin-right: 0; }
       header h1 { font-size: 1.35rem; }
       header .header-logo-left img { height: 3.5rem; }
-      header .header-nav { margin-right: 0; }
       header .header-logo-link { display: none; }
     }
     @media (max-width: 480px) {
@@ -161,19 +160,31 @@
     header .header-nav {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      flex-shrink: 0;
-      margin-right: 14rem;
+      justify-content: center;
+      gap: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       font-size: 0.85rem;
       font-weight: 500;
-      color: var(--header-subtitle);
+      color: #1a1a1a;
     }
     header .header-nav a {
-      color: var(--accent);
+      color: #1a1a1a;
       text-decoration: none;
+      padding: 0 0.5rem;
     }
-    header .header-nav a:hover { text-decoration: underline; }
-    header .header-nav .sep { color: var(--header-subtitle); user-select: none; }
+    header .header-nav a:hover { color: var(--accent); text-decoration: underline; }
+    header .header-nav .sep {
+      display: inline-block;
+      width: 1px;
+      height: 0.85em;
+      background: #1a1a1a;
+      opacity: 0.6;
+      flex-shrink: 0;
+      margin: 0 0.15rem;
+      user-select: none;
+    }
     header { overflow: visible; }
     header .header-logo-link {
       position: absolute;
@@ -1025,7 +1036,7 @@
         </div>
       </div>
       <nav class="header-nav" aria-label="Site navigation">
-        <a href="tree.html">Indicator Tree</a><span class="sep">—</span><a href="documentation.html">Documentation</a><span class="sep">—</span><a href="https://github.com/Jfilhorv/IMMI_DATA" target="_blank" rel="noopener noreferrer">Git</a>
+        <a href="tree.html">Indicator Tree</a><span class="sep" aria-hidden="true"></span><a href="documentation.html">Documentation</a><span class="sep" aria-hidden="true"></span><a href="https://github.com/Jfilhorv/IMMI_DATA" target="_blank" rel="noopener noreferrer">Git</a>
       </nav>
       <a href="index.html" class="header-logo-link" aria-label="Back to dashboard"><img src="logo_immi_data.png" alt="IMMI-DATA" class="header-logo logo-default"><img src="immi_data_logo_plate.png" alt="IMMI-DATA" class="header-logo logo-hover" aria-hidden="true"></a>
     </header>
