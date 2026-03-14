@@ -455,7 +455,7 @@
   }
 
   var SPOTLIGHT_FADE_MS = 500;
-  var MAP_HIGHLIGHT_BORDER = '#22d3ee';
+  var MAP_HIGHLIGHT_BORDER = '#facc15';
 
   function highlightCountryOnMap(countryName) {
     if (!mapGeoLayer || !currentMapData) return;

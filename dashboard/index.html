@@ -251,7 +251,7 @@
       min-width: 0;
       overflow-x: hidden;
       overflow-y: auto;
-      padding: 0.28rem 0.4rem 0.35rem;
+      padding: 0.2rem 0.35rem 0.25rem;
       border-top: 1px solid var(--border);
       flex-direction: column;
       align-items: stretch;
@@ -276,7 +276,7 @@
     }
     .country-spotlight-below-map .spotlight-title,
     .country-spotlight-below-map .spotlight-country {
-      font-size: clamp(0.78rem, 14cqh, 1.2rem);
+      font-size: clamp(0.78rem, 22cqh, 4rem);
       font-weight: 600;
       color: var(--text);
     }
@@ -287,8 +287,8 @@
       word-break: break-word;
     }
     .country-spotlight-below-map .spotlight-text {
-      font-size: clamp(0.72rem, 12cqh, 1.1rem);
-      line-height: 1.38;
+      font-size: clamp(0.72rem, 20cqh, 3.5rem);
+      line-height: 1.35;
       margin: 0;
       color: var(--text);
       flex: 1;
@@ -323,6 +323,8 @@
     }
     .leaflet-tooltip.map-tooltip { font-size: 0.7rem; padding: 0.2rem 0.4rem; }
     .map-area .leaflet-interactive { cursor: pointer; }
+    .map-area .leaflet-marker-pane,
+    .map-area .leaflet-marker-pane * { pointer-events: none !important; }
     .map-wrap .leaflet-control-zoom {
       border: 1px solid var(--border) !important;
       border-radius: 4px !important;
