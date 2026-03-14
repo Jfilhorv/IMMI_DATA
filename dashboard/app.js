@@ -455,7 +455,6 @@
   function updateCountrySpotlight(countryName) {
     var countryEl = document.getElementById('spotlight-country');
     var textEl = document.getElementById('spotlight-text');
-    var hintEl = document.getElementById('spotlight-hint');
     if (!countryEl || !textEl) return;
     if (countryName) {
       selectedSpotlightCountry = countryName;
@@ -464,12 +463,10 @@
         countryEl.textContent = (entry.name || '').replace(/\s*[—–-]\s*$/, '').trim();
         countryEl.style.display = '';
         textEl.textContent = entry.summary || '';
-        if (hintEl) hintEl.textContent = '';
       } else {
         countryEl.textContent = '';
         countryEl.style.display = 'none';
-        textEl.textContent = countrySummaries.length ? 'Select a country from the Indicator menu (map tables).' : 'Country summaries loading…';
-        if (hintEl) hintEl.textContent = '';
+        textEl.textContent = countrySummaries.length ? 'Select a country from the Indicator menu or click the map.' : 'Country summaries loading…';
       }
       return;
     }
@@ -478,7 +475,6 @@
       countryEl.textContent = '';
       countryEl.style.display = 'none';
       textEl.textContent = 'Country summaries unavailable.';
-      if (hintEl) hintEl.textContent = '';
       return;
     }
     var idx = spotlightCycleIndex % countrySummaries.length;
@@ -486,7 +482,6 @@
     countryEl.textContent = (entry.name || '').replace(/\s*[—–-]\s*$/, '').trim();
     countryEl.style.display = '';
     textEl.textContent = entry.summary || '';
-    if (hintEl) hintEl.textContent = '';
     spotlightCycleIndex = (spotlightCycleIndex + 1) % countrySummaries.length;
   }
 
@@ -779,6 +774,41 @@
             var val = iso && data.valuesByIso[iso];
             if (val != null && isFinite(val)) {
               layer.bindTooltip(name + ': ' + fmtNum(Math.round(val)), { permanent: false, direction: 'top', className: 'map-tooltip' });
+              layer.on('click', function () {
+                var countryName = null;
+                for (var i = 0; i < data.countryList.length; i++) {
+                  var n = data.countryList[i].name;
+                  if ((countryToIso[n] || countryToIso[n.replace(/\d+$/, '')]) === iso) {
+                    countryName = n;
+                    break;
+                  }
+                }
+                if (!countryName) return;
+                var mapTableEl = document.getElementById('map-table');
+                var mapTableId = mapTableEl ? mapTableEl.value : null;
+                if (!mapTableId || MAP_TABLES.indexOf(mapTableId) < 0) return;
+                var tbl = tableList.filter(function (t) { return t.id === mapTableId; })[0];
+                if (!tbl || !sectionsWithData.has(tbl.section)) return;
+                var sectionSel = document.getElementById('section');
+                var tableSel = document.getElementById('table');
+                var indSel = document.getElementById('indicator');
+                sectionSel.value = String(tbl.section);
+                onSectionChange();
+                tableSel.value = mapTableId;
+                onTableChange();
+                var opts = indSel.options;
+                for (var j = 0; j < opts.length; j++) {
+                  if (opts[j].value === countryName) {
+                    indSel.value = countryName;
+                    break;
+                  }
+                }
+                onIndicatorChange();
+              });
+              layer.on('add', function () {
+                if (layer._path) layer._path.style.cursor = 'pointer';
+              });
+              if (layer._path) layer._path.style.cursor = 'pointer';
             }
           }
         }).addTo(leafletMap);
