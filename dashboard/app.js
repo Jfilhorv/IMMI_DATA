@@ -464,12 +464,12 @@
         countryEl.textContent = entry.name + ' — ';
         countryEl.style.display = '';
         textEl.textContent = entry.summary || '';
-        if (hintEl) hintEl.textContent = 'Showing selected country. Change indicator to cycle again.';
+        if (hintEl) hintEl.textContent = '';
       } else {
         countryEl.textContent = '';
         countryEl.style.display = 'none';
         textEl.textContent = countrySummaries.length ? 'Select a country from the Indicator menu (map tables).' : 'Country summaries loading…';
-        if (hintEl) hintEl.textContent = 'Select a country in the Indicator menu (when a map table is selected) or wait to cycle.';
+        if (hintEl) hintEl.textContent = '';
       }
       return;
     }
@@ -486,7 +486,7 @@
     countryEl.textContent = entry.name + ' — ';
     countryEl.style.display = '';
     textEl.textContent = entry.summary || '';
-    if (hintEl) hintEl.textContent = 'Cycling through countries. Select a country in the Indicator menu to pin one.';
+    if (hintEl) hintEl.textContent = '';
     spotlightCycleIndex = (spotlightCycleIndex + 1) % countrySummaries.length;
   }
 
