@@ -30,6 +30,17 @@
       box-shadow: 0 2px 8px rgba(30,64,175,0.25);
     }
     header .wrap { padding-top: 0.5rem; padding-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    header .header-logo-left {
+      flex-shrink: 0;
+      display: block;
+      line-height: 0;
+    }
+    header .header-logo-left img {
+      height: 12rem;
+      width: auto;
+      display: block;
+      vertical-align: middle;
+    }
     header .wrap .header-left { flex: 1; min-width: 0; }
     header { overflow: visible; }
     header .header-logo-link { flex-shrink: 0; display: block; overflow: visible; }
@@ -98,6 +109,7 @@
 <body>
   <header>
     <div class="wrap">
+      <a href="index.html" class="header-logo-left" aria-label="IMMI-DATA"><img src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"></a>
       <div class="header-left">
         <h1>Indicator tree</h1>
         <p class="back"><a href="index.html">← Back to Dashboard</a></p>
