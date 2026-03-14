@@ -6,7 +6,8 @@ A **free, public** dashboard and webpage showing Australian immigration statisti
 
 <div align="center">
 
-**Australian Immigration — Indicator Dashboard**  
+<img src="dashboard/logo_immi_data.png" alt="IMMI-DATA" height="160" style="vertical-align: middle;" /> **Australian Immigration — Indicator Dashboard**
+
 7 sections · 46 tables · 577 indicators · [Indicator tree](https://jfilhorv.github.io/IMMI_DATA/dashboard/tree.html) (visual hierarchy)
 
 [![Open live dashboard](https://img.shields.io/badge/🌐_Live_Dashboard-Open_here-1e40af?style=for-the-badge)](https://jfilhorv.github.io/IMMI_DATA/dashboard/)
@@ -63,6 +64,7 @@ IMMI_DATA/
 ├── dashboard/                # Static dashboard (HTML/JS, Chart.js, Leaflet)
 │   ├── index.html
 │   ├── app.js
+│   ├── logo_immi_data.png    # Header logo (same as in README)
 │   └── data/                 # tables.json, indicators.csv, kpi_candidates.json, etc.
 └── docs/                     # indicator_tree.drawio (edit in draw.io); indicator_tree.drawio.html (view: https://jfilhorv.github.io/IMMI_DATA/docs/indicator_tree.drawio.html)
 ```
