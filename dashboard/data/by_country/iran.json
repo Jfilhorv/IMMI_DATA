@@ -1,0 +1,335 @@
+{
+  "country": "Iran",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_10",
+      "table_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "Iran"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_12",
+      "table_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "Iran"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_15",
+      "table_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "Iran"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_6",
+      "table_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "Iran"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_8",
+      "table_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Iran"
+    },
+    {
+      "section": "Humanitarian",
+      "table": "3_3",
+      "table_title": "3.3: Permanent Protection, top 10",
+      "indicator": "Iran"
+    },
+    {
+      "section": "Citizenship",
+      "table": "6_0",
+      "table_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Iran"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_10",
+      "table_title": "Table 1.10: Skill stream outcome—top 15 citizenship countries, Skilled Independent visas, 2015–16 to 2024–25",
+      "short_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "Iran",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 970.0
+        },
+        {
+          "year": 2016,
+          "value": 1019.0
+        },
+        {
+          "year": 2017,
+          "value": 743.0
+        },
+        {
+          "year": 2018,
+          "value": 678.0
+        },
+        {
+          "year": 2019,
+          "value": 204.0
+        },
+        {
+          "year": 2020,
+          "value": 82.0
+        },
+        {
+          "year": 2021,
+          "value": 54.0
+        },
+        {
+          "year": 2022,
+          "value": 847.0
+        },
+        {
+          "year": 2023,
+          "value": 840.0
+        },
+        {
+          "year": 2024,
+          "value": 352.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_12",
+      "table_title": "Table 1.12: Skill stream outcome—top 15 citizenship countries, Skilled Regional visas, 2009–10 to 2018–19",
+      "short_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "Iran",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2009,
+          "value": 21.0
+        },
+        {
+          "year": 2010,
+          "value": 35.0
+        },
+        {
+          "year": 2011,
+          "value": 130.0
+        },
+        {
+          "year": 2012,
+          "value": 162.0
+        },
+        {
+          "year": 2013,
+          "value": 102.0
+        },
+        {
+          "year": 2014,
+          "value": 64.0
+        },
+        {
+          "year": 2015,
+          "value": 51.0
+        },
+        {
+          "year": 2016,
+          "value": 52.0
+        },
+        {
+          "year": 2017,
+          "value": 60.0
+        },
+        {
+          "year": 2018,
+          "value": 19.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_15",
+      "table_title": "Table 1.15: Skill stream outcome—top 15 citizenship countries, Global Talent (Independent) visas, 2019–20 to 2024–25",
+      "short_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "Iran",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 516.0
+        },
+        {
+          "year": 2020,
+          "value": 850.0
+        },
+        {
+          "year": 2021,
+          "value": 510.0
+        },
+        {
+          "year": 2022,
+          "value": 359.0
+        },
+        {
+          "year": 2023,
+          "value": 231.0
+        },
+        {
+          "year": 2024,
+          "value": 141.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_6",
+      "table_title": "Table 1.6: Skill stream outcome—top 15 citizenship countries, Regional visas, 2019–20 to 2024–25",
+      "short_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "Iran",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 340.0
+        },
+        {
+          "year": 2020,
+          "value": 283.0
+        },
+        {
+          "year": 2021,
+          "value": 170.0
+        },
+        {
+          "year": 2022,
+          "value": 402.0
+        },
+        {
+          "year": 2023,
+          "value": 495.0
+        },
+        {
+          "year": 2024,
+          "value": 582.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_8",
+      "table_title": "Table 1.8: Skill stream outcome—top 15 citizenship countries, State/Territory Nominated visas, 2015–16 to 2024–25",
+      "short_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Iran",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 466.0
+        },
+        {
+          "year": 2016,
+          "value": 488.0
+        },
+        {
+          "year": 2017,
+          "value": 634.0
+        },
+        {
+          "year": 2018,
+          "value": 567.0
+        },
+        {
+          "year": 2019,
+          "value": 589.0
+        },
+        {
+          "year": 2020,
+          "value": 202.0
+        },
+        {
+          "year": 2021,
+          "value": 265.0
+        },
+        {
+          "year": 2022,
+          "value": 828.0
+        },
+        {
+          "year": 2023,
+          "value": 576.0
+        },
+        {
+          "year": 2024,
+          "value": 665.0
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section": "Humanitarian",
+      "table_id": "3_3",
+      "table_title": "Table 3.3: Final Permanent Protection visas granted—top 10 countries of citizenship, 2023–24 and 2024–25",
+      "short_title": "3.3: Permanent Protection, top 10",
+      "indicator": "Iran",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2023,
+          "value": 119.0
+        },
+        {
+          "year": 2024,
+          "value": 462.0
+        }
+      ]
+    },
+    {
+      "section_id": 6,
+      "section": "Citizenship",
+      "table_id": "6_0",
+      "table_title": "Table 6.0: Australian citizenship conferrals—top 15 countries of original citizenship and gender female, 2024–25",
+      "short_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Iran",
+      "columns": [
+        "year",
+        "value",
+        "category"
+      ],
+      "data": [
+        {
+          "year": 0,
+          "value": 1595.0,
+          "category": "Females"
+        },
+        {
+          "year": 0,
+          "value": 3394.0,
+          "category": "Total4"
+        }
+      ]
+    }
+  ]
+}

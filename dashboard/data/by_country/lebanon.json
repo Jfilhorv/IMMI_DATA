@@ -1,0 +1,68 @@
+{
+  "country": "Lebanon",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_16",
+      "table_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "Lebanon"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_16",
+      "table_title": "Table 1.16: Family stream outcome—top 15 citizenship countries, Partner visas, 2015–16 to 2024–25",
+      "short_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "Lebanon",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 637.0
+        },
+        {
+          "year": 2016,
+          "value": 727.0
+        },
+        {
+          "year": 2017,
+          "value": 815.0
+        },
+        {
+          "year": 2018,
+          "value": 516.0
+        },
+        {
+          "year": 2019,
+          "value": 505.0
+        },
+        {
+          "year": 2020,
+          "value": 541.0
+        },
+        {
+          "year": 2021,
+          "value": 760.0
+        },
+        {
+          "year": 2022,
+          "value": 415.0
+        },
+        {
+          "year": 2023,
+          "value": 1141.0
+        },
+        {
+          "year": 2024,
+          "value": 1107.0
+        }
+      ]
+    }
+  ]
+}

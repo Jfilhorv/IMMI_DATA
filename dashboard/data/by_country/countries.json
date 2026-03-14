@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Afghanistan",
+    "slug": "afghanistan"
+  },
+  {
+    "name": "All other countries",
+    "slug": "all_other_countries"
+  },
+  {
+    "name": "Bangladesh",
+    "slug": "bangladesh"
+  },
+  {
+    "name": "Bhutan",
+    "slug": "bhutan"
+  },
+  {
+    "name": "Brazil",
+    "slug": "brazil"
+  },
+  {
+    "name": "Canada",
+    "slug": "canada"
+  },
+  {
+    "name": "Colombia",
+    "slug": "colombia"
+  },
+  {
+    "name": "Egypt",
+    "slug": "egypt"
+  },
+  {
+    "name": "Fiji",
+    "slug": "fiji"
+  },
+  {
+    "name": "France",
+    "slug": "france"
+  },
+  {
+    "name": "Germany",
+    "slug": "germany"
+  },
+  {
+    "name": "Hong Kong (SAR of the PRC)",
+    "slug": "hong_kong_sar_of_the_prc"
+  },
+  {
+    "name": "India",
+    "slug": "india"
+  },
+  {
+    "name": "Indonesia",
+    "slug": "indonesia"
+  },
+  {
+    "name": "Iran",
+    "slug": "iran"
+  },
+  {
+    "name": "Iraq",
+    "slug": "iraq"
+  },
+  {
+    "name": "Ireland",
+    "slug": "ireland"
+  },
+  {
+    "name": "Israel",
+    "slug": "israel"
+  },
+  {
+    "name": "Italy",
+    "slug": "italy"
+  },
+  {
+    "name": "Japan",
+    "slug": "japan"
+  },
+  {
+    "name": "Kenya",
+    "slug": "kenya"
+  },
+  {
+    "name": "Lebanon",
+    "slug": "lebanon"
+  },
+  {
+    "name": "Malaysia",
+    "slug": "malaysia"
+  },
+  {
+    "name": "Myanmar",
+    "slug": "myanmar"
+  },
+  {
+    "name": "Nepal",
+    "slug": "nepal"
+  },
+  {
+    "name": "New Zealand",
+    "slug": "new_zealand"
+  },
+  {
+    "name": "Nigeria",
+    "slug": "nigeria"
+  },
+  {
+    "name": "Other countries",
+    "slug": "other_countries"
+  },
+  {
+    "name": "Pakistan",
+    "slug": "pakistan"
+  },
+  {
+    "name": "Papua New Guinea",
+    "slug": "papua_new_guinea"
+  },
+  {
+    "name": "People's Republic of China",
+    "slug": "peoples_republic_of_china"
+  },
+  {
+    "name": "People’s Republic of China",
+    "slug": "peoples_republic_of_china"
+  },
+  {
+    "name": "Philippines",
+    "slug": "philippines"
+  },
+  {
+    "name": "Republic of Korea",
+    "slug": "republic_of_korea"
+  },
+  {
+    "name": "Russian Federation",
+    "slug": "russian_federation"
+  },
+  {
+    "name": "Singapore",
+    "slug": "singapore"
+  },
+  {
+    "name": "South Africa",
+    "slug": "south_africa"
+  },
+  {
+    "name": "Sri Lanka",
+    "slug": "sri_lanka"
+  },
+  {
+    "name": "Taiwan",
+    "slug": "taiwan"
+  },
+  {
+    "name": "Thailand",
+    "slug": "thailand"
+  },
+  {
+    "name": "United Kingdom",
+    "slug": "united_kingdom"
+  },
+  {
+    "name": "United States of America",
+    "slug": "united_states_of_america"
+  },
+  {
+    "name": "Vietnam",
+    "slug": "vietnam"
+  },
+  {
+    "name": "Yemen",
+    "slug": "yemen"
+  },
+  {
+    "name": "Zimbabwe",
+    "slug": "zimbabwe"
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "country": "Canada",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Temporary migration",
+      "table": "2_4",
+      "table_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "Canada"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 2,
+      "section": "Temporary migration",
+      "table_id": "2_4",
+      "table_title": "Table 2.4: Visitor visas granted—top 15 citizenship countries, 2015–16 to 2024–25",
+      "short_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "Canada",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 112554.0
+        },
+        {
+          "year": 2016,
+          "value": 133858.0
+        },
+        {
+          "year": 2017,
+          "value": 143514.0
+        },
+        {
+          "year": 2018,
+          "value": 148685.0
+        },
+        {
+          "year": 2019,
+          "value": 114560.0
+        },
+        {
+          "year": 2020,
+          "value": 1948.0
+        },
+        {
+          "year": 2021,
+          "value": 27351.0
+        },
+        {
+          "year": 2022,
+          "value": 111870.0
+        },
+        {
+          "year": 2023,
+          "value": 129273.0
+        },
+        {
+          "year": 2024,
+          "value": 133993.0
+        }
+      ]
+    }
+  ]
+}

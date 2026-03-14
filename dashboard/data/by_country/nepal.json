@@ -1,0 +1,383 @@
+{
+  "country": "Nepal",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_10",
+      "table_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "Nepal"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_12",
+      "table_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "Nepal"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_16",
+      "table_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "Nepal"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_3",
+      "table_title": "1.3: Employer Sponsored, top 15 countries",
+      "indicator": "Nepal"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_6",
+      "table_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "Nepal"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_8",
+      "table_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Nepal"
+    },
+    {
+      "section": "Citizenship",
+      "table": "6_0",
+      "table_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Nepal"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_10",
+      "table_title": "Table 1.10: Skill stream outcome—top 15 citizenship countries, Skilled Independent visas, 2015–16 to 2024–25",
+      "short_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "Nepal",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 1272.0
+        },
+        {
+          "year": 2016,
+          "value": 1032.0
+        },
+        {
+          "year": 2017,
+          "value": 843.0
+        },
+        {
+          "year": 2018,
+          "value": 1089.0
+        },
+        {
+          "year": 2019,
+          "value": 427.0
+        },
+        {
+          "year": 2020,
+          "value": 270.0
+        },
+        {
+          "year": 2021,
+          "value": 55.0
+        },
+        {
+          "year": 2022,
+          "value": 2763.0
+        },
+        {
+          "year": 2023,
+          "value": 4090.0
+        },
+        {
+          "year": 2024,
+          "value": 999.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_12",
+      "table_title": "Table 1.12: Skill stream outcome—top 15 citizenship countries, Skilled Regional visas, 2009–10 to 2018–19",
+      "short_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "Nepal",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2009,
+          "value": 48.0
+        },
+        {
+          "year": 2010,
+          "value": 386.0
+        },
+        {
+          "year": 2011,
+          "value": 249.0
+        },
+        {
+          "year": 2012,
+          "value": 316.0
+        },
+        {
+          "year": 2013,
+          "value": 181.0
+        },
+        {
+          "year": 2014,
+          "value": 66.0
+        },
+        {
+          "year": 2015,
+          "value": 129.0
+        },
+        {
+          "year": 2016,
+          "value": 59.0
+        },
+        {
+          "year": 2017,
+          "value": 67.0
+        },
+        {
+          "year": 2018,
+          "value": 32.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_16",
+      "table_title": "Table 1.16: Family stream outcome—top 15 citizenship countries, Partner visas, 2015–16 to 2024–25",
+      "short_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "Nepal",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 562.0
+        },
+        {
+          "year": 2016,
+          "value": 637.0
+        },
+        {
+          "year": 2017,
+          "value": 460.0
+        },
+        {
+          "year": 2018,
+          "value": 516.0
+        },
+        {
+          "year": 2019,
+          "value": 338.0
+        },
+        {
+          "year": 2020,
+          "value": 843.0
+        },
+        {
+          "year": 2021,
+          "value": 541.0
+        },
+        {
+          "year": 2022,
+          "value": 675.0
+        },
+        {
+          "year": 2023,
+          "value": 571.0
+        },
+        {
+          "year": 2024,
+          "value": 721.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_3",
+      "table_title": "Table 1.3: Skill stream outcome—top 15 citizenship countries, Employer Sponsored visas, 2015–16 to 2024–25",
+      "short_title": "1.3: Employer Sponsored, top 15 countries",
+      "indicator": "Nepal",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 1682.0
+        },
+        {
+          "year": 2016,
+          "value": 1577.0
+        },
+        {
+          "year": 2017,
+          "value": 748.0
+        },
+        {
+          "year": 2018,
+          "value": 1296.0
+        },
+        {
+          "year": 2019,
+          "value": 884.0
+        },
+        {
+          "year": 2020,
+          "value": 597.0
+        },
+        {
+          "year": 2021,
+          "value": 696.0
+        },
+        {
+          "year": 2022,
+          "value": 761.0
+        },
+        {
+          "year": 2023,
+          "value": 710.0
+        },
+        {
+          "year": 2024,
+          "value": 1412.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_6",
+      "table_title": "Table 1.6: Skill stream outcome—top 15 citizenship countries, Regional visas, 2019–20 to 2024–25",
+      "short_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "Nepal",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 1638.0
+        },
+        {
+          "year": 2020,
+          "value": 1198.0
+        },
+        {
+          "year": 2021,
+          "value": 2472.0
+        },
+        {
+          "year": 2022,
+          "value": 4380.0
+        },
+        {
+          "year": 2023,
+          "value": 3301.0
+        },
+        {
+          "year": 2024,
+          "value": 2574.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_8",
+      "table_title": "Table 1.8: Skill stream outcome—top 15 citizenship countries, State/Territory Nominated visas, 2015–16 to 2024–25",
+      "short_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Nepal",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 1382.0
+        },
+        {
+          "year": 2016,
+          "value": 934.0
+        },
+        {
+          "year": 2017,
+          "value": 917.0
+        },
+        {
+          "year": 2018,
+          "value": 1122.0
+        },
+        {
+          "year": 2019,
+          "value": 1679.0
+        },
+        {
+          "year": 2020,
+          "value": 1669.0
+        },
+        {
+          "year": 2021,
+          "value": 2737.0
+        },
+        {
+          "year": 2022,
+          "value": 3367.0
+        },
+        {
+          "year": 2023,
+          "value": 2773.0
+        },
+        {
+          "year": 2024,
+          "value": 2523.0
+        }
+      ]
+    },
+    {
+      "section_id": 6,
+      "section": "Citizenship",
+      "table_id": "6_0",
+      "table_title": "Table 6.0: Australian citizenship conferrals—top 15 countries of original citizenship and gender female, 2024–25",
+      "short_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Nepal",
+      "columns": [
+        "year",
+        "value",
+        "category"
+      ],
+      "data": [
+        {
+          "year": 0,
+          "value": 3040.0,
+          "category": "Females"
+        },
+        {
+          "year": 0,
+          "value": 5398.0,
+          "category": "Total4"
+        }
+      ]
+    }
+  ]
+}

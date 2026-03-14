@@ -1,0 +1,52 @@
+{
+  "country": "Russian Federation",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_15",
+      "table_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "Russian Federation"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_15",
+      "table_title": "Table 1.15: Skill stream outcome—top 15 citizenship countries, Global Talent (Independent) visas, 2019–20 to 2024–25",
+      "short_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "Russian Federation",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 43.0
+        },
+        {
+          "year": 2020,
+          "value": 64.0
+        },
+        {
+          "year": 2021,
+          "value": 43.0
+        },
+        {
+          "year": 2022,
+          "value": 22.0
+        },
+        {
+          "year": 2023,
+          "value": 32.0
+        },
+        {
+          "year": 2024,
+          "value": 40.0
+        }
+      ]
+    }
+  ]
+}

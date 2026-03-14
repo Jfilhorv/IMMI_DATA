@@ -1,0 +1,112 @@
+{
+  "country": "Taiwan",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_15",
+      "table_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "Taiwan"
+    },
+    {
+      "section": "Temporary migration",
+      "table": "2_4",
+      "table_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "Taiwan"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_15",
+      "table_title": "Table 1.15: Skill stream outcome—top 15 citizenship countries, Global Talent (Independent) visas, 2019–20 to 2024–25",
+      "short_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "Taiwan",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 17.0
+        },
+        {
+          "year": 2020,
+          "value": 43.0
+        },
+        {
+          "year": 2021,
+          "value": 121.0
+        },
+        {
+          "year": 2022,
+          "value": 136.0
+        },
+        {
+          "year": 2023,
+          "value": 244.0
+        },
+        {
+          "year": 2024,
+          "value": 134.0
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section": "Temporary migration",
+      "table_id": "2_4",
+      "table_title": "Table 2.4: Visitor visas granted—top 15 citizenship countries, 2015–16 to 2024–25",
+      "short_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "Taiwan",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 112888.0
+        },
+        {
+          "year": 2016,
+          "value": 132442.0
+        },
+        {
+          "year": 2017,
+          "value": 154746.0
+        },
+        {
+          "year": 2018,
+          "value": 152632.0
+        },
+        {
+          "year": 2019,
+          "value": 100591.0
+        },
+        {
+          "year": 2020,
+          "value": 3527.0
+        },
+        {
+          "year": 2021,
+          "value": 7833.0
+        },
+        {
+          "year": 2022,
+          "value": 72318.0
+        },
+        {
+          "year": 2023,
+          "value": 131982.0
+        },
+        {
+          "year": 2024,
+          "value": 142770.0
+        }
+      ]
+    }
+  ]
+}

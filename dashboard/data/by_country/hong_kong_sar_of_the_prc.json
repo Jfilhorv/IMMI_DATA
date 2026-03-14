@@ -1,0 +1,172 @@
+{
+  "country": "Hong Kong (SAR of the PRC)",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_10",
+      "table_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "Hong Kong (SAR of the PRC)"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_15",
+      "table_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "Hong Kong (SAR of the PRC)"
+    },
+    {
+      "section": "Temporary migration",
+      "table": "2_4",
+      "table_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "Hong Kong (SAR of the PRC)"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_10",
+      "table_title": "Table 1.10: Skill stream outcome—top 15 citizenship countries, Skilled Independent visas, 2015–16 to 2024–25",
+      "short_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "Hong Kong (SAR of the PRC)",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 403.0
+        },
+        {
+          "year": 2016,
+          "value": 373.0
+        },
+        {
+          "year": 2017,
+          "value": 337.0
+        },
+        {
+          "year": 2018,
+          "value": 137.0
+        },
+        {
+          "year": 2019,
+          "value": 31.0
+        },
+        {
+          "year": 2020,
+          "value": 41.0
+        },
+        {
+          "year": 2021,
+          "value": 52.0
+        },
+        {
+          "year": 2022,
+          "value": 699.0
+        },
+        {
+          "year": 2023,
+          "value": 788.0
+        },
+        {
+          "year": 2024,
+          "value": 478.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_15",
+      "table_title": "Table 1.15: Skill stream outcome—top 15 citizenship countries, Global Talent (Independent) visas, 2019–20 to 2024–25",
+      "short_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "Hong Kong (SAR of the PRC)",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 40.0
+        },
+        {
+          "year": 2020,
+          "value": 910.0
+        },
+        {
+          "year": 2021,
+          "value": 1115.0
+        },
+        {
+          "year": 2022,
+          "value": 671.0
+        },
+        {
+          "year": 2023,
+          "value": 603.0
+        },
+        {
+          "year": 2024,
+          "value": 388.0
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section": "Temporary migration",
+      "table_id": "2_4",
+      "table_title": "Table 2.4: Visitor visas granted—top 15 citizenship countries, 2015–16 to 2024–25",
+      "short_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "Hong Kong (SAR of the PRC)",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 134187.0
+        },
+        {
+          "year": 2016,
+          "value": 152733.0
+        },
+        {
+          "year": 2017,
+          "value": 174241.0
+        },
+        {
+          "year": 2018,
+          "value": 177835.0
+        },
+        {
+          "year": 2019,
+          "value": 124438.0
+        },
+        {
+          "year": 2020,
+          "value": 1111.0
+        },
+        {
+          "year": 2021,
+          "value": 9584.0
+        },
+        {
+          "year": 2022,
+          "value": 72301.0
+        },
+        {
+          "year": 2023,
+          "value": 131010.0
+        },
+        {
+          "year": 2024,
+          "value": 140232.0
+        }
+      ]
+    }
+  ]
+}

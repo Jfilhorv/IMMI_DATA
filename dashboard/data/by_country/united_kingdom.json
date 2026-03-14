@@ -1,0 +1,551 @@
+{
+  "country": "United Kingdom",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_10",
+      "table_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "United Kingdom"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_12",
+      "table_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "United Kingdom"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_15",
+      "table_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "United Kingdom"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_16",
+      "table_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "United Kingdom"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_3",
+      "table_title": "1.3: Employer Sponsored, top 15 countries",
+      "indicator": "United Kingdom"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_6",
+      "table_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "United Kingdom"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_8",
+      "table_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "United Kingdom"
+    },
+    {
+      "section": "Temporary migration",
+      "table": "2_4",
+      "table_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "United Kingdom"
+    },
+    {
+      "section": "Visa cancellations and departures",
+      "table": "4_1",
+      "table_title": "4.1: Cancellations, top 10 countries",
+      "indicator": "United Kingdom"
+    },
+    {
+      "section": "Visa cancellations and departures",
+      "table": "4_4",
+      "table_title": "4.4: Departures, top 10 countries",
+      "indicator": "United Kingdom"
+    },
+    {
+      "section": "Citizenship",
+      "table": "6_0",
+      "table_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "United Kingdom"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_10",
+      "table_title": "Table 1.10: Skill stream outcome—top 15 citizenship countries, Skilled Independent visas, 2015–16 to 2024–25",
+      "short_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 3947.0
+        },
+        {
+          "year": 2016,
+          "value": 3074.0
+        },
+        {
+          "year": 2017,
+          "value": 2320.0
+        },
+        {
+          "year": 2018,
+          "value": 1811.0
+        },
+        {
+          "year": 2019,
+          "value": 425.0
+        },
+        {
+          "year": 2020,
+          "value": 212.0
+        },
+        {
+          "year": 2021,
+          "value": 134.0
+        },
+        {
+          "year": 2022,
+          "value": 1076.0
+        },
+        {
+          "year": 2023,
+          "value": 1257.0
+        },
+        {
+          "year": 2024,
+          "value": 1084.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_12",
+      "table_title": "Table 1.12: Skill stream outcome—top 15 citizenship countries, Skilled Regional visas, 2009–10 to 2018–19",
+      "short_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2009,
+          "value": 414.0
+        },
+        {
+          "year": 2010,
+          "value": 745.0
+        },
+        {
+          "year": 2011,
+          "value": 1465.0
+        },
+        {
+          "year": 2012,
+          "value": 310.0
+        },
+        {
+          "year": 2013,
+          "value": 189.0
+        },
+        {
+          "year": 2014,
+          "value": 86.0
+        },
+        {
+          "year": 2015,
+          "value": 75.0
+        },
+        {
+          "year": 2016,
+          "value": 69.0
+        },
+        {
+          "year": 2017,
+          "value": 61.0
+        },
+        {
+          "year": 2018,
+          "value": 22.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_15",
+      "table_title": "Table 1.15: Skill stream outcome—top 15 citizenship countries, Global Talent (Independent) visas, 2019–20 to 2024–25",
+      "short_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 416.0
+        },
+        {
+          "year": 2020,
+          "value": 787.0
+        },
+        {
+          "year": 2021,
+          "value": 588.0
+        },
+        {
+          "year": 2022,
+          "value": 268.0
+        },
+        {
+          "year": 2023,
+          "value": 152.0
+        },
+        {
+          "year": 2024,
+          "value": 124.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_16",
+      "table_title": "Table 1.16: Family stream outcome—top 15 citizenship countries, Partner visas, 2015–16 to 2024–25",
+      "short_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 4055.0
+        },
+        {
+          "year": 2016,
+          "value": 4064.0
+        },
+        {
+          "year": 2017,
+          "value": 3175.0
+        },
+        {
+          "year": 2018,
+          "value": 2659.0
+        },
+        {
+          "year": 2019,
+          "value": 2788.0
+        },
+        {
+          "year": 2020,
+          "value": 6657.0
+        },
+        {
+          "year": 2021,
+          "value": 4027.0
+        },
+        {
+          "year": 2022,
+          "value": 2535.0
+        },
+        {
+          "year": 2023,
+          "value": 1835.0
+        },
+        {
+          "year": 2024,
+          "value": 1852.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_3",
+      "table_title": "Table 1.3: Skill stream outcome—top 15 citizenship countries, Employer Sponsored visas, 2015–16 to 2024–25",
+      "short_title": "1.3: Employer Sponsored, top 15 countries",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 8420.0
+        },
+        {
+          "year": 2016,
+          "value": 7955.0
+        },
+        {
+          "year": 2017,
+          "value": 6335.0
+        },
+        {
+          "year": 2018,
+          "value": 7256.0
+        },
+        {
+          "year": 2019,
+          "value": 4275.0
+        },
+        {
+          "year": 2020,
+          "value": 3419.0
+        },
+        {
+          "year": 2021,
+          "value": 2967.0
+        },
+        {
+          "year": 2022,
+          "value": 4324.0
+        },
+        {
+          "year": 2023,
+          "value": 4500.0
+        },
+        {
+          "year": 2024,
+          "value": 4650.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_6",
+      "table_title": "Table 1.6: Skill stream outcome—top 15 citizenship countries, Regional visas, 2019–20 to 2024–25",
+      "short_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 1050.0
+        },
+        {
+          "year": 2020,
+          "value": 489.0
+        },
+        {
+          "year": 2021,
+          "value": 583.0
+        },
+        {
+          "year": 2022,
+          "value": 1141.0
+        },
+        {
+          "year": 2023,
+          "value": 729.0
+        },
+        {
+          "year": 2024,
+          "value": 521.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_8",
+      "table_title": "Table 1.8: Skill stream outcome—top 15 citizenship countries, State/Territory Nominated visas, 2015–16 to 2024–25",
+      "short_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 1611.0
+        },
+        {
+          "year": 2016,
+          "value": 1176.0
+        },
+        {
+          "year": 2017,
+          "value": 1192.0
+        },
+        {
+          "year": 2018,
+          "value": 1390.0
+        },
+        {
+          "year": 2019,
+          "value": 1204.0
+        },
+        {
+          "year": 2020,
+          "value": 592.0
+        },
+        {
+          "year": 2021,
+          "value": 740.0
+        },
+        {
+          "year": 2022,
+          "value": 1703.0
+        },
+        {
+          "year": 2023,
+          "value": 1163.0
+        },
+        {
+          "year": 2024,
+          "value": 1602.0
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section": "Temporary migration",
+      "table_id": "2_4",
+      "table_title": "Table 2.4: Visitor visas granted—top 15 citizenship countries, 2015–16 to 2024–25",
+      "short_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 586174.0
+        },
+        {
+          "year": 2016,
+          "value": 622869.0
+        },
+        {
+          "year": 2017,
+          "value": 630761.0
+        },
+        {
+          "year": 2018,
+          "value": 591171.0
+        },
+        {
+          "year": 2019,
+          "value": 479662.0
+        },
+        {
+          "year": 2020,
+          "value": 9029.0
+        },
+        {
+          "year": 2021,
+          "value": 160841.0
+        },
+        {
+          "year": 2022,
+          "value": 460157.0
+        },
+        {
+          "year": 2023,
+          "value": 479042.0
+        },
+        {
+          "year": 2024,
+          "value": 530543.0
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section": "Visa cancellations and departures",
+      "table_id": "4_1",
+      "table_title": "Table 4.1: Visa cancellations—top 10 countries of citizenship, 2022–23 to 2024–25",
+      "short_title": "4.1: Cancellations, top 10 countries",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2022,
+          "value": 1025.0
+        },
+        {
+          "year": 2023,
+          "value": 1069.0
+        },
+        {
+          "year": 2024,
+          "value": 1410.0
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section": "Visa cancellations and departures",
+      "table_id": "4_4",
+      "table_title": "Table 4.4: Departures—top 10 countries of citizenship, 2022–23 to 2024–25",
+      "short_title": "4.4: Departures, top 10 countries",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2022,
+          "value": 330.0
+        },
+        {
+          "year": 2023,
+          "value": 377.0
+        },
+        {
+          "year": 2024,
+          "value": 267.0
+        }
+      ]
+    },
+    {
+      "section_id": 6,
+      "section": "Citizenship",
+      "table_id": "6_0",
+      "table_title": "Table 6.0: Australian citizenship conferrals—top 15 countries of original citizenship and gender female, 2024–25",
+      "short_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "United Kingdom",
+      "columns": [
+        "year",
+        "value",
+        "category"
+      ],
+      "data": [
+        {
+          "year": 0,
+          "value": 6069.0,
+          "category": "Females"
+        },
+        {
+          "year": 0,
+          "value": 12674.0,
+          "category": "Total4"
+        }
+      ]
+    }
+  ]
+}

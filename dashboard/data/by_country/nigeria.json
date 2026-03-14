@@ -1,0 +1,112 @@
+{
+  "country": "Nigeria",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_12",
+      "table_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "Nigeria"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_6",
+      "table_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "Nigeria"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_12",
+      "table_title": "Table 1.12: Skill stream outcome—top 15 citizenship countries, Skilled Regional visas, 2009–10 to 2018–19",
+      "short_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "Nigeria",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2009,
+          "value": 21.0
+        },
+        {
+          "year": 2010,
+          "value": 15.0
+        },
+        {
+          "year": 2011,
+          "value": 27.0
+        },
+        {
+          "year": 2012,
+          "value": 12.0
+        },
+        {
+          "year": 2013,
+          "value": 11.0
+        },
+        {
+          "year": 2014,
+          "value": 9.0
+        },
+        {
+          "year": 2015,
+          "value": 15.0
+        },
+        {
+          "year": 2016,
+          "value": 15.0
+        },
+        {
+          "year": 2017,
+          "value": 12.0
+        },
+        {
+          "year": 2018,
+          "value": 11.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_6",
+      "table_title": "Table 1.6: Skill stream outcome—top 15 citizenship countries, Regional visas, 2019–20 to 2024–25",
+      "short_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "Nigeria",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 266.0
+        },
+        {
+          "year": 2020,
+          "value": 153.0
+        },
+        {
+          "year": 2021,
+          "value": 183.0
+        },
+        {
+          "year": 2022,
+          "value": 560.0
+        },
+        {
+          "year": 2023,
+          "value": 362.0
+        },
+        {
+          "year": 2024,
+          "value": 413.0
+        }
+      ]
+    }
+  ]
+}

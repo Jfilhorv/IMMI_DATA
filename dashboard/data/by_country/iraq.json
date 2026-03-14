@@ -1,0 +1,99 @@
+{
+  "country": "Iraq",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_16",
+      "table_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "Iraq"
+    },
+    {
+      "section": "Citizenship",
+      "table": "6_0",
+      "table_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Iraq"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_16",
+      "table_title": "Table 1.16: Family stream outcome—top 15 citizenship countries, Partner visas, 2015–16 to 2024–25",
+      "short_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "Iraq",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 342.0
+        },
+        {
+          "year": 2016,
+          "value": 342.0
+        },
+        {
+          "year": 2017,
+          "value": 338.0
+        },
+        {
+          "year": 2018,
+          "value": 312.0
+        },
+        {
+          "year": 2019,
+          "value": 212.0
+        },
+        {
+          "year": 2020,
+          "value": 257.0
+        },
+        {
+          "year": 2021,
+          "value": 191.0
+        },
+        {
+          "year": 2022,
+          "value": 231.0
+        },
+        {
+          "year": 2023,
+          "value": 469.0
+        },
+        {
+          "year": 2024,
+          "value": 571.0
+        }
+      ]
+    },
+    {
+      "section_id": 6,
+      "section": "Citizenship",
+      "table_id": "6_0",
+      "table_title": "Table 6.0: Australian citizenship conferrals—top 15 countries of original citizenship and gender female, 2024–25",
+      "short_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Iraq",
+      "columns": [
+        "year",
+        "value",
+        "category"
+      ],
+      "data": [
+        {
+          "year": 0,
+          "value": 2617.0,
+          "category": "Females"
+        },
+        {
+          "year": 0,
+          "value": 5272.0,
+          "category": "Total4"
+        }
+      ]
+    }
+  ]
+}

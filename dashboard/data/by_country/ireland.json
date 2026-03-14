@@ -1,0 +1,188 @@
+{
+  "country": "Ireland",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_10",
+      "table_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "Ireland"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_3",
+      "table_title": "1.3: Employer Sponsored, top 15 countries",
+      "indicator": "Ireland"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_8",
+      "table_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Ireland"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_10",
+      "table_title": "Table 1.10: Skill stream outcome—top 15 citizenship countries, Skilled Independent visas, 2015–16 to 2024–25",
+      "short_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "Ireland",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 918.0
+        },
+        {
+          "year": 2016,
+          "value": 553.0
+        },
+        {
+          "year": 2017,
+          "value": 381.0
+        },
+        {
+          "year": 2018,
+          "value": 241.0
+        },
+        {
+          "year": 2019,
+          "value": 84.0
+        },
+        {
+          "year": 2020,
+          "value": 46.0
+        },
+        {
+          "year": 2021,
+          "value": 34.0
+        },
+        {
+          "year": 2022,
+          "value": 273.0
+        },
+        {
+          "year": 2023,
+          "value": 413.0
+        },
+        {
+          "year": 2024,
+          "value": 412.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_3",
+      "table_title": "Table 1.3: Skill stream outcome—top 15 citizenship countries, Employer Sponsored visas, 2015–16 to 2024–25",
+      "short_title": "1.3: Employer Sponsored, top 15 countries",
+      "indicator": "Ireland",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 2862.0
+        },
+        {
+          "year": 2016,
+          "value": 2436.0
+        },
+        {
+          "year": 2017,
+          "value": 1511.0
+        },
+        {
+          "year": 2018,
+          "value": 1546.0
+        },
+        {
+          "year": 2019,
+          "value": 996.0
+        },
+        {
+          "year": 2020,
+          "value": 823.0
+        },
+        {
+          "year": 2021,
+          "value": 791.0
+        },
+        {
+          "year": 2022,
+          "value": 1402.0
+        },
+        {
+          "year": 2023,
+          "value": 1154.0
+        },
+        {
+          "year": 2024,
+          "value": 1343.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_8",
+      "table_title": "Table 1.8: Skill stream outcome—top 15 citizenship countries, State/Territory Nominated visas, 2015–16 to 2024–25",
+      "short_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Ireland",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 413.0
+        },
+        {
+          "year": 2016,
+          "value": 222.0
+        },
+        {
+          "year": 2017,
+          "value": 189.0
+        },
+        {
+          "year": 2018,
+          "value": 160.0
+        },
+        {
+          "year": 2019,
+          "value": 133.0
+        },
+        {
+          "year": 2020,
+          "value": 117.0
+        },
+        {
+          "year": 2021,
+          "value": 221.0
+        },
+        {
+          "year": 2022,
+          "value": 277.0
+        },
+        {
+          "year": 2023,
+          "value": 416.0
+        },
+        {
+          "year": 2024,
+          "value": 382.0
+        }
+      ]
+    }
+  ]
+}

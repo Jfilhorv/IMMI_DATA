@@ -1,0 +1,39 @@
+{
+  "country": "Other countries",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Citizenship",
+      "table": "6_0",
+      "table_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Other countries"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 6,
+      "section": "Citizenship",
+      "table_id": "6_0",
+      "table_title": "Table 6.0: Australian citizenship conferrals—top 15 countries of original citizenship and gender female, 2024–25",
+      "short_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Other countries",
+      "columns": [
+        "year",
+        "value",
+        "category"
+      ],
+      "data": [
+        {
+          "year": 0,
+          "value": 23048.0,
+          "category": "Females"
+        },
+        {
+          "year": 0,
+          "value": 41713.0,
+          "category": "Total4"
+        }
+      ]
+    }
+  ]
+}

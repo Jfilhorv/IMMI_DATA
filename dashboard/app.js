@@ -12,9 +12,14 @@
   var CATEGORY_TABLES_URL = base + 'data/category_tables.json' + CACHE_BUST;
   var FOOTNOTES_URL = base + 'data/table_footnotes.json' + CACHE_BUST;
   var KPI_CANDIDATES_URL = base + 'data/kpi_candidates.json' + CACHE_BUST;
+  var SUMMARIES_URL = base + 'data/by_country/summaries.json' + CACHE_BUST;
   var categoryTables = [];
   var tableFootnotes = {};
   var kpiCandidates = {};
+  var countrySummaries = [];
+  var spotlightCycleIndex = 0;
+  var spotlightCycleTimer = null;
+  var selectedSpotlightCountry = null;
   var SECTION_LABELS = {
     1: '1. Permanent migration',
     2: '2. Temporary visas',
@@ -447,12 +452,66 @@
     titleEl.textContent = parts.length ? parts.join(' · ') : '';
   }
 
+  function updateCountrySpotlight(countryName) {
+    var countryEl = document.getElementById('spotlight-country');
+    var textEl = document.getElementById('spotlight-text');
+    var hintEl = document.getElementById('spotlight-hint');
+    if (!countryEl || !textEl) return;
+    if (countryName) {
+      selectedSpotlightCountry = countryName;
+      var entry = countrySummaries.filter(function (s) { return s.name === countryName; })[0];
+      if (entry) {
+        countryEl.textContent = entry.name + ' — ';
+        countryEl.style.display = '';
+        textEl.textContent = entry.summary || '';
+        if (hintEl) hintEl.textContent = 'Showing selected country. Change indicator to cycle again.';
+      } else {
+        countryEl.textContent = '';
+        countryEl.style.display = 'none';
+        textEl.textContent = countrySummaries.length ? 'Select a country from the Indicator menu (map tables).' : 'Country summaries loading…';
+        if (hintEl) hintEl.textContent = 'Select a country in the Indicator menu (when a map table is selected) or wait to cycle.';
+      }
+      return;
+    }
+    selectedSpotlightCountry = null;
+    if (!countrySummaries.length) {
+      countryEl.textContent = '';
+      countryEl.style.display = 'none';
+      textEl.textContent = 'Country summaries unavailable.';
+      if (hintEl) hintEl.textContent = '';
+      return;
+    }
+    var idx = spotlightCycleIndex % countrySummaries.length;
+    var entry = countrySummaries[idx];
+    countryEl.textContent = entry.name + ' — ';
+    countryEl.style.display = '';
+    textEl.textContent = entry.summary || '';
+    if (hintEl) hintEl.textContent = 'Cycling through countries. Select a country in the Indicator menu to pin one.';
+    spotlightCycleIndex = (spotlightCycleIndex + 1) % countrySummaries.length;
+  }
+
+  function startSpotlightCycle() {
+    if (spotlightCycleTimer) return;
+    spotlightCycleTimer = setInterval(function () {
+      if (selectedSpotlightCountry) return;
+      updateCountrySpotlight(null);
+    }, 6000);
+    updateCountrySpotlight(null);
+  }
+
   function onIndicatorChange() {
     const tableSel = document.getElementById('table');
     const indSel = document.getElementById('indicator');
     const tableId = tableSel.value;
     const indicator = indSel.value;
     setChartTitle();
+    if (MAP_TABLES.indexOf(tableId) >= 0 && indicator && countrySummaries.some(function (s) { return s.name === indicator; })) {
+      updateCountrySpotlight(indicator);
+    } else {
+      selectedSpotlightCountry = null;
+      updateCountrySpotlight(null);
+      if (!spotlightCycleTimer) startSpotlightCycle();
+    }
     if (!tableId || !indicator) {
       if (chart) {
         chart.data.labels = [];
@@ -787,7 +846,8 @@
       }),
       fetch(CATEGORY_TABLES_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; }),
       fetch(FOOTNOTES_URL).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }),
-      fetch(KPI_CANDIDATES_URL).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
+      fetch(KPI_CANDIDATES_URL).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }),
+      fetch(SUMMARIES_URL).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; })
     ]).then(function (results) {
       try {
         tableList = results[0];
@@ -796,6 +856,7 @@
         categoryTables = Array.isArray(results[2]) ? results[2] : [];
         tableFootnotes = results[3] && typeof results[3] === 'object' ? results[3] : {};
         kpiCandidates = results[4] && typeof results[4] === 'object' ? results[4] : {};
+        countrySummaries = Array.isArray(results[5]) ? results[5] : [];
         var dataTablePattern = /^\d+_\d+$/;
         tablesWithData = new Set();
         allData.forEach(function (row) {
@@ -837,6 +898,7 @@
           updateMapWithCountryData(mapTableEl ? mapTableEl.value : MAP_TABLE_TEST, y);
         });
         updateKpiCards();
+        startSpotlightCycle();
         document.getElementById('chart-type-bar').addEventListener('click', function () {
           chartType = 'bar';
           document.getElementById('chart-type-bar').classList.add('active');

@@ -1,0 +1,280 @@
+{
+  "country": "Malaysia",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_10",
+      "table_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "Malaysia"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_8",
+      "table_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Malaysia"
+    },
+    {
+      "section": "Temporary migration",
+      "table": "2_4",
+      "table_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "Malaysia"
+    },
+    {
+      "section": "Humanitarian",
+      "table": "3_3",
+      "table_title": "3.3: Permanent Protection, top 10",
+      "indicator": "Malaysia"
+    },
+    {
+      "section": "Visa cancellations and departures",
+      "table": "4_1",
+      "table_title": "4.1: Cancellations, top 10 countries",
+      "indicator": "Malaysia"
+    },
+    {
+      "section": "Visa cancellations and departures",
+      "table": "4_4",
+      "table_title": "4.4: Departures, top 10 countries",
+      "indicator": "Malaysia"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_10",
+      "table_title": "Table 1.10: Skill stream outcome—top 15 citizenship countries, Skilled Independent visas, 2015–16 to 2024–25",
+      "short_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "Malaysia",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 1371.0
+        },
+        {
+          "year": 2016,
+          "value": 1121.0
+        },
+        {
+          "year": 2017,
+          "value": 785.0
+        },
+        {
+          "year": 2018,
+          "value": 473.0
+        },
+        {
+          "year": 2019,
+          "value": 156.0
+        },
+        {
+          "year": 2020,
+          "value": 123.0
+        },
+        {
+          "year": 2021,
+          "value": 62.0
+        },
+        {
+          "year": 2022,
+          "value": 500.0
+        },
+        {
+          "year": 2023,
+          "value": 663.0
+        },
+        {
+          "year": 2024,
+          "value": 386.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_8",
+      "table_title": "Table 1.8: Skill stream outcome—top 15 citizenship countries, State/Territory Nominated visas, 2015–16 to 2024–25",
+      "short_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Malaysia",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 729.0
+        },
+        {
+          "year": 2016,
+          "value": 774.0
+        },
+        {
+          "year": 2017,
+          "value": 695.0
+        },
+        {
+          "year": 2018,
+          "value": 472.0
+        },
+        {
+          "year": 2019,
+          "value": 428.0
+        },
+        {
+          "year": 2020,
+          "value": 451.0
+        },
+        {
+          "year": 2021,
+          "value": 514.0
+        },
+        {
+          "year": 2022,
+          "value": 716.0
+        },
+        {
+          "year": 2023,
+          "value": 628.0
+        },
+        {
+          "year": 2024,
+          "value": 815.0
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section": "Temporary migration",
+      "table_id": "2_4",
+      "table_title": "Table 2.4: Visitor visas granted—top 15 citizenship countries, 2015–16 to 2024–25",
+      "short_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "Malaysia",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 327383.0
+        },
+        {
+          "year": 2016,
+          "value": 356010.0
+        },
+        {
+          "year": 2017,
+          "value": 332224.0
+        },
+        {
+          "year": 2018,
+          "value": 337481.0
+        },
+        {
+          "year": 2019,
+          "value": 213531.0
+        },
+        {
+          "year": 2020,
+          "value": 3622.0
+        },
+        {
+          "year": 2021,
+          "value": 39960.0
+        },
+        {
+          "year": 2022,
+          "value": 147838.0
+        },
+        {
+          "year": 2023,
+          "value": 172617.0
+        },
+        {
+          "year": 2024,
+          "value": 169612.0
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section": "Humanitarian",
+      "table_id": "3_3",
+      "table_title": "Table 3.3: Final Permanent Protection visas granted—top 10 countries of citizenship, 2023–24 and 2024–25",
+      "short_title": "3.3: Permanent Protection, top 10",
+      "indicator": "Malaysia",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2023,
+          "value": 257.0
+        },
+        {
+          "year": 2024,
+          "value": 844.0
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section": "Visa cancellations and departures",
+      "table_id": "4_1",
+      "table_title": "Table 4.1: Visa cancellations—top 10 countries of citizenship, 2022–23 to 2024–25",
+      "short_title": "4.1: Cancellations, top 10 countries",
+      "indicator": "Malaysia",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2022,
+          "value": 682.0
+        },
+        {
+          "year": 2023,
+          "value": 838.0
+        },
+        {
+          "year": 2024,
+          "value": 870.0
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section": "Visa cancellations and departures",
+      "table_id": "4_4",
+      "table_title": "Table 4.4: Departures—top 10 countries of citizenship, 2022–23 to 2024–25",
+      "short_title": "4.4: Departures, top 10 countries",
+      "indicator": "Malaysia",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2022,
+          "value": 579.0
+        },
+        {
+          "year": 2023,
+          "value": 597.0
+        },
+        {
+          "year": 2024,
+          "value": 479.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "country": "Bhutan",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_6",
+      "table_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "Bhutan"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_8",
+      "table_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Bhutan"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_6",
+      "table_title": "Table 1.6: Skill stream outcome—top 15 citizenship countries, Regional visas, 2019–20 to 2024–25",
+      "short_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "Bhutan",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 48.0
+        },
+        {
+          "year": 2020,
+          "value": 71.0
+        },
+        {
+          "year": 2021,
+          "value": 186.0
+        },
+        {
+          "year": 2022,
+          "value": 266.0
+        },
+        {
+          "year": 2023,
+          "value": 409.0
+        },
+        {
+          "year": 2024,
+          "value": 490.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_8",
+      "table_title": "Table 1.8: Skill stream outcome—top 15 citizenship countries, State/Territory Nominated visas, 2015–16 to 2024–25",
+      "short_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Bhutan",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 16.0
+        },
+        {
+          "year": 2016,
+          "value": 56.0
+        },
+        {
+          "year": 2017,
+          "value": 63.0
+        },
+        {
+          "year": 2018,
+          "value": 61.0
+        },
+        {
+          "year": 2019,
+          "value": 96.0
+        },
+        {
+          "year": 2020,
+          "value": 141.0
+        },
+        {
+          "year": 2021,
+          "value": 207.0
+        },
+        {
+          "year": 2022,
+          "value": 244.0
+        },
+        {
+          "year": 2023,
+          "value": 315.0
+        },
+        {
+          "year": 2024,
+          "value": 672.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "country": "Kenya",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_12",
+      "table_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "Kenya"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_12",
+      "table_title": "Table 1.12: Skill stream outcome—top 15 citizenship countries, Skilled Regional visas, 2009–10 to 2018–19",
+      "short_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "Kenya",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2009,
+          "value": 6.0
+        },
+        {
+          "year": 2010,
+          "value": 5.0
+        },
+        {
+          "year": 2011,
+          "value": 42.0
+        },
+        {
+          "year": 2012,
+          "value": 25.0
+        },
+        {
+          "year": 2013,
+          "value": 30.0
+        },
+        {
+          "year": 2014,
+          "value": 30.0
+        },
+        {
+          "year": 2015,
+          "value": 39.0
+        },
+        {
+          "year": 2016,
+          "value": 13.0
+        },
+        {
+          "year": 2017,
+          "value": 6.0
+        },
+        {
+          "year": 2018,
+          "value": 11.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+[
+  {
+    "name": "Afghanistan",
+    "slug": "afghanistan",
+    "summary": "Afghanistan appears in 3 tables: 1.16: Partner visas, top 15 countries, 3.3: Permanent Protection, top 10, 6.0: Citizenship conferrals, top 15. Latest: 1.16: Partner visas, top 15 countries = 3,379."
+  },
+  {
+    "name": "All other countries",
+    "slug": "all_other_countries",
+    "summary": "All other countries appears in 2 tables: 4.1: Cancellations, top 10 countries, 4.4: Departures, top 10 countries. Latest: 4.1: Cancellations, top 10 countries = 16,167."
+  },
+  {
+    "name": "Bangladesh",
+    "slug": "bangladesh",
+    "summary": "Bangladesh appears in 4 tables: 1.12: Skilled Regional, top 15 countries, 1.15: Global Talent, top 15 countries and 2 other tables. Latest: 1.12: Skilled Regional, top 15 countries = 17."
+  },
+  {
+    "name": "Bhutan",
+    "slug": "bhutan",
+    "summary": "Bhutan appears in 2 tables: 1.6: Regional visas, top 15 countries, 1.8: State/Territory Nominated, top 15. Latest: 1.6: Regional visas, top 15 countries = 490."
+  },
+  {
+    "name": "Brazil",
+    "slug": "brazil",
+    "summary": "Brazil appears in 4 tables: 1.10: Skilled Independent, top 15 countries, 1.3: Employer Sponsored, top 15 countries and 2 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 280."
+  },
+  {
+    "name": "Canada",
+    "slug": "canada",
+    "summary": "Canada appears in 1 table: 2.4: Visitor visas, top 15 countries. Latest: 2.4: Visitor visas, top 15 countries = 133,993."
+  },
+  {
+    "name": "Colombia",
+    "slug": "colombia",
+    "summary": "Colombia appears in 3 tables: 1.16: Partner visas, top 15 countries, 1.3: Employer Sponsored, top 15 countries, 4.4: Departures, top 10 countries. Latest: 1.16: Partner visas, top 15 countries = 556."
+  },
+  {
+    "name": "Egypt",
+    "slug": "egypt",
+    "summary": "Egypt appears in 2 tables: 1.12: Skilled Regional, top 15 countries, 1.6: Regional visas, top 15 countries. Latest: 1.12: Skilled Regional, top 15 countries = 7."
+  },
+  {
+    "name": "Fiji",
+    "slug": "fiji",
+    "summary": "Fiji appears in 3 tables: 3.3: Permanent Protection, top 10, 4.1: Cancellations, top 10 countries, 4.4: Departures, top 10 countries. Latest: 3.3: Permanent Protection, top 10 = 73."
+  },
+  {
+    "name": "France",
+    "slug": "france",
+    "summary": "France appears in 1 table: 2.4: Visitor visas, top 15 countries. Latest: 2.4: Visitor visas, top 15 countries = 114,782."
+  },
+  {
+    "name": "Germany",
+    "slug": "germany",
+    "summary": "Germany appears in 1 table: 2.4: Visitor visas, top 15 countries. Latest: 2.4: Visitor visas, top 15 countries = 144,271."
+  },
+  {
+    "name": "Hong Kong (SAR of the PRC)",
+    "slug": "hong_kong_sar_of_the_prc",
+    "summary": "Hong Kong (SAR of the PRC) appears in 3 tables: 1.10: Skilled Independent, top 15 countries, 1.15: Global Talent, top 15 countries, 2.4: Visitor visas, top 15 countries. Latest: 1.10: Skilled Independent, top 15 countries = 478."
+  },
+  {
+    "name": "India",
+    "slug": "india",
+    "summary": "India appears in 11 tables: 1.10: Skilled Independent, top 15 countries, 1.12: Skilled Regional, top 15 countries and 9 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 5,058."
+  },
+  {
+    "name": "Indonesia",
+    "slug": "indonesia",
+    "summary": "Indonesia appears in 4 tables: 1.16: Partner visas, top 15 countries, 2.4: Visitor visas, top 15 countries and 2 other tables. Latest: 1.16: Partner visas, top 15 countries = 852."
+  },
+  {
+    "name": "Iran",
+    "slug": "iran",
+    "summary": "Iran appears in 7 tables: 1.10: Skilled Independent, top 15 countries, 1.12: Skilled Regional, top 15 countries and 5 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 352."
+  },
+  {
+    "name": "Iraq",
+    "slug": "iraq",
+    "summary": "Iraq appears in 2 tables: 1.16: Partner visas, top 15 countries, 6.0: Citizenship conferrals, top 15. Latest: 1.16: Partner visas, top 15 countries = 571."
+  },
+  {
+    "name": "Ireland",
+    "slug": "ireland",
+    "summary": "Ireland appears in 3 tables: 1.10: Skilled Independent, top 15 countries, 1.3: Employer Sponsored, top 15 countries, 1.8: State/Territory Nominated, top 15. Latest: 1.10: Skilled Independent, top 15 countries = 412."
+  },
+  {
+    "name": "Israel",
+    "slug": "israel",
+    "summary": "Israel appears in 1 table: 1.15: Global Talent, top 15 countries. Latest: 1.15: Global Talent, top 15 countries = 55."
+  },
+  {
+    "name": "Italy",
+    "slug": "italy",
+    "summary": "Italy appears in 1 table: 1.3: Employer Sponsored, top 15 countries. Latest: 1.3: Employer Sponsored, top 15 countries = 671."
+  },
+  {
+    "name": "Japan",
+    "slug": "japan",
+    "summary": "Japan appears in 1 table: 2.4: Visitor visas, top 15 countries. Latest: 2.4: Visitor visas, top 15 countries = 357,960."
+  },
+  {
+    "name": "Kenya",
+    "slug": "kenya",
+    "summary": "Kenya appears in 1 table: 1.12: Skilled Regional, top 15 countries. Latest: 1.12: Skilled Regional, top 15 countries = 11."
+  },
+  {
+    "name": "Lebanon",
+    "slug": "lebanon",
+    "summary": "Lebanon appears in 1 table: 1.16: Partner visas, top 15 countries. Latest: 1.16: Partner visas, top 15 countries = 1,107."
+  },
+  {
+    "name": "Malaysia",
+    "slug": "malaysia",
+    "summary": "Malaysia appears in 6 tables: 1.10: Skilled Independent, top 15 countries, 1.8: State/Territory Nominated, top 15 and 4 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 386."
+  },
+  {
+    "name": "Myanmar",
+    "slug": "myanmar",
+    "summary": "Myanmar appears in 2 tables: 3.3: Permanent Protection, top 10, 6.0: Citizenship conferrals, top 15. Latest: 3.3: Permanent Protection, top 10 = 756."
+  },
+  {
+    "name": "Nepal",
+    "slug": "nepal",
+    "summary": "Nepal appears in 7 tables: 1.10: Skilled Independent, top 15 countries, 1.12: Skilled Regional, top 15 countries and 5 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 999."
+  },
+  {
+    "name": "New Zealand",
+    "slug": "new_zealand",
+    "summary": "New Zealand appears in 2 tables: 4.4: Departures, top 10 countries, 6.0: Citizenship conferrals, top 15. Latest: 4.4: Departures, top 10 countries = 444."
+  },
+  {
+    "name": "Nigeria",
+    "slug": "nigeria",
+    "summary": "Nigeria appears in 2 tables: 1.12: Skilled Regional, top 15 countries, 1.6: Regional visas, top 15 countries. Latest: 1.12: Skilled Regional, top 15 countries = 11."
+  },
+  {
+    "name": "Other countries",
+    "slug": "other_countries",
+    "summary": "Other countries appears in 1 table: 6.0: Citizenship conferrals, top 15. Latest: 6.0: Citizenship conferrals, top 15 = 41,713."
+  },
+  {
+    "name": "Pakistan",
+    "slug": "pakistan",
+    "summary": "Pakistan appears in 9 tables: 1.10: Skilled Independent, top 15 countries, 1.12: Skilled Regional, top 15 countries and 7 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 757."
+  },
+  {
+    "name": "Papua New Guinea",
+    "slug": "papua_new_guinea",
+    "summary": "Papua New Guinea appears in 1 table: 3.3: Permanent Protection, top 10. Latest: 3.3: Permanent Protection, top 10 = 140."
+  },
+  {
+    "name": "People's Republic of China",
+    "slug": "peoples_republic_of_china",
+    "summary": "People's Republic of China appears in 11 tables: 1.10: Skilled Independent, top 15 countries, 1.12: Skilled Regional, top 15 countries and 9 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 2,488."
+  },
+  {
+    "name": "People’s Republic of China",
+    "slug": "peoples_republic_of_china",
+    "summary": "People’s Republic of China appears in 1 table: 3.3: Permanent Protection, top 10. Latest: 3.3: Permanent Protection, top 10 = 289."
+  },
+  {
+    "name": "Philippines",
+    "slug": "philippines",
+    "summary": "Philippines appears in 10 tables: 1.10: Skilled Independent, top 15 countries, 1.12: Skilled Regional, top 15 countries and 8 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 673."
+  },
+  {
+    "name": "Republic of Korea",
+    "slug": "republic_of_korea",
+    "summary": "Republic of Korea appears in 2 tables: 1.3: Employer Sponsored, top 15 countries, 2.4: Visitor visas, top 15 countries. Latest: 1.3: Employer Sponsored, top 15 countries = 767."
+  },
+  {
+    "name": "Russian Federation",
+    "slug": "russian_federation",
+    "summary": "Russian Federation appears in 1 table: 1.15: Global Talent, top 15 countries. Latest: 1.15: Global Talent, top 15 countries = 40."
+  },
+  {
+    "name": "Singapore",
+    "slug": "singapore",
+    "summary": "Singapore appears in 3 tables: 1.10: Skilled Independent, top 15 countries, 1.15: Global Talent, top 15 countries, 2.4: Visitor visas, top 15 countries. Latest: 1.10: Skilled Independent, top 15 countries = 266."
+  },
+  {
+    "name": "South Africa",
+    "slug": "south_africa",
+    "summary": "South Africa appears in 7 tables: 1.10: Skilled Independent, top 15 countries, 1.12: Skilled Regional, top 15 countries and 5 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 326."
+  },
+  {
+    "name": "Sri Lanka",
+    "slug": "sri_lanka",
+    "summary": "Sri Lanka appears in 8 tables: 1.10: Skilled Independent, top 15 countries, 1.12: Skilled Regional, top 15 countries and 6 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 501."
+  },
+  {
+    "name": "Taiwan",
+    "slug": "taiwan",
+    "summary": "Taiwan appears in 2 tables: 1.15: Global Talent, top 15 countries, 2.4: Visitor visas, top 15 countries. Latest: 1.15: Global Talent, top 15 countries = 134."
+  },
+  {
+    "name": "Thailand",
+    "slug": "thailand",
+    "summary": "Thailand appears in 2 tables: 1.16: Partner visas, top 15 countries, 4.1: Cancellations, top 10 countries. Latest: 1.16: Partner visas, top 15 countries = 1,206."
+  },
+  {
+    "name": "United Kingdom",
+    "slug": "united_kingdom",
+    "summary": "United Kingdom appears in 11 tables: 1.10: Skilled Independent, top 15 countries, 1.12: Skilled Regional, top 15 countries and 9 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 1,084."
+  },
+  {
+    "name": "United States of America",
+    "slug": "united_states_of_america",
+    "summary": "United States of America appears in 4 tables: 1.15: Global Talent, top 15 countries, 1.16: Partner visas, top 15 countries and 2 other tables. Latest: 1.15: Global Talent, top 15 countries = 141."
+  },
+  {
+    "name": "Vietnam",
+    "slug": "vietnam",
+    "summary": "Vietnam appears in 11 tables: 1.10: Skilled Independent, top 15 countries, 1.12: Skilled Regional, top 15 countries and 9 other tables. Latest: 1.10: Skilled Independent, top 15 countries = 330."
+  },
+  {
+    "name": "Yemen",
+    "slug": "yemen",
+    "summary": "Yemen appears in 1 table: 3.3: Permanent Protection, top 10. Latest: 3.3: Permanent Protection, top 10 = 106."
+  },
+  {
+    "name": "Zimbabwe",
+    "slug": "zimbabwe",
+    "summary": "Zimbabwe appears in 3 tables: 1.12: Skilled Regional, top 15 countries, 1.3: Employer Sponsored, top 15 countries, 1.6: Regional visas, top 15 countries. Latest: 1.12: Skilled Regional, top 15 countries = 17."
+  }
+]

@@ -1,0 +1,127 @@
+{
+  "country": "Afghanistan",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_16",
+      "table_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "Afghanistan"
+    },
+    {
+      "section": "Humanitarian",
+      "table": "3_3",
+      "table_title": "3.3: Permanent Protection, top 10",
+      "indicator": "Afghanistan"
+    },
+    {
+      "section": "Citizenship",
+      "table": "6_0",
+      "table_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Afghanistan"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_16",
+      "table_title": "Table 1.16: Family stream outcome—top 15 citizenship countries, Partner visas, 2015–16 to 2024–25",
+      "short_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "Afghanistan",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 1349.0
+        },
+        {
+          "year": 2016,
+          "value": 1536.0
+        },
+        {
+          "year": 2017,
+          "value": 2200.0
+        },
+        {
+          "year": 2018,
+          "value": 1956.0
+        },
+        {
+          "year": 2019,
+          "value": 2220.0
+        },
+        {
+          "year": 2020,
+          "value": 1332.0
+        },
+        {
+          "year": 2021,
+          "value": 1542.0
+        },
+        {
+          "year": 2022,
+          "value": 2094.0
+        },
+        {
+          "year": 2023,
+          "value": 5228.0
+        },
+        {
+          "year": 2024,
+          "value": 3379.0
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section": "Humanitarian",
+      "table_id": "3_3",
+      "table_title": "Table 3.3: Final Permanent Protection visas granted—top 10 countries of citizenship, 2023–24 and 2024–25",
+      "short_title": "3.3: Permanent Protection, top 10",
+      "indicator": "Afghanistan",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2023,
+          "value": 111.0
+        },
+        {
+          "year": 2024,
+          "value": 123.0
+        }
+      ]
+    },
+    {
+      "section_id": 6,
+      "section": "Citizenship",
+      "table_id": "6_0",
+      "table_title": "Table 6.0: Australian citizenship conferrals—top 15 countries of original citizenship and gender female, 2024–25",
+      "short_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Afghanistan",
+      "columns": [
+        "year",
+        "value",
+        "category"
+      ],
+      "data": [
+        {
+          "year": 0,
+          "value": 2154.0,
+          "category": "Females"
+        },
+        {
+          "year": 0,
+          "value": 4136.0,
+          "category": "Total4"
+        }
+      ]
+    }
+  ]
+}

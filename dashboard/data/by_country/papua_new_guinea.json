@@ -1,0 +1,36 @@
+{
+  "country": "Papua New Guinea",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Humanitarian",
+      "table": "3_3",
+      "table_title": "3.3: Permanent Protection, top 10",
+      "indicator": "Papua New Guinea"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 3,
+      "section": "Humanitarian",
+      "table_id": "3_3",
+      "table_title": "Table 3.3: Final Permanent Protection visas granted—top 10 countries of citizenship, 2023–24 and 2024–25",
+      "short_title": "3.3: Permanent Protection, top 10",
+      "indicator": "Papua New Guinea",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2023,
+          "value": 109.0
+        },
+        {
+          "year": 2024,
+          "value": 140.0
+        }
+      ]
+    }
+  ]
+}

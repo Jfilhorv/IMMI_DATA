@@ -1,0 +1,192 @@
+{
+  "country": "Indonesia",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_16",
+      "table_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "Indonesia"
+    },
+    {
+      "section": "Temporary migration",
+      "table": "2_4",
+      "table_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "Indonesia"
+    },
+    {
+      "section": "Visa cancellations and departures",
+      "table": "4_1",
+      "table_title": "4.1: Cancellations, top 10 countries",
+      "indicator": "Indonesia"
+    },
+    {
+      "section": "Visa cancellations and departures",
+      "table": "4_4",
+      "table_title": "4.4: Departures, top 10 countries",
+      "indicator": "Indonesia"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_16",
+      "table_title": "Table 1.16: Family stream outcome—top 15 citizenship countries, Partner visas, 2015–16 to 2024–25",
+      "short_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "Indonesia",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 890.0
+        },
+        {
+          "year": 2016,
+          "value": 917.0
+        },
+        {
+          "year": 2017,
+          "value": 1086.0
+        },
+        {
+          "year": 2018,
+          "value": 674.0
+        },
+        {
+          "year": 2019,
+          "value": 856.0
+        },
+        {
+          "year": 2020,
+          "value": 1839.0
+        },
+        {
+          "year": 2021,
+          "value": 1159.0
+        },
+        {
+          "year": 2022,
+          "value": 899.0
+        },
+        {
+          "year": 2023,
+          "value": 845.0
+        },
+        {
+          "year": 2024,
+          "value": 852.0
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section": "Temporary migration",
+      "table_id": "2_4",
+      "table_title": "Table 2.4: Visitor visas granted—top 15 citizenship countries, 2015–16 to 2024–25",
+      "short_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "Indonesia",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 89403.0
+        },
+        {
+          "year": 2016,
+          "value": 111187.0
+        },
+        {
+          "year": 2017,
+          "value": 106747.0
+        },
+        {
+          "year": 2018,
+          "value": 112762.0
+        },
+        {
+          "year": 2019,
+          "value": 72337.0
+        },
+        {
+          "year": 2020,
+          "value": 2592.0
+        },
+        {
+          "year": 2021,
+          "value": 32106.0
+        },
+        {
+          "year": 2022,
+          "value": 116912.0
+        },
+        {
+          "year": 2023,
+          "value": 93556.0
+        },
+        {
+          "year": 2024,
+          "value": 96785.0
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section": "Visa cancellations and departures",
+      "table_id": "4_1",
+      "table_title": "Table 4.1: Visa cancellations—top 10 countries of citizenship, 2022–23 to 2024–25",
+      "short_title": "4.1: Cancellations, top 10 countries",
+      "indicator": "Indonesia",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2022,
+          "value": 848.0
+        },
+        {
+          "year": 2023,
+          "value": 873.0
+        },
+        {
+          "year": 2024,
+          "value": 982.0
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section": "Visa cancellations and departures",
+      "table_id": "4_4",
+      "table_title": "Table 4.4: Departures—top 10 countries of citizenship, 2022–23 to 2024–25",
+      "short_title": "4.4: Departures, top 10 countries",
+      "indicator": "Indonesia",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2022,
+          "value": 240.0
+        },
+        {
+          "year": 2023,
+          "value": 248.0
+        },
+        {
+          "year": 2024,
+          "value": 384.0
+        }
+      ]
+    }
+  ]
+}

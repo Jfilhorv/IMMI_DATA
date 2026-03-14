@@ -1,0 +1,67 @@
+{
+  "country": "Myanmar",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Humanitarian",
+      "table": "3_3",
+      "table_title": "3.3: Permanent Protection, top 10",
+      "indicator": "Myanmar"
+    },
+    {
+      "section": "Citizenship",
+      "table": "6_0",
+      "table_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Myanmar"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 3,
+      "section": "Humanitarian",
+      "table_id": "3_3",
+      "table_title": "Table 3.3: Final Permanent Protection visas granted—top 10 countries of citizenship, 2023–24 and 2024–25",
+      "short_title": "3.3: Permanent Protection, top 10",
+      "indicator": "Myanmar",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2023,
+          "value": 900.0
+        },
+        {
+          "year": 2024,
+          "value": 756.0
+        }
+      ]
+    },
+    {
+      "section_id": 6,
+      "section": "Citizenship",
+      "table_id": "6_0",
+      "table_title": "Table 6.0: Australian citizenship conferrals—top 15 countries of original citizenship and gender female, 2024–25",
+      "short_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "Myanmar",
+      "columns": [
+        "year",
+        "value",
+        "category"
+      ],
+      "data": [
+        {
+          "year": 0,
+          "value": 1300.0,
+          "category": "Females"
+        },
+        {
+          "year": 0,
+          "value": 2479.0,
+          "category": "Total4"
+        }
+      ]
+    }
+  ]
+}

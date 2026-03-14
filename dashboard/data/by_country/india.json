@@ -1,0 +1,551 @@
+{
+  "country": "India",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_10",
+      "table_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "India"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_12",
+      "table_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "India"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_15",
+      "table_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "India"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_16",
+      "table_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "India"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_3",
+      "table_title": "1.3: Employer Sponsored, top 15 countries",
+      "indicator": "India"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_6",
+      "table_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "India"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_8",
+      "table_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "India"
+    },
+    {
+      "section": "Temporary migration",
+      "table": "2_4",
+      "table_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "India"
+    },
+    {
+      "section": "Visa cancellations and departures",
+      "table": "4_1",
+      "table_title": "4.1: Cancellations, top 10 countries",
+      "indicator": "India"
+    },
+    {
+      "section": "Visa cancellations and departures",
+      "table": "4_4",
+      "table_title": "4.4: Departures, top 10 countries",
+      "indicator": "India"
+    },
+    {
+      "section": "Citizenship",
+      "table": "6_0",
+      "table_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "India"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_10",
+      "table_title": "Table 1.10: Skill stream outcome—top 15 citizenship countries, Skilled Independent visas, 2015–16 to 2024–25",
+      "short_title": "1.10: Skilled Independent, top 15 countries",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 13343.0
+        },
+        {
+          "year": 2016,
+          "value": 13781.0
+        },
+        {
+          "year": 2017,
+          "value": 12161.0
+        },
+        {
+          "year": 2018,
+          "value": 11741.0
+        },
+        {
+          "year": 2019,
+          "value": 3225.0
+        },
+        {
+          "year": 2020,
+          "value": 1140.0
+        },
+        {
+          "year": 2021,
+          "value": 699.0
+        },
+        {
+          "year": 2022,
+          "value": 5074.0
+        },
+        {
+          "year": 2023,
+          "value": 9631.0
+        },
+        {
+          "year": 2024,
+          "value": 5058.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_12",
+      "table_title": "Table 1.12: Skill stream outcome—top 15 citizenship countries, Skilled Regional visas, 2009–10 to 2018–19",
+      "short_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2009,
+          "value": 750.0
+        },
+        {
+          "year": 2010,
+          "value": 1989.0
+        },
+        {
+          "year": 2011,
+          "value": 2575.0
+        },
+        {
+          "year": 2012,
+          "value": 2783.0
+        },
+        {
+          "year": 2013,
+          "value": 1853.0
+        },
+        {
+          "year": 2014,
+          "value": 923.0
+        },
+        {
+          "year": 2015,
+          "value": 1523.0
+        },
+        {
+          "year": 2016,
+          "value": 639.0
+        },
+        {
+          "year": 2017,
+          "value": 637.0
+        },
+        {
+          "year": 2018,
+          "value": 234.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_15",
+      "table_title": "Table 1.15: Skill stream outcome—top 15 citizenship countries, Global Talent (Independent) visas, 2019–20 to 2024–25",
+      "short_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 398.0
+        },
+        {
+          "year": 2020,
+          "value": 1116.0
+        },
+        {
+          "year": 2021,
+          "value": 1398.0
+        },
+        {
+          "year": 2022,
+          "value": 931.0
+        },
+        {
+          "year": 2023,
+          "value": 1155.0
+        },
+        {
+          "year": 2024,
+          "value": 1244.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_16",
+      "table_title": "Table 1.16: Family stream outcome—top 15 citizenship countries, Partner visas, 2015–16 to 2024–25",
+      "short_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 5503.0
+        },
+        {
+          "year": 2016,
+          "value": 4972.0
+        },
+        {
+          "year": 2017,
+          "value": 3625.0
+        },
+        {
+          "year": 2018,
+          "value": 3803.0
+        },
+        {
+          "year": 2019,
+          "value": 2684.0
+        },
+        {
+          "year": 2020,
+          "value": 5515.0
+        },
+        {
+          "year": 2021,
+          "value": 3954.0
+        },
+        {
+          "year": 2022,
+          "value": 3815.0
+        },
+        {
+          "year": 2023,
+          "value": 3289.0
+        },
+        {
+          "year": 2024,
+          "value": 3848.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_3",
+      "table_title": "Table 1.3: Skill stream outcome—top 15 citizenship countries, Employer Sponsored visas, 2015–16 to 2024–25",
+      "short_title": "1.3: Employer Sponsored, top 15 countries",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 10495.0
+        },
+        {
+          "year": 2016,
+          "value": 9873.0
+        },
+        {
+          "year": 2017,
+          "value": 5148.0
+        },
+        {
+          "year": 2018,
+          "value": 7224.0
+        },
+        {
+          "year": 2019,
+          "value": 4718.0
+        },
+        {
+          "year": 2020,
+          "value": 4347.0
+        },
+        {
+          "year": 2021,
+          "value": 5845.0
+        },
+        {
+          "year": 2022,
+          "value": 8187.0
+        },
+        {
+          "year": 2023,
+          "value": 10966.0
+        },
+        {
+          "year": 2024,
+          "value": 12762.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_6",
+      "table_title": "Table 1.6: Skill stream outcome—top 15 citizenship countries, Regional visas, 2019–20 to 2024–25",
+      "short_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 7585.0
+        },
+        {
+          "year": 2020,
+          "value": 4638.0
+        },
+        {
+          "year": 2021,
+          "value": 5931.0
+        },
+        {
+          "year": 2022,
+          "value": 12192.0
+        },
+        {
+          "year": 2023,
+          "value": 12953.0
+        },
+        {
+          "year": 2024,
+          "value": 13193.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_8",
+      "table_title": "Table 1.8: Skill stream outcome—top 15 citizenship countries, State/Territory Nominated visas, 2015–16 to 2024–25",
+      "short_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 8115.0
+        },
+        {
+          "year": 2016,
+          "value": 8541.0
+        },
+        {
+          "year": 2017,
+          "value": 10652.0
+        },
+        {
+          "year": 2018,
+          "value": 9465.0
+        },
+        {
+          "year": 2019,
+          "value": 6149.0
+        },
+        {
+          "year": 2020,
+          "value": 4052.0
+        },
+        {
+          "year": 2021,
+          "value": 5386.0
+        },
+        {
+          "year": 2022,
+          "value": 9740.0
+        },
+        {
+          "year": 2023,
+          "value": 11064.0
+        },
+        {
+          "year": 2024,
+          "value": 11355.0
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section": "Temporary migration",
+      "table_id": "2_4",
+      "table_title": "Table 2.4: Visitor visas granted—top 15 citizenship countries, 2015–16 to 2024–25",
+      "short_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 189221.0
+        },
+        {
+          "year": 2016,
+          "value": 220952.0
+        },
+        {
+          "year": 2017,
+          "value": 268194.0
+        },
+        {
+          "year": 2018,
+          "value": 280344.0
+        },
+        {
+          "year": 2019,
+          "value": 222785.0
+        },
+        {
+          "year": 2020,
+          "value": 29502.0
+        },
+        {
+          "year": 2021,
+          "value": 200325.0
+        },
+        {
+          "year": 2022,
+          "value": 357038.0
+        },
+        {
+          "year": 2023,
+          "value": 287259.0
+        },
+        {
+          "year": 2024,
+          "value": 302758.0
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section": "Visa cancellations and departures",
+      "table_id": "4_1",
+      "table_title": "Table 4.1: Visa cancellations—top 10 countries of citizenship, 2022–23 to 2024–25",
+      "short_title": "4.1: Cancellations, top 10 countries",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2022,
+          "value": 1700.0
+        },
+        {
+          "year": 2023,
+          "value": 3145.0
+        },
+        {
+          "year": 2024,
+          "value": 4113.0
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section": "Visa cancellations and departures",
+      "table_id": "4_4",
+      "table_title": "Table 4.4: Departures—top 10 countries of citizenship, 2022–23 to 2024–25",
+      "short_title": "4.4: Departures, top 10 countries",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2022,
+          "value": 927.0
+        },
+        {
+          "year": 2023,
+          "value": 858.0
+        },
+        {
+          "year": 2024,
+          "value": 606.0
+        }
+      ]
+    },
+    {
+      "section_id": 6,
+      "section": "Citizenship",
+      "table_id": "6_0",
+      "table_title": "Table 6.0: Australian citizenship conferrals—top 15 countries of original citizenship and gender female, 2024–25",
+      "short_title": "6.0: Citizenship conferrals, top 15",
+      "indicator": "India",
+      "columns": [
+        "year",
+        "value",
+        "category"
+      ],
+      "data": [
+        {
+          "year": 0,
+          "value": 11658.0,
+          "category": "Females"
+        },
+        {
+          "year": 0,
+          "value": 23015.0,
+          "category": "Total4"
+        }
+      ]
+    }
+  ]
+}

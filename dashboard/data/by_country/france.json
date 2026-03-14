@@ -1,0 +1,68 @@
+{
+  "country": "France",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Temporary migration",
+      "table": "2_4",
+      "table_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "France"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 2,
+      "section": "Temporary migration",
+      "table_id": "2_4",
+      "table_title": "Table 2.4: Visitor visas granted—top 15 citizenship countries, 2015–16 to 2024–25",
+      "short_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "France",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 135984.0
+        },
+        {
+          "year": 2016,
+          "value": 141759.0
+        },
+        {
+          "year": 2017,
+          "value": 147989.0
+        },
+        {
+          "year": 2018,
+          "value": 145985.0
+        },
+        {
+          "year": 2019,
+          "value": 114375.0
+        },
+        {
+          "year": 2020,
+          "value": 1608.0
+        },
+        {
+          "year": 2021,
+          "value": 35276.0
+        },
+        {
+          "year": 2022,
+          "value": 96717.0
+        },
+        {
+          "year": 2023,
+          "value": 110476.0
+        },
+        {
+          "year": 2024,
+          "value": 114782.0
+        }
+      ]
+    }
+  ]
+}

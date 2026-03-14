@@ -1,0 +1,204 @@
+{
+  "country": "United States of America",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_15",
+      "table_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "United States of America"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_16",
+      "table_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "United States of America"
+    },
+    {
+      "section": "Temporary migration",
+      "table": "2_4",
+      "table_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "United States of America"
+    },
+    {
+      "section": "Visa cancellations and departures",
+      "table": "4_1",
+      "table_title": "4.1: Cancellations, top 10 countries",
+      "indicator": "United States of America"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_15",
+      "table_title": "Table 1.15: Skill stream outcome—top 15 citizenship countries, Global Talent (Independent) visas, 2019–20 to 2024–25",
+      "short_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "United States of America",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 188.0
+        },
+        {
+          "year": 2020,
+          "value": 490.0
+        },
+        {
+          "year": 2021,
+          "value": 484.0
+        },
+        {
+          "year": 2022,
+          "value": 194.0
+        },
+        {
+          "year": 2023,
+          "value": 163.0
+        },
+        {
+          "year": 2024,
+          "value": 141.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_16",
+      "table_title": "Table 1.16: Family stream outcome—top 15 citizenship countries, Partner visas, 2015–16 to 2024–25",
+      "short_title": "1.16: Partner visas, top 15 countries",
+      "indicator": "United States of America",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 1823.0
+        },
+        {
+          "year": 2016,
+          "value": 1759.0
+        },
+        {
+          "year": 2017,
+          "value": 1065.0
+        },
+        {
+          "year": 2018,
+          "value": 1778.0
+        },
+        {
+          "year": 2019,
+          "value": 1758.0
+        },
+        {
+          "year": 2020,
+          "value": 3350.0
+        },
+        {
+          "year": 2021,
+          "value": 1845.0
+        },
+        {
+          "year": 2022,
+          "value": 1591.0
+        },
+        {
+          "year": 2023,
+          "value": 1266.0
+        },
+        {
+          "year": 2024,
+          "value": 1166.0
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section": "Temporary migration",
+      "table_id": "2_4",
+      "table_title": "Table 2.4: Visitor visas granted—top 15 citizenship countries, 2015–16 to 2024–25",
+      "short_title": "2.4: Visitor visas, top 15 countries",
+      "indicator": "United States of America",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 466030.0
+        },
+        {
+          "year": 2016,
+          "value": 526605.0
+        },
+        {
+          "year": 2017,
+          "value": 564874.0
+        },
+        {
+          "year": 2018,
+          "value": 621954.0
+        },
+        {
+          "year": 2019,
+          "value": 455029.0
+        },
+        {
+          "year": 2020,
+          "value": 6323.0
+        },
+        {
+          "year": 2021,
+          "value": 97628.0
+        },
+        {
+          "year": 2022,
+          "value": 456565.0
+        },
+        {
+          "year": 2023,
+          "value": 559620.0
+        },
+        {
+          "year": 2024,
+          "value": 579217.0
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section": "Visa cancellations and departures",
+      "table_id": "4_1",
+      "table_title": "Table 4.1: Visa cancellations—top 10 countries of citizenship, 2022–23 to 2024–25",
+      "short_title": "4.1: Cancellations, top 10 countries",
+      "indicator": "United States of America",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2022,
+          "value": 525.0
+        },
+        {
+          "year": 2023,
+          "value": 2055.0
+        },
+        {
+          "year": 2024,
+          "value": 1308.0
+        }
+      ]
+    }
+  ]
+}

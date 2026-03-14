@@ -1,0 +1,216 @@
+{
+  "country": "Bangladesh",
+  "context": "All tables where this country appears (citizenship / country of origin).",
+  "section_table_indicator": [
+    {
+      "section": "Permanent migration",
+      "table": "1_12",
+      "table_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "Bangladesh"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_15",
+      "table_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "Bangladesh"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_6",
+      "table_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "Bangladesh"
+    },
+    {
+      "section": "Permanent migration",
+      "table": "1_8",
+      "table_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Bangladesh"
+    }
+  ],
+  "tables": [
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_12",
+      "table_title": "Table 1.12: Skill stream outcome—top 15 citizenship countries, Skilled Regional visas, 2009–10 to 2018–19",
+      "short_title": "1.12: Skilled Regional, top 15 countries",
+      "indicator": "Bangladesh",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2009,
+          "value": 58.0
+        },
+        {
+          "year": 2010,
+          "value": 189.0
+        },
+        {
+          "year": 2011,
+          "value": 340.0
+        },
+        {
+          "year": 2012,
+          "value": 190.0
+        },
+        {
+          "year": 2013,
+          "value": 145.0
+        },
+        {
+          "year": 2014,
+          "value": 175.0
+        },
+        {
+          "year": 2015,
+          "value": 440.0
+        },
+        {
+          "year": 2016,
+          "value": 50.0
+        },
+        {
+          "year": 2017,
+          "value": 39.0
+        },
+        {
+          "year": 2018,
+          "value": 17.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_15",
+      "table_title": "Table 1.15: Skill stream outcome—top 15 citizenship countries, Global Talent (Independent) visas, 2019–20 to 2024–25",
+      "short_title": "1.15: Global Talent, top 15 countries",
+      "indicator": "Bangladesh",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 568.0
+        },
+        {
+          "year": 2020,
+          "value": 595.0
+        },
+        {
+          "year": 2021,
+          "value": 246.0
+        },
+        {
+          "year": 2022,
+          "value": 119.0
+        },
+        {
+          "year": 2023,
+          "value": 140.0
+        },
+        {
+          "year": 2024,
+          "value": 80.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_6",
+      "table_title": "Table 1.6: Skill stream outcome—top 15 citizenship countries, Regional visas, 2019–20 to 2024–25",
+      "short_title": "1.6: Regional visas, top 15 countries",
+      "indicator": "Bangladesh",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2019,
+          "value": 380.0
+        },
+        {
+          "year": 2020,
+          "value": 201.0
+        },
+        {
+          "year": 2021,
+          "value": 315.0
+        },
+        {
+          "year": 2022,
+          "value": 457.0
+        },
+        {
+          "year": 2023,
+          "value": 495.0
+        },
+        {
+          "year": 2024,
+          "value": 588.0
+        }
+      ]
+    },
+    {
+      "section_id": 1,
+      "section": "Permanent migration",
+      "table_id": "1_8",
+      "table_title": "Table 1.8: Skill stream outcome—top 15 citizenship countries, State/Territory Nominated visas, 2015–16 to 2024–25",
+      "short_title": "1.8: State/Territory Nominated, top 15",
+      "indicator": "Bangladesh",
+      "columns": [
+        "year",
+        "value"
+      ],
+      "data": [
+        {
+          "year": 2015,
+          "value": 710.0
+        },
+        {
+          "year": 2016,
+          "value": 729.0
+        },
+        {
+          "year": 2017,
+          "value": 535.0
+        },
+        {
+          "year": 2018,
+          "value": 377.0
+        },
+        {
+          "year": 2019,
+          "value": 364.0
+        },
+        {
+          "year": 2020,
+          "value": 183.0
+        },
+        {
+          "year": 2021,
+          "value": 258.0
+        },
+        {
+          "year": 2022,
+          "value": 384.0
+        },
+        {
+          "year": 2023,
+          "value": 390.0
+        },
+        {
+          "year": 2024,
+          "value": 401.0
+        }
+      ]
+    }
+  ]
+}
