@@ -168,18 +168,19 @@
       bottom: 0.36rem;
       left: auto;
       font-size: 0.85rem;
-      font-weight: 700;
+      font-weight: 600;
       color: #5a6578;
     }
     header .header-nav a {
       color: #5a6578;
       text-decoration: none;
       padding: 0 0.5rem;
-      font-weight: 700;
+      font-weight: 600;
     }
+    header .header-nav a .nav-link-text { padding: 0.15em 0.4em; border-radius: 4px; font-weight: 600; }
     header .header-nav a:not(.nav-external):hover { background: none; text-decoration: none; }
-    header .header-nav a:not(.nav-external):hover .nav-link-text { background: var(--accent); color: #fff; border-radius: 4px; padding: 0.15em 0.4em; }
-    header .header-nav a.current { font-weight: 700; }
+    header .header-nav a:not(.nav-external):hover .nav-link-text { background: var(--accent); color: #fff; }
+    header .header-nav a.current .nav-link-text { font-weight: 600; }
     header .header-nav a.nav-linkedin { color: #0a66c2; }
     header .header-nav .nav-icon { width: 16px; height: 16px; vertical-align: -0.2em; margin-right: 0.35em; flex-shrink: 0; display: inline-block; }
     header .header-nav svg.nav-icon { fill: currentColor; }
