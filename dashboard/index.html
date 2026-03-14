@@ -1068,6 +1068,8 @@
         'https://corsproxy.io/?' + encodeURIComponent(feedUrl)
       ];
       var timeout = 45000;
+      var RETRY_DELAY_MS = 12000;
+      var retryScheduled = false;
       function renderFeed(responseText) {
         try {
           var xmlText = responseText;
@@ -1114,6 +1116,13 @@
       function tryFetch(proxyIndex) {
         if (proxyIndex >= proxies.length) {
           listEl.innerHTML = '<p class="news-error">News temporarily unavailable.</p>';
+          if (!retryScheduled) {
+            retryScheduled = true;
+            setTimeout(function () {
+              listEl.innerHTML = '<p class="news-loading">Loading news…</p>';
+              tryFetch(0);
+            }, RETRY_DELAY_MS);
+          }
           return;
         }
         var url = proxies[proxyIndex];
@@ -1124,7 +1133,16 @@
           if (t) clearTimeout(t);
           if (renderFeed(xmlText)) return;
           if (proxyIndex + 1 < proxies.length) tryFetch(proxyIndex + 1);
-          else listEl.innerHTML = '<p class="news-error">No items in feed.</p>';
+          else {
+            listEl.innerHTML = '<p class="news-error">No items in feed.</p>';
+            if (!retryScheduled) {
+              retryScheduled = true;
+              setTimeout(function () {
+                listEl.innerHTML = '<p class="news-loading">Loading news…</p>';
+                tryFetch(0);
+              }, RETRY_DELAY_MS);
+            }
+          }
         }).catch(function () {
           if (t) clearTimeout(t);
           tryFetch(proxyIndex + 1);
