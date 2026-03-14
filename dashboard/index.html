@@ -166,43 +166,43 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 8px;
-      position: relative;
       min-height: 360px;
       min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
     }
-    .map-overlay {
-      position: absolute;
-      z-index: 500;
-      pointer-events: none;
+    .map-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.5rem;
+      flex-shrink: 0;
+      border-bottom: 1px solid var(--border);
     }
-    .map-overlay.map-title {
-      top: 0.35rem;
-      left: 0.5rem;
-      right: 0.5rem;
-      text-align: center;
+    .map-title-inline {
+      margin: 0;
       font-size: 0.68rem;
       font-weight: 600;
       color: var(--text);
-      margin: 0;
-      padding: 0.2rem 0.4rem;
-      background: rgba(255,255,255,0.85);
-      border-radius: 4px;
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .map-view-toggle {
-      position: absolute;
-      top: 0.4rem;
-      left: 0.5rem;
-      z-index: 600;
       display: flex;
       gap: 0;
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 4px;
       overflow: hidden;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.9);
+      flex-shrink: 0;
     }
     .map-view-toggle button {
-      padding: 0.25rem 0.5rem;
-      font-size: 0.75rem;
+      padding: 0.2rem 0.4rem;
+      font-size: 0.7rem;
       border: none;
       background: transparent;
       color: var(--text-muted);
@@ -212,6 +212,12 @@
       background: var(--accent);
       color: #fff;
       font-weight: 600;
+    }
+    .map-area {
+      flex: 73 1 0;
+      min-height: 0;
+      position: relative;
+      border-radius: 0 0 6px 6px;
     }
     .map-donut-wrap {
       position: absolute;
@@ -225,18 +231,35 @@
       max-width: 100%;
       max-height: 100%;
     }
-    .map-wrap .map-title { top: 2.25rem; }
     .map-wrap .map-inner {
       position: absolute;
       inset: 0;
-      border-radius: 6px;
+      border-radius: 0;
       overflow: hidden;
     }
     .map-wrap #map {
       width: 100%;
       height: 100%;
-      min-height: 200px;
+      min-height: 160px;
     }
+    .country-spotlight-below-map {
+      flex: 27 1 0;
+      min-height: 0;
+      overflow-y: auto;
+      padding: 0.35rem 0.5rem;
+      border-top: 1px solid var(--border);
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .country-spotlight-below-map h2 {
+      font-size: 0.65rem;
+      margin: 0 0 0.2rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .country-spotlight-below-map .spotlight-country { font-size: 0.75rem; }
+    .country-spotlight-below-map .spotlight-text { font-size: 0.7rem; line-height: 1.3; margin: 0 0 0.15rem 0; }
+    .country-spotlight-below-map .spotlight-hint { font-size: 0.58rem; }
     .map-legend {
       position: absolute;
       bottom: 0.35rem;
@@ -265,6 +288,20 @@
       white-space: nowrap; pointer-events: none;
     }
     .leaflet-tooltip.map-tooltip { font-size: 0.7rem; padding: 0.2rem 0.4rem; }
+    .map-wrap .leaflet-control-zoom {
+      border: 1px solid var(--border) !important;
+      border-radius: 4px !important;
+      overflow: hidden !important;
+      background: rgba(255, 255, 255, 0.75) !important;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
+    }
+    .map-wrap .leaflet-control-zoom a {
+      width: 22px !important;
+      height: 22px !important;
+      line-height: 22px !important;
+      font-size: 16px !important;
+      font-weight: 600 !important;
+    }
     .news-block {
       grid-column: 1 / -1;
       background: var(--surface);
@@ -676,12 +713,6 @@
           <option value="">— Select table first —</option>
         </select>
       </div>
-      <section class="country-spotlight country-spotlight-in-sidebar" id="country-spotlight" aria-label="Country spotlight">
-        <h2>Country spotlight</h2>
-        <span class="spotlight-country" id="spotlight-country"></span>
-        <p class="spotlight-text" id="spotlight-text">Loading…</p>
-        <span class="spotlight-hint" id="spotlight-hint">Select a country in the Indicator menu (when a map table is selected) or wait to cycle.</span>
-      </section>
     </aside>
 
     <main class="main">
@@ -708,22 +739,32 @@
         <select id="map-year" aria-label="Map year"></select>
       </div>
       <div class="map-wrap" id="map-wrap">
-        <div class="map-view-toggle">
-          <button type="button" id="map-view-map" class="active" aria-pressed="true">Map</button>
-          <button type="button" id="map-view-donut" aria-pressed="false">Donut</button>
+        <div class="map-header">
+          <p class="map-title-inline" id="map-title">Map (country data)</p>
+          <div class="map-view-toggle">
+            <button type="button" id="map-view-map" class="active" aria-pressed="true">Map</button>
+            <button type="button" id="map-view-donut" aria-pressed="false">Donut</button>
+          </div>
         </div>
-        <p class="map-overlay map-title" id="map-title">Map (country data)</p>
-        <div class="map-inner" id="map-inner">
-          <div id="map"></div>
+        <div class="map-area">
+          <div class="map-inner" id="map-inner">
+            <div id="map"></div>
+          </div>
+          <div class="map-donut-wrap" id="map-donut-wrap" style="display: none;">
+            <canvas id="map-donut-chart" aria-label="Map data as donut chart"></canvas>
+          </div>
+          <div class="map-legend" id="map-legend" style="display: none;">
+            <h4 id="map-legend-title">Outcomes</h4>
+            <div class="scale" id="map-legend-scale"></div>
+            <div class="scale-labels" id="map-legend-labels"></div>
+          </div>
         </div>
-        <div class="map-donut-wrap" id="map-donut-wrap" style="display: none;">
-          <canvas id="map-donut-chart" aria-label="Map data as donut chart"></canvas>
-        </div>
-        <div class="map-legend" id="map-legend" style="display: none;">
-          <h4 id="map-legend-title">Outcomes</h4>
-          <div class="scale" id="map-legend-scale"></div>
-          <div class="scale-labels" id="map-legend-labels"></div>
-        </div>
+        <section class="country-spotlight country-spotlight-below-map" id="country-spotlight" aria-label="Country spotlight">
+          <h2>Country spotlight</h2>
+          <span class="spotlight-country" id="spotlight-country"></span>
+          <p class="spotlight-text" id="spotlight-text">Loading…</p>
+          <span class="spotlight-hint" id="spotlight-hint">Select a country in the Indicator menu (when a map table is selected) or wait to cycle.</span>
+        </section>
       </div>
     </main>
 
