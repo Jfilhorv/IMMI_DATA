@@ -29,7 +29,11 @@
       margin: 0 0 1rem 0;
       box-shadow: 0 2px 8px rgba(30,64,175,0.25);
     }
-    header .wrap { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    header .wrap { padding-top: 0.5rem; padding-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    header .wrap .header-left { flex: 1; min-width: 0; }
+    header .header-logo-link { flex-shrink: 0; }
+    header .header-logo-link img { height: 4rem; width: auto; display: block; vertical-align: middle; }
+    header .header-logo-link:hover { opacity: 0.9; }
     h1 { font-size: 1.2rem; margin: 0 0 0.25rem 0; font-weight: 700; }
     .back { font-size: 0.85rem; margin-top: 0.25rem; }
     .back a { color: rgba(255,255,255,0.9); text-decoration: none; }
@@ -87,8 +91,11 @@
 <body>
   <header>
     <div class="wrap">
-      <h1>Indicator tree</h1>
-      <p class="back"><a href="index.html">← Back to Dashboard</a></p>
+      <div class="header-left">
+        <h1>Indicator tree</h1>
+        <p class="back"><a href="index.html">← Back to Dashboard</a></p>
+      </div>
+      <a href="index.html" class="header-logo-link" aria-label="Back to dashboard"><img src="logo_immi_data.png" alt="IMMI-DATA"></a>
     </div>
   </header>
   <div class="wrap">

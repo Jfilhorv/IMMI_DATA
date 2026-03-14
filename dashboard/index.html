@@ -89,16 +89,22 @@
     header .subtitle a:hover {
       text-decoration: underline;
     }
-    header .header-logo {
+    header .header-logo-link {
       position: absolute;
       right: 0.6rem;
       top: 50%;
       transform: translateY(-50%);
+      text-decoration: none;
+      line-height: 0;
+    }
+    header .header-logo-link:hover { opacity: 0.9; }
+    header .header-logo {
       height: 10rem;
       width: auto;
       max-width: 400px;
       object-fit: contain;
       flex-shrink: 0;
+      display: block;
     }
     .sidebar {
       background: var(--surface);
@@ -852,7 +858,7 @@
         <h1>Australian Immigration — Indicator Dashboard</h1>
         <p class="subtitle">Department of Home Affairs · Australian Migration Statistics · <a href="tree.html">Indicator tree</a> (577 combinations)</p>
       </div>
-      <img src="logo_immi_data.png" alt="IMMI-DATA" class="header-logo">
+      <a href="index.html" class="header-logo-link" aria-label="Back to dashboard"><img src="logo_immi_data.png" alt="IMMI-DATA" class="header-logo"></a>
     </header>
 
     <section class="news-block" id="news-block" aria-label="Australian immigration news">
