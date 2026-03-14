@@ -415,12 +415,28 @@
     updateTableNotes(tableId);
   }
 
+  function formatPercentagesInNotes(text) {
+    return text.replace(/([+-])(\d+\.?\d*)(?=\s|$|,|\))/g, function (_, sign, num) {
+      var n = parseFloat(sign + num);
+      if (n >= -100 && n <= 100) return sign + num + '%';
+      return sign + num;
+    }).replace(/\b(\d{1,2}\.\d+)(?=\s|$|,)(?!%)/g, function (m) {
+      var n = parseFloat(m);
+      if (n >= 0 && n <= 100) return m + '%';
+      return m;
+    });
+  }
+
   function updateTableNotes(tableId) {
     var el = document.getElementById('table-notes');
     if (!el) return;
     var lines = tableId && tableFootnotes[tableId];
     if (lines && lines.length) {
-      el.innerHTML = lines.map(function (line) { return '<p>' + escapeHtml(line) + '</p>'; }).join('');
+      el.innerHTML = lines.map(function (line) {
+        var escaped = escapeHtml(line);
+        var formatted = formatPercentagesInNotes(escaped);
+        return '<p>' + formatted + '</p>';
+      }).join('');
     } else {
       el.innerHTML = '<p class="table-notes-empty">Select a table to view notes and sources.</p>';
     }
