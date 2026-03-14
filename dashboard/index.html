@@ -89,6 +89,7 @@
     header .subtitle a:hover {
       text-decoration: underline;
     }
+    header { overflow: visible; }
     header .header-logo-link {
       position: absolute;
       right: 0.6rem;
@@ -96,11 +97,15 @@
       transform: translateY(-50%);
       text-decoration: none;
       line-height: 0;
+      display: block;
+      overflow: visible;
     }
     header .header-logo-link:hover { opacity: 0.9; }
+    header .header-logo-link img,
     header .header-logo {
-      height: 22rem;
-      width: auto;
+      height: 22rem !important;
+      min-height: 352px;
+      width: auto !important;
       max-width: 500px;
       object-fit: contain;
       flex-shrink: 0;
