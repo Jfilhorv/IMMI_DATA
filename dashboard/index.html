@@ -184,22 +184,65 @@
     .main {
       display: grid;
       grid-template-columns: 1.5fr 0.5fr;
-      grid-template-rows: auto 480px;
+      grid-template-rows: 480px 480px;
       gap: 0.6rem;
       min-height: 0;
       min-width: 0;
       align-items: stretch;
     }
-    .chart-toolbar { grid-column: 1; grid-row: 1; }
-    .chart-wrap { grid-column: 1; grid-row: 2; }
+    .chart-wrap { grid-column: 1; grid-row: 1; }
     .map-toolbar { grid-column: 2; grid-row: 1; align-self: start; }
     .map-wrap { grid-column: 2; grid-row: 2; }
     @media (max-width: 1200px) {
-      .main { grid-template-columns: 1fr; grid-template-rows: auto 480px auto 480px; }
-      .chart-toolbar { grid-column: 1; grid-row: 1; }
-      .chart-wrap { grid-column: 1; grid-row: 2; }
-      .map-toolbar { grid-column: 1; grid-row: 3; }
-      .map-wrap { grid-column: 1; grid-row: 4; }
+      .main { grid-template-columns: 1fr; grid-template-rows: 480px auto 480px; }
+      .chart-wrap { grid-column: 1; grid-row: 1; }
+      .map-toolbar { grid-column: 1; grid-row: 2; }
+      .map-wrap { grid-column: 1; grid-row: 3; }
+    }
+    .chart-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem 1rem;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.25rem;
+    }
+    .controls-over-chart {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.25rem 0.75rem;
+    }
+    .controls-over-chart label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      margin: 0;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .controls-over-chart .step-num {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--accent);
+      min-width: 1.2em;
+    }
+    .controls-over-chart select {
+      width: auto;
+      padding: 0.25rem 0.35rem;
+      font-size: 0.75rem;
+      min-width: 8rem;
+    }
+    .controls-over-chart .submenu-wrap { display: inline-flex; align-items: center; gap: 0.2rem; }
+    .chart-toolbar-inline {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
     }
     .chart-wrap {
       background: var(--surface);
@@ -207,7 +250,7 @@
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 0.6rem 0.8rem;
+      padding: 0.5rem 0.7rem;
       min-height: 400px;
       height: 480px;
       display: flex;
@@ -830,27 +873,7 @@
       <div class="kpi-card"><div class="kpi-title" id="kpi-4-title">—</div><div class="kpi-value-row"><div class="kpi-value" id="kpi-4-val">—</div><div class="kpi-spark"><canvas id="kpi-4-spark"></canvas></div></div><div class="kpi-change" id="kpi-4-change"></div></div>
     </div>
 
-    <aside class="sidebar">
-      <div class="controls">
-        <label for="section">1. Section</label>
-        <select id="section">
-          <option value="">— Loading —</option>
-        </select>
-        <label for="table">2. Table</label>
-        <select id="table" disabled>
-          <option value="">— Select section first —</option>
-        </select>
-        <div id="submenu-wrap" class="submenu-wrap" style="display: none;">
-          <label for="submenu">3. Submenu</label>
-          <select id="submenu">
-            <option value="">— Select submenu —</option>
-          </select>
-        </div>
-        <label for="indicator" id="indicator-label">4. Indicator</label>
-        <select id="indicator" disabled>
-          <option value="">— Select table first —</option>
-        </select>
-      </div>
+    <aside class="sidebar sidebar-data-only">
       <section class="doc-section sidebar-data-items" id="data-items">
         <h2>Data Items &amp; Terminology</h2>
         <dl>
@@ -876,19 +899,40 @@
     </aside>
 
     <main class="main">
-      <div class="chart-toolbar">
-        <label for="chart-type">Chart type:</label>
-        <div class="chart-type-toggle" id="chart-type-toggle" role="group" aria-label="Chart type">
-          <button type="button" id="chart-type-bar" class="active" aria-pressed="true">Bar</button>
-          <button type="button" id="chart-type-line" aria-pressed="false">Line</button>
-        </div>
-        <span class="chart-toolbar-sep" aria-hidden="true">|</span>
-        <div class="download-buttons" role="group" aria-label="Download">
-          <button type="button" id="download-png" class="btn-download" title="Download chart as PNG"><span aria-hidden="true">↓</span> PNG</button>
-          <button type="button" id="download-csv" class="btn-download" title="Download data as CSV"><span aria-hidden="true">↓</span> CSV</button>
-        </div>
-      </div>
       <div class="chart-wrap">
+        <div class="chart-top-bar">
+          <div class="controls controls-over-chart">
+            <label for="section"><span class="step-num">1.</span> Section</label>
+            <select id="section">
+              <option value="">— Loading —</option>
+            </select>
+            <label for="table"><span class="step-num">2.</span> Table</label>
+            <select id="table" disabled>
+              <option value="">— Select section first —</option>
+            </select>
+            <div id="submenu-wrap" class="submenu-wrap" style="display: none;">
+              <label for="submenu"><span class="step-num">3.</span> Submenu</label>
+              <select id="submenu">
+                <option value="">— Select submenu —</option>
+              </select>
+            </div>
+            <label for="indicator" id="indicator-label"><span class="step-num">4.</span> Indicator</label>
+            <select id="indicator" disabled>
+              <option value="">— Select table first —</option>
+            </select>
+          </div>
+          <div class="chart-toolbar chart-toolbar-inline">
+            <div class="chart-type-toggle" id="chart-type-toggle" role="group" aria-label="Chart type">
+              <button type="button" id="chart-type-bar" class="active" aria-pressed="true">Bar</button>
+              <button type="button" id="chart-type-line" aria-pressed="false">Line</button>
+            </div>
+            <span class="chart-toolbar-sep" aria-hidden="true">|</span>
+            <div class="download-buttons" role="group" aria-label="Download">
+              <button type="button" id="download-png" class="btn-download" title="Download chart as PNG"><span aria-hidden="true">↓</span> PNG</button>
+              <button type="button" id="download-csv" class="btn-download" title="Download data as CSV"><span aria-hidden="true">↓</span> CSV</button>
+            </div>
+          </div>
+        </div>
         <p class="chart-title" id="chart-title" aria-live="polite"></p>
         <canvas id="chart" aria-label="Indicator time series chart"></canvas>
       </div>

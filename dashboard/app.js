@@ -373,7 +373,7 @@
     var hasCategory = categoryTables.indexOf(tableId) >= 0;
     if (hasCategory) {
       var submenus = getSubmenusForTable(tableId);
-      submenuWrap.style.display = submenus.length ? 'block' : 'none';
+      submenuWrap.style.display = submenus.length ? 'inline-flex' : 'none';
       indLabel.textContent = '4. Indicator';
       if (submenus.length) {
         submenuSel.innerHTML = '<option value="">— All —</option>' +
