@@ -283,7 +283,7 @@
     var sectionId = sectionSel.value ? parseInt(sectionSel.value, 10) : null;
     submenuWrap.style.display = 'none';
     submenuSel.innerHTML = '<option value="">— Select submenu —</option>';
-    indLabel.textContent = '3. Indicator';
+    indLabel.innerHTML = '<span class="step-num">3.</span> Indicator';
     if (!sectionId) {
       tableSel.disabled = true;
       tableSel.innerHTML = '<option value="">— Select section first —</option>';
@@ -355,7 +355,7 @@
     var tableId = tableSel.value;
     if (!tableId) {
       submenuWrap.style.display = 'none';
-      indLabel.textContent = '3. Indicator';
+      indLabel.innerHTML = '<span class="step-num">3.</span> Indicator';
       indSel.disabled = true;
       indSel.innerHTML = '<option value="">— Select a table first —</option>';
       if (chart) {
@@ -374,7 +374,7 @@
     if (hasCategory) {
       var submenus = getSubmenusForTable(tableId);
       submenuWrap.style.display = submenus.length ? 'inline-flex' : 'none';
-      indLabel.textContent = '4. Indicator';
+      indLabel.innerHTML = '<span class="step-num">4.</span> Indicator';
       if (submenus.length) {
         submenuSel.innerHTML = '<option value="">— All —</option>' +
           submenus.map(function (s) { return '<option value="' + escapeHtml(s) + '">' + escapeHtml(s) + '</option>'; }).join('');
@@ -396,7 +396,7 @@
       }
     } else {
       submenuWrap.style.display = 'none';
-      indLabel.textContent = '3. Indicator';
+      indLabel.innerHTML = '<span class="step-num">3.</span> Indicator';
       var indicators = getIndicatorsForTable(tableId);
       indSel.disabled = false;
       indSel.innerHTML = '<option value="">— Select indicator —</option>' +
