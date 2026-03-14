@@ -242,6 +242,12 @@
       color: var(--text);
       white-space: nowrap;
     }
+    .controls-over-chart .step-num-img {
+      height: 1rem;
+      width: auto;
+      vertical-align: middle;
+      display: inline-block;
+    }
     .controls-over-chart .step-num {
       font-size: 0.82rem;
       font-weight: 800;
@@ -937,21 +943,21 @@
       <div class="chart-wrap">
         <div class="chart-top-bar">
           <div class="controls controls-over-chart">
-            <label for="section"><span class="step-num">1.</span> Section</label>
+            <label for="section"><img src="number-1.png" alt="1" class="step-num-img"> Section</label>
             <select id="section">
               <option value="">— Loading —</option>
             </select>
-            <label for="table"><span class="step-num">2.</span> Table</label>
+            <label for="table"><img src="number-2.png" alt="2" class="step-num-img"> Table</label>
             <select id="table" disabled>
               <option value="">— Select section first —</option>
             </select>
             <div id="submenu-wrap" class="submenu-wrap" style="display: none;">
-              <label for="submenu"><span class="step-num">3.</span> Submenu</label>
+              <label for="submenu"><img src="number-3.png" alt="3" class="step-num-img"> Submenu</label>
               <select id="submenu">
                 <option value="">— Select submenu —</option>
               </select>
             </div>
-            <label for="indicator" id="indicator-label"><span class="step-num">4.</span> Indicator</label>
+            <label for="indicator" id="indicator-label"><img src="number-4.png" alt="4" class="step-num-img"> Indicator</label>
             <select id="indicator" disabled>
               <option value="">— Select table first —</option>
             </select>
