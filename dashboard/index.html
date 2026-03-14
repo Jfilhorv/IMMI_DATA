@@ -71,13 +71,25 @@
       display: block;
       line-height: 0;
       margin-left: -0.25rem;
+      position: relative;
     }
     header .header-logo-left img {
       height: 4rem;
       width: auto;
       display: block;
+      transition: opacity 0.2s ease;
     }
-    header .header-logo-left:hover { opacity: 0.9; }
+    header .header-logo-left .logo-hover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+    }
+    header .header-logo-left:hover .logo-default { opacity: 0; }
+    header .header-logo-left:hover .logo-hover { opacity: 1; }
     header .header-left-group {
       display: flex;
       align-items: center;
@@ -935,7 +947,7 @@
   <div class="page">
     <header>
       <div class="header-left-group">
-        <a href="index.html" class="header-logo-left" aria-label="IMMI-DATA" title="Dashboard"><img src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"></a>
+        <a href="index.html" class="header-logo-left" aria-label="IMMI-DATA" title="Dashboard"><img class="logo-default" src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"><img class="logo-hover" src="logo_immi_data_squera_plate.png" alt="IMMI-DATA" aria-hidden="true"></a>
         <div class="header-text">
           <h1>Australian Immigration — Indicator Dashboard</h1>
           <p class="subtitle">Department of Home Affairs · Australian Migration Statistics · <a href="tree.html">Indicator tree</a> (577 combinations)</p>
