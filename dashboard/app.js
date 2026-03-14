@@ -640,7 +640,14 @@
             rotation: isVerticalLabels ? -90 : 0,
             color: CHART_COLOR.axis,
             font: { family: 'JetBrains Mono, monospace', size: 10 },
-            formatter: function (v) { return typeof v === 'number' && !isNaN(v) ? (v >= 1000 ? (v / 1000).toFixed(1) + 'k' : v) : ''; }
+            formatter: function (v, ctx) {
+              if (typeof v !== 'number' || isNaN(v)) return '';
+              if (v > 0 && v <= 1) return (v * 100).toFixed(1) + '%';
+              if (v >= 1000) return (v / 1000).toFixed(1) + 'k';
+              var data = ctx.dataset && ctx.dataset.data;
+              if (data && data.length && data.every(function (x) { return typeof x === 'number' && x >= 0 && x <= 100; })) return v.toFixed(1) + '%';
+              return v;
+            }
           } : undefined
         },
         scales: {
