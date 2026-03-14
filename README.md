@@ -12,6 +12,8 @@ A **free, public** dashboard and webpage showing Australian immigration statisti
 
 [![Open live dashboard](https://img.shields.io/badge/🌐_Live_Dashboard-Open_here-1e40af?style=for-the-badge)](https://jfilhorv.github.io/IMMI_DATA/dashboard/)
 
+*Open dashboard for exploring Australian migration statistics published by the Department of Home Affairs. Select a section, table and indicator to explore trends, download charts, or view migration patterns by country.*
+
 </div>
 
 ---
