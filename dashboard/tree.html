@@ -29,29 +29,21 @@
       margin: 0 0 1rem 0;
       box-shadow: 0 2px 8px rgba(30,64,175,0.25);
     }
-    header .wrap { padding-top: 0.5rem; padding-bottom: 0.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    header .wrap { padding-top: 0.5rem; padding-bottom: 0.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
     header .header-logo-left {
       flex-shrink: 0;
       display: block;
       line-height: 0;
+      margin-left: -0.25rem;
     }
     header .header-logo-left img {
-      height: 12rem;
+      height: 4rem;
       width: auto;
       display: block;
       vertical-align: middle;
     }
+    header .header-logo-left:hover { opacity: 0.9; }
     header .wrap .header-left { flex: 1; min-width: 0; }
-    header { overflow: visible; }
-    header .header-logo-link { flex-shrink: 0; display: block; overflow: visible; }
-    header .header-logo-link img {
-      height: 22rem !important;
-      min-height: 352px;
-      width: auto !important;
-      display: block;
-      vertical-align: middle;
-    }
-    header .header-logo-link:hover { opacity: 0.9; }
     h1 { font-size: 1.2rem; margin: 0 0 0.25rem 0; font-weight: 700; }
     .back { font-size: 0.85rem; margin-top: 0.25rem; }
     .back a { color: rgba(255,255,255,0.9); text-decoration: none; }
@@ -109,12 +101,11 @@
 <body>
   <header>
     <div class="wrap">
-      <a href="index.html" class="header-logo-left" aria-label="IMMI-DATA"><img src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"></a>
+      <a href="index.html" class="header-logo-left" aria-label="Back to Dashboard" title="Back to Dashboard"><img src="logo_immi_data_square_black_write.png" alt="IMMI-DATA"></a>
       <div class="header-left">
         <h1>Indicator tree</h1>
         <p class="back"><a href="index.html">← Back to Dashboard</a></p>
       </div>
-      <a href="index.html" class="header-logo-link" aria-label="Back to dashboard"><img src="logo_immi_data.png" alt="IMMI-DATA"></a>
     </div>
   </header>
   <div class="wrap">
