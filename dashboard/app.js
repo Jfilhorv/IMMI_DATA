@@ -871,6 +871,37 @@
             chart.update('none');
           }
         });
+        var downloadPngEl = document.getElementById('download-png');
+        var downloadCsvEl = document.getElementById('download-csv');
+        if (downloadPngEl) downloadPngEl.addEventListener('click', function () {
+          if (!chart) return;
+          var canvas = document.getElementById('chart');
+          if (!canvas) return;
+          var link = document.createElement('a');
+          link.download = 'chart.png';
+          link.href = canvas.toDataURL('image/png');
+          link.click();
+        });
+        if (downloadCsvEl) downloadCsvEl.addEventListener('click', function () {
+          var tableId = tableSel.value;
+          var indicator = indSel.value;
+          if (!tableId || !indicator || !chart || !chart.data || !chart.data.labels) return;
+          var labels = chart.data.labels;
+          var values = chart.data.datasets[0] && chart.data.datasets[0].data ? chart.data.datasets[0].data : [];
+          var rows = ['year,value'];
+          for (var i = 0; i < labels.length; i++) {
+            var y = labels[i];
+            var v = values[i] != null ? values[i] : '';
+            rows.push(String(y) + ',' + String(v));
+          }
+          var csv = rows.join('\n');
+          var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+          var link = document.createElement('a');
+          link.download = 'data_' + tableId + '_' + (indicator.replace(/[^a-zA-Z0-9]/g, '_').slice(0, 30)) + '.csv';
+          link.href = URL.createObjectURL(blob);
+          link.click();
+          URL.revokeObjectURL(link.href);
+        });
         var mapViewMapBtn = document.getElementById('map-view-map');
         var mapViewDonutBtn = document.getElementById('map-view-donut');
         if (mapViewMapBtn) mapViewMapBtn.addEventListener('click', function () {
