@@ -52,6 +52,8 @@
   var mapLabelLayer = null;
   var mapDonutChart = null;
   var mapViewMode = 'map';
+  var currentMapData = null;
+  var lastSpotlightCountryName = null;
   var DONUT_COLORS = ['#2563eb', '#1d4ed8', '#3b82f6', '#60a5fa', '#93c5fd', '#1e40af', '#1e3a8a', '#3730a3', '#4f46e5', '#6366f1', '#818cf8', '#a5b4fc', '#4338ca', '#5b21b6', '#7c3aed'];
 
   function doughnutColors(n) {
@@ -453,6 +455,27 @@
   }
 
   var SPOTLIGHT_FADE_MS = 500;
+  var MAP_HIGHLIGHT_COLOR = '#2563eb';
+  var MAP_HIGHLIGHT_BORDER = '#1e40af';
+
+  function highlightCountryOnMap(countryName) {
+    if (!mapGeoLayer || !currentMapData) return;
+    var targetIso = countryName ? (countryToIso[countryName] || countryToIso[countryName.replace(/\d+$/, '')]) : null;
+    if (targetIso) targetIso = String(targetIso).toUpperCase();
+    mapGeoLayer.eachLayer(function (layer) {
+      var iso = layer.feature.properties && (layer.feature.properties.ISO_A2 || layer.feature.properties.iso_a2);
+      if (!iso) return;
+      iso = String(iso).toUpperCase();
+      var val = currentMapData.valuesByIso[iso];
+      var isHighlight = targetIso && iso === targetIso;
+      if (isHighlight) {
+        layer.setStyle({ fillColor: MAP_HIGHLIGHT_COLOR, fillOpacity: 0.95, weight: 2.5, color: MAP_HIGHLIGHT_BORDER });
+      } else {
+        var fill = val != null ? valueToColor(val, currentMapData.min, currentMapData.max) : '#e5e7eb';
+        layer.setStyle({ fillColor: fill, fillOpacity: 0.75, weight: 1, color: '#94a3b8' });
+      }
+    });
+  }
 
   function updateCountrySpotlight(countryName) {
     var countryEl = document.getElementById('spotlight-country');
@@ -460,10 +483,12 @@
     var contentEl = document.getElementById('spotlight-content');
     if (!countryEl || !textEl) return;
     function apply() {
+      var displayedName = null;
       if (countryName) {
         selectedSpotlightCountry = countryName;
         var entry = countrySummaries.filter(function (s) { return s.name === countryName; })[0];
         if (entry) {
+          displayedName = entry.name;
           countryEl.textContent = (entry.name || '').replace(/\s*[—–-]\s*$/, '').trim();
           countryEl.style.display = '';
           textEl.textContent = entry.summary || '';
@@ -472,30 +497,37 @@
           countryEl.style.display = 'none';
           textEl.textContent = countrySummaries.length ? 'Select a country from the Indicator menu or click the map.' : 'Country summaries loading…';
         }
-        return;
+        lastSpotlightCountryName = displayedName;
+        return displayedName;
       }
       selectedSpotlightCountry = null;
       if (!countrySummaries.length) {
         countryEl.textContent = '';
         countryEl.style.display = 'none';
         textEl.textContent = 'Country summaries unavailable.';
-        return;
+        lastSpotlightCountryName = null;
+        return null;
       }
       var idx = spotlightCycleIndex % countrySummaries.length;
       var entry = countrySummaries[idx];
+      displayedName = entry.name;
       countryEl.textContent = (entry.name || '').replace(/\s*[—–-]\s*$/, '').trim();
       countryEl.style.display = '';
       textEl.textContent = entry.summary || '';
       spotlightCycleIndex = (spotlightCycleIndex + 1) % countrySummaries.length;
+      lastSpotlightCountryName = displayedName;
+      return displayedName;
     }
     if (contentEl) {
       contentEl.style.opacity = '0';
       setTimeout(function () {
-        apply();
+        var name = apply();
         contentEl.style.opacity = '1';
+        highlightCountryOnMap(name);
       }, SPOTLIGHT_FADE_MS);
     } else {
-      apply();
+      var name = apply();
+      highlightCountryOnMap(name);
     }
   }
 
@@ -770,6 +802,7 @@
       leafletMap.removeLayer(mapGeoLayer);
       mapGeoLayer = null;
     }
+    currentMapData = data;
     function fmtNum(n) { return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n); }
     var isoToCountryName = {};
     data.countryList.forEach(function (c) {
@@ -861,6 +894,7 @@
           legendScale.appendChild(span);
         }
         legendLabels.innerHTML = '<span>' + fmtNum(Math.round(data.min)) + '</span><span>' + fmtNum(Math.round(data.max)) + '</span>';
+        highlightCountryOnMap(lastSpotlightCountryName);
       })
       .catch(function () {
         if (titleEl) titleEl.textContent = 'Map (load failed)';
