@@ -428,7 +428,7 @@
   }
 
   function formatBoldNumbersInNotes(text) {
-    return text.replace(/\b(\d+\.?\d*)\b/g, '<b>$1</b>');
+    return text.replace(/(\d+\.?\d*)/g, '<b>$1</b>');
   }
 
   function updateTableNotes(tableId) {
