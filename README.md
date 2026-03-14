@@ -1,4 +1,4 @@
-# <img src="dashboard/logo_immi_data_square.png" alt="IMMI-DATA" height="40" style="vertical-align: middle;" /> Australian Immigration Data Dashboard
+# <img src="dashboard/logo_immi_data_square_black_write.png" alt="IMMI-DATA" height="40" style="vertical-align: middle;" /> Australian Immigration Data Dashboard
 
 A **free, public** dashboard and webpage showing Australian immigration statistics from official government sources: **when** (year/quarter/month), **from** (country), **to** (Australia), **across years**.
 
@@ -110,8 +110,6 @@ The repo is initialized with an initial commit. To push to GitHub:
 
 <div align="center">
 
-**IMMI-DATA** — logo prata
-
-<img src="dashboard/immi_data_logo_plate.png" alt="IMMI-DATA logo prata" height="72" />
+<img src="dashboard/immi_data_logo_plate.png" alt="IMMI-DATA" height="140" />
 
 </div>
