@@ -177,7 +177,7 @@
     var min = Math.min.apply(null, values);
     var max = Math.max.apply(null, values);
     var range = max - min || 1;
-    var pad = 4;
+    var pad = 22;
     var x0 = pad;
     var x1 = w - pad;
     var y0 = lineBottom - pad;
@@ -211,7 +211,7 @@
       ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
       ctx.fill();
     });
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.6)';
+    ctx.fillStyle = 'rgba(59, 130, 246, 0.78)';
     ctx.font = '8px system-ui, sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
