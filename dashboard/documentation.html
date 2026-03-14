@@ -24,13 +24,13 @@
     body {
       font-family: 'DM Sans', system-ui, sans-serif;
       margin: 0;
-      padding: 0 0.75rem;
+      padding: 0 0.75rem 0.2rem;
       background: var(--bg);
       background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 248, 255, 0.95) 50%, rgba(230, 240, 252, 0.9) 100%);
       color: var(--text);
       min-height: 100vh;
     }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 1rem 1.25rem 2rem; }
+    .wrap { max-width: 720px; margin: 0; padding: 1rem 0 2rem; }
     header {
       padding: 0.36rem 0.54rem;
       border-radius: 0 0 8px 8px;
@@ -89,12 +89,14 @@
     header .header-logo-link:hover .logo-default, header .header-logo-link:hover .header-logo.logo-default { opacity: 0; }
     header .header-logo-link:hover .logo-hover { opacity: 1; }
     @media (max-width: 768px) {
+      body { padding: 0.3rem 0.5rem 0.2rem; }
       header { padding: 0.35rem 0.45rem; flex-wrap: wrap; gap: 0.4rem; }
       header h1 { font-size: 1.35rem; }
       header .header-logo-left img { height: 3.5rem; }
       header .header-logo-link { display: none; }
     }
     @media (max-width: 480px) {
+      body { padding: 0.2rem 0.3rem 0.12rem; }
       header { padding: 0.25rem 0.35rem; }
       header h1 { font-size: 1.05rem; }
       header .header-logo-left img { height: 2.5rem; }
