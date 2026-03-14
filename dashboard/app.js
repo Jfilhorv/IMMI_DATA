@@ -461,7 +461,7 @@
       selectedSpotlightCountry = countryName;
       var entry = countrySummaries.filter(function (s) { return s.name === countryName; })[0];
       if (entry) {
-        countryEl.textContent = entry.name;
+        countryEl.textContent = (entry.name || '').replace(/\s*[—–-]\s*$/, '').trim();
         countryEl.style.display = '';
         textEl.textContent = entry.summary || '';
         if (hintEl) hintEl.textContent = '';
@@ -483,7 +483,7 @@
     }
     var idx = spotlightCycleIndex % countrySummaries.length;
     var entry = countrySummaries[idx];
-    countryEl.textContent = entry.name;
+    countryEl.textContent = (entry.name || '').replace(/\s*[—–-]\s*$/, '').trim();
     countryEl.style.display = '';
     textEl.textContent = entry.summary || '';
     if (hintEl) hintEl.textContent = '';
