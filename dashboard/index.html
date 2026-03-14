@@ -107,8 +107,16 @@
       font-size: 1.4rem;
       font-weight: 700;
       margin: 0 0 0.12rem 0;
+      padding: 0.2rem 0.4rem;
       letter-spacing: -0.02em;
       color: var(--header-title);
+      border-radius: 6px;
+      transition: background 0.2s ease, color 0.2s ease, -webkit-text-stroke 0.2s ease;
+    }
+    header h1:hover {
+      background: rgba(255, 255, 255, 0.95);
+      color: #1a202c;
+      -webkit-text-stroke: 0.35px #1a202c;
     }
     header .subtitle {
       font-size: 0.7rem;
@@ -912,12 +920,18 @@
       font-size: 0.72rem;
       font-weight: 500;
       font-family: inherit;
-      border: 1px solid var(--border);
+      border: 1px solid var(--accent);
       border-radius: 4px;
       background: #fff;
       color: var(--text);
       cursor: pointer;
       min-width: 0;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+    }
+    .map-toolbar-inside select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-dim);
     }
     .map-toolbar-inside select#map-table { min-width: 6rem; max-width: 12rem; }
     .map-toolbar-inside select#map-year { max-width: 4rem; }
