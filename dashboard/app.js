@@ -158,7 +158,9 @@
     }
     var dpr = window.devicePixelRatio || 1;
     var w = el.parentElement.clientWidth || 120;
-    var h = 28;
+    var labelTop = 10;
+    var lineBottom = 24;
+    var h = 32;
     el.width = w * dpr;
     el.height = h * dpr;
     el.style.width = w + 'px';
@@ -169,23 +171,32 @@
     var max = Math.max.apply(null, values);
     var range = max - min || 1;
     var pad = 4;
-    var lineTop = 4;
-    var lineH = h - 2 * pad;
     var x0 = pad;
     var x1 = w - pad;
-    var y0 = h - pad;
+    var y0 = lineBottom - pad;
+    var lineH = lineBottom - labelTop - 2;
     var step = values.length > 1 ? (x1 - x0) / (values.length - 1) : 0;
     ctx.strokeStyle = '#60a5fa';
     ctx.lineWidth = 2;
-    ctx.beginPath();
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
     var points = [];
     values.forEach(function (v, i) {
       var x = x0 + i * step;
       var y = y0 - ((v - min) / range) * lineH;
       points.push({ x: x, y: y, v: v });
-      if (i === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
     });
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, points[0].y);
+    for (var i = 1; i < points.length; i++) {
+      var p0 = points[i - 1];
+      var p1 = points[i];
+      var cpx = (p0.x + p1.x) / 2;
+      var cpy = (p0.y + p1.y) / 2;
+      var dx = (p1.x - p0.x) * 0.2;
+      var dy = (p1.y - p0.y) * 0.2;
+      ctx.quadraticCurveTo(cpx - dx, cpy - dy, p1.x, p1.y);
+    }
     ctx.stroke();
     ctx.fillStyle = '#60a5fa';
     points.forEach(function (p) {
@@ -200,7 +211,8 @@
     points.forEach(function (p) {
       var label = abbreviateSparkValue(p.v);
       if (!label) return;
-      var textY = Math.max(8, p.y - 4);
+      var textY = p.y - 5;
+      if (textY < labelTop) textY = labelTop;
       ctx.fillText(label, p.x, textY);
     });
   }
