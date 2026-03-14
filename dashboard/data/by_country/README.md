@@ -1,4 +1,4 @@
-# By-country data
+![1773462205157](image/README/1773462205157.png)![1773462249968](image/README/1773462249968.png)![1773462255773](image/README/1773462255773.png)![1773462270301](image/README/1773462270301.png)![1773462283786](image/README/1773462283786.png)![1773462285958](image/README/1773462285958.png)# By-country data
 
 Summaries and aggregated data by **country** (citizenship / country of origin) from Australian migration statistics.
 
