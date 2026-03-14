@@ -608,6 +608,28 @@
       border-top: 1px solid var(--border);
     }
     .source a { color: var(--accent); }
+    .source-row {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      padding-top: 0.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .source-row .source { border-top: none; padding-top: 0; flex: 1; min-width: 0; }
+    .btn-download-footer {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .btn-download-footer:hover { border-color: var(--accent); color: var(--accent); }
     .loading { color: var(--text-muted); }
     .error { color: #ef4444; }
     .kpi-row {
@@ -897,9 +919,12 @@
       </div>
     </div>
 
-    <p class="source">
-      Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Years = financial year start (e.g. 1984 = 1984–85).
-    </p>
+    <div class="source-row">
+      <p class="source">
+        Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Years = financial year start (e.g. 1984 = 1984–85).
+      </p>
+      <button type="button" id="footer-download-csv" class="btn-download-footer" title="Download current selection as CSV">Download CSV</button>
+    </div>
     <p class="source attribution-notice">
       Data: © Commonwealth of Australia, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. This site is not affiliated with the Australian Government.
     </p>

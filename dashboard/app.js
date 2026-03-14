@@ -1028,7 +1028,7 @@
           link.href = canvas.toDataURL('image/png');
           link.click();
         });
-        if (downloadCsvEl) downloadCsvEl.addEventListener('click', function () {
+        function doDownloadCsv() {
           var tableId = tableSel.value;
           var indicator = indSel.value;
           if (!tableId || !indicator || !chart || !chart.data || !chart.data.labels) return;
@@ -1047,7 +1047,10 @@
           link.href = URL.createObjectURL(blob);
           link.click();
           URL.revokeObjectURL(link.href);
-        });
+        }
+        if (downloadCsvEl) downloadCsvEl.addEventListener('click', doDownloadCsv);
+        var footerDownloadCsvEl = document.getElementById('footer-download-csv');
+        if (footerDownloadCsvEl) footerDownloadCsvEl.addEventListener('click', doDownloadCsv);
         var mapViewMapBtn = document.getElementById('map-view-map');
         var mapViewDonutBtn = document.getElementById('map-view-donut');
         if (mapViewMapBtn) mapViewMapBtn.addEventListener('click', function () {
