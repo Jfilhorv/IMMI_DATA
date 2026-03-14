@@ -141,10 +141,11 @@
   }
 
   function abbreviateSparkValue(v) {
-    if (v >= 1e6) return (v / 1e6).toFixed(1) + 'M';
-    if (v >= 1000) return (v / 1000).toFixed(1) + 'k';
-    if (Math.abs(v) < 10 && v !== Math.floor(v)) return v.toFixed(1);
-    return Math.round(v).toString();
+    var n = Number(v);
+    if (!isFinite(n)) return '';
+    if (n >= 1e6) return Math.round(n / 1e6) + 'M';
+    if (n >= 1000) return Math.round(n / 1000) + 'k';
+    return Math.round(n).toString();
   }
 
   function drawSparkline(canvasId, values) {
@@ -197,7 +198,10 @@
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
     points.forEach(function (p) {
-      ctx.fillText(abbreviateSparkValue(p.v), p.x, p.y - 4);
+      var label = abbreviateSparkValue(p.v);
+      if (!label) return;
+      var textY = Math.max(8, p.y - 4);
+      ctx.fillText(label, p.x, textY);
     });
   }
 
