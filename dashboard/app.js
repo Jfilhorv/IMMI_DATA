@@ -459,10 +459,14 @@
     return text.replace(/(\d+\.?\d*)/g, '<b>$1</b>');
   }
 
+  var REPORT_CONTENTS_LINE = 'click here to return to: report contents';
   function updateTableNotes(tableId) {
     var el = document.getElementById('table-notes');
     if (!el) return;
-    var lines = tableId && tableFootnotes[tableId];
+    var raw = tableId && tableFootnotes[tableId];
+    var lines = raw && raw.filter(function (line) {
+      return String(line).trim().toLowerCase() !== REPORT_CONTENTS_LINE;
+    });
     if (lines && lines.length) {
       el.innerHTML = lines.map(function (line) {
         var escaped = escapeHtml(line);
