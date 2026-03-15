@@ -416,17 +416,16 @@
     .controls-over-chart .submenu-wrap label { display: inline-flex; align-items: center; gap: 0.2rem; }
     .controls-over-chart .submenu-wrap select { min-width: 4rem; }
     .controls-over-chart #indicator-label .step-num-img { height: 1rem; width: auto; min-width: 1rem; vertical-align: middle; display: inline-block; }
-    @keyframes controlsFlashPulse {
-      0% { box-shadow: 0 0 0 0 transparent; border-radius: 6px; }
-      20% { box-shadow: 0 0 0 3px var(--accent); border-radius: 6px; }
-      50% { box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.5); border-radius: 6px; }
-      75% { box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3); border-radius: 6px; }
-      100% { box-shadow: 0 0 0 0 transparent; border-radius: 6px; }
+    @keyframes selectBlink {
+      0%, 100% { background: var(--surface2); border-color: var(--border); }
+      25% { background: rgba(37, 99, 235, 0.08); border-color: var(--accent); }
+      50% { background: rgba(219, 39, 119, 0.1); border-color: #db2777; }
+      75% { background: rgba(37, 99, 235, 0.08); border-color: var(--accent); }
     }
-    .controls-over-chart.controls-intro {
-      padding: 0.35rem 0.5rem;
-      margin: 0 -0.35rem;
-      animation: controlsFlashPulse 1.4s ease-out 1;
+    .controls-over-chart.controls-intro select#section,
+    .controls-over-chart.controls-intro select#table,
+    .controls-over-chart.controls-intro select#indicator {
+      animation: selectBlink 0.9s ease-in-out 2;
     }
     .chart-body {
       position: relative;
