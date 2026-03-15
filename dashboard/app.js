@@ -709,14 +709,14 @@
         },
         scales: {
           x: {
-            grid: { color: CHART_COLOR.grid },
+            grid: { color: CHART_COLOR.grid, lineWidth: 0.5 },
             ticks: { color: CHART_COLOR.axis, maxRotation: isVerticalLabels ? 90 : 45 },
             title: { display: true, text: 'Year (financial year start)', color: CHART_COLOR.axis }
           },
           y: {
             beginAtZero: true,
             grace: '8%',
-            grid: { color: CHART_COLOR.grid },
+            grid: { color: CHART_COLOR.grid, lineWidth: 0.5 },
             ticks: { color: CHART_COLOR.axis },
             title: { display: false }
           }
