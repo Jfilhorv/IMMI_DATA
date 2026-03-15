@@ -791,13 +791,13 @@
     .footer-three-blocks {
       grid-column: 2;
       display: grid;
-      grid-template-columns: 1.38fr 0.62fr;
-      grid-template-rows: 1fr auto;
+      grid-template-columns: 0.32fr 1.06fr 0.62fr;
+      grid-template-rows: auto;
       gap: 0.2rem;
     }
-    .footer-three-blocks .block-notes { grid-column: 1; grid-row: 1; }
-    .footer-three-blocks .block-meta { grid-column: 1; grid-row: 2; }
-    .footer-three-blocks #overview { grid-column: 2; grid-row: 1 / -1; }
+    .footer-three-blocks .block-meta { grid-column: 1; grid-row: 1; }
+    .footer-three-blocks .block-notes { grid-column: 2; grid-row: 1; }
+    .footer-three-blocks #overview { grid-column: 3; grid-row: 1; }
     .footer-three-blocks .block-meta {
       background: rgba(255, 255, 255, 0.45);
       border-color: rgba(0, 0, 0, 0.06);
@@ -869,9 +869,9 @@
     .table-notes b, .table-notes strong { font-weight: 700 !important; }
     .table-notes .table-notes-empty { color: var(--text-muted); font-style: italic; font-size: 0.8rem; }
     @media (max-width: 1100px) {
-      .footer-three-blocks { grid-template-columns: 1fr; grid-template-rows: auto; }
-      .footer-three-blocks .block-notes,
+      .footer-three-blocks { grid-template-columns: 1fr; }
       .footer-three-blocks .block-meta,
+      .footer-three-blocks .block-notes,
       .footer-three-blocks #overview { grid-column: 1; grid-row: auto; }
     }
     @media (max-width: 600px) {
@@ -1278,10 +1278,6 @@
     </main>
 
     <div class="footer-three-blocks" id="footer-three-blocks">
-      <section class="doc-section block-notes">
-        <h2>Notes</h2>
-        <div id="table-notes" class="table-notes" aria-live="polite"></div>
-      </section>
       <section class="doc-section block-meta" id="dataset-meta" aria-label="Dataset summary">
         <h2>Dataset</h2>
         <dl class="meta-list">
@@ -1294,6 +1290,10 @@
           <dt>Cols</dt><dd>5</dd>
         </dl>
         <p class="meta-extra"><small>Data: indicators.csv, tables.json, kpi_candidates.json, category_tables.json · Scripts: build_dashboard_data, sync_dashboard_data, fetch_first_dataset, melt_all_sheets, list_kpi_candidates, build_by_country, build_drawio_tree, extract_table_footnotes, run_update, export_sheets_to_md, build_index_csv</small></p>
+      </section>
+      <section class="doc-section block-notes">
+        <h2>Notes</h2>
+        <div id="table-notes" class="table-notes" aria-live="polite"></div>
       </section>
       <section class="doc-section" id="overview">
         <h2>Overview</h2>
