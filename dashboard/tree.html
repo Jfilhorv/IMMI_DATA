@@ -156,17 +156,6 @@
       margin: 0 0.15rem;
       user-select: none;
     }
-    @keyframes navFlashPulse {
-      0% { background: transparent; color: inherit; transform: scale(1); }
-      18% { background: var(--accent); color: #fff; transform: scale(1.08); }
-      45% { background: var(--accent); color: #fff; transform: scale(1.02); }
-      65% { transform: scale(1.05); }
-      85% { transform: scale(1); }
-      100% { background: transparent; color: inherit; transform: scale(1); }
-    }
-    header .header-nav.nav-intro a.current .nav-link-text {
-      animation: navFlashPulse 1.4s ease-out 1;
-    }
     header { overflow: visible; }
     header .header-right {
       position: absolute;
@@ -502,6 +491,5 @@
   });
 })();
   </script>
-  <script>(function(){var n=document.querySelector('header .header-nav');if(n)n.classList.add('nav-intro');})();</script>
 </body>
 </html>

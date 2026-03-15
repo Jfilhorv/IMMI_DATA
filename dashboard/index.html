@@ -195,17 +195,6 @@
       margin: 0 0.15rem;
       user-select: none;
     }
-    @keyframes navFlashPulse {
-      0% { background: transparent; color: inherit; transform: scale(1); }
-      18% { background: var(--accent); color: #fff; transform: scale(1.08); }
-      45% { background: var(--accent); color: #fff; transform: scale(1.02); }
-      65% { transform: scale(1.05); }
-      85% { transform: scale(1); }
-      100% { background: transparent; color: inherit; transform: scale(1); }
-    }
-    header .header-nav.nav-intro a.current .nav-link-text {
-      animation: navFlashPulse 1.4s ease-out 1;
-    }
     header { overflow: visible; }
     header .header-right {
       position: absolute;
@@ -427,6 +416,18 @@
     .controls-over-chart .submenu-wrap label { display: inline-flex; align-items: center; gap: 0.2rem; }
     .controls-over-chart .submenu-wrap select { min-width: 4rem; }
     .controls-over-chart #indicator-label .step-num-img { height: 1rem; width: auto; min-width: 1rem; vertical-align: middle; display: inline-block; }
+    @keyframes controlsFlashPulse {
+      0% { box-shadow: 0 0 0 0 transparent; border-radius: 6px; }
+      20% { box-shadow: 0 0 0 3px var(--accent); border-radius: 6px; }
+      50% { box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.5); border-radius: 6px; }
+      75% { box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3); border-radius: 6px; }
+      100% { box-shadow: 0 0 0 0 transparent; border-radius: 6px; }
+    }
+    .controls-over-chart.controls-intro {
+      padding: 0.35rem 0.5rem;
+      margin: 0 -0.35rem;
+      animation: controlsFlashPulse 1.4s ease-out 1;
+    }
     .chart-body {
       position: relative;
       flex: 1;
@@ -1341,6 +1342,6 @@
   </script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="app.js?v=12"></script>
-  <script>(function(){var n=document.querySelector('header .header-nav');if(n)n.classList.add('nav-intro');})();</script>
+  <script>(function(){var c=document.querySelector('.controls-over-chart');if(c)c.classList.add('controls-intro');})();</script>
 </body>
 </html>

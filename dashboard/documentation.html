@@ -97,17 +97,6 @@
       width: 1px; height: 0.85em; background: #5a6578; opacity: 0.7;
       flex-shrink: 0; margin: 0 0.15rem; user-select: none;
     }
-    @keyframes navFlashPulse {
-      0% { background: transparent; color: inherit; transform: scale(1); }
-      18% { background: var(--accent); color: #fff; transform: scale(1.08); }
-      45% { background: var(--accent); color: #fff; transform: scale(1.02); }
-      65% { transform: scale(1.05); }
-      85% { transform: scale(1); }
-      100% { background: transparent; color: inherit; transform: scale(1); }
-    }
-    header .header-nav.nav-intro a.current .nav-link-text {
-      animation: navFlashPulse 1.4s ease-out 1;
-    }
     header .header-nav a.current .nav-link-text { font-weight: 600; }
     header .header-nav .nav-icon { width: 16px; height: 16px; vertical-align: -0.2em; margin-right: 0.35em; flex-shrink: 0; display: inline-block; }
     header .header-nav svg.nav-icon { fill: currentColor; }
@@ -235,6 +224,5 @@
     </section>
   </div>
   </div>
-  <script>(function(){var n=document.querySelector('header .header-nav');if(n)n.classList.add('nav-intro');})();</script>
 </body>
 </html>
