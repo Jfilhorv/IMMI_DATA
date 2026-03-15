@@ -177,38 +177,57 @@
     var min = Math.min.apply(null, values);
     var max = Math.max.apply(null, values);
     var range = max - min || 1;
-    var pad = 22;
+    var grace = range * 0.12;
+    var minDisplay = min - grace;
+    var maxDisplay = max + grace;
+    var rangeDisplay = maxDisplay - minDisplay;
+    var pad = 14;
     var x0 = pad;
     var x1 = w - pad;
     var y0 = lineBottom - 6;
     var lineH = lineBottom - labelTop - 6;
     var step = values.length > 1 ? (x1 - x0) / (values.length - 1) : 0;
-    ctx.strokeStyle = '#60a5fa';
-    ctx.lineWidth = 2;
-    ctx.lineJoin = 'round';
-    ctx.lineCap = 'round';
     var points = [];
     values.forEach(function (v, i) {
       var x = x0 + i * step;
-      var y = y0 - ((v - min) / range) * lineH;
+      var y = y0 - ((v - minDisplay) / rangeDisplay) * lineH;
       points.push({ x: x, y: y, v: v });
     });
+    var grad = ctx.createLinearGradient(0, labelTop, 0, lineBottom);
+    grad.addColorStop(0, 'rgba(96, 165, 250, 0.35)');
+    grad.addColorStop(1, 'rgba(96, 165, 250, 0.02)');
+    ctx.fillStyle = grad;
     ctx.beginPath();
-    ctx.moveTo(points[0].x, points[0].y);
+    ctx.moveTo(points[0].x, y0);
     for (var i = 1; i < points.length; i++) {
       var p0 = points[i - 1];
       var p1 = points[i];
       var cpx = (p0.x + p1.x) / 2;
       var cpy = (p0.y + p1.y) / 2;
-      var dx = (p1.x - p0.x) * 0.2;
-      var dy = (p1.y - p0.y) * 0.2;
-      ctx.quadraticCurveTo(cpx - dx, cpy - dy, p1.x, p1.y);
+      ctx.quadraticCurveTo(cpx, cpy, p1.x, p1.y);
+    }
+    ctx.lineTo(points[points.length - 1].x, y0);
+    ctx.lineTo(points[0].x, y0);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = '#60a5fa';
+    ctx.lineWidth = 2.2;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, points[0].y);
+    for (var k = 1; k < points.length; k++) {
+      var p0 = points[k - 1];
+      var p1 = points[k];
+      var cpx = (p0.x + p1.x) / 2;
+      var cpy = (p0.y + p1.y) / 2;
+      ctx.quadraticCurveTo(cpx, cpy, p1.x, p1.y);
     }
     ctx.stroke();
     ctx.fillStyle = '#60a5fa';
     points.forEach(function (p) {
       ctx.beginPath();
-      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, 2.2, 0, Math.PI * 2);
       ctx.fill();
     });
     ctx.fillStyle = 'rgba(59, 130, 246, 0.78)';
