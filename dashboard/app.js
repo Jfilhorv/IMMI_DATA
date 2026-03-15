@@ -622,10 +622,10 @@
       var area = ch.chartArea;
       var w = area.right - area.left;
       var h = area.bottom - area.top;
-      var maxSide = Math.min(w, h) * Math.min(0.82 * 3, 1);
+      var maxSide = Math.min(w, h) * 4;
       var iw = chartWatermarkImg.naturalWidth;
       var ih = chartWatermarkImg.naturalHeight;
-      var scale = Math.min(maxSide / iw, maxSide / ih, 1);
+      var scale = Math.min(maxSide / iw, maxSide / ih);
       var dw = iw * scale;
       var dh = ih * scale;
       var x = area.left + (w - dw) / 2;
