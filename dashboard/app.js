@@ -629,9 +629,9 @@
       var dw = iw * scale;
       var dh = ih * scale;
       var x = area.left + (w - dw) / 2;
-      var y = area.top + (h - dh) / 2;
+      var y = area.top + (h - dh) / 2 + Math.min(h * 0.06, 24);
       ctx.save();
-      ctx.globalAlpha = 0.14;
+      ctx.globalAlpha = 0.88;
       ctx.drawImage(chartWatermarkImg, x, y, dw, dh);
       ctx.restore();
     }
