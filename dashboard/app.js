@@ -165,9 +165,9 @@
     }
     var dpr = window.devicePixelRatio || 1;
     var w = el.parentElement.clientWidth || 160;
-    var h = 56;
-    var labelTop = 22;
-    var lineBottom = 50;
+    var h = 72;
+    var labelTop = 18;
+    var lineBottom = 66;
     el.width = w * dpr;
     el.height = h * dpr;
     el.style.width = w + 'px';
