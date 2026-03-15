@@ -717,7 +717,7 @@
             beginAtZero: true,
             grace: '8%',
             grid: { color: CHART_COLOR.grid, lineWidth: 0.5 },
-            ticks: { color: CHART_COLOR.axis },
+            ticks: { color: CHART_COLOR.axis, font: { size: 9 } },
             title: { display: false }
           }
         }
