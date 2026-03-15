@@ -803,14 +803,14 @@
       padding: 0.4rem 0.55rem;
       box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
     }
-    .block-notes h2 {
+    .footer-three-blocks .doc-section.block-notes h2 {
       font-family: 'Plus Jakarta Sans', 'DM Sans', system-ui, sans-serif;
       font-size: 0.95rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 0.25rem;
       padding-bottom: 0.2rem;
-      color: #6d28d9;
+      color: var(--header-title) !important;
     }
     .block-notes .table-notes {
       font-size: 0.85rem;
@@ -874,12 +874,12 @@
     .doc-section small { color: var(--text-muted); font-size: 0.65rem; }
     .overview-release { color: #2563eb; font-weight: 700; }
     .footer-three-blocks .doc-section.block-notes {
-      border: 2px solid #5b21b6;
-      border-color: #5b21b6;
-      background: rgba(91, 33, 182, 0.06);
+      border: 2px solid var(--accent);
+      border-color: var(--accent);
+      background: rgba(37, 99, 235, 0.05);
     }
     @keyframes blockNotesFlash {
-      0%, 100% { border-color: #5b21b6; }
+      0%, 100% { border-color: var(--accent); }
       20%, 70% { border-color: #fff; }
     }
     .footer-three-blocks .doc-section.block-notes.block-notes-flash {
