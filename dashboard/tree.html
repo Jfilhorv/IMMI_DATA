@@ -261,9 +261,15 @@
       padding: 0.5rem 0.75rem;
       font-size: 0.95rem;
       font-family: inherit;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(37,99,235,0.45);
       border-radius: 6px;
       background: var(--surface);
+      animation: search-pulse 1.4s ease-out 1;
+    }
+    @keyframes search-pulse {
+      0% { box-shadow: 0 0 0 3px rgba(37,99,235,0.35); }
+      50% { box-shadow: 0 0 0 6px rgba(37,99,235,0.12); }
+      100% { box-shadow: none; }
     }
     .search-wrap input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(37,99,235,0.15); }
     .search-wrap input::placeholder { color: var(--text-muted); }
