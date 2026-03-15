@@ -429,6 +429,20 @@
     .controls-over-chart.controls-intro select#indicator {
       animation: selectBlink 0.9s ease-in-out 2;
     }
+    .chart-toolbar-row {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 1.5rem;
+      margin-bottom: 0.15rem;
+    }
+    .chart-toolbar-inline {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
     .chart-body {
       position: relative;
       flex: 1;
@@ -436,17 +450,7 @@
       display: flex;
       flex-direction: column;
     }
-    .chart-toolbar-inline {
-      position: absolute;
-      top: 0.35rem;
-      right: 0.5rem;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      flex-shrink: 0;
-    }
-    .chart-wrap .chart-title + .chart-body { flex: 1; min-height: 0; }
+    .chart-body .chart-title { flex-shrink: 0; margin: 0 0 0.15rem 0; }
     .chart-wrap .chart-body canvas { flex: 1; min-height: 0; width: 100% !important; height: 100% !important; max-height: none; }
     .chart-wrap {
       background: var(--surface);
@@ -1254,9 +1258,8 @@
             </select>
           </div>
         </div>
-        <p class="chart-title" id="chart-title" aria-live="polite"></p>
-        <div class="chart-body">
-          <div class="chart-toolbar chart-toolbar-inline">
+        <div class="chart-toolbar-row">
+          <div class="chart-toolbar chart-toolbar-inline" role="group" aria-label="Chart type and download">
             <div class="chart-type-toggle" id="chart-type-toggle" role="group" aria-label="Chart type">
               <button type="button" id="chart-type-bar" class="active" aria-pressed="true">Bar</button>
               <button type="button" id="chart-type-line" aria-pressed="false">Line</button>
@@ -1267,6 +1270,9 @@
               <button type="button" id="download-csv" class="btn-download" title="Download data as CSV"><span aria-hidden="true">↓</span> CSV</button>
             </div>
           </div>
+        </div>
+        <div class="chart-body">
+          <p class="chart-title" id="chart-title" aria-live="polite"></p>
           <canvas id="chart" aria-label="Indicator time series chart"></canvas>
         </div>
       </div>

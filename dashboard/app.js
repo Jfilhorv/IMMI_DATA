@@ -1118,16 +1118,25 @@
         if (downloadPngEl) downloadPngEl.addEventListener('click', function () {
           if (!chart) return;
           var canvas = document.getElementById('chart');
+          var titleEl = document.getElementById('chart-title');
           if (!canvas) return;
           var w = canvas.width;
           var h = canvas.height;
+          var titleText = (titleEl && titleEl.textContent) ? titleEl.textContent.trim() : '';
+          var titleHeight = titleText ? 28 : 0;
           var off = document.createElement('canvas');
           off.width = w;
-          off.height = h;
+          off.height = titleHeight + h;
           var ctx = off.getContext('2d');
           ctx.fillStyle = '#ffffff';
-          ctx.fillRect(0, 0, w, h);
-          ctx.drawImage(canvas, 0, 0);
+          ctx.fillRect(0, 0, off.width, off.height);
+          if (titleText) {
+            ctx.fillStyle = '#2d3748';
+            ctx.font = '600 12px "DM Sans", system-ui, sans-serif';
+            ctx.textBaseline = 'top';
+            ctx.fillText(titleText, 0, 6);
+          }
+          ctx.drawImage(canvas, 0, titleHeight, w, h);
           var link = document.createElement('a');
           link.download = 'chart.png';
           link.href = off.toDataURL('image/png');
