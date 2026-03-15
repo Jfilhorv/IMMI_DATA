@@ -273,6 +273,7 @@
     }
     .search-wrap input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(37,99,235,0.15); }
     .search-wrap input::placeholder { color: var(--text-muted); }
+    .tree-footer-hint { font-size: 0.8rem; color: var(--text-muted); margin: 1rem 0 0 0; line-height: 1.4; }
   </style>
 </head>
 <body>
@@ -300,6 +301,7 @@
     <div id="tree-root" class="tree">
       <p class="loading" id="loading">Loading…</p>
     </div>
+    <p class="tree-footer-hint">Click any section, table or indicator to open the dashboard with that filter.</p>
   </div>
   </div>
   <script>
