@@ -601,6 +601,31 @@
   var CHART_COLOR = { bg: 'rgba(37, 99, 235, 0.5)', border: 'rgba(37, 99, 235, 0.9)', axis: '#1a202c', grid: 'rgba(0, 0, 0, 0.12)' };
   var LINE_POINT_BLUE = '#60a5fa';
 
+  var chartWatermarkImg = new Image();
+  chartWatermarkImg.src = base + 'immi_data_logo_plate.png';
+  var chartWatermarkPlugin = {
+    id: 'chartWatermark',
+    afterDraw: function (ch) {
+      if (!ch.chartArea || !chartWatermarkImg.complete || !chartWatermarkImg.naturalWidth) return;
+      var ctx = ch.ctx;
+      var area = ch.chartArea;
+      var w = area.right - area.left;
+      var h = area.bottom - area.top;
+      var maxSide = Math.min(w, h) * 0.4;
+      var iw = chartWatermarkImg.naturalWidth;
+      var ih = chartWatermarkImg.naturalHeight;
+      var scale = Math.min(maxSide / iw, maxSide / ih, 1);
+      var dw = iw * scale;
+      var dh = ih * scale;
+      var x = area.left + (w - dw) / 2;
+      var y = area.top + (h - dh) / 2;
+      ctx.save();
+      ctx.globalAlpha = 0.065;
+      ctx.drawImage(chartWatermarkImg, x, y, dw, dh);
+      ctx.restore();
+    }
+  };
+
   function updateChart(labels, values, indicatorName) {
     var ctx = document.getElementById('chart').getContext('2d');
     var isVerticalLabels = labels.length > 20;
@@ -627,7 +652,7 @@
       chart.update('none');
       return;
     }
-    var plugins = [];
+    var plugins = [chartWatermarkPlugin];
     if (typeof ChartDataLabels !== 'undefined') plugins.push(ChartDataLabels);
     chart = new Chart(ctx, {
       type: chartType,
