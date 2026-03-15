@@ -616,7 +616,7 @@
   chartWatermarkImg.src = base + 'immi_data_logo_plate.png';
   var chartWatermarkPlugin = {
     id: 'chartWatermark',
-    afterDraw: function (ch) {
+    beforeDatasetsDraw: function (ch) {
       if (!ch.chartArea || !chartWatermarkImg.complete || !chartWatermarkImg.naturalWidth) return;
       var ctx = ch.ctx;
       var area = ch.chartArea;
