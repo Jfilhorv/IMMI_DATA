@@ -602,6 +602,10 @@
   var LINE_POINT_BLUE = '#60a5fa';
 
   var chartWatermarkImg = new Image();
+  chartWatermarkImg.crossOrigin = 'anonymous';
+  chartWatermarkImg.onload = function () {
+    if (chart) chart.update('none');
+  };
   chartWatermarkImg.src = base + 'immi_data_logo_plate.png';
   var chartWatermarkPlugin = {
     id: 'chartWatermark',
@@ -611,7 +615,7 @@
       var area = ch.chartArea;
       var w = area.right - area.left;
       var h = area.bottom - area.top;
-      var maxSide = Math.min(w, h) * 0.4;
+      var maxSide = Math.min(w, h) * 0.45;
       var iw = chartWatermarkImg.naturalWidth;
       var ih = chartWatermarkImg.naturalHeight;
       var scale = Math.min(maxSide / iw, maxSide / ih, 1);
@@ -620,7 +624,7 @@
       var x = area.left + (w - dw) / 2;
       var y = area.top + (h - dh) / 2;
       ctx.save();
-      ctx.globalAlpha = 0.065;
+      ctx.globalAlpha = 0.14;
       ctx.drawImage(chartWatermarkImg, x, y, dw, dh);
       ctx.restore();
     }
