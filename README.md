@@ -1,5 +1,7 @@
 # <img src="dashboard/logo_immi_data_squera_plate.png" alt="IMMI-DATA" height="80" style="vertical-align: middle;" /> Australian Immigration Data Dashboard
 
+**IMMI-DATA** — Open dashboard for exploring Australian migration statistics published by the Department of Home Affairs.
+
 A **free, public** dashboard and webpage showing Australian immigration statistics from official government sources: **when** (year/quarter/month), **from** (country), **to** (Australia), **across years**.
 
 ---
@@ -42,6 +44,37 @@ All statistics shown in the dashboard come from the following official release:
 **How to update:** See [docs/DATA_AND_UPDATE.md](./docs/DATA_AND_UPDATE.md) for the exact script list, order, and steps. From project root you can run `python scripts/run_update.py` to run the full pipeline.
 
 Additional references: [Visa statistics](https://www.homeaffairs.gov.au/research-and-statistics/statistics/visa-statistics) (Home Affairs), [PLANNING.md](./PLANNING.md), [DATA_SOURCES.md](./DATA_SOURCES.md).
+
+## Data pipeline
+
+The dashboard is fed by a pipeline that turns the official XLSX package into static JSON/CSV consumed by the front end:
+
+```
+Department of Home Affairs dataset (XLSX)
+        ↓
+Data processing (Python)
+        ↓
+Normalized indicators (melted CSV, footnotes)
+        ↓
+JSON dataset (tables.json, indicators.csv, kpi_candidates.json, etc.)
+        ↓
+Static dashboard (GitHub Pages)
+```
+
+Scripts: **fetch** → export by sheet → **melt** → **build** dashboard data → **footnotes** → **KPIs** → **sync** to `dashboard/data/`. Run the full pipeline with `python scripts/run_update.py`. See [docs/DATA_AND_UPDATE.md](./docs/DATA_AND_UPDATE.md) for details.
+
+## Dataset structure
+
+The dashboard organises the data in a fixed hierarchy:
+
+```
+Section
+   └── Table
+        └── Indicator
+             └── Year (values)
+```
+
+The source Excel has tables in many different layouts (different columns, positions, and footnotes). The pipeline **normalises** this: we extract **footnotes** per table, treat **multiple columns** as a single set of options (e.g. submenus), and map everything into **Section → Table → Indicator → Year** so the dashboard can show one consistent structure (7 sections, 46 tables, 577 indicators) with charts, KPIs, and maps.
 
 ## Project structure
 
