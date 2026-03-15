@@ -193,25 +193,35 @@
       var y = y0 - ((v - minDisplay) / rangeDisplay) * lineH;
       points.push({ x: x, y: y, v: v });
     });
+    function smoothCurveSegment(p0, p1, pPrev, pNext) {
+      var t = 0.33;
+      var tx0 = pPrev ? (p1.x - pPrev.x) * 0.5 : (p1.x - p0.x) * 0.5;
+      var ty0 = pPrev ? (p1.y - pPrev.y) * 0.5 : (p1.y - p0.y) * 0.5;
+      var tx1 = pNext ? (pNext.x - p0.x) * 0.5 : (p1.x - p0.x) * 0.5;
+      var ty1 = pNext ? (pNext.y - p0.y) * 0.5 : (p1.y - p0.y) * 0.5;
+      var cp1x = p0.x + tx0 * t;
+      var cp1y = p0.y + ty0 * t;
+      var cp2x = p1.x - tx1 * t;
+      var cp2y = p1.y - ty1 * t;
+      ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p1.x, p1.y);
+    }
     var grad = ctx.createLinearGradient(0, labelTop, 0, lineBottom);
-    grad.addColorStop(0, 'rgba(96, 165, 250, 0.35)');
-    grad.addColorStop(1, 'rgba(96, 165, 250, 0.02)');
+    grad.addColorStop(0, 'rgba(96, 165, 250, 0.11)');
+    grad.addColorStop(1, 'rgba(96, 165, 250, 0.01)');
     ctx.fillStyle = grad;
     ctx.beginPath();
     ctx.moveTo(points[0].x, y0);
     for (var i = 1; i < points.length; i++) {
       var p0 = points[i - 1];
       var p1 = points[i];
-      var cpx = (p0.x + p1.x) / 2;
-      var cpy = (p0.y + p1.y) / 2;
-      ctx.quadraticCurveTo(cpx, cpy, p1.x, p1.y);
+      smoothCurveSegment(p0, p1, points[i - 2], points[i + 1]);
     }
     ctx.lineTo(points[points.length - 1].x, y0);
     ctx.lineTo(points[0].x, y0);
     ctx.closePath();
     ctx.fill();
     ctx.strokeStyle = '#60a5fa';
-    ctx.lineWidth = 2.2;
+    ctx.lineWidth = 2.6;
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';
     ctx.beginPath();
@@ -219,15 +229,13 @@
     for (var k = 1; k < points.length; k++) {
       var p0 = points[k - 1];
       var p1 = points[k];
-      var cpx = (p0.x + p1.x) / 2;
-      var cpy = (p0.y + p1.y) / 2;
-      ctx.quadraticCurveTo(cpx, cpy, p1.x, p1.y);
+      smoothCurveSegment(p0, p1, points[k - 2], points[k + 1]);
     }
     ctx.stroke();
     ctx.fillStyle = '#60a5fa';
     points.forEach(function (p) {
       ctx.beginPath();
-      ctx.arc(p.x, p.y, 2.2, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
       ctx.fill();
     });
     ctx.fillStyle = 'rgba(59, 130, 246, 0.78)';
