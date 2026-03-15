@@ -791,40 +791,40 @@
     .footer-three-blocks {
       grid-column: 2;
       display: grid;
-      grid-template-columns: 1.38fr 0.62fr;
+      grid-template-columns: 0.3fr 1.08fr 0.62fr;
       gap: 0.2rem;
     }
-    .sidebar .block-meta {
-      flex-shrink: 0;
-      margin-top: 0.2rem;
-      padding: 0.22rem 0.32rem;
-      border-top: 1px solid var(--border);
+    .footer-three-blocks .block-meta { grid-column: 1; }
+    .footer-three-blocks .block-notes { grid-column: 2; }
+    .footer-three-blocks #overview { grid-column: 3; }
+    .footer-three-blocks .block-meta {
       background: rgba(255, 255, 255, 0.5);
       border-color: rgba(0, 0, 0, 0.06);
+      padding: 0.28rem 0.38rem;
     }
-    .sidebar .block-meta h2 {
-      font-size: 0.52rem;
+    .footer-three-blocks .block-meta h2 {
+      font-size: 0.62rem;
+      color: #94a3b8;
       margin: 0 0 0.12rem 0;
       padding-bottom: 0.08rem;
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-      color: #94a3b8;
     }
-    .sidebar .block-meta .meta-list {
+    .footer-three-blocks .block-meta .meta-list {
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 0.04rem 0.5rem;
+      gap: 0.05rem 0.45rem;
       margin: 0;
-      font-size: 0.4rem;
-      line-height: 1.25;
+      font-size: 0.56rem;
+      line-height: 1.3;
     }
-    .sidebar .block-meta .meta-list dt { color: #94a3b8; font-weight: 600; margin: 0; }
-    .sidebar .block-meta .meta-list dd { margin: 0; color: #64748b; text-align: right; }
-    .sidebar .block-meta .meta-extra {
+    .footer-three-blocks .block-meta .meta-list dt { color: #94a3b8; font-weight: 600; margin: 0; }
+    .footer-three-blocks .block-meta .meta-list dd { margin: 0; color: #64748b; text-align: right; }
+    .footer-three-blocks .block-meta .meta-extra {
       margin: 0.15rem 0 0 0;
       padding-top: 0.1rem;
       border-top: 1px solid rgba(0, 0, 0, 0.05);
-      font-size: 0.34rem;
-      line-height: 1.3;
+      font-size: 0.48rem;
+      line-height: 1.35;
       color: #94a3b8;
     }
     .footer-three-blocks #overview {
@@ -861,6 +861,9 @@
     .table-notes .table-notes-empty { color: var(--text-muted); font-style: italic; font-size: 0.8rem; }
     @media (max-width: 1100px) {
       .footer-three-blocks { grid-template-columns: 1fr; }
+      .footer-three-blocks .block-meta,
+      .footer-three-blocks .block-notes,
+      .footer-three-blocks #overview { grid-column: 1; }
     }
     @media (max-width: 600px) {
       .chart-toolbar { gap: 0.4rem; }
@@ -1182,19 +1185,6 @@
         </dl>
         <p><small>© Commonwealth of Australia. Source: Department of Home Affairs.</small></p>
       </section>
-      <section class="doc-section block-meta" id="dataset-meta" aria-label="Dataset summary">
-        <h2>Dataset</h2>
-        <dl class="meta-list">
-          <dt>Sections</dt><dd>7</dd>
-          <dt>Tables</dt><dd>46</dd>
-          <dt>Indicators</dt><dd>577</dd>
-          <dt>Scripts</dt><dd>11</dd>
-          <dt>JSON</dt><dd>33</dd>
-          <dt>Rows</dt><dd>~4,990</dd>
-          <dt>Cols</dt><dd>5</dd>
-        </dl>
-        <p class="meta-extra"><small>Data: indicators.csv, tables.json, kpi_candidates.json · Scripts: build_dashboard_data, sync_dashboard_data, fetch_first_dataset, melt_all_sheets, list_kpi_candidates, build_by_country, build_drawio_tree, extract_table_footnotes, run_update, export_sheets_to_md, build_index_csv</small></p>
-      </section>
     </aside>
 
     <main class="main">
@@ -1279,6 +1269,19 @@
     </main>
 
     <div class="footer-three-blocks" id="footer-three-blocks">
+      <section class="doc-section block-meta" id="dataset-meta" aria-label="Dataset summary">
+        <h2>Dataset</h2>
+        <dl class="meta-list">
+          <dt>Sections</dt><dd>7</dd>
+          <dt>Tables</dt><dd>46</dd>
+          <dt>Indicators</dt><dd>577</dd>
+          <dt>Scripts</dt><dd>11</dd>
+          <dt>JSON</dt><dd>33</dd>
+          <dt>Rows</dt><dd>~4,990</dd>
+          <dt>Cols</dt><dd>5</dd>
+        </dl>
+        <p class="meta-extra"><small>Data: indicators.csv, tables.json, kpi_candidates.json · Scripts: build_dashboard_data, sync_dashboard_data, fetch_first_dataset, melt_all_sheets, list_kpi_candidates, build_by_country, build_drawio_tree, extract_table_footnotes, run_update, export_sheets_to_md, build_index_csv</small></p>
+      </section>
       <section class="doc-section block-notes">
         <h2>Notes</h2>
         <div id="table-notes" class="table-notes" aria-live="polite"></div>
