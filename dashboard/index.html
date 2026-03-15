@@ -810,19 +810,29 @@
       box-sizing: border-box;
     }
     .dataset-block-wrap .block-meta h2 {
-      font-size: 0.7rem;
+      font-size: 0.62rem;
       font-weight: 600;
       color: #94a3b8;
-      margin: 0 0 0.2rem 0;
-      padding-bottom: 0.1rem;
+      margin: 0 0 0.15rem 0;
+      padding-bottom: 0.08rem;
       border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
     }
+    .dataset-block-wrap .block-meta .meta-coverage {
+      margin: 0 0 0.15rem 0;
+      padding-bottom: 0.12rem;
+      border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+      font-size: 0.38rem;
+      line-height: 1.4;
+      color: #94a3b8;
+    }
+    .dataset-block-wrap .block-meta .meta-coverage-label { display: block; font-weight: 600; }
+    .dataset-block-wrap .block-meta .meta-coverage-range { color: #a8b8c8; }
     .dataset-block-wrap .block-meta .meta-list {
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 0 0.4rem;
       margin: 0;
-      font-size: 0.45rem;
+      font-size: 0.4rem;
       line-height: 1.45;
       border-collapse: collapse;
     }
@@ -839,17 +849,17 @@
     .dataset-block-wrap .block-meta .meta-list dt { color: #94a3b8; font-weight: 600; }
     .dataset-block-wrap .block-meta .meta-list dd { color: #94a3b8; text-align: left; }
     .dataset-block-wrap .block-meta .meta-extra {
-      margin: 0.2rem 0 0 0;
-      padding-top: 0.18rem;
+      margin: 0.18rem 0 0 0;
+      padding-top: 0.14rem;
       border-top: 0.5px solid rgba(0, 0, 0, 0.06);
-      font-size: 0.4rem;
+      font-size: 0.36rem;
       line-height: 1.5;
       color: #a8b8c8;
     }
     .dataset-block-wrap .block-meta .meta-extra .meta-label {
       font-weight: 600;
       color: #94a3b8;
-      font-size: 0.42rem;
+      font-size: 0.38rem;
       display: block;
       margin-bottom: 0.08rem;
     }
@@ -858,7 +868,7 @@
     }
     .dataset-block-wrap .block-meta .meta-extra .meta-section small {
       display: block;
-      font-size: 0.4rem;
+      font-size: 0.36rem;
       line-height: 1.45;
       color: #a8b8c8;
     }
@@ -1310,6 +1320,7 @@
     <div class="dataset-block-wrap">
       <section class="doc-section block-meta" id="dataset-meta" aria-label="Dataset summary">
         <h2>Dataset</h2>
+        <p class="meta-coverage"><span class="meta-coverage-label">Dataset coverage</span><br><span class="meta-coverage-range">1945 — 2025</span></p>
         <dl class="meta-list">
           <dt>Source</dt><dd>1</dd>
           <dt>Sections</dt><dd>7</dd>
