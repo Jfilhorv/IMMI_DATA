@@ -1115,9 +1115,18 @@
           if (!chart) return;
           var canvas = document.getElementById('chart');
           if (!canvas) return;
+          var w = canvas.width;
+          var h = canvas.height;
+          var off = document.createElement('canvas');
+          off.width = w;
+          off.height = h;
+          var ctx = off.getContext('2d');
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, w, h);
+          ctx.drawImage(canvas, 0, 0);
           var link = document.createElement('a');
           link.download = 'chart.png';
-          link.href = canvas.toDataURL('image/png');
+          link.href = off.toDataURL('image/png');
           link.click();
         });
         function doDownloadCsv() {
