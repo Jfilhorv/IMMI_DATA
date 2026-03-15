@@ -810,7 +810,6 @@
       box-sizing: border-box;
     }
     .dataset-block-wrap .block-meta h2,
-    .dataset-block-wrap .block-meta .meta-coverage,
     .dataset-block-wrap .block-meta .meta-list,
     .dataset-block-wrap .block-meta .meta-extra,
     .dataset-block-wrap .block-meta .meta-extra .meta-label,
@@ -824,15 +823,6 @@
       padding-bottom: 0.08rem;
       border-bottom: 0.5px solid rgba(0, 0, 0, 0.08);
     }
-    .dataset-block-wrap .block-meta .meta-coverage {
-      margin: 0 0 0.15rem 0;
-      padding-bottom: 0.12rem;
-      border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
-      line-height: 1.4;
-      color: #94a3b8;
-    }
-    .dataset-block-wrap .block-meta .meta-coverage-label { display: block; font-weight: 600; }
-    .dataset-block-wrap .block-meta .meta-coverage-range { color: #a8b8c8; }
     .dataset-block-wrap .block-meta .meta-list {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -1322,8 +1312,8 @@
     <div class="dataset-block-wrap">
       <section class="doc-section block-meta" id="dataset-meta" aria-label="Dataset summary">
         <h2>Dataset</h2>
-        <p class="meta-coverage"><span class="meta-coverage-label">Dataset coverage</span><br><span class="meta-coverage-range">1945 — 2025</span></p>
         <dl class="meta-list">
+          <dt>Data coverage</dt><dd>1945 — 2025</dd>
           <dt>Source</dt><dd>1</dd>
           <dt>Sections</dt><dd>7</dd>
           <dt>Tables</dt><dd>46</dd>
