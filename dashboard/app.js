@@ -445,6 +445,13 @@
     } else {
       el.innerHTML = '<p class="table-notes-empty">Select a table to view notes and sources.</p>';
     }
+    var block = el.closest('.block-notes');
+    if (block) {
+      block.classList.remove('block-notes-flash');
+      block.offsetHeight;
+      block.classList.add('block-notes-flash');
+      setTimeout(function () { block.classList.remove('block-notes-flash'); }, 520);
+    }
   }
 
   function setChartTitle() {

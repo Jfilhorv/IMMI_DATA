@@ -876,6 +876,13 @@
       border-color: #2563eb;
       background: rgba(37, 99, 235, 0.05);
     }
+    @keyframes blockNotesFlash {
+      0%, 100% { border-color: #2563eb; }
+      20%, 70% { border-color: #fff; }
+    }
+    .footer-three-blocks .doc-section.block-notes.block-notes-flash {
+      animation: blockNotesFlash 0.5s ease-out 1;
+    }
     .source {
       grid-column: 1 / -1;
       font-size: 0.56rem;
