@@ -150,9 +150,10 @@
   function abbreviateSparkValue(v) {
     var n = Number(v);
     if (!isFinite(n)) return '';
-    if (n >= 1e6) return Math.round(n / 1e6) + 'M';
-    if (n >= 1000) return Math.round(n / 1000) + 'k';
-    return Math.round(n).toString();
+    if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+    if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
+    if (n % 1 === 0) return Math.round(n).toString();
+    return n.toFixed(1);
   }
 
   function drawSparkline(canvasId, values) {
