@@ -1521,7 +1521,9 @@
             }
 
             var viewsEl = el2.querySelector('#gcvc-views');
-            if (viewsEl) {
+            var txt = (el2.textContent || '').toLowerCase();
+            var hasDigit = /\b\d+\b/.test(txt);
+            if (viewsEl || (hasDigit && !txt.includes('403') && !txt.includes('forbidden'))) {
               el2.style.visibility = 'visible';
               clearInterval(poll);
               return;
