@@ -979,6 +979,16 @@
       border-top: 1px solid var(--border);
     }
     .source a { color: var(--accent); }
+    .source .gc-site-total {
+      display: block;
+      margin-top: 0.05rem;
+      font-size: 0.52rem;
+      color: #4a5568;
+      opacity: 0.85;
+      line-height: 1.2;
+      white-space: nowrap;
+      pointer-events: none;
+    }
     .source-row {
       grid-column: 1 / -1;
       display: flex;
@@ -1363,7 +1373,7 @@
 
     <div class="source-row">
       <p class="source">
-        Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Years = financial year start (e.g. 1984 = 1984–85).
+        Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Years = financial year start (e.g. 1984 = 1984–85).<span id="gc-site-total" class="gc-site-total" aria-hidden="true"></span>
       </p>
       <button type="button" id="footer-download-csv" class="btn-download-footer" title="Download current selection as CSV">Download CSV</button>
       <p class="source attribution-notice">
@@ -1474,5 +1484,32 @@
   <script src="app.js?v=12"></script>
   <script>(function(){var c=document.querySelector('.controls-over-chart');if(c)c.classList.add('controls-intro');})();</script>
   <script data-goatcounter="https://jfilhorv.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <script>
+    (function () {
+      var el = document.getElementById('gc-site-total');
+      if (!el) return;
+
+      var t = setInterval(function () {
+        if (window.goatcounter && typeof window.goatcounter.visit_count === 'function') {
+          clearInterval(t);
+          window.goatcounter.visit_count({
+            append: '#gc-site-total',
+            type: 'html',
+            no_branding: true,
+            path: 'TOTAL',
+            style: `
+              #gcvc-border { border: none !important; background: transparent !important; padding: 0 !important; width: auto !important; }
+              #gcvc-for { display: none !important; }
+              #gcvc-by { display: none !important; }
+              #gcvc-views { font-size: 0.52rem !important; color: #4a5568 !important; line-height: 1.2 !important; font-weight: 700 !important; }
+            `
+          });
+        }
+      }, 100);
+
+      // Safety stop: evita ficar rodando caso o script externo falhe.
+      setTimeout(function () { clearInterval(t); }, 8000);
+    })();
+  </script>
 </body>
 </html>
