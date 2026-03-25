@@ -980,7 +980,7 @@
     }
     .source a { color: var(--accent); }
     .source .gc-site-total {
-      display: inline-block;
+      display: none; /* Avoid layout jump while GoatCounter renders (and while it may show 403 HTML). */
       margin: 0 0.35rem 0 0;
       font-size: 0.52rem;
       color: #4a5568;
@@ -989,7 +989,6 @@
       white-space: nowrap;
       pointer-events: none;
       vertical-align: baseline;
-      visibility: hidden;
     }
     .source .gc-site-total * { pointer-events: none; }
     .source-row {
@@ -1491,6 +1490,7 @@
     (function () {
       var el = document.getElementById('gc-site-total');
       if (!el) return;
+      el.style.display = 'none';
 
       var t = setInterval(function () {
         if (window.goatcounter && typeof window.goatcounter.visit_count === 'function') {
@@ -1509,9 +1509,7 @@
             `
           });
 
-          // Evita o flash do erro 403: mantém invisível até aparecer o número.
-          // Em seguida, revela o valor; se demorar demais, deixa vazio.
-          el.style.visibility = 'hidden';
+          // Evita o "bloco" invisível grande: mantém display:none até detectar o número.
           var start = Date.now();
           var poll = setInterval(function () {
             var el2 = document.getElementById('gc-site-total');
@@ -1523,15 +1521,15 @@
             var viewsEl = el2.querySelector('#gcvc-views');
             var txt = (el2.textContent || '').toLowerCase();
             var hasDigit = /\b\d+\b/.test(txt);
-            if (viewsEl || (hasDigit && !txt.includes('403') && !txt.includes('forbidden'))) {
-              el2.style.visibility = 'visible';
+            if ((viewsEl && hasDigit && !txt.includes('403') && !txt.includes('forbidden')) || (hasDigit && !txt.includes('403') && !txt.includes('forbidden'))) {
+              el2.style.display = 'inline-block';
               clearInterval(poll);
               return;
             }
 
-            if (Date.now() - start > 60000) {
+            if (Date.now() - start > 12000) {
               el2.innerHTML = '';
-              el2.style.visibility = 'hidden';
+              el2.style.display = 'none';
               clearInterval(poll);
             }
           }, 200);
