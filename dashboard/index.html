@@ -1527,8 +1527,12 @@
               return;
             }
 
-            if (Date.now() - start > 12000) {
+            // Se vier HTML de erro, elimina para não bloquear uma renderização posterior.
+            if (txt.includes('403') || txt.includes('forbidden')) {
               el2.innerHTML = '';
+            }
+
+            if (Date.now() - start > 60000) {
               el2.style.display = 'none';
               clearInterval(poll);
             }
