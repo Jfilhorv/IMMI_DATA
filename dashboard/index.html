@@ -1507,6 +1507,18 @@
               #gcvc-views { font-size: 0.52rem !important; color: #4a5568 !important; line-height: 1.2 !important; font-weight: 700 !important; display: inline !important; }
             `
           });
+
+          // Se o GoatCounter bloquear a exibição (ex: settings desativadas), não queremos mostrar
+          // a página de erro 403 no rodapé. Então, após um tempo, limpamos o container se o número não aparecer.
+          setTimeout(function () {
+            var el2 = document.getElementById('gc-site-total');
+            if (!el2) return;
+            var hasViews = !!el2.querySelector('#gcvc-views');
+            var txt = (el2.textContent || '').toLowerCase();
+            if (!hasViews || txt.includes('403') || txt.includes('forbidden')) {
+              el2.innerHTML = '';
+            }
+          }, 6000);
         }
       }, 100);
 
