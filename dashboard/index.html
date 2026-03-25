@@ -1492,56 +1492,73 @@
       if (!el) return;
       el.style.display = 'none';
 
-      var t = setInterval(function () {
-        if (window.goatcounter && typeof window.goatcounter.visit_count === 'function') {
-          clearInterval(t);
-          window.goatcounter.visit_count({
-            append: '#gc-site-total',
-            type: 'html',
-            no_branding: true,
-            path: 'TOTAL',
-            style: `
-              #gcvc, #gcvc-border { display: inline !important; }
-              #gcvc-border { border: none !important; background: transparent !important; padding: 0 !important; width: auto !important; margin: 0 !important; }
-              #gcvc-for { display: none !important; }
-              #gcvc-by { display: none !important; }
-              #gcvc-views { font-size: 0.52rem !important; color: #4a5568 !important; line-height: 1.2 !important; font-weight: 700 !important; display: inline !important; }
-            `
-          });
+      function renderOnce() {
+        if (!window.goatcounter || typeof window.goatcounter.visit_count !== 'function') return false;
 
-          // Evita o "bloco" invisível grande: mantém display:none até detectar o número.
-          var start = Date.now();
-          var poll = setInterval(function () {
-            var el2 = document.getElementById('gc-site-total');
-            if (!el2) {
-              clearInterval(poll);
-              return;
-            }
+        window.goatcounter.visit_count({
+          append: '#gc-site-total',
+          type: 'html',
+          no_branding: true,
+          path: 'TOTAL',
+          style: `
+            #gcvc, #gcvc-border { display: inline !important; }
+            #gcvc-border { border: none !important; background: transparent !important; padding: 0 !important; width: auto !important; margin: 0 !important; }
+            #gcvc-for { display: none !important; }
+            #gcvc-by { display: none !important; }
+            #gcvc-views { font-size: 0.52rem !important; color: #4a5568 !important; line-height: 1.2 !important; font-weight: 700 !important; display: inline !important; }
+          `
+        });
 
-            var viewsEl = el2.querySelector('#gcvc-views');
-            var txt = (el2.textContent || '').toLowerCase();
-            var hasDigit = /\b\d+\b/.test(txt);
-            if ((viewsEl && hasDigit && !txt.includes('403') && !txt.includes('forbidden')) || (hasDigit && !txt.includes('403') && !txt.includes('forbidden'))) {
-              el2.style.display = 'inline-block';
-              clearInterval(poll);
-              return;
-            }
+        return true;
+      }
 
-            // Se vier HTML de erro, elimina para não bloquear uma renderização posterior.
-            if (txt.includes('403') || txt.includes('forbidden')) {
-              el2.innerHTML = '';
-            }
+      function tryFinalizeFromContainer() {
+        var el2 = document.getElementById('gc-site-total');
+        if (!el2) return false;
 
-            if (Date.now() - start > 60000) {
-              el2.style.display = 'none';
-              clearInterval(poll);
-            }
-          }, 200);
+        var txt = (el2.textContent || '').toLowerCase();
+        var m = txt.match(/\b\d+\b/);
+        var hasDigit = !!m;
+        var isError = txt.includes('403') || txt.includes('forbidden');
+
+        if (isError) {
+          el2.innerHTML = '';
+          el2.style.display = 'none';
+          return false;
         }
-      }, 100);
 
-      // Safety stop: evita ficar rodando caso o script externo falhe.
-      setTimeout(function () { clearInterval(t); }, 8000);
+        if (hasDigit) {
+          // Força o conteúdo para ser só o número (remove qualquer texto extra que venha do widget).
+          el2.textContent = m[0];
+          el2.style.display = 'inline-block';
+          return true;
+        }
+
+        return false;
+      }
+
+      var tries = 0;
+      var maxTries = 12; // ~12 * 2.5s = 30s
+      var intervalMs = 2500;
+
+      var tick = setInterval(function () {
+        tries += 1;
+        if (tries > maxTries) {
+          clearInterval(tick);
+          return;
+        }
+
+        // Mantemos display:none até o número aparecer.
+        el.style.display = 'none';
+        renderOnce();
+
+        // O widget injeta conteúdo de forma assíncrona; depois verificamos.
+        setTimeout(function () {
+          tryFinalizeFromContainer();
+          var done = (document.getElementById('gc-site-total') && document.getElementById('gc-site-total').style.display === 'inline-block');
+          if (done) clearInterval(tick);
+        }, 900);
+      }, intervalMs);
     })();
   </script>
 </body>
