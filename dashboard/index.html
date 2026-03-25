@@ -980,7 +980,7 @@
     }
     .source a { color: var(--accent); }
     .source .gc-site-total {
-      display: none; /* Avoid layout jump while GoatCounter renders (and while it may show 403 HTML). */
+      display: inline-block;
       margin: 0 0.35rem 0 0;
       font-size: 0.52rem;
       color: #4a5568;
@@ -989,6 +989,14 @@
       white-space: nowrap;
       pointer-events: none;
       vertical-align: baseline;
+    }
+    .source .gc-site-total iframe {
+      border: 0;
+      display: block;
+      width: 70px;
+      height: 18px;
+      background: transparent;
+      pointer-events: none;
     }
     .source .gc-site-total * { pointer-events: none; }
     .source-row {
@@ -1375,7 +1383,11 @@
 
     <div class="source-row">
       <p class="source">
-        Total acess: <span id="gc-site-total" class="gc-site-total" aria-hidden="true"></span> Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Years = financial year start (e.g. 1984 = 1984–85).
+        Total acess: <span id="gc-site-total" class="gc-site-total" aria-hidden="true">
+          <iframe title="Site views counter" tabindex="-1" aria-hidden="true"
+            src="https://jfilhorv.goatcounter.com/counter/TOTAL.html?no_branding=1&amp;style=%23gcvc%7Bdisplay%3Ainline-block%7D%23gcvc-border%7Bborder%3Anone%3Bbackground%3Atransparent%3Bpadding%3A0%7D%23gcvc-for%7Bdisplay%3Anone%7D%23gcvc-by%7Bdisplay%3Anone%7D%23gcvc-views%7Bfont-size%3A0.52rem%3Bcolor%3A%234a5568%3Bline-height%3A1.2%3Bfont-weight%3A700%7D"
+          ></iframe>
+        </span> Source: <a href="https://data.gov.au/data/dataset/australian-migration-statistics" target="_blank" rel="noopener">Australian Migration Statistics</a>, Department of Home Affairs (data.gov.au). Years = financial year start (e.g. 1984 = 1984–85).
       </p>
       <button type="button" id="footer-download-csv" class="btn-download-footer" title="Download current selection as CSV">Download CSV</button>
       <p class="source attribution-notice">
@@ -1490,7 +1502,7 @@
     (function () {
       var el = document.getElementById('gc-site-total');
       if (!el) return;
-      el.style.display = 'none';
+      if (el.querySelector('iframe')) return; // iframe-based counter to avoid 403/layout issues
 
       function renderOnce() {
         if (!window.goatcounter || typeof window.goatcounter.visit_count !== 'function') return false;
@@ -1547,9 +1559,6 @@
           clearInterval(tick);
           return;
         }
-
-        // Mantemos display:none até o número aparecer.
-        el.style.display = 'none';
         renderOnce();
 
         // O widget injeta conteúdo de forma assíncrona; depois verificamos.
